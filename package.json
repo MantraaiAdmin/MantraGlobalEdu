@@ -1,0 +1,38 @@
+{
+  "name": "mantra-global-education",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise Global Education Management Platform - Phase 1 MVP",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "predev": "pkill -f 'next dev' 2>/dev/null || true; pkill -f 'next start' 2>/dev/null || true; lsof -ti:3000,4000 | xargs kill -9 2>/dev/null || true; rm -rf apps/web/.next",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run dev --workspace=@mge/web",
+    "dev:web:clean": "npm run clean:web && npm run dev:web",
+    "clean:web": "rm -rf apps/web/.next",
+    "dev:api": "npm run dev --workspace=@mge/api",
+    "build": "npm run build --workspaces --if-present",
+    "build:web": "npm run build --workspace=@mge/web",
+    "build:api": "npm run build --workspace=@mge/api",
+    "db:generate": "dotenv -e .env -- prisma generate --schema=database/prisma/schema.prisma",
+    "db:migrate": "dotenv -e .env -- prisma migrate dev --schema=database/prisma/schema.prisma",
+    "db:push": "dotenv -e .env -- prisma db push --schema=database/prisma/schema.prisma",
+    "db:seed": "dotenv -e .env -- tsx database/seed/index.ts",
+    "db:studio": "npm run db:studio --workspace=@mge/api",
+    "deck:partnership": "node docs/partnership/generate-deck.mjs",
+    "deck:company": "node docs/company/generate-company-deck.mjs",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv-cli": "^8.0.0",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

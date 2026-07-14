@@ -1,0 +1,15 @@
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
+import { AboutPageContent } from '@/features/about/components/about-page-content';
+
+export default function AboutPage() {
+  return (
+    <>
+      <Header />
+      <main className="bg-background">
+        <AboutPageContent />
+      </main>
+      <Footer />
+    </>
+  );
+}

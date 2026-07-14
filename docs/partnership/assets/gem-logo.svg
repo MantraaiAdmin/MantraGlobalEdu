@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" fill="none">
+  <defs>
+    <linearGradient id="gemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8B84A"/>
+      <stop offset="50%" stop-color="#C89116"/>
+      <stop offset="100%" stop-color="#9A6E0E"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(12,16)">
+    <polygon points="44,4 80,28 68,76 20,76 8,28" fill="url(#gemGrad)"/>
+    <polygon points="44,4 80,28 44,52 8,28" fill="#F5D78E" opacity="0.55"/>
+    <polygon points="44,52 80,28 68,76 44,76" fill="#7A5608" opacity="0.35"/>
+    <text x="44" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#00234E">G</text>
+  </g>
+  <text x="108" y="58" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#00234E">GEM</text>
+  <text x="108" y="88" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" letter-spacing="4" fill="#00234E">STUDY ABROAD</text>
+  <line x1="108" y1="96" x2="280" y2="96" stroke="#C89116" stroke-width="3"/>
+</svg>
