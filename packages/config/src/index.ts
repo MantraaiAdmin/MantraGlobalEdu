@@ -116,6 +116,8 @@ export const CONTACT = {
   whatsappMessage: 'Hi Mantra Global Education, I would like guidance on studying in USA, UK or Australia.',
   supportPhone: '+91 98765 43210',
   supportEmail: 'support@mantraglobaledu.com',
+  website: 'mantraglobaledu.com',
+  hq: 'Coimbatore, TN',
 } as const;
 
 export const ROUTES = {

@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { APP_CONFIG, CONTACT, ROUTES, FOUNDER } from '@mge/config';
 import { submitContact } from '@/services/api.service';
-import { Phone, Mail, MessageCircle, Calendar, MapPin } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Calendar, MapPin, Globe } from 'lucide-react';
 
 function ContactForm() {
   const searchParams = useSearchParams();
@@ -69,6 +69,9 @@ function ContactForm() {
                   <a href={`mailto:${CONTACT.supportEmail}`} className="flex items-center gap-3 text-sm text-primary hover:text-accent">
                     <Mail className="h-5 w-5 text-accent" /> {CONTACT.supportEmail}
                   </a>
+                  <a href={`https://${CONTACT.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm text-primary hover:text-accent">
+                    <Globe className="h-5 w-5 text-accent" /> {CONTACT.website}
+                  </a>
                 </div>
               </div>
               <div className="premium-card p-6 bg-primary text-white">
@@ -81,7 +84,9 @@ function ContactForm() {
               </div>
               <div className="premium-card p-6">
                 <MapPin className="h-5 w-5 text-accent mb-2" />
-                <p className="text-sm text-muted-foreground">{APP_CONFIG.name} — Online & in-person counseling available.</p>
+                <h3 className="font-semibold text-primary">Headquarters</h3>
+                <p className="text-sm text-muted-foreground mt-1">{CONTACT.hq}</p>
+                <p className="text-sm text-muted-foreground mt-3">Online & in-person counseling available across India.</p>
               </div>
             </div>
 
