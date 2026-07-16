@@ -124,7 +124,7 @@ export function ServicesPageContent() {
               </div>
               <div className="absolute -top-3 -right-3 glass rounded-2xl px-5 py-4 shadow-premium-lg">
                 <p className="text-xs text-muted-foreground">Destinations</p>
-                <p className="text-2xl font-bold text-accent">3 Countries</p>
+                <p className="text-2xl font-bold text-accent">19+ Countries</p>
               </div>
             </motion.div>
           </div>

@@ -5,12 +5,20 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Users } from 'lucide-react';
 import { DESTINATIONS } from '@mge/config';
+import { getUniversityCountByCountryCode } from '@/lib/catalog';
 import { SectionHeader } from '@/components/common/section-header';
 
-const destinationMeta: Record<string, { students: string; unis: string; gradient: string }> = {
-  US: { students: '4,500+', unis: '5', gradient: 'from-blue-600/20 to-red-500/10' },
-  GB: { students: '3,800+', unis: '5', gradient: 'from-blue-700/20 to-red-600/10' },
-  AU: { students: '2,800+', unis: '5', gradient: 'from-green-500/20 to-yellow-400/10' },
+const destinationGradients: Record<string, string> = {
+  US: 'from-blue-600/20 to-red-500/10',
+  GB: 'from-blue-700/20 to-red-600/10',
+  AU: 'from-green-500/20 to-yellow-400/10',
+  CA: 'from-red-500/20 to-white/10',
+  DE: 'from-yellow-500/20 to-red-600/10',
+  FR: 'from-blue-600/20 to-red-500/10',
+  IE: 'from-green-500/20 to-orange-400/10',
+  NZ: 'from-blue-500/20 to-green-400/10',
+  SG: 'from-red-500/20 to-white/10',
+  NL: 'from-orange-500/20 to-blue-500/10',
 };
 
 export function DestinationsSection() {
@@ -39,7 +47,8 @@ export function DestinationsSection() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {DESTINATIONS.map((dest, i) => {
-            const meta = destinationMeta[dest.code] || { students: '500+', unis: '3+', gradient: 'from-primary/10 to-accent/5' };
+            const uniCount = getUniversityCountByCountryCode(dest.code);
+            const gradient = destinationGradients[dest.code] || 'from-primary/10 to-accent/5';
             return (
               <motion.div
                 key={dest.code}
@@ -49,7 +58,7 @@ export function DestinationsSection() {
               >
                 <Link href={`/countries/${dest.code}`}>
                   <div className={`premium-card group cursor-pointer overflow-hidden`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${meta.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                     <div className="relative p-6">
                       <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-500 drop-shadow-sm">
                         {dest.flag}
@@ -57,9 +66,8 @@ export function DestinationsSection() {
                       <h3 className="font-semibold text-primary text-lg">{dest.name}</h3>
                       <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
                         <span className="flex items-center gap-1">
-                          <Users className="h-3 w-3" /> {meta.students}
+                          <Users className="h-3 w-3" /> {uniCount > 0 ? `${uniCount} universities` : 'Programs available'}
                         </span>
-                        <span>{meta.unis} unis</span>
                       </div>
                       <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-accent opacity-0 group-hover:opacity-100 transition-opacity">
                         Explore <ArrowRight className="h-3 w-3" />

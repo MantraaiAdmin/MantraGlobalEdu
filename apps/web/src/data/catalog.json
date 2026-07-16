@@ -1,0 +1,4727 @@
+{
+  "generatedAt": "2026-07-16T06:25:23.040Z",
+  "countries": [
+    {
+      "id": "country-us",
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+      "tuitionRange": "$25,000 – $65,000/year",
+      "livingCost": "$12,000 – $22,000/year",
+      "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+      "intakePeriods": [
+        "FALL",
+        "SPRING"
+      ],
+      "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+    },
+    {
+      "id": "country-gb",
+      "code": "GB",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+      "tuitionRange": "£18,000 – £45,000/year",
+      "livingCost": "£10,000 – £16,000/year",
+      "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+    },
+    {
+      "id": "country-au",
+      "code": "AU",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+      "tuitionRange": "AUD 32,000 – 55,000/year",
+      "livingCost": "AUD 20,000 – 27,000/year",
+      "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+    },
+    {
+      "id": "country-ca",
+      "code": "CA",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+      "tuitionRange": "CAD 18,000 – 45,000/year",
+      "livingCost": "CAD 12,000 – 18,000/year",
+      "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY",
+        "MAY"
+      ],
+      "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+    },
+    {
+      "id": "country-de",
+      "code": "DE",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+      "tuitionRange": "€0 – €20,000/year (public unis often free)",
+      "livingCost": "€10,000 – €12,000/year",
+      "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+      "intakePeriods": [
+        "OCTOBER",
+        "APRIL"
+      ],
+      "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+    },
+    {
+      "id": "country-fr",
+      "code": "FR",
+      "name": "France",
+      "flag": "🇫🇷",
+      "description": "Prestigious grandes écoles and universities with affordable public tuition and growing English-taught Masters programs.",
+      "tuitionRange": "€2,800 – €15,000/year",
+      "livingCost": "€10,000 – €14,000/year",
+      "visaRequirements": "Student visa (VLS-TS). IELTS 6.0+ for English programs.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "APS visa allows 12 months to seek employment after graduation."
+    },
+    {
+      "id": "country-ie",
+      "code": "IE",
+      "name": "Ireland",
+      "flag": "🇮🇪",
+      "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+      "tuitionRange": "€12,000 – €35,000/year",
+      "livingCost": "€10,000 – €15,000/year",
+      "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
+    },
+    {
+      "id": "country-nz",
+      "code": "NZ",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "description": "Safe, high-quality education with practical learning, stunning campuses, and straightforward post-study work visas.",
+      "tuitionRange": "NZD 26,000 – 45,000/year",
+      "livingCost": "NZD 15,000 – 20,000/year",
+      "visaRequirements": "Student Visa. IELTS 6.0–6.5 typically required.",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "graduateOpportunities": "Post-study work visa up to 3 years depending on qualification level."
+    },
+    {
+      "id": "country-sg",
+      "code": "SG",
+      "name": "Singapore",
+      "flag": "🇸🇬",
+      "description": "Asia's education hub with globally ranked universities, strong business schools, and proximity to Indian students.",
+      "tuitionRange": "SGD 20,000 – 45,000/year",
+      "livingCost": "SGD 12,000 – 18,000/year",
+      "visaRequirements": "Student Pass (IPA). IELTS/TOEFL for English-medium programs.",
+      "intakePeriods": [
+        "AUGUST",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "Employment Pass pathway for graduates with job offers."
+    },
+    {
+      "id": "country-nl",
+      "code": "NL",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "description": "2,000+ English-taught programs, innovative teaching, and orientation year visa for international graduates.",
+      "tuitionRange": "€8,000 – €20,000/year",
+      "livingCost": "€10,000 – €14,000/year",
+      "visaRequirements": "MVV + residence permit. IELTS 6.0–6.5 for English programs.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "FEBRUARY"
+      ],
+      "graduateOpportunities": "Orientation Year permit — 1 year to find work after graduation."
+    },
+    {
+      "id": "country-it",
+      "code": "IT",
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+      "tuitionRange": "€1,000 – €15,000/year",
+      "livingCost": "€8,000 – €12,000/year",
+      "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "FEBRUARY"
+      ],
+      "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+    },
+    {
+      "id": "country-ch",
+      "code": "CH",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "description": "Home to ETH Zurich and EPFL — world-leading STEM, hospitality, and finance programs with strong industry placement.",
+      "tuitionRange": "CHF 1,000 – 8,000/year (public) + living",
+      "livingCost": "CHF 18,000 – 28,000/year",
+      "visaRequirements": "National D visa. IELTS/TOEFL and strong academic profile.",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "graduateOpportunities": "6-month job search permit for graduates; strong pharma & banking sectors."
+    },
+    {
+      "id": "country-ae",
+      "code": "AE",
+      "name": "UAE",
+      "flag": "🇦🇪",
+      "description": "Dubai and Abu Dhabi host branch campuses of global universities with tax-free earning potential and modern infrastructure.",
+      "tuitionRange": "AED 40,000 – 120,000/year",
+      "livingCost": "AED 30,000 – 50,000/year",
+      "visaRequirements": "Student residence visa sponsored by university. IELTS 5.5–6.5.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+    },
+    {
+      "id": "country-jp",
+      "code": "JP",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+      "tuitionRange": "¥535,800 – ¥1,500,000/year",
+      "livingCost": "¥1,000,000 – ¥1,500,000/year",
+      "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+      "intakePeriods": [
+        "APRIL",
+        "SEPTEMBER"
+      ],
+      "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+    },
+    {
+      "id": "country-kr",
+      "code": "KR",
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+      "tuitionRange": "KRW 4M – 12M/year",
+      "livingCost": "KRW 8M – 12M/year",
+      "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+      "intakePeriods": [
+        "MARCH",
+        "SEPTEMBER"
+      ],
+      "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+    },
+    {
+      "id": "country-my",
+      "code": "MY",
+      "name": "Malaysia",
+      "flag": "🇲🇾",
+      "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+      "tuitionRange": "MYR 20,000 – 60,000/year",
+      "livingCost": "MYR 15,000 – 25,000/year",
+      "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+      "intakePeriods": [
+        "FEBRUARY",
+        "SEPTEMBER"
+      ],
+      "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+    },
+    {
+      "id": "country-se",
+      "code": "SE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+      "tuitionRange": "SEK 80,000 – 295,000/year",
+      "livingCost": "SEK 90,000 – 120,000/year",
+      "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+      "intakePeriods": [
+        "AUGUST",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "6-month residence permit extension to seek employment."
+    },
+    {
+      "id": "country-es",
+      "code": "ES",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+      "tuitionRange": "€1,000 – €18,000/year",
+      "livingCost": "€8,000 – €12,000/year",
+      "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "FEBRUARY"
+      ],
+      "graduateOpportunities": "12-month post-study residence authorization for job search."
+    },
+    {
+      "id": "country-fi",
+      "code": "FI",
+      "name": "Finland",
+      "flag": "🇫🇮",
+      "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+      "tuitionRange": "€8,000 – €18,000/year",
+      "livingCost": "€9,000 – €13,000/year",
+      "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY"
+      ],
+      "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+    }
+  ],
+  "universities": [
+    {
+      "id": "uni-massachusetts-institute-of-technology",
+      "name": "Massachusetts Institute of Technology",
+      "slug": "massachusetts-institute-of-technology",
+      "countryId": "country-us",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 1,
+      "tuitionMin": 57590,
+      "tuitionMax": 61990,
+      "acceptanceRate": 4,
+      "description": "World-leading institution in science, technology, engineering, and mathematics.",
+      "website": "https://www.mit.edu",
+      "popularPrograms": [
+        "Computer Science",
+        "Electrical Engineering",
+        "Business Analytics"
+      ],
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      }
+    },
+    {
+      "id": "uni-stanford-university",
+      "name": "Stanford University",
+      "slug": "stanford-university",
+      "countryId": "country-us",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 3,
+      "tuitionMin": 56169,
+      "tuitionMax": 65730,
+      "acceptanceRate": 4,
+      "description": "Premier research university in Silicon Valley with strong entrepreneurship culture.",
+      "website": "https://www.stanford.edu",
+      "popularPrograms": [
+        "Computer Science",
+        "MBA",
+        "Data Science",
+        "Engineering"
+      ],
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      }
+    },
+    {
+      "id": "uni-harvard-university",
+      "name": "Harvard University",
+      "slug": "harvard-university",
+      "countryId": "country-us",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 4,
+      "tuitionMin": 54269,
+      "tuitionMax": 73440,
+      "acceptanceRate": 3,
+      "description": "Ivy League institution with world-renowned faculties across arts, sciences, and professional schools.",
+      "website": "https://www.harvard.edu",
+      "popularPrograms": [
+        "Economics",
+        "Computer Science",
+        "MBA",
+        "Public Health"
+      ],
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-california-berkeley",
+      "name": "University of California, Berkeley",
+      "slug": "university-of-california-berkeley",
+      "countryId": "country-us",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 12,
+      "tuitionMin": 46892,
+      "tuitionMax": 52890,
+      "acceptanceRate": 11,
+      "description": "Top public research university known for engineering, business, and social sciences.",
+      "website": "https://www.berkeley.edu",
+      "popularPrograms": [
+        "EECS",
+        "Business",
+        "Data Science",
+        "Environmental Science"
+      ],
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      }
+    },
+    {
+      "id": "uni-columbia-university",
+      "name": "Columbia University",
+      "slug": "columbia-university",
+      "countryId": "country-us",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 18,
+      "tuitionMin": 54500,
+      "tuitionMax": 69728,
+      "acceptanceRate": 4,
+      "description": "Ivy League university in New York City with strong programs in journalism, business, and engineering.",
+      "website": "https://www.columbia.edu",
+      "popularPrograms": [
+        "Computer Science",
+        "Journalism",
+        "International Affairs",
+        "MBA"
+      ],
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-oxford",
+      "name": "University of Oxford",
+      "slug": "university-of-oxford",
+      "countryId": "country-gb",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 2,
+      "tuitionMin": 28950,
+      "tuitionMax": 48630,
+      "acceptanceRate": 17,
+      "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+      "website": "https://www.ox.ac.uk",
+      "popularPrograms": [
+        "PPE",
+        "Law",
+        "Medicine",
+        "Computer Science",
+        "MBA"
+      ],
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-cambridge",
+      "name": "University of Cambridge",
+      "slug": "university-of-cambridge",
+      "countryId": "country-gb",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 5,
+      "tuitionMin": 25000,
+      "tuitionMax": 72000,
+      "acceptanceRate": 18,
+      "description": "World-renowned collegiate university with excellence in sciences, engineering, and humanities.",
+      "website": "https://www.cam.ac.uk",
+      "popularPrograms": [
+        "Natural Sciences",
+        "Engineering",
+        "Economics",
+        "Computer Science"
+      ],
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      }
+    },
+    {
+      "id": "uni-imperial-college-london",
+      "name": "Imperial College London",
+      "slug": "imperial-college-london",
+      "countryId": "country-gb",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 6,
+      "tuitionMin": 33000,
+      "tuitionMax": 45000,
+      "acceptanceRate": 14,
+      "description": "STEM-focused university in London, ranked among the world's best for engineering and medicine.",
+      "website": "https://www.imperial.ac.uk",
+      "popularPrograms": [
+        "Engineering",
+        "Computing",
+        "Medicine",
+        "Business"
+      ],
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      }
+    },
+    {
+      "id": "uni-university-college-london",
+      "name": "University College London",
+      "slug": "university-college-london",
+      "countryId": "country-gb",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 9,
+      "tuitionMin": 28000,
+      "tuitionMax": 42000,
+      "acceptanceRate": 16,
+      "description": "London's global university with strengths in medicine, law, architecture, and data science.",
+      "website": "https://www.ucl.ac.uk",
+      "popularPrograms": [
+        "Data Science",
+        "Architecture",
+        "Medicine",
+        "Economics"
+      ],
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-manchester",
+      "name": "University of Manchester",
+      "slug": "university-of-manchester",
+      "countryId": "country-gb",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 32,
+      "tuitionMin": 22000,
+      "tuitionMax": 32000,
+      "acceptanceRate": 45,
+      "description": "Russell Group university and the largest single-site university in the UK.",
+      "website": "https://www.manchester.ac.uk",
+      "popularPrograms": [
+        "Engineering",
+        "Business",
+        "Computer Science",
+        "Pharmacy"
+      ],
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-melbourne",
+      "name": "University of Melbourne",
+      "slug": "university-of-melbourne",
+      "countryId": "country-au",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 13,
+      "tuitionMin": 35000,
+      "tuitionMax": 52000,
+      "acceptanceRate": 70,
+      "description": "Australia's leading university with the Melbourne Model and strong research output.",
+      "website": "https://www.unimelb.edu.au",
+      "popularPrograms": [
+        "Commerce",
+        "Engineering",
+        "Medicine",
+        "Data Science"
+      ],
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-sydney",
+      "name": "University of Sydney",
+      "slug": "university-of-sydney",
+      "countryId": "country-au",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 19,
+      "tuitionMin": 42000,
+      "tuitionMax": 55000,
+      "acceptanceRate": 65,
+      "description": "Australia's first university with a stunning campus and globally ranked professional schools.",
+      "website": "https://www.sydney.edu.au",
+      "popularPrograms": [
+        "Business",
+        "Engineering",
+        "Medicine",
+        "Computer Science"
+      ],
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      }
+    },
+    {
+      "id": "uni-unsw-sydney",
+      "name": "UNSW Sydney",
+      "slug": "unsw-sydney",
+      "countryId": "country-au",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 19,
+      "tuitionMin": 42000,
+      "tuitionMax": 54000,
+      "acceptanceRate": 60,
+      "description": "Leading Australian university known for engineering, business, and quantum computing research.",
+      "website": "https://www.unsw.edu.au",
+      "popularPrograms": [
+        "Engineering",
+        "Computer Science",
+        "Business",
+        "Law"
+      ],
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      }
+    },
+    {
+      "id": "uni-monash-university",
+      "name": "Monash University",
+      "slug": "monash-university",
+      "countryId": "country-au",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 37,
+      "tuitionMin": 38000,
+      "tuitionMax": 50000,
+      "acceptanceRate": 55,
+      "description": "Australia's largest university with campuses in Melbourne and international partnerships.",
+      "website": "https://www.monash.edu",
+      "popularPrograms": [
+        "Pharmacy",
+        "Engineering",
+        "Business",
+        "IT"
+      ],
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      }
+    },
+    {
+      "id": "uni-australian-national-university",
+      "name": "Australian National University",
+      "slug": "australian-national-university",
+      "countryId": "country-au",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 34,
+      "tuitionMin": 40000,
+      "tuitionMax": 52000,
+      "acceptanceRate": 50,
+      "description": "National research university in Canberra with strong government and policy connections.",
+      "website": "https://www.anu.edu.au",
+      "popularPrograms": [
+        "International Relations",
+        "Computer Science",
+        "Economics",
+        "Law"
+      ],
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      }
+    },
+    {
+      "id": "uni-university-of-toronto",
+      "name": "University of Toronto",
+      "slug": "university-of-toronto",
+      "countryId": "country-ca",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 21,
+      "tuitionMin": 45000,
+      "tuitionMax": 65000,
+      "acceptanceRate": 43,
+      "description": "Canada's top university with world-class research across engineering, business, and health sciences.",
+      "website": "https://www.utoronto.ca",
+      "popularPrograms": [
+        "Computer Science",
+        "Engineering",
+        "Business",
+        "Data Science"
+      ],
+      "country": {
+        "id": "country-ca",
+        "code": "CA",
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+        "tuitionRange": "CAD 18,000 – 45,000/year",
+        "livingCost": "CAD 12,000 – 18,000/year",
+        "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY",
+          "MAY"
+        ],
+        "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+      }
+    },
+    {
+      "id": "uni-university-of-british-columbia",
+      "name": "University of British Columbia",
+      "slug": "university-of-british-columbia",
+      "countryId": "country-ca",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 34,
+      "tuitionMin": 40000,
+      "tuitionMax": 55000,
+      "acceptanceRate": 52,
+      "description": "Leading Canadian research university on the Pacific coast with strong co-op programs.",
+      "website": "https://www.ubc.ca",
+      "popularPrograms": [
+        "Computer Science",
+        "Forestry",
+        "Business",
+        "Engineering"
+      ],
+      "country": {
+        "id": "country-ca",
+        "code": "CA",
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+        "tuitionRange": "CAD 18,000 – 45,000/year",
+        "livingCost": "CAD 12,000 – 18,000/year",
+        "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY",
+          "MAY"
+        ],
+        "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+      }
+    },
+    {
+      "id": "uni-technical-university-munich",
+      "name": "Technical University of Munich",
+      "slug": "technical-university-munich",
+      "countryId": "country-de",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 37,
+      "tuitionMin": 0,
+      "tuitionMax": 6000,
+      "acceptanceRate": 48,
+      "description": "Germany's #1 technical university — engineering, informatics, and natural sciences excellence.",
+      "website": "https://www.tum.de",
+      "popularPrograms": [
+        "Informatics",
+        "Mechanical Engineering",
+        "Physics",
+        "Management"
+      ],
+      "country": {
+        "id": "country-de",
+        "code": "DE",
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+        "tuitionRange": "€0 – €20,000/year (public unis often free)",
+        "livingCost": "€10,000 – €12,000/year",
+        "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+        "intakePeriods": [
+          "OCTOBER",
+          "APRIL"
+        ],
+        "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+      }
+    },
+    {
+      "id": "uni-trinity-college-dublin",
+      "name": "Trinity College Dublin",
+      "slug": "trinity-college-dublin",
+      "countryId": "country-ie",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 81,
+      "tuitionMin": 20000,
+      "tuitionMax": 35000,
+      "acceptanceRate": 55,
+      "description": "Ireland's oldest and most prestigious university in the heart of Dublin's tech corridor.",
+      "website": "https://www.tcd.ie",
+      "popularPrograms": [
+        "Computer Science",
+        "Pharmaceutical Sciences",
+        "Business",
+        "Law"
+      ],
+      "country": {
+        "id": "country-ie",
+        "code": "IE",
+        "name": "Ireland",
+        "flag": "🇮🇪",
+        "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+        "tuitionRange": "€12,000 – €35,000/year",
+        "livingCost": "€10,000 – €15,000/year",
+        "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
+      }
+    },
+    {
+      "id": "uni-national-university-singapore",
+      "name": "National University of Singapore",
+      "slug": "national-university-singapore",
+      "countryId": "country-sg",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 8,
+      "tuitionMin": 35000,
+      "tuitionMax": 55000,
+      "acceptanceRate": 25,
+      "description": "Asia's leading global university with top-ranked engineering, computing, and business schools.",
+      "website": "https://www.nus.edu.sg",
+      "popularPrograms": [
+        "Computer Science",
+        "Business Analytics",
+        "Engineering",
+        "Public Policy"
+      ],
+      "country": {
+        "id": "country-sg",
+        "code": "SG",
+        "name": "Singapore",
+        "flag": "🇸🇬",
+        "description": "Asia's education hub with globally ranked universities, strong business schools, and proximity to Indian students.",
+        "tuitionRange": "SGD 20,000 – 45,000/year",
+        "livingCost": "SGD 12,000 – 18,000/year",
+        "visaRequirements": "Student Pass (IPA). IELTS/TOEFL for English-medium programs.",
+        "intakePeriods": [
+          "AUGUST",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Employment Pass pathway for graduates with job offers."
+      }
+    },
+    {
+      "id": "uni-delft-university-technology",
+      "name": "Delft University of Technology",
+      "slug": "delft-university-technology",
+      "countryId": "country-nl",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 47,
+      "tuitionMin": 15000,
+      "tuitionMax": 20000,
+      "acceptanceRate": 60,
+      "description": "Netherlands' top technical university renowned for engineering, architecture, and aerospace.",
+      "website": "https://www.tudelft.nl",
+      "popularPrograms": [
+        "Aerospace Engineering",
+        "Computer Science",
+        "Architecture",
+        "Robotics"
+      ],
+      "country": {
+        "id": "country-nl",
+        "code": "NL",
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "description": "2,000+ English-taught programs, innovative teaching, and orientation year visa for international graduates.",
+        "tuitionRange": "€8,000 – €20,000/year",
+        "livingCost": "€10,000 – €14,000/year",
+        "visaRequirements": "MVV + residence permit. IELTS 6.0–6.5 for English programs.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "Orientation Year permit — 1 year to find work after graduation."
+      }
+    },
+    {
+      "id": "uni-university-of-auckland",
+      "name": "University of Auckland",
+      "slug": "university-of-auckland",
+      "countryId": "country-nz",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 68,
+      "tuitionMin": 32000,
+      "tuitionMax": 48000,
+      "acceptanceRate": 58,
+      "description": "New Zealand's highest-ranked university with strong research and industry connections.",
+      "website": "https://www.auckland.ac.nz",
+      "popularPrograms": [
+        "Engineering",
+        "Computer Science",
+        "Business",
+        "Health Sciences"
+      ],
+      "country": {
+        "id": "country-nz",
+        "code": "NZ",
+        "name": "New Zealand",
+        "flag": "🇳🇿",
+        "description": "Safe, high-quality education with practical learning, stunning campuses, and straightforward post-study work visas.",
+        "tuitionRange": "NZD 26,000 – 45,000/year",
+        "livingCost": "NZD 15,000 – 20,000/year",
+        "visaRequirements": "Student Visa. IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Post-study work visa up to 3 years depending on qualification level."
+      }
+    },
+    {
+      "id": "uni-sorbonne-university",
+      "name": "Sorbonne University",
+      "slug": "sorbonne-university",
+      "countryId": "country-fr",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 59,
+      "tuitionMin": 3000,
+      "tuitionMax": 12000,
+      "acceptanceRate": 50,
+      "description": "Historic French research university with growing English-taught international programs.",
+      "website": "https://www.sorbonne-universite.fr",
+      "popularPrograms": [
+        "Engineering",
+        "Physics",
+        "Medicine",
+        "Literature"
+      ],
+      "country": {
+        "id": "country-fr",
+        "code": "FR",
+        "name": "France",
+        "flag": "🇫🇷",
+        "description": "Prestigious grandes écoles and universities with affordable public tuition and growing English-taught Masters programs.",
+        "tuitionRange": "€2,800 – €15,000/year",
+        "livingCost": "€10,000 – €14,000/year",
+        "visaRequirements": "Student visa (VLS-TS). IELTS 6.0+ for English programs.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "APS visa allows 12 months to seek employment after graduation."
+      }
+    },
+    {
+      "id": "uni-eth-zurich",
+      "name": "ETH Zurich",
+      "slug": "eth-zurich",
+      "countryId": "country-ch",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 7,
+      "tuitionMin": 1500,
+      "tuitionMax": 3000,
+      "acceptanceRate": 27,
+      "description": "World's leading science and technology university — Albert Einstein's alma mater.",
+      "website": "https://ethz.ch",
+      "popularPrograms": [
+        "Computer Science",
+        "Robotics",
+        "Data Science",
+        "Architecture"
+      ],
+      "country": {
+        "id": "country-ch",
+        "code": "CH",
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "description": "Home to ETH Zurich and EPFL — world-leading STEM, hospitality, and finance programs with strong industry placement.",
+        "tuitionRange": "CHF 1,000 – 8,000/year (public) + living",
+        "livingCost": "CHF 18,000 – 28,000/year",
+        "visaRequirements": "National D visa. IELTS/TOEFL and strong academic profile.",
+        "intakePeriods": [
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "6-month job search permit for graduates; strong pharma & banking sectors."
+      }
+    },
+    {
+      "id": "uni-university-of-dubai",
+      "name": "University of Dubai",
+      "slug": "university-of-dubai",
+      "countryId": "country-ae",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 0,
+      "tuitionMin": 35000,
+      "tuitionMax": 80000,
+      "acceptanceRate": 70,
+      "description": "Leading UAE institution offering accredited business, IT, and engineering programs in Dubai.",
+      "website": "https://www.ud.ac.ae",
+      "popularPrograms": [
+        "MBA",
+        "Information Technology",
+        "Business",
+        "Law"
+      ],
+      "country": {
+        "id": "country-ae",
+        "code": "AE",
+        "name": "UAE",
+        "flag": "🇦🇪",
+        "description": "Dubai and Abu Dhabi host branch campuses of global universities with tax-free earning potential and modern infrastructure.",
+        "tuitionRange": "AED 40,000 – 120,000/year",
+        "livingCost": "AED 30,000 – 50,000/year",
+        "visaRequirements": "Student residence visa sponsored by university. IELTS 5.5–6.5.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+      }
+    }
+  ],
+  "courses": [
+    {
+      "id": "course-mit-bs-computer-science-engineering",
+      "name": "BS in Computer Science and Engineering",
+      "slug": "mit-bs-computer-science-engineering",
+      "universityId": "uni-massachusetts-institute-of-technology",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 61990,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Strong high school STEM record. SAT/ACT optional. English proficiency required.",
+      "description": "Undergraduate program covering algorithms, AI, systems, and software engineering.",
+      "university": {
+        "id": "uni-massachusetts-institute-of-technology",
+        "name": "Massachusetts Institute of Technology",
+        "slug": "massachusetts-institute-of-technology",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 1,
+        "tuitionMin": 57590,
+        "tuitionMax": 61990,
+        "acceptanceRate": 4,
+        "description": "World-leading institution in science, technology, engineering, and mathematics.",
+        "website": "https://www.mit.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Business Analytics"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-mit-intl-excellence",
+          "name": "MIT International Excellence Award",
+          "awardAmount": 25000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-mit-ms-eecs",
+      "name": "MS in Electrical Engineering and Computer Science",
+      "slug": "mit-ms-eecs",
+      "universityId": "uni-massachusetts-institute-of-technology",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 61990,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Bachelor's in EE/CS. GRE not required. Strong academic record.",
+      "description": "Graduate research program in EECS with AI, robotics, and systems focus.",
+      "university": {
+        "id": "uni-massachusetts-institute-of-technology",
+        "name": "Massachusetts Institute of Technology",
+        "slug": "massachusetts-institute-of-technology",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 1,
+        "tuitionMin": 57590,
+        "tuitionMax": 61990,
+        "acceptanceRate": 4,
+        "description": "World-leading institution in science, technology, engineering, and mathematics.",
+        "website": "https://www.mit.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Business Analytics"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-mit-intl-excellence",
+          "name": "MIT International Excellence Award",
+          "awardAmount": 25000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-stanford-bs-computer-science",
+      "name": "BS in Computer Science",
+      "slug": "stanford-bs-computer-science",
+      "universityId": "uni-stanford-university",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 65730,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Exceptional academic record. English proficiency. Holistic admissions review.",
+      "description": "Core CS theory, systems, AI, and human-computer interaction.",
+      "university": {
+        "id": "uni-stanford-university",
+        "name": "Stanford University",
+        "slug": "stanford-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 3,
+        "tuitionMin": 56169,
+        "tuitionMax": 65730,
+        "acceptanceRate": 4,
+        "description": "Premier research university in Silicon Valley with strong entrepreneurship culture.",
+        "website": "https://www.stanford.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "MBA",
+          "Data Science",
+          "Engineering"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-stanford-knight-hennessy",
+          "name": "Knight-Hennessy Scholars Program",
+          "awardAmount": 75000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-stanford-ms-computer-science",
+      "name": "MS in Computer Science",
+      "slug": "stanford-ms-computer-science",
+      "universityId": "uni-stanford-university",
+      "degreeLevel": "MASTERS",
+      "duration": "1.5–2 years",
+      "tuition": 56169,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Bachelor's in CS or related field. Strong GPA and research background.",
+      "description": "Specializations in AI, systems, theory, and HCI.",
+      "university": {
+        "id": "uni-stanford-university",
+        "name": "Stanford University",
+        "slug": "stanford-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 3,
+        "tuitionMin": 56169,
+        "tuitionMax": 65730,
+        "acceptanceRate": 4,
+        "description": "Premier research university in Silicon Valley with strong entrepreneurship culture.",
+        "website": "https://www.stanford.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "MBA",
+          "Data Science",
+          "Engineering"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-stanford-knight-hennessy",
+          "name": "Knight-Hennessy Scholars Program",
+          "awardAmount": 75000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-harvard-ab-computer-science",
+      "name": "AB in Computer Science",
+      "slug": "harvard-ab-computer-science",
+      "universityId": "uni-harvard-university",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 59076,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Outstanding secondary school record. English proficiency required.",
+      "description": "Harvard College undergraduate degree in computer science.",
+      "university": {
+        "id": "uni-harvard-university",
+        "name": "Harvard University",
+        "slug": "harvard-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 4,
+        "tuitionMin": 54269,
+        "tuitionMax": 73440,
+        "acceptanceRate": 3,
+        "description": "Ivy League institution with world-renowned faculties across arts, sciences, and professional schools.",
+        "website": "https://www.harvard.edu",
+        "popularPrograms": [
+          "Economics",
+          "Computer Science",
+          "MBA",
+          "Public Health"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-harvard-intl",
+          "name": "Harvard Financial Aid — International Students",
+          "awardAmount": 50000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-harvard-mba",
+      "name": "MBA — Harvard Business School",
+      "slug": "harvard-mba",
+      "universityId": "uni-harvard-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 73440,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Bachelor's degree. 2+ years work experience. GMAT/GRE required.",
+      "description": "Full-time MBA program at Harvard Business School.",
+      "university": {
+        "id": "uni-harvard-university",
+        "name": "Harvard University",
+        "slug": "harvard-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 4,
+        "tuitionMin": 54269,
+        "tuitionMax": 73440,
+        "acceptanceRate": 3,
+        "description": "Ivy League institution with world-renowned faculties across arts, sciences, and professional schools.",
+        "website": "https://www.harvard.edu",
+        "popularPrograms": [
+          "Economics",
+          "Computer Science",
+          "MBA",
+          "Public Health"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-harvard-intl",
+          "name": "Harvard Financial Aid — International Students",
+          "awardAmount": 50000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-ucb-bs-eecs",
+      "name": "BS in Electrical Engineering & Computer Sciences",
+      "slug": "ucb-bs-eecs",
+      "universityId": "uni-university-of-california-berkeley",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 52890,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Strong STEM grades. English proficiency. UC application required.",
+      "description": "EECS undergraduate program — one of the top CS programs globally.",
+      "university": {
+        "id": "uni-university-of-california-berkeley",
+        "name": "University of California, Berkeley",
+        "slug": "university-of-california-berkeley",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 12,
+        "tuitionMin": 46892,
+        "tuitionMax": 52890,
+        "acceptanceRate": 11,
+        "description": "Top public research university known for engineering, business, and social sciences.",
+        "website": "https://www.berkeley.edu",
+        "popularPrograms": [
+          "EECS",
+          "Business",
+          "Data Science",
+          "Environmental Science"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-berkeley-regents",
+          "name": "UC Berkeley Regents' and Chancellor's Scholarship",
+          "awardAmount": 15000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-ucb-meng-eecs",
+      "name": "Master of Engineering in EECS",
+      "slug": "ucb-meng-eecs",
+      "universityId": "uni-university-of-california-berkeley",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 46892,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Bachelor's in engineering or CS. Minimum 3.0 GPA.",
+      "description": "Industry-focused one-year professional masters in EECS.",
+      "university": {
+        "id": "uni-university-of-california-berkeley",
+        "name": "University of California, Berkeley",
+        "slug": "university-of-california-berkeley",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 12,
+        "tuitionMin": 46892,
+        "tuitionMax": 52890,
+        "acceptanceRate": 11,
+        "description": "Top public research university known for engineering, business, and social sciences.",
+        "website": "https://www.berkeley.edu",
+        "popularPrograms": [
+          "EECS",
+          "Business",
+          "Data Science",
+          "Environmental Science"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-berkeley-regents",
+          "name": "UC Berkeley Regents' and Chancellor's Scholarship",
+          "awardAmount": 15000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-columbia-bs-computer-science",
+      "name": "BS in Computer Science",
+      "slug": "columbia-bs-computer-science",
+      "universityId": "uni-columbia-university",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 69728,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL"
+      ],
+      "eligibility": "Competitive academic record. English proficiency required.",
+      "description": "Columbia Engineering undergraduate CS program in NYC.",
+      "university": {
+        "id": "uni-columbia-university",
+        "name": "Columbia University",
+        "slug": "columbia-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 18,
+        "tuitionMin": 54500,
+        "tuitionMax": 69728,
+        "acceptanceRate": 4,
+        "description": "Ivy League university in New York City with strong programs in journalism, business, and engineering.",
+        "website": "https://www.columbia.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "Journalism",
+          "International Affairs",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-columbia-intl",
+          "name": "Columbia International Student Grant",
+          "awardAmount": 20000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-columbia-ms-data-science",
+      "name": "MS in Data Science",
+      "slug": "columbia-ms-data-science",
+      "universityId": "uni-columbia-university",
+      "degreeLevel": "MASTERS",
+      "duration": "1.5 years",
+      "tuition": 69728,
+      "currency": "USD",
+      "intakePeriods": [
+        "FALL",
+        "SPRING"
+      ],
+      "eligibility": "Quantitative bachelor's degree. Programming and statistics background.",
+      "description": "Interdisciplinary data science masters from Columbia's Data Science Institute.",
+      "university": {
+        "id": "uni-columbia-university",
+        "name": "Columbia University",
+        "slug": "columbia-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 18,
+        "tuitionMin": 54500,
+        "tuitionMax": 69728,
+        "acceptanceRate": 4,
+        "description": "Ivy League university in New York City with strong programs in journalism, business, and engineering.",
+        "website": "https://www.columbia.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "Journalism",
+          "International Affairs",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-columbia-intl",
+          "name": "Columbia International Student Grant",
+          "awardAmount": 20000,
+          "currency": "USD"
+        }
+      ]
+    },
+    {
+      "id": "course-oxford-ba-computer-science",
+      "name": "BA in Computer Science",
+      "slug": "oxford-ba-computer-science",
+      "universityId": "uni-university-of-oxford",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 39120,
+      "currency": "GBP",
+      "intakePeriods": [
+        "OCTOBER"
+      ],
+      "eligibility": "A-levels or equivalent. Strong mathematics. Admissions test may apply.",
+      "description": "Three-year undergraduate computer science at Oxford.",
+      "university": {
+        "id": "uni-university-of-oxford",
+        "name": "University of Oxford",
+        "slug": "university-of-oxford",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 2,
+        "tuitionMin": 28950,
+        "tuitionMax": 48630,
+        "acceptanceRate": 17,
+        "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+        "website": "https://www.ox.ac.uk",
+        "popularPrograms": [
+          "PPE",
+          "Law",
+          "Medicine",
+          "Computer Science",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-chevening",
+          "name": "Chevening Scholarship (UK Government)",
+          "awardAmount": 35000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-oxford-msc-computer-science",
+      "name": "MSc in Computer Science",
+      "slug": "oxford-msc-computer-science",
+      "universityId": "uni-university-of-oxford",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 36900,
+      "currency": "GBP",
+      "intakePeriods": [
+        "OCTOBER"
+      ],
+      "eligibility": "First-class or strong upper second bachelor's in CS or related field.",
+      "description": "One-year taught masters in advanced computer science.",
+      "university": {
+        "id": "uni-university-of-oxford",
+        "name": "University of Oxford",
+        "slug": "university-of-oxford",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 2,
+        "tuitionMin": 28950,
+        "tuitionMax": 48630,
+        "acceptanceRate": 17,
+        "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+        "website": "https://www.ox.ac.uk",
+        "popularPrograms": [
+          "PPE",
+          "Law",
+          "Medicine",
+          "Computer Science",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-oxford-clarendon",
+          "name": "Clarendon Fund Scholarship",
+          "awardAmount": 18000,
+          "currency": "GBP"
+        },
+        {
+          "id": "sch-chevening",
+          "name": "Chevening Scholarship (UK Government)",
+          "awardAmount": 35000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-oxford-mba",
+      "name": "MBA — Saïd Business School",
+      "slug": "oxford-mba",
+      "universityId": "uni-university-of-oxford",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 78640,
+      "currency": "GBP",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Bachelor's degree. 2+ years work experience. GMAT/GRE required.",
+      "description": "One-year intensive MBA at Oxford Saïd Business School.",
+      "university": {
+        "id": "uni-university-of-oxford",
+        "name": "University of Oxford",
+        "slug": "university-of-oxford",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 2,
+        "tuitionMin": 28950,
+        "tuitionMax": 48630,
+        "acceptanceRate": 17,
+        "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+        "website": "https://www.ox.ac.uk",
+        "popularPrograms": [
+          "PPE",
+          "Law",
+          "Medicine",
+          "Computer Science",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-chevening",
+          "name": "Chevening Scholarship (UK Government)",
+          "awardAmount": 35000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-cambridge-ba-computer-science",
+      "name": "BA in Computer Science",
+      "slug": "cambridge-ba-computer-science",
+      "universityId": "uni-university-of-cambridge",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 39162,
+      "currency": "GBP",
+      "intakePeriods": [
+        "OCTOBER"
+      ],
+      "eligibility": "A-levels or equivalent with strong mathematics. Admissions assessment.",
+      "description": "Cambridge undergraduate computer science tripos.",
+      "university": {
+        "id": "uni-university-of-cambridge",
+        "name": "University of Cambridge",
+        "slug": "university-of-cambridge",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 5,
+        "tuitionMin": 25000,
+        "tuitionMax": 72000,
+        "acceptanceRate": 18,
+        "description": "World-renowned collegiate university with excellence in sciences, engineering, and humanities.",
+        "website": "https://www.cam.ac.uk",
+        "popularPrograms": [
+          "Natural Sciences",
+          "Engineering",
+          "Economics",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-cambridge-gates",
+          "name": "Gates Cambridge Scholarship",
+          "awardAmount": 40000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-cambridge-mphil-computer-science",
+      "name": "MPhil in Advanced Computer Science",
+      "slug": "cambridge-mphil-computer-science",
+      "universityId": "uni-university-of-cambridge",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 42000,
+      "currency": "GBP",
+      "intakePeriods": [
+        "OCTOBER"
+      ],
+      "eligibility": "First-class bachelor's in CS. Research proposal may be required.",
+      "description": "Advanced taught masters with research dissertation component.",
+      "university": {
+        "id": "uni-university-of-cambridge",
+        "name": "University of Cambridge",
+        "slug": "university-of-cambridge",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 5,
+        "tuitionMin": 25000,
+        "tuitionMax": 72000,
+        "acceptanceRate": 18,
+        "description": "World-renowned collegiate university with excellence in sciences, engineering, and humanities.",
+        "website": "https://www.cam.ac.uk",
+        "popularPrograms": [
+          "Natural Sciences",
+          "Engineering",
+          "Economics",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-cambridge-gates",
+          "name": "Gates Cambridge Scholarship",
+          "awardAmount": 40000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-imperial-beng-computing",
+      "name": "BEng in Computing",
+      "slug": "imperial-beng-computing",
+      "universityId": "uni-imperial-college-london",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 40940,
+      "currency": "GBP",
+      "intakePeriods": [
+        "OCTOBER"
+      ],
+      "eligibility": "A-levels AAA including Mathematics. English proficiency.",
+      "description": "Computing undergraduate degree at Imperial's Department of Computing.",
+      "university": {
+        "id": "uni-imperial-college-london",
+        "name": "Imperial College London",
+        "slug": "imperial-college-london",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 6,
+        "tuitionMin": 33000,
+        "tuitionMax": 45000,
+        "acceptanceRate": 14,
+        "description": "STEM-focused university in London, ranked among the world's best for engineering and medicine.",
+        "website": "https://www.imperial.ac.uk",
+        "popularPrograms": [
+          "Engineering",
+          "Computing",
+          "Medicine",
+          "Business"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-imperial-president",
+          "name": "Imperial President's PhD Scholarship",
+          "awardAmount": 25000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-imperial-msc-computing-ai",
+      "name": "MSc in Computing (AI & ML)",
+      "slug": "imperial-msc-computing-ai",
+      "universityId": "uni-imperial-college-london",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 43250,
+      "currency": "GBP",
+      "intakePeriods": [
+        "OCTOBER"
+      ],
+      "eligibility": "First-class bachelor's in computing or related quantitative field.",
+      "description": "Specialist masters in artificial intelligence and machine learning.",
+      "university": {
+        "id": "uni-imperial-college-london",
+        "name": "Imperial College London",
+        "slug": "imperial-college-london",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 6,
+        "tuitionMin": 33000,
+        "tuitionMax": 45000,
+        "acceptanceRate": 14,
+        "description": "STEM-focused university in London, ranked among the world's best for engineering and medicine.",
+        "website": "https://www.imperial.ac.uk",
+        "popularPrograms": [
+          "Engineering",
+          "Computing",
+          "Medicine",
+          "Business"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-imperial-president",
+          "name": "Imperial President's PhD Scholarship",
+          "awardAmount": 25000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-ucl-bsc-computer-science",
+      "name": "BSc in Computer Science",
+      "slug": "ucl-bsc-computer-science",
+      "universityId": "uni-university-college-london",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 37500,
+      "currency": "GBP",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "A-levels A*AA including Mathematics. English proficiency.",
+      "description": "UCL Computer Science undergraduate programme.",
+      "university": {
+        "id": "uni-university-college-london",
+        "name": "University College London",
+        "slug": "university-college-london",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 9,
+        "tuitionMin": 28000,
+        "tuitionMax": 42000,
+        "acceptanceRate": 16,
+        "description": "London's global university with strengths in medicine, law, architecture, and data science.",
+        "website": "https://www.ucl.ac.uk",
+        "popularPrograms": [
+          "Data Science",
+          "Architecture",
+          "Medicine",
+          "Economics"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-ucl-global",
+          "name": "UCL Global Undergraduate Scholarship",
+          "awardAmount": 15000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-ucl-msc-data-science",
+      "name": "MSc in Data Science and Machine Learning",
+      "slug": "ucl-msc-data-science",
+      "universityId": "uni-university-college-london",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 36500,
+      "currency": "GBP",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Upper second bachelor's in quantitative discipline.",
+      "description": "Taught masters combining statistics, ML, and big data systems.",
+      "university": {
+        "id": "uni-university-college-london",
+        "name": "University College London",
+        "slug": "university-college-london",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 9,
+        "tuitionMin": 28000,
+        "tuitionMax": 42000,
+        "acceptanceRate": 16,
+        "description": "London's global university with strengths in medicine, law, architecture, and data science.",
+        "website": "https://www.ucl.ac.uk",
+        "popularPrograms": [
+          "Data Science",
+          "Architecture",
+          "Medicine",
+          "Economics"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-manchester-bsc-computer-science",
+      "name": "BSc in Computer Science",
+      "slug": "manchester-bsc-computer-science",
+      "universityId": "uni-university-of-manchester",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 30000,
+      "currency": "GBP",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "A-levels or equivalent with mathematics. IELTS 6.5.",
+      "description": "Computer science undergraduate at the School of Computer Science.",
+      "university": {
+        "id": "uni-university-of-manchester",
+        "name": "University of Manchester",
+        "slug": "university-of-manchester",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 32,
+        "tuitionMin": 22000,
+        "tuitionMax": 32000,
+        "acceptanceRate": 45,
+        "description": "Russell Group university and the largest single-site university in the UK.",
+        "website": "https://www.manchester.ac.uk",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Computer Science",
+          "Pharmacy"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-manchester-equity",
+          "name": "Manchester International Equity Scholarship",
+          "awardAmount": 10000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-manchester-msc-computer-science",
+      "name": "MSc in Advanced Computer Science",
+      "slug": "manchester-msc-computer-science",
+      "universityId": "uni-university-of-manchester",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 32000,
+      "currency": "GBP",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Upper second bachelor's in CS or related field.",
+      "description": "Advanced CS masters with AI, software engineering, and data analytics options.",
+      "university": {
+        "id": "uni-university-of-manchester",
+        "name": "University of Manchester",
+        "slug": "university-of-manchester",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 32,
+        "tuitionMin": 22000,
+        "tuitionMax": 32000,
+        "acceptanceRate": 45,
+        "description": "Russell Group university and the largest single-site university in the UK.",
+        "website": "https://www.manchester.ac.uk",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Computer Science",
+          "Pharmacy"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-manchester-equity",
+          "name": "Manchester International Equity Scholarship",
+          "awardAmount": 10000,
+          "currency": "GBP"
+        }
+      ]
+    },
+    {
+      "id": "course-melbourne-bsc-computing",
+      "name": "Bachelor of Science — Computing and Software Systems",
+      "slug": "melbourne-bsc-computing",
+      "universityId": "uni-university-of-melbourne",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 48576,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "ATAR 85+ or equivalent. Mathematics prerequisite. IELTS 6.5.",
+      "description": "Computing major within the Bachelor of Science at Melbourne.",
+      "university": {
+        "id": "uni-university-of-melbourne",
+        "name": "University of Melbourne",
+        "slug": "university-of-melbourne",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 13,
+        "tuitionMin": 35000,
+        "tuitionMax": 52000,
+        "acceptanceRate": 70,
+        "description": "Australia's leading university with the Melbourne Model and strong research output.",
+        "website": "https://www.unimelb.edu.au",
+        "popularPrograms": [
+          "Commerce",
+          "Engineering",
+          "Medicine",
+          "Data Science"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-melbourne-intl-ug",
+          "name": "Melbourne International Undergraduate Scholarship",
+          "awardAmount": 10000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-melbourne-mit",
+      "name": "Master of Information Technology",
+      "slug": "melbourne-mit",
+      "universityId": "uni-university-of-melbourne",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 52000,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "Bachelor's degree. Prior computing experience preferred.",
+      "description": "Professional IT masters with software, AI, and cybersecurity streams.",
+      "university": {
+        "id": "uni-university-of-melbourne",
+        "name": "University of Melbourne",
+        "slug": "university-of-melbourne",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 13,
+        "tuitionMin": 35000,
+        "tuitionMax": 52000,
+        "acceptanceRate": 70,
+        "description": "Australia's leading university with the Melbourne Model and strong research output.",
+        "website": "https://www.unimelb.edu.au",
+        "popularPrograms": [
+          "Commerce",
+          "Engineering",
+          "Medicine",
+          "Data Science"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-sydney-bachelor-advanced-computing",
+      "name": "Bachelor of Advanced Computing",
+      "slug": "sydney-bachelor-advanced-computing",
+      "universityId": "uni-university-of-sydney",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 54800,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "ATAR 90+ or equivalent. Mathematics Extension 1. IELTS 6.5.",
+      "description": "Advanced computing degree with AI, data science, and software engineering majors.",
+      "university": {
+        "id": "uni-university-of-sydney",
+        "name": "University of Sydney",
+        "slug": "university-of-sydney",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 19,
+        "tuitionMin": 42000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 65,
+        "description": "Australia's first university with a stunning campus and globally ranked professional schools.",
+        "website": "https://www.sydney.edu.au",
+        "popularPrograms": [
+          "Business",
+          "Engineering",
+          "Medicine",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-sydney-vc-intl",
+          "name": "Sydney Vice-Chancellor International Scholarships",
+          "awardAmount": 40000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-sydney-mpe-software",
+      "name": "Master of Professional Engineering (Software)",
+      "slug": "sydney-mpe-software",
+      "universityId": "uni-university-of-sydney",
+      "degreeLevel": "MASTERS",
+      "duration": "3 years",
+      "tuition": 52000,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "Engineering or IT bachelor's. Accredited pathway to professional engineer status.",
+      "description": "Professional engineering masters accredited by Engineers Australia.",
+      "university": {
+        "id": "uni-university-of-sydney",
+        "name": "University of Sydney",
+        "slug": "university-of-sydney",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 19,
+        "tuitionMin": 42000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 65,
+        "description": "Australia's first university with a stunning campus and globally ranked professional schools.",
+        "website": "https://www.sydney.edu.au",
+        "popularPrograms": [
+          "Business",
+          "Engineering",
+          "Medicine",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-sydney-vc-intl",
+          "name": "Sydney Vice-Chancellor International Scholarships",
+          "awardAmount": 40000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-unsw-bachelor-computer-science",
+      "name": "Bachelor of Computer Science",
+      "slug": "unsw-bachelor-computer-science",
+      "universityId": "uni-unsw-sydney",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 50850,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "SEPTEMBER"
+      ],
+      "eligibility": "ATAR 85+ or equivalent. Mathematics. IELTS 6.5 overall.",
+      "description": "Computer science undergraduate at UNSW School of Computer Science and Engineering.",
+      "university": {
+        "id": "uni-unsw-sydney",
+        "name": "UNSW Sydney",
+        "slug": "unsw-sydney",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 19,
+        "tuitionMin": 42000,
+        "tuitionMax": 54000,
+        "acceptanceRate": 60,
+        "description": "Leading Australian university known for engineering, business, and quantum computing research.",
+        "website": "https://www.unsw.edu.au",
+        "popularPrograms": [
+          "Engineering",
+          "Computer Science",
+          "Business",
+          "Law"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-unsw-intl",
+          "name": "UNSW International Scientia Scholarship",
+          "awardAmount": 20000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-unsw-master-information-technology",
+      "name": "Master of Information Technology",
+      "slug": "unsw-master-information-technology",
+      "universityId": "uni-unsw-sydney",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 54000,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "SEPTEMBER"
+      ],
+      "eligibility": "Recognised bachelor's degree. Computing background recommended.",
+      "description": "MIT program with specialisations in AI, cybersecurity, and database systems.",
+      "university": {
+        "id": "uni-unsw-sydney",
+        "name": "UNSW Sydney",
+        "slug": "unsw-sydney",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 19,
+        "tuitionMin": 42000,
+        "tuitionMax": 54000,
+        "acceptanceRate": 60,
+        "description": "Leading Australian university known for engineering, business, and quantum computing research.",
+        "website": "https://www.unsw.edu.au",
+        "popularPrograms": [
+          "Engineering",
+          "Computer Science",
+          "Business",
+          "Law"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-unsw-intl",
+          "name": "UNSW International Scientia Scholarship",
+          "awardAmount": 20000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-monash-bachelor-computer-science",
+      "name": "Bachelor of Computer Science",
+      "slug": "monash-bachelor-computer-science",
+      "universityId": "uni-monash-university",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 46400,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "ATAR 80+ or equivalent. Mathematics. IELTS 6.5.",
+      "description": "CS undergraduate with AI, data science, and software engineering majors.",
+      "university": {
+        "id": "uni-monash-university",
+        "name": "Monash University",
+        "slug": "monash-university",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 37,
+        "tuitionMin": 38000,
+        "tuitionMax": 50000,
+        "acceptanceRate": 55,
+        "description": "Australia's largest university with campuses in Melbourne and international partnerships.",
+        "website": "https://www.monash.edu",
+        "popularPrograms": [
+          "Pharmacy",
+          "Engineering",
+          "Business",
+          "IT"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-monash-intl-leadership",
+          "name": "Monash International Leadership Scholarship",
+          "awardAmount": 10000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-monash-master-data-science",
+      "name": "Master of Data Science",
+      "slug": "monash-master-data-science",
+      "universityId": "uni-monash-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 50000,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "Quantitative bachelor's degree with statistics or programming.",
+      "description": "Data science masters covering ML, big data, and visualisation.",
+      "university": {
+        "id": "uni-monash-university",
+        "name": "Monash University",
+        "slug": "monash-university",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 37,
+        "tuitionMin": 38000,
+        "tuitionMax": 50000,
+        "acceptanceRate": 55,
+        "description": "Australia's largest university with campuses in Melbourne and international partnerships.",
+        "website": "https://www.monash.edu",
+        "popularPrograms": [
+          "Pharmacy",
+          "Engineering",
+          "Business",
+          "IT"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-monash-intl-leadership",
+          "name": "Monash International Leadership Scholarship",
+          "awardAmount": 10000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-anu-bachelor-computing",
+      "name": "Bachelor of Computing",
+      "slug": "anu-bachelor-computing",
+      "universityId": "uni-australian-national-university",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 48552,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "ATAR 85+ or equivalent. Mathematics Methods. IELTS 6.5.",
+      "description": "Computing undergraduate at ANU College of Engineering, Computing and Cybernetics.",
+      "university": {
+        "id": "uni-australian-national-university",
+        "name": "Australian National University",
+        "slug": "australian-national-university",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 34,
+        "tuitionMin": 40000,
+        "tuitionMax": 52000,
+        "acceptanceRate": 50,
+        "description": "National research university in Canberra with strong government and policy connections.",
+        "website": "https://www.anu.edu.au",
+        "popularPrograms": [
+          "International Relations",
+          "Computer Science",
+          "Economics",
+          "Law"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-anu-master-computing",
+      "name": "Master of Computing",
+      "slug": "anu-master-computing",
+      "universityId": "uni-australian-national-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 52000,
+      "currency": "AUD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "Bachelor's in computing or related field with minimum 60% average.",
+      "description": "Advanced computing masters with AI, systems, and HCI specialisations.",
+      "university": {
+        "id": "uni-australian-national-university",
+        "name": "Australian National University",
+        "slug": "australian-national-university",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 34,
+        "tuitionMin": 40000,
+        "tuitionMax": 52000,
+        "acceptanceRate": 50,
+        "description": "National research university in Canberra with strong government and policy connections.",
+        "website": "https://www.anu.edu.au",
+        "popularPrograms": [
+          "International Relations",
+          "Computer Science",
+          "Economics",
+          "Law"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-anu-coe",
+          "name": "ANU College of Engineering & Computer Science International Scholarship",
+          "awardAmount": 15000,
+          "currency": "AUD"
+        }
+      ]
+    },
+    {
+      "id": "course-uoft-meng-ece",
+      "name": "Master of Engineering in Electrical & Computer",
+      "slug": "uoft-meng-ece",
+      "universityId": "uni-university-of-toronto",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 58000,
+      "currency": "CAD",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Bachelor's in ECE with 75%+. IELTS 7.0.",
+      "description": "Professional graduate engineering degree at U of T Faculty of Applied Science.",
+      "university": {
+        "id": "uni-university-of-toronto",
+        "name": "University of Toronto",
+        "slug": "university-of-toronto",
+        "countryId": "country-ca",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 21,
+        "tuitionMin": 45000,
+        "tuitionMax": 65000,
+        "acceptanceRate": 43,
+        "description": "Canada's top university with world-class research across engineering, business, and health sciences.",
+        "website": "https://www.utoronto.ca",
+        "popularPrograms": [
+          "Computer Science",
+          "Engineering",
+          "Business",
+          "Data Science"
+        ],
+        "country": {
+          "id": "country-ca",
+          "code": "CA",
+          "name": "Canada",
+          "flag": "🇨🇦",
+          "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+          "tuitionRange": "CAD 18,000 – 45,000/year",
+          "livingCost": "CAD 12,000 – 18,000/year",
+          "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY",
+            "MAY"
+          ],
+          "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-ubc-mds",
+      "name": "Master of Data Science",
+      "slug": "ubc-mds",
+      "universityId": "uni-university-of-british-columbia",
+      "degreeLevel": "MASTERS",
+      "duration": "10 months",
+      "tuition": 52000,
+      "currency": "CAD",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Quantitative bachelor's degree. IELTS 7.0.",
+      "description": "Intensive data science professional masters at UBC Vancouver.",
+      "university": {
+        "id": "uni-university-of-british-columbia",
+        "name": "University of British Columbia",
+        "slug": "university-of-british-columbia",
+        "countryId": "country-ca",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 34,
+        "tuitionMin": 40000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 52,
+        "description": "Leading Canadian research university on the Pacific coast with strong co-op programs.",
+        "website": "https://www.ubc.ca",
+        "popularPrograms": [
+          "Computer Science",
+          "Forestry",
+          "Business",
+          "Engineering"
+        ],
+        "country": {
+          "id": "country-ca",
+          "code": "CA",
+          "name": "Canada",
+          "flag": "🇨🇦",
+          "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+          "tuitionRange": "CAD 18,000 – 45,000/year",
+          "livingCost": "CAD 12,000 – 18,000/year",
+          "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY",
+            "MAY"
+          ],
+          "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-tum-msc-informatics",
+      "name": "MSc Informatics",
+      "slug": "tum-msc-informatics",
+      "universityId": "uni-technical-university-munich",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 0,
+      "currency": "EUR",
+      "intakePeriods": [
+        "OCTOBER",
+        "APRIL"
+      ],
+      "eligibility": "CS bachelor's with strong GPA. IELTS 6.5 or German C1.",
+      "description": "Research-oriented informatics masters at TUM School of Computation, Information and Technology.",
+      "university": {
+        "id": "uni-technical-university-munich",
+        "name": "Technical University of Munich",
+        "slug": "technical-university-munich",
+        "countryId": "country-de",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 37,
+        "tuitionMin": 0,
+        "tuitionMax": 6000,
+        "acceptanceRate": 48,
+        "description": "Germany's #1 technical university — engineering, informatics, and natural sciences excellence.",
+        "website": "https://www.tum.de",
+        "popularPrograms": [
+          "Informatics",
+          "Mechanical Engineering",
+          "Physics",
+          "Management"
+        ],
+        "country": {
+          "id": "country-de",
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+          "tuitionRange": "€0 – €20,000/year (public unis often free)",
+          "livingCost": "€10,000 – €12,000/year",
+          "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+          "intakePeriods": [
+            "OCTOBER",
+            "APRIL"
+          ],
+          "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-tcd-msc-cs",
+      "name": "MSc Computer Science",
+      "slug": "tcd-msc-cs",
+      "universityId": "uni-trinity-college-dublin",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 28000,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS or related bachelor's. IELTS 6.5.",
+      "description": "Full-time taught masters in computer science at Trinity College Dublin.",
+      "university": {
+        "id": "uni-trinity-college-dublin",
+        "name": "Trinity College Dublin",
+        "slug": "trinity-college-dublin",
+        "countryId": "country-ie",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 81,
+        "tuitionMin": 20000,
+        "tuitionMax": 35000,
+        "acceptanceRate": 55,
+        "description": "Ireland's oldest and most prestigious university in the heart of Dublin's tech corridor.",
+        "website": "https://www.tcd.ie",
+        "popularPrograms": [
+          "Computer Science",
+          "Pharmaceutical Sciences",
+          "Business",
+          "Law"
+        ],
+        "country": {
+          "id": "country-ie",
+          "code": "IE",
+          "name": "Ireland",
+          "flag": "🇮🇪",
+          "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+          "tuitionRange": "€12,000 – €35,000/year",
+          "livingCost": "€10,000 – €15,000/year",
+          "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-nus-msba",
+      "name": "MSc Business Analytics",
+      "slug": "nus-msba",
+      "universityId": "uni-national-university-singapore",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 48000,
+      "currency": "SGD",
+      "intakePeriods": [
+        "AUGUST"
+      ],
+      "eligibility": "Bachelor's with quantitative background. IELTS 7.0.",
+      "description": "Business analytics masters at NUS Business School.",
+      "university": {
+        "id": "uni-national-university-singapore",
+        "name": "National University of Singapore",
+        "slug": "national-university-singapore",
+        "countryId": "country-sg",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 8,
+        "tuitionMin": 35000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 25,
+        "description": "Asia's leading global university with top-ranked engineering, computing, and business schools.",
+        "website": "https://www.nus.edu.sg",
+        "popularPrograms": [
+          "Computer Science",
+          "Business Analytics",
+          "Engineering",
+          "Public Policy"
+        ],
+        "country": {
+          "id": "country-sg",
+          "code": "SG",
+          "name": "Singapore",
+          "flag": "🇸🇬",
+          "description": "Asia's education hub with globally ranked universities, strong business schools, and proximity to Indian students.",
+          "tuitionRange": "SGD 20,000 – 45,000/year",
+          "livingCost": "SGD 12,000 – 18,000/year",
+          "visaRequirements": "Student Pass (IPA). IELTS/TOEFL for English-medium programs.",
+          "intakePeriods": [
+            "AUGUST",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Employment Pass pathway for graduates with job offers."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-tudelft-msc-cs",
+      "name": "MSc Computer Science",
+      "slug": "tudelft-msc-cs",
+      "universityId": "uni-delft-university-technology",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 18500,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS bachelor's. IELTS 6.5.",
+      "description": "English-taught computer science masters at TU Delft.",
+      "university": {
+        "id": "uni-delft-university-technology",
+        "name": "Delft University of Technology",
+        "slug": "delft-university-technology",
+        "countryId": "country-nl",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 47,
+        "tuitionMin": 15000,
+        "tuitionMax": 20000,
+        "acceptanceRate": 60,
+        "description": "Netherlands' top technical university renowned for engineering, architecture, and aerospace.",
+        "website": "https://www.tudelft.nl",
+        "popularPrograms": [
+          "Aerospace Engineering",
+          "Computer Science",
+          "Architecture",
+          "Robotics"
+        ],
+        "country": {
+          "id": "country-nl",
+          "code": "NL",
+          "name": "Netherlands",
+          "flag": "🇳🇱",
+          "description": "2,000+ English-taught programs, innovative teaching, and orientation year visa for international graduates.",
+          "tuitionRange": "€8,000 – €20,000/year",
+          "livingCost": "€10,000 – €14,000/year",
+          "visaRequirements": "MVV + residence permit. IELTS 6.0–6.5 for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "Orientation Year permit — 1 year to find work after graduation."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-auckland-meng-studies",
+      "name": "Master of Engineering Studies",
+      "slug": "auckland-meng-studies",
+      "universityId": "uni-university-of-auckland",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 42000,
+      "currency": "NZD",
+      "intakePeriods": [
+        "FEBRUARY",
+        "JULY"
+      ],
+      "eligibility": "Engineering bachelor's. IELTS 6.5.",
+      "description": "Taught engineering masters at University of Auckland Faculty of Engineering.",
+      "university": {
+        "id": "uni-university-of-auckland",
+        "name": "University of Auckland",
+        "slug": "university-of-auckland",
+        "countryId": "country-nz",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 68,
+        "tuitionMin": 32000,
+        "tuitionMax": 48000,
+        "acceptanceRate": 58,
+        "description": "New Zealand's highest-ranked university with strong research and industry connections.",
+        "website": "https://www.auckland.ac.nz",
+        "popularPrograms": [
+          "Engineering",
+          "Computer Science",
+          "Business",
+          "Health Sciences"
+        ],
+        "country": {
+          "id": "country-nz",
+          "code": "NZ",
+          "name": "New Zealand",
+          "flag": "🇳🇿",
+          "description": "Safe, high-quality education with practical learning, stunning campuses, and straightforward post-study work visas.",
+          "tuitionRange": "NZD 26,000 – 45,000/year",
+          "livingCost": "NZD 15,000 – 20,000/year",
+          "visaRequirements": "Student Visa. IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Post-study work visa up to 3 years depending on qualification level."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-sorbonne-msc-cs",
+      "name": "MSc Computer Science",
+      "slug": "sorbonne-msc-cs",
+      "universityId": "uni-sorbonne-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 3770,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS bachelor's. IELTS 6.0 or French B2.",
+      "description": "Computer science masters at Sorbonne Faculty of Science and Engineering.",
+      "university": {
+        "id": "uni-sorbonne-university",
+        "name": "Sorbonne University",
+        "slug": "sorbonne-university",
+        "countryId": "country-fr",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 59,
+        "tuitionMin": 3000,
+        "tuitionMax": 12000,
+        "acceptanceRate": 50,
+        "description": "Historic French research university with growing English-taught international programs.",
+        "website": "https://www.sorbonne-universite.fr",
+        "popularPrograms": [
+          "Engineering",
+          "Physics",
+          "Medicine",
+          "Literature"
+        ],
+        "country": {
+          "id": "country-fr",
+          "code": "FR",
+          "name": "France",
+          "flag": "🇫🇷",
+          "description": "Prestigious grandes écoles and universities with affordable public tuition and growing English-taught Masters programs.",
+          "tuitionRange": "€2,800 – €15,000/year",
+          "livingCost": "€10,000 – €14,000/year",
+          "visaRequirements": "Student visa (VLS-TS). IELTS 6.0+ for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "APS visa allows 12 months to seek employment after graduation."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-eth-msc-cs",
+      "name": "MSc Computer Science",
+      "slug": "eth-msc-cs",
+      "universityId": "uni-eth-zurich",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 1800,
+      "currency": "CHF",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Outstanding CS bachelor's. IELTS 7.0 or German C1.",
+      "description": "Research-intensive computer science masters at ETH Zurich.",
+      "university": {
+        "id": "uni-eth-zurich",
+        "name": "ETH Zurich",
+        "slug": "eth-zurich",
+        "countryId": "country-ch",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 7,
+        "tuitionMin": 1500,
+        "tuitionMax": 3000,
+        "acceptanceRate": 27,
+        "description": "World's leading science and technology university — Albert Einstein's alma mater.",
+        "website": "https://ethz.ch",
+        "popularPrograms": [
+          "Computer Science",
+          "Robotics",
+          "Data Science",
+          "Architecture"
+        ],
+        "country": {
+          "id": "country-ch",
+          "code": "CH",
+          "name": "Switzerland",
+          "flag": "🇨🇭",
+          "description": "Home to ETH Zurich and EPFL — world-leading STEM, hospitality, and finance programs with strong industry placement.",
+          "tuitionRange": "CHF 1,000 – 8,000/year (public) + living",
+          "livingCost": "CHF 18,000 – 28,000/year",
+          "visaRequirements": "National D visa. IELTS/TOEFL and strong academic profile.",
+          "intakePeriods": [
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "6-month job search permit for graduates; strong pharma & banking sectors."
+        }
+      },
+      "scholarships": []
+    },
+    {
+      "id": "course-ud-mba",
+      "name": "MBA",
+      "slug": "ud-mba",
+      "universityId": "uni-university-of-dubai",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 65000,
+      "currency": "AED",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "JANUARY"
+      ],
+      "eligibility": "Bachelor's + 2 years work experience. IELTS 6.0.",
+      "description": "Accelerated MBA program at University of Dubai.",
+      "university": {
+        "id": "uni-university-of-dubai",
+        "name": "University of Dubai",
+        "slug": "university-of-dubai",
+        "countryId": "country-ae",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 0,
+        "tuitionMin": 35000,
+        "tuitionMax": 80000,
+        "acceptanceRate": 70,
+        "description": "Leading UAE institution offering accredited business, IT, and engineering programs in Dubai.",
+        "website": "https://www.ud.ac.ae",
+        "popularPrograms": [
+          "MBA",
+          "Information Technology",
+          "Business",
+          "Law"
+        ],
+        "country": {
+          "id": "country-ae",
+          "code": "AE",
+          "name": "UAE",
+          "flag": "🇦🇪",
+          "description": "Dubai and Abu Dhabi host branch campuses of global universities with tax-free earning potential and modern infrastructure.",
+          "tuitionRange": "AED 40,000 – 120,000/year",
+          "livingCost": "AED 30,000 – 50,000/year",
+          "visaRequirements": "Student residence visa sponsored by university. IELTS 5.5–6.5.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+        }
+      },
+      "scholarships": []
+    }
+  ],
+  "scholarships": [
+    {
+      "id": "sch-mit-intl-excellence",
+      "name": "MIT International Excellence Award",
+      "awardAmount": 25000,
+      "currency": "USD",
+      "deadline": "2026-12-15",
+      "eligibility": "International applicants with outstanding academic merit.",
+      "requirements": "Admission application, transcripts, and financial documentation.",
+      "universityId": "uni-massachusetts-institute-of-technology",
+      "countryId": "country-us",
+      "courseId": null,
+      "university": {
+        "id": "uni-massachusetts-institute-of-technology",
+        "name": "Massachusetts Institute of Technology",
+        "slug": "massachusetts-institute-of-technology",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 1,
+        "tuitionMin": 57590,
+        "tuitionMax": 61990,
+        "acceptanceRate": 4,
+        "description": "World-leading institution in science, technology, engineering, and mathematics.",
+        "website": "https://www.mit.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Business Analytics"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-stanford-knight-hennessy",
+      "name": "Knight-Hennessy Scholars Program",
+      "awardAmount": 75000,
+      "currency": "USD",
+      "deadline": "2026-10-11",
+      "eligibility": "Graduate applicants demonstrating leadership and civic commitment.",
+      "requirements": "Graduate school application plus Knight-Hennessy separate application.",
+      "universityId": "uni-stanford-university",
+      "countryId": "country-us",
+      "courseId": null,
+      "university": {
+        "id": "uni-stanford-university",
+        "name": "Stanford University",
+        "slug": "stanford-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 3,
+        "tuitionMin": 56169,
+        "tuitionMax": 65730,
+        "acceptanceRate": 4,
+        "description": "Premier research university in Silicon Valley with strong entrepreneurship culture.",
+        "website": "https://www.stanford.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "MBA",
+          "Data Science",
+          "Engineering"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-harvard-intl",
+      "name": "Harvard Financial Aid — International Students",
+      "awardAmount": 50000,
+      "currency": "USD",
+      "deadline": "2026-02-01",
+      "eligibility": "Admitted international students demonstrating financial need.",
+      "requirements": "CSS Profile and institutional financial aid application.",
+      "universityId": "uni-harvard-university",
+      "countryId": "country-us",
+      "courseId": null,
+      "university": {
+        "id": "uni-harvard-university",
+        "name": "Harvard University",
+        "slug": "harvard-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 4,
+        "tuitionMin": 54269,
+        "tuitionMax": 73440,
+        "acceptanceRate": 3,
+        "description": "Ivy League institution with world-renowned faculties across arts, sciences, and professional schools.",
+        "website": "https://www.harvard.edu",
+        "popularPrograms": [
+          "Economics",
+          "Computer Science",
+          "MBA",
+          "Public Health"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-berkeley-regents",
+      "name": "UC Berkeley Regents' and Chancellor's Scholarship",
+      "awardAmount": 15000,
+      "currency": "USD",
+      "deadline": "2026-12-01",
+      "eligibility": "Outstanding incoming undergraduates including international students.",
+      "requirements": "Automatic consideration with UC application.",
+      "universityId": "uni-university-of-california-berkeley",
+      "countryId": "country-us",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-california-berkeley",
+        "name": "University of California, Berkeley",
+        "slug": "university-of-california-berkeley",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 12,
+        "tuitionMin": 46892,
+        "tuitionMax": 52890,
+        "acceptanceRate": 11,
+        "description": "Top public research university known for engineering, business, and social sciences.",
+        "website": "https://www.berkeley.edu",
+        "popularPrograms": [
+          "EECS",
+          "Business",
+          "Data Science",
+          "Environmental Science"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-columbia-intl",
+      "name": "Columbia International Student Grant",
+      "awardAmount": 20000,
+      "currency": "USD",
+      "deadline": "2026-11-15",
+      "eligibility": "International students with demonstrated financial need.",
+      "requirements": "CSS Profile and admission application.",
+      "universityId": "uni-columbia-university",
+      "countryId": "country-us",
+      "courseId": null,
+      "university": {
+        "id": "uni-columbia-university",
+        "name": "Columbia University",
+        "slug": "columbia-university",
+        "countryId": "country-us",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 18,
+        "tuitionMin": 54500,
+        "tuitionMax": 69728,
+        "acceptanceRate": 4,
+        "description": "Ivy League university in New York City with strong programs in journalism, business, and engineering.",
+        "website": "https://www.columbia.edu",
+        "popularPrograms": [
+          "Computer Science",
+          "Journalism",
+          "International Affairs",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-us",
+          "code": "US",
+          "name": "United States",
+          "flag": "🇺🇸",
+          "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+          "tuitionRange": "$25,000 – $65,000/year",
+          "livingCost": "$12,000 – $22,000/year",
+          "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+          "intakePeriods": [
+            "FALL",
+            "SPRING"
+          ],
+          "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+        }
+      },
+      "country": {
+        "id": "country-us",
+        "code": "US",
+        "name": "United States",
+        "flag": "🇺🇸",
+        "description": "Home to the world's top-ranked universities with exceptional research, innovation, and OPT work opportunities for international graduates.",
+        "tuitionRange": "$25,000 – $65,000/year",
+        "livingCost": "$12,000 – $22,000/year",
+        "visaRequirements": "F-1 Student Visa. IELTS 6.5+ or TOEFL 90+ typically required.",
+        "intakePeriods": [
+          "FALL",
+          "SPRING"
+        ],
+        "graduateOpportunities": "OPT allows 12 months (36 months for STEM) of post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-oxford-clarendon",
+      "name": "Clarendon Fund Scholarship",
+      "awardAmount": 18000,
+      "currency": "GBP",
+      "deadline": "2026-01-20",
+      "eligibility": "Outstanding graduate applicants across all subjects.",
+      "requirements": "Automatic consideration with graduate course application.",
+      "universityId": "uni-university-of-oxford",
+      "countryId": "country-gb",
+      "courseId": "course-oxford-msc-computer-science",
+      "university": {
+        "id": "uni-university-of-oxford",
+        "name": "University of Oxford",
+        "slug": "university-of-oxford",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 2,
+        "tuitionMin": 28950,
+        "tuitionMax": 48630,
+        "acceptanceRate": 17,
+        "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+        "website": "https://www.ox.ac.uk",
+        "popularPrograms": [
+          "PPE",
+          "Law",
+          "Medicine",
+          "Computer Science",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      },
+      "course": {
+        "id": "course-oxford-msc-computer-science",
+        "name": "MSc in Computer Science",
+        "slug": "oxford-msc-computer-science",
+        "universityId": "uni-university-of-oxford",
+        "degreeLevel": "MASTERS",
+        "duration": "1 year",
+        "tuition": 36900,
+        "currency": "GBP",
+        "intakePeriods": [
+          "OCTOBER"
+        ],
+        "eligibility": "First-class or strong upper second bachelor's in CS or related field.",
+        "description": "One-year taught masters in advanced computer science.",
+        "university": {
+          "id": "uni-university-of-oxford",
+          "name": "University of Oxford",
+          "slug": "university-of-oxford",
+          "countryId": "country-gb",
+          "logo": null,
+          "campusImage": null,
+          "worldRanking": 2,
+          "tuitionMin": 28950,
+          "tuitionMax": 48630,
+          "acceptanceRate": 17,
+          "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+          "website": "https://www.ox.ac.uk",
+          "popularPrograms": [
+            "PPE",
+            "Law",
+            "Medicine",
+            "Computer Science",
+            "MBA"
+          ],
+          "country": {
+            "id": "country-gb",
+            "code": "GB",
+            "name": "United Kingdom",
+            "flag": "🇬🇧",
+            "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+            "tuitionRange": "£18,000 – £45,000/year",
+            "livingCost": "£10,000 – £16,000/year",
+            "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+            "intakePeriods": [
+              "SEPTEMBER",
+              "JANUARY"
+            ],
+            "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+          }
+        },
+        "scholarships": [
+          {
+            "id": "sch-oxford-clarendon",
+            "name": "Clarendon Fund Scholarship",
+            "awardAmount": 18000,
+            "currency": "GBP"
+          },
+          {
+            "id": "sch-chevening",
+            "name": "Chevening Scholarship (UK Government)",
+            "awardAmount": 35000,
+            "currency": "GBP"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sch-chevening",
+      "name": "Chevening Scholarship (UK Government)",
+      "awardAmount": 35000,
+      "currency": "GBP",
+      "deadline": "2026-11-05",
+      "eligibility": "Future leaders with 2+ years work experience from Chevening-eligible countries.",
+      "requirements": "Separate Chevening application plus UK university offer.",
+      "universityId": "uni-university-of-oxford",
+      "countryId": "country-gb",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-oxford",
+        "name": "University of Oxford",
+        "slug": "university-of-oxford",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 2,
+        "tuitionMin": 28950,
+        "tuitionMax": 48630,
+        "acceptanceRate": 17,
+        "description": "Oldest university in the English-speaking world with collegiate tutorial system.",
+        "website": "https://www.ox.ac.uk",
+        "popularPrograms": [
+          "PPE",
+          "Law",
+          "Medicine",
+          "Computer Science",
+          "MBA"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-cambridge-gates",
+      "name": "Gates Cambridge Scholarship",
+      "awardAmount": 40000,
+      "currency": "GBP",
+      "deadline": "2026-10-11",
+      "eligibility": "Outstanding international graduate applicants outside the UK.",
+      "requirements": "Graduate admission application plus Gates Cambridge application.",
+      "universityId": "uni-university-of-cambridge",
+      "countryId": "country-gb",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-cambridge",
+        "name": "University of Cambridge",
+        "slug": "university-of-cambridge",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 5,
+        "tuitionMin": 25000,
+        "tuitionMax": 72000,
+        "acceptanceRate": 18,
+        "description": "World-renowned collegiate university with excellence in sciences, engineering, and humanities.",
+        "website": "https://www.cam.ac.uk",
+        "popularPrograms": [
+          "Natural Sciences",
+          "Engineering",
+          "Economics",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-imperial-president",
+      "name": "Imperial President's PhD Scholarship",
+      "awardAmount": 25000,
+      "currency": "GBP",
+      "deadline": "2026-01-15",
+      "eligibility": "Outstanding PhD applicants across all faculties.",
+      "requirements": "PhD programme application. Covers fees and stipend.",
+      "universityId": "uni-imperial-college-london",
+      "countryId": "country-gb",
+      "courseId": null,
+      "university": {
+        "id": "uni-imperial-college-london",
+        "name": "Imperial College London",
+        "slug": "imperial-college-london",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 6,
+        "tuitionMin": 33000,
+        "tuitionMax": 45000,
+        "acceptanceRate": 14,
+        "description": "STEM-focused university in London, ranked among the world's best for engineering and medicine.",
+        "website": "https://www.imperial.ac.uk",
+        "popularPrograms": [
+          "Engineering",
+          "Computing",
+          "Medicine",
+          "Business"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-ucl-global",
+      "name": "UCL Global Undergraduate Scholarship",
+      "awardAmount": 15000,
+      "currency": "GBP",
+      "deadline": "2026-05-31",
+      "eligibility": "International undergraduate applicants with financial need.",
+      "requirements": "UCAS application and scholarship application form.",
+      "universityId": "uni-university-college-london",
+      "countryId": "country-gb",
+      "courseId": "course-ucl-bsc-computer-science",
+      "university": {
+        "id": "uni-university-college-london",
+        "name": "University College London",
+        "slug": "university-college-london",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 9,
+        "tuitionMin": 28000,
+        "tuitionMax": 42000,
+        "acceptanceRate": 16,
+        "description": "London's global university with strengths in medicine, law, architecture, and data science.",
+        "website": "https://www.ucl.ac.uk",
+        "popularPrograms": [
+          "Data Science",
+          "Architecture",
+          "Medicine",
+          "Economics"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      },
+      "course": {
+        "id": "course-ucl-bsc-computer-science",
+        "name": "BSc in Computer Science",
+        "slug": "ucl-bsc-computer-science",
+        "universityId": "uni-university-college-london",
+        "degreeLevel": "BACHELORS",
+        "duration": "3 years",
+        "tuition": 37500,
+        "currency": "GBP",
+        "intakePeriods": [
+          "SEPTEMBER"
+        ],
+        "eligibility": "A-levels A*AA including Mathematics. English proficiency.",
+        "description": "UCL Computer Science undergraduate programme.",
+        "university": {
+          "id": "uni-university-college-london",
+          "name": "University College London",
+          "slug": "university-college-london",
+          "countryId": "country-gb",
+          "logo": null,
+          "campusImage": null,
+          "worldRanking": 9,
+          "tuitionMin": 28000,
+          "tuitionMax": 42000,
+          "acceptanceRate": 16,
+          "description": "London's global university with strengths in medicine, law, architecture, and data science.",
+          "website": "https://www.ucl.ac.uk",
+          "popularPrograms": [
+            "Data Science",
+            "Architecture",
+            "Medicine",
+            "Economics"
+          ],
+          "country": {
+            "id": "country-gb",
+            "code": "GB",
+            "name": "United Kingdom",
+            "flag": "🇬🇧",
+            "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+            "tuitionRange": "£18,000 – £45,000/year",
+            "livingCost": "£10,000 – £16,000/year",
+            "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+            "intakePeriods": [
+              "SEPTEMBER",
+              "JANUARY"
+            ],
+            "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+          }
+        },
+        "scholarships": [
+          {
+            "id": "sch-ucl-global",
+            "name": "UCL Global Undergraduate Scholarship",
+            "awardAmount": 15000,
+            "currency": "GBP"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sch-manchester-equity",
+      "name": "Manchester International Equity Scholarship",
+      "awardAmount": 10000,
+      "currency": "GBP",
+      "deadline": "2026-06-30",
+      "eligibility": "Self-funded international postgraduate taught students.",
+      "requirements": "Offer holder application via scholarship portal.",
+      "universityId": "uni-university-of-manchester",
+      "countryId": "country-gb",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-manchester",
+        "name": "University of Manchester",
+        "slug": "university-of-manchester",
+        "countryId": "country-gb",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 32,
+        "tuitionMin": 22000,
+        "tuitionMax": 32000,
+        "acceptanceRate": 45,
+        "description": "Russell Group university and the largest single-site university in the UK.",
+        "website": "https://www.manchester.ac.uk",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Computer Science",
+          "Pharmacy"
+        ],
+        "country": {
+          "id": "country-gb",
+          "code": "GB",
+          "name": "United Kingdom",
+          "flag": "🇬🇧",
+          "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+          "tuitionRange": "£18,000 – £45,000/year",
+          "livingCost": "£10,000 – £16,000/year",
+          "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+        }
+      },
+      "country": {
+        "id": "country-gb",
+        "code": "GB",
+        "name": "United Kingdom",
+        "flag": "🇬🇧",
+        "description": "Prestigious universities with shorter degree durations — 3-year UG and 1-year Masters — plus Graduate Route work visa.",
+        "tuitionRange": "£18,000 – £45,000/year",
+        "livingCost": "£10,000 – £16,000/year",
+        "visaRequirements": "Student Route visa. IELTS 6.0–7.0 depending on institution.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Graduate Route visa allows 2 years (3 years for PhD) post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-melbourne-intl-ug",
+      "name": "Melbourne International Undergraduate Scholarship",
+      "awardAmount": 10000,
+      "currency": "AUD",
+      "deadline": "2026-11-30",
+      "eligibility": "High-achieving international undergraduate applicants.",
+      "requirements": "Automatic consideration with course application.",
+      "universityId": "uni-university-of-melbourne",
+      "countryId": "country-au",
+      "courseId": "course-melbourne-bsc-computing",
+      "university": {
+        "id": "uni-university-of-melbourne",
+        "name": "University of Melbourne",
+        "slug": "university-of-melbourne",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 13,
+        "tuitionMin": 35000,
+        "tuitionMax": 52000,
+        "acceptanceRate": 70,
+        "description": "Australia's leading university with the Melbourne Model and strong research output.",
+        "website": "https://www.unimelb.edu.au",
+        "popularPrograms": [
+          "Commerce",
+          "Engineering",
+          "Medicine",
+          "Data Science"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      },
+      "course": {
+        "id": "course-melbourne-bsc-computing",
+        "name": "Bachelor of Science — Computing and Software Systems",
+        "slug": "melbourne-bsc-computing",
+        "universityId": "uni-university-of-melbourne",
+        "degreeLevel": "BACHELORS",
+        "duration": "3 years",
+        "tuition": 48576,
+        "currency": "AUD",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "eligibility": "ATAR 85+ or equivalent. Mathematics prerequisite. IELTS 6.5.",
+        "description": "Computing major within the Bachelor of Science at Melbourne.",
+        "university": {
+          "id": "uni-university-of-melbourne",
+          "name": "University of Melbourne",
+          "slug": "university-of-melbourne",
+          "countryId": "country-au",
+          "logo": null,
+          "campusImage": null,
+          "worldRanking": 13,
+          "tuitionMin": 35000,
+          "tuitionMax": 52000,
+          "acceptanceRate": 70,
+          "description": "Australia's leading university with the Melbourne Model and strong research output.",
+          "website": "https://www.unimelb.edu.au",
+          "popularPrograms": [
+            "Commerce",
+            "Engineering",
+            "Medicine",
+            "Data Science"
+          ],
+          "country": {
+            "id": "country-au",
+            "code": "AU",
+            "name": "Australia",
+            "flag": "🇦🇺",
+            "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+            "tuitionRange": "AUD 32,000 – 55,000/year",
+            "livingCost": "AUD 20,000 – 27,000/year",
+            "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+            "intakePeriods": [
+              "FEBRUARY",
+              "JULY"
+            ],
+            "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+          }
+        },
+        "scholarships": [
+          {
+            "id": "sch-melbourne-intl-ug",
+            "name": "Melbourne International Undergraduate Scholarship",
+            "awardAmount": 10000,
+            "currency": "AUD"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sch-sydney-vc-intl",
+      "name": "Sydney Vice-Chancellor International Scholarships",
+      "awardAmount": 40000,
+      "currency": "AUD",
+      "deadline": "2026-12-31",
+      "eligibility": "High-achieving international students commencing coursework degrees.",
+      "requirements": "Automatic consideration with admission application.",
+      "universityId": "uni-university-of-sydney",
+      "countryId": "country-au",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-sydney",
+        "name": "University of Sydney",
+        "slug": "university-of-sydney",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 19,
+        "tuitionMin": 42000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 65,
+        "description": "Australia's first university with a stunning campus and globally ranked professional schools.",
+        "website": "https://www.sydney.edu.au",
+        "popularPrograms": [
+          "Business",
+          "Engineering",
+          "Medicine",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-unsw-intl",
+      "name": "UNSW International Scientia Scholarship",
+      "awardAmount": 20000,
+      "currency": "AUD",
+      "deadline": "2026-11-01",
+      "eligibility": "High-achieving international students across all faculties.",
+      "requirements": "Admission application. Merit-based automatic assessment.",
+      "universityId": "uni-unsw-sydney",
+      "countryId": "country-au",
+      "courseId": null,
+      "university": {
+        "id": "uni-unsw-sydney",
+        "name": "UNSW Sydney",
+        "slug": "unsw-sydney",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 19,
+        "tuitionMin": 42000,
+        "tuitionMax": 54000,
+        "acceptanceRate": 60,
+        "description": "Leading Australian university known for engineering, business, and quantum computing research.",
+        "website": "https://www.unsw.edu.au",
+        "popularPrograms": [
+          "Engineering",
+          "Computer Science",
+          "Business",
+          "Law"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-monash-intl-leadership",
+      "name": "Monash International Leadership Scholarship",
+      "awardAmount": 10000,
+      "currency": "AUD",
+      "deadline": "2026-10-31",
+      "eligibility": "International students demonstrating academic excellence and leadership.",
+      "requirements": "Separate scholarship application after receiving offer.",
+      "universityId": "uni-monash-university",
+      "countryId": "country-au",
+      "courseId": null,
+      "university": {
+        "id": "uni-monash-university",
+        "name": "Monash University",
+        "slug": "monash-university",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 37,
+        "tuitionMin": 38000,
+        "tuitionMax": 50000,
+        "acceptanceRate": 55,
+        "description": "Australia's largest university with campuses in Melbourne and international partnerships.",
+        "website": "https://www.monash.edu",
+        "popularPrograms": [
+          "Pharmacy",
+          "Engineering",
+          "Business",
+          "IT"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-anu-coe",
+      "name": "ANU College of Engineering & Computer Science International Scholarship",
+      "awardAmount": 15000,
+      "currency": "AUD",
+      "deadline": "2026-11-15",
+      "eligibility": "International students in CECS postgraduate coursework programs.",
+      "requirements": "Offer holder. Merit-based selection.",
+      "universityId": "uni-australian-national-university",
+      "countryId": "country-au",
+      "courseId": "course-anu-master-computing",
+      "university": {
+        "id": "uni-australian-national-university",
+        "name": "Australian National University",
+        "slug": "australian-national-university",
+        "countryId": "country-au",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 34,
+        "tuitionMin": 40000,
+        "tuitionMax": 52000,
+        "acceptanceRate": 50,
+        "description": "National research university in Canberra with strong government and policy connections.",
+        "website": "https://www.anu.edu.au",
+        "popularPrograms": [
+          "International Relations",
+          "Computer Science",
+          "Economics",
+          "Law"
+        ],
+        "country": {
+          "id": "country-au",
+          "code": "AU",
+          "name": "Australia",
+          "flag": "🇦🇺",
+          "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+          "tuitionRange": "AUD 32,000 – 55,000/year",
+          "livingCost": "AUD 20,000 – 27,000/year",
+          "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "JULY"
+          ],
+          "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+        }
+      },
+      "country": {
+        "id": "country-au",
+        "code": "AU",
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+        "tuitionRange": "AUD 32,000 – 55,000/year",
+        "livingCost": "AUD 20,000 – 27,000/year",
+        "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+      },
+      "course": {
+        "id": "course-anu-master-computing",
+        "name": "Master of Computing",
+        "slug": "anu-master-computing",
+        "universityId": "uni-australian-national-university",
+        "degreeLevel": "MASTERS",
+        "duration": "2 years",
+        "tuition": 52000,
+        "currency": "AUD",
+        "intakePeriods": [
+          "FEBRUARY",
+          "JULY"
+        ],
+        "eligibility": "Bachelor's in computing or related field with minimum 60% average.",
+        "description": "Advanced computing masters with AI, systems, and HCI specialisations.",
+        "university": {
+          "id": "uni-australian-national-university",
+          "name": "Australian National University",
+          "slug": "australian-national-university",
+          "countryId": "country-au",
+          "logo": null,
+          "campusImage": null,
+          "worldRanking": 34,
+          "tuitionMin": 40000,
+          "tuitionMax": 52000,
+          "acceptanceRate": 50,
+          "description": "National research university in Canberra with strong government and policy connections.",
+          "website": "https://www.anu.edu.au",
+          "popularPrograms": [
+            "International Relations",
+            "Computer Science",
+            "Economics",
+            "Law"
+          ],
+          "country": {
+            "id": "country-au",
+            "code": "AU",
+            "name": "Australia",
+            "flag": "🇦🇺",
+            "description": "High-quality education in a multicultural environment with strong post-study work rights and world-leading research universities.",
+            "tuitionRange": "AUD 32,000 – 55,000/year",
+            "livingCost": "AUD 20,000 – 27,000/year",
+            "visaRequirements": "Student Visa (Subclass 500). IELTS 6.0–6.5 typically required.",
+            "intakePeriods": [
+              "FEBRUARY",
+              "JULY"
+            ],
+            "graduateOpportunities": "Temporary Graduate visa (485) allows 2–4 years post-study work."
+          }
+        },
+        "scholarships": [
+          {
+            "id": "sch-anu-coe",
+            "name": "ANU College of Engineering & Computer Science International Scholarship",
+            "awardAmount": 15000,
+            "currency": "AUD"
+          }
+        ]
+      }
+    }
+  ]
+}

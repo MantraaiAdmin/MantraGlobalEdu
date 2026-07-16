@@ -6,7 +6,7 @@ import Link from 'next/link';
 import {
   ArrowRight, Sparkles, BookOpen,
 } from 'lucide-react';
-import { APP_CONFIG, ROUTES, STUDENTS_PLACED_STAT } from '@mge/config';
+import { APP_CONFIG, DESTINATIONS, ROUTES, STUDENTS_PLACED_STAT } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { STUDENT_IMAGES } from '@/lib/student-images';
 
@@ -85,9 +85,9 @@ export function HeroSection() {
               className="mt-12 flex items-center gap-8"
             >
               {[
-                { value: '3', label: 'Focus Countries' },
+                { value: `${DESTINATIONS.length}+`, label: 'Study Destinations' },
                 { value: STUDENTS_PLACED_STAT, label: 'Students Guided' },
-                { value: '15+', label: 'Partner Universities' },
+                { value: '25+', label: 'Partner Universities' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold text-white">{stat.value}</div>

@@ -1,4 +1,21 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/v1';
+function resolveApiUrl(): string {
+  if (process.env.NEXT_PUBLIC_USE_EMBEDDED_API === 'true') {
+    return '/api/v1';
+  }
+
+  const configured = process.env.NEXT_PUBLIC_API_URL;
+  if (configured && !configured.includes('api.mantraglobaledu.com')) {
+    return configured;
+  }
+
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:4000/api/v1';
+  }
+
+  return '/api/v1';
+}
+
+const API_URL = resolveApiUrl();
 
 interface FetchOptions extends RequestInit {
   token?: string;

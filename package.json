@@ -22,7 +22,7 @@
     "db:push": "dotenv -e .env -- prisma db push --schema=database/prisma/schema.prisma",
     "db:seed": "dotenv -e .env -- tsx database/seed/index.ts",
     "db:studio": "npm run db:studio --workspace=@mge/api",
-    "deck:partnership": "node docs/partnership/generate-deck.mjs",
+    "catalog:generate": "npx tsx scripts/generate-web-catalog.ts",
     "deck:company": "node docs/company/generate-company-deck.mjs",
     "lint": "npm run lint --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present"
