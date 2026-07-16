@@ -6,7 +6,7 @@ import { ServicesPageContent } from '@/features/services/components/services-pag
 export const metadata: Metadata = {
   title: 'Student Services',
   description:
-    'Comprehensive study abroad services for USA, UK, and Australia — counseling, admissions, scholarships, visa, and more.',
+    'Comprehensive study abroad services for 19+ countries — counseling, admissions, scholarships, visa, and more.',
 };
 
 export default function ServicesPage() {

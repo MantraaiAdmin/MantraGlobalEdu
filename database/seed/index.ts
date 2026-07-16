@@ -40,8 +40,8 @@ async function main() {
       counselor: {
         create: {
           department: 'International Admissions',
-          bio: 'Experienced study abroad counselor specialising in USA, UK, and Australia.',
-          specialties: ['USA', 'UK', 'Australia'],
+          bio: 'Experienced study abroad counselor specialising in global university admissions across 19+ countries.',
+          specialties: ['USA', 'UK', 'Canada', 'Australia', 'Germany', 'Ireland', 'Singapore', 'Netherlands'],
         },
       },
     },
@@ -61,13 +61,13 @@ async function main() {
         create: {
           nationality: 'Indian',
           academicScore: 85,
-          preferredCountries: ['US', 'GB', 'AU'],
+          preferredCountries: ['US', 'GB', 'CA', 'AU', 'DE'],
         },
       },
     },
   });
 
-  // Deactivate countries outside USA / UK / Australia focus
+  // Activate all supported study destinations
   await prisma.country.updateMany({
     where: { code: { notIn: [...FOCUS_COUNTRY_CODES] } },
     data: { isActive: false },
@@ -452,7 +452,7 @@ async function main() {
   }
 
   console.log('Seed completed successfully!');
-  console.log(`  Countries: ${stats[0]} (USA, UK, Australia)`);
+  console.log(`  Countries: ${stats[0]} (19+ global destinations)`);
   console.log(`  Universities: ${stats[1]}`);
   console.log(`  Courses: ${stats[2]}`);
   console.log(`  Scholarships: ${stats[3]}`);

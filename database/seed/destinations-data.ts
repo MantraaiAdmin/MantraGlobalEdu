@@ -1,7 +1,11 @@
 import { DegreeLevel, IntakePeriod } from '@prisma/client';
+import { GLOBAL_COUNTRY_DATA, GLOBAL_UNIVERSITIES } from './destinations-global';
 
-/** Official fee references — 2025-26 published international student rates */
-export const FOCUS_COUNTRY_CODES = ['US', 'GB', 'AU'] as const;
+/** All active study destination country codes */
+export const FOCUS_COUNTRY_CODES = [
+  'US', 'GB', 'AU', 'CA', 'DE', 'FR', 'IE', 'NZ', 'SG', 'NL',
+  'IT', 'CH', 'AE', 'JP', 'KR', 'MY', 'SE', 'ES', 'FI',
+] as const;
 
 export const COUNTRY_DATA = [
   {
@@ -40,6 +44,7 @@ export const COUNTRY_DATA = [
     intakePeriods: [IntakePeriod.FEBRUARY, IntakePeriod.JULY],
     graduateOpportunities: 'Temporary Graduate visa (485) allows 2–4 years post-study work.',
   },
+  ...GLOBAL_COUNTRY_DATA,
 ] as const;
 
 export interface CourseSeed {
@@ -70,7 +75,7 @@ export interface ScholarshipSeed {
 export interface UniversitySeed {
   name: string;
   slug: string;
-  countryCode: 'US' | 'GB' | 'AU';
+  countryCode: string;
   worldRanking: number;
   tuitionMin: number;
   tuitionMax: number;
@@ -864,6 +869,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
       },
     ],
   },
+  ...GLOBAL_UNIVERSITIES,
 ];
 
 /** Country-level scholarships not tied to a single university */

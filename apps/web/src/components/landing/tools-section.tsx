@@ -11,7 +11,7 @@ import { SectionHeader } from '@/components/common/section-header';
 const tools = [
   {
     title: PRODUCT_NAMES.profileCheck,
-    description: '4-step readiness assessment for USA, UK, or Australia — get your score and personalised recommendations.',
+    description: '4-step readiness assessment for your target country — get your score and personalised recommendations.',
     icon: ClipboardCheck,
     href: ROUTES.profileCheck,
     cta: 'Check Eligibility',

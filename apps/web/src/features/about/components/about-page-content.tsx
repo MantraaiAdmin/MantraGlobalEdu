@@ -10,7 +10,7 @@ import { APP_CONFIG, FOUNDER, STUDENTS_PLACED_STAT, ROUTES, DESTINATIONS } from 
 
 const values = [
   { icon: Users, title: 'Student-First', desc: 'Every decision starts with what is best for the student and their family.' },
-  { icon: Globe2, title: 'Focused Excellence', desc: 'Deep expertise in USA, UK, and Australia — not scattered across dozens of countries.' },
+  { icon: Globe2, title: 'Global Reach', desc: 'Deep expertise across 19+ study destinations worldwide — not limited to three countries.' },
   { icon: Award, title: 'Proven Results', desc: `${STUDENTS_PLACED_STAT} students guided with award-winning counseling credentials.` },
   { icon: BadgeCheck, title: 'Certified Guidance', desc: 'British Council certified counseling you can trust with your future.' },
 ];
@@ -31,7 +31,7 @@ export function AboutPageContent() {
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
                 {APP_CONFIG.name} is a boutique study abroad consultancy founded by {FOUNDER.name}.
-                We help ambitious students pursue world-class education in the USA, UK, and Australia —
+                We help ambitious students pursue world-class education across 19+ countries worldwide —
                 with personal counseling, not call-center scripts.
               </p>
               <Button variant="accent" className="mt-8" asChild>
@@ -71,7 +71,7 @@ export function AboutPageContent() {
           <ul className="mt-6 space-y-3">
             {[
               `Founded by ${FOUNDER.name} — 10+ years experience, former IDP Counselor`,
-              `${STUDENTS_PLACED_STAT} students placed across USA, UK & Australia`,
+              `${STUDENTS_PLACED_STAT} students placed across global universities worldwide`,
               'Pan-India Top 17 · Best Counselor — Silver Category',
               'British Council Certified Counselor',
               '15+ partner universities with real course and fee data',

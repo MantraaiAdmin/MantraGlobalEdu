@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mantra Global Education — Company Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #00234e;
+      --primary-mid: #0d3a6e;
+      --accent: #c89116;
+      --accent-soft: #f5ead4;
+      --muted: #5a6b7d;
+      --light: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--primary);
+      background: #e8ecf1;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      margin: 0 auto 16px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; }
+    }
+
+    /* ── Cover ── */
+    .cover {
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .cover-top { padding: 28mm 22mm 0; }
+    .cover-img {
+      position: absolute; right: 0; top: 0; width: 48%; height: 100%;
+      object-fit: cover; opacity: 0.35;
+    }
+    .cover-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg, var(--primary) 52%, transparent 78%);
+    }
+    .cover-content { position: relative; z-index: 2; padding: 28mm 22mm 22mm; min-height: 297mm; display: flex; flex-direction: column; justify-content: space-between; }
+    .cover-label { font-size: 9px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .cover-brand { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; line-height: 1.08; }
+    .cover-brand span { color: var(--accent); }
+    .cover-tagline { font-size: 15px; color: var(--accent); margin-top: 12px; font-weight: 600; }
+    .cover-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 600; margin-top: 36px; line-height: 1.3; max-width: 420px; }
+    .cover-desc { font-size: 12px; color: rgba(255,255,255,0.72); line-height: 1.7; margin-top: 16px; max-width: 400px; }
+    .cover-footer { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 11px; color: rgba(255,255,255,0.6); }
+    .cover-footer strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .cover-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); z-index: 3; }
+
+    /* ── Inner pages ── */
+    .inner { padding: 16mm 20mm 18mm; }
+    .page-header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft); margin-bottom: 14px; }
+    .page-header .brand-small { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--primary); }
+    .page-header .brand-small span { color: var(--accent); }
+    .page-header .page-num { font-size: 9px; color: var(--muted); font-weight: 600; }
+    .section-label { font-size: 8px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--primary); line-height: 1.2; margin-bottom: 10px; }
+    .section-sub { font-size: 11px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+
+    .card { background: var(--light); padding: 12px 14px; border-left: 3px solid var(--accent); }
+    .card h4 { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
+    .card p { font-size: 9.5px; color: var(--muted); line-height: 1.55; }
+
+    .stat-box { background: var(--primary); color: var(--white); text-align: center; padding: 14px 8px; }
+    .stat-box .val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-box .lbl { font-size: 8px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.65); margin-top: 3px; }
+
+    .img-block { border-radius: 6px; overflow: hidden; }
+    .img-block img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .highlight-band { background: var(--primary); color: var(--white); padding: 12px 16px; margin: 12px 0; }
+    .highlight-band p { font-size: 11px; line-height: 1.6; }
+    .highlight-band strong { color: var(--accent); }
+
+    .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .fw-card { background: var(--light); padding: 10px 12px; border-top: 3px solid var(--primary); }
+    .fw-card .letter { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--accent); line-height: 1; }
+    .fw-card .word { font-size: 7px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin: 2px 0 4px; }
+    .fw-card .fw-title { font-size: 10px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+    .fw-card .fw-desc { font-size: 8.5px; color: var(--muted); line-height: 1.45; }
+    .fw-card .fw-out { font-size: 7.5px; font-weight: 700; color: var(--accent); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .country-card { border: 1px solid rgba(0,35,78,0.08); overflow: hidden; }
+    .country-card .c-img { height: 72px; }
+    .country-card .c-img img { width: 100%; height: 100%; object-fit: cover; }
+    .country-card .c-body { padding: 10px 12px; background: var(--light); }
+    .country-card .c-flag { font-size: 16px; }
+    .country-card h4 { font-size: 11px; font-weight: 700; margin: 2px 0 6px; }
+    .country-card ul { list-style: none; font-size: 8.5px; color: var(--muted); line-height: 1.5; }
+    .country-card ul li::before { content: "— "; color: var(--accent); }
+
+    .country-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .country-mini { background: var(--light); padding: 8px 10px; border-top: 2px solid var(--accent); }
+    .country-mini .flag { font-size: 14px; }
+    .country-mini h4 { font-size: 9px; font-weight: 700; margin: 2px 0; color: var(--primary); }
+    .country-mini p { font-size: 7.5px; color: var(--muted); line-height: 1.35; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .svc { background: var(--light); padding: 10px; text-align: center; border-bottom: 2px solid var(--accent); }
+    .svc .svc-icon { font-size: 18px; margin-bottom: 4px; }
+    .svc h4 { font-size: 9px; font-weight: 700; color: var(--primary); }
+
+    .team-org { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 10px 0; }
+    .team-top { background: var(--primary); color: var(--white); padding: 12px 28px; text-align: center; border-radius: 6px; min-width: 200px; }
+    .team-top h4 { font-size: 11px; font-weight: 700; color: var(--accent); }
+    .team-top p { font-size: 9px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    .team-line { width: 2px; height: 16px; background: var(--accent); }
+    .team-row { display: flex; gap: 10px; justify-content: center; }
+    .team-box { background: var(--light); border: 1px solid rgba(0,35,78,0.1); padding: 10px 14px; text-align: center; min-width: 110px; border-top: 3px solid var(--accent); }
+    .team-box h4 { font-size: 10px; font-weight: 700; color: var(--primary); }
+    .team-box p { font-size: 8px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cmp-col { font-size: 9px; }
+    .cmp-head { padding: 8px 12px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; }
+    .cmp-bad .cmp-head { background: #fde8e8; color: #c0392b; }
+    .cmp-good .cmp-head { background: var(--primary); color: var(--accent); }
+    .cmp-body { padding: 10px 12px; }
+    .cmp-bad .cmp-body { background: #fff8f8; }
+    .cmp-good .cmp-body { background: var(--light); }
+    .cmp-item { padding: 5px 0; border-bottom: 1px solid rgba(0,35,78,0.06); line-height: 1.45; color: var(--muted); }
+    .cmp-item:last-child { border: none; }
+
+    .contact-page { background: var(--primary); color: var(--white); }
+    .contact-inner { padding: 20mm 22mm; min-height: 297mm; display: flex; flex-direction: column; justify-content: space-between; }
+    .contact-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; line-height: 1.2; }
+    .contact-title span { color: var(--accent); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+    .contact-block strong { display: block; font-size: 8px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .contact-block p { font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.8); }
+    .contact-email { font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 8px; }
+    .cta-box { background: rgba(200,145,22,0.15); border: 1px solid rgba(200,145,22,0.35); padding: 16px 20px; margin-top: 20px; }
+    .cta-box p { font-size: 11px; line-height: 1.65; color: rgba(255,255,255,0.85); }
+
+    .page-foot { position: absolute; bottom: 10mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 7.5px; color: var(--muted); border-top: 1px solid rgba(0,35,78,0.08); padding-top: 6px; }
+
+    .vision-mission { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .vm-box { padding: 14px; background: var(--primary); color: var(--white); }
+    .vm-box h4 { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .vm-box p { font-size: 10px; line-height: 1.65; color: rgba(255,255,255,0.8); }
+
+    .values-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+    .val-card { text-align: center; padding: 10px 8px; background: var(--accent-soft); }
+    .val-card h4 { font-size: 9px; font-weight: 700; color: var(--primary); margin-bottom: 3px; }
+    .val-card p { font-size: 8px; color: var(--muted); line-height: 1.4; }
+
+    .split-img-text { display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; align-items: start; }
+    .bullet-list { list-style: none; font-size: 9.5px; color: var(--muted); line-height: 1.65; }
+    .bullet-list li { padding-left: 12px; position: relative; margin-bottom: 5px; }
+    .bullet-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    .bullet-list li strong { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1: COVER -->
+<div class="page cover">
+  <div class="cover-bar"></div>
+  <img class="cover-img" src="profile-assets/students-group.jpg" alt="International students" />
+  <div class="cover-overlay"></div>
+  <div class="cover-content">
+    <div>
+      <div class="cover-label">Company Profile · 2026</div>
+      <div class="cover-brand">Mantra <span>Global</span> Education</div>
+      <div class="cover-tagline">Your Journey. Our Guidance. Global Success.</div>
+      <div class="cover-title">Empowering Students to Access World-Class International Education</div>
+      <div class="cover-desc">
+        A full-service study abroad consultancy delivering personalized, end-to-end guidance
+        for undergraduate and postgraduate programs across 19+ countries worldwide — with certified
+        counselors, transparent processes, and proven outcomes.
+      </div>
+    </div>
+    <div class="cover-footer">
+      <div>
+        <strong>Headquarters</strong>
+        Coimbatore, Tamil Nadu, India
+      </div>
+      <div>
+        <strong>Contact</strong>
+        admin@mantraai.cloud
+      </div>
+      <div>
+        <strong>Website</strong>
+        mantraglobaledu.com
+      </div>
+      <div>
+        <strong>Global Reach</strong>
+        19+ Study Destinations Worldwide
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: ABOUT -->
+<div class="page inner">
+  <div class="page-header">
+    <div class="brand-small">Mantra <span>Global</span> Education</div>
+    <div class="page-num">02</div>
+  </div>
+  <div class="section-label">About Us</div>
+  <h2 class="section-title">Who We Are</h2>
+  <p class="section-sub">
+    Mantra Global Education is a specialized international education consultancy headquartered in Coimbatore, Tamil Nadu.
+    We partner with students, families, engineering colleges, and universities to create structured pathways from
+    campus to global careers — with integrity, expertise, and measurable results.
+  </p>
+  <div class="split-img-text">
+    <div class="img-block" style="height:200px;">
+      <img src="profile-assets/students-group.jpg" alt="International student group" />
+    </div>
+    <div>
+      <ul class="bullet-list">
+        <li><strong>Boutique model</strong> — one dedicated counselor per student, not a call-center queue</li>
+        <li><strong>700+ students guided</strong> to universities across 19+ countries worldwide</li>
+        <li><strong>25+ partner universities</strong> with verified course and fee data</li>
+        <li><strong>British Council certified</strong> counseling with 10+ years of expertise</li>
+        <li><strong>Former IDP counselor</strong> leadership with deep admissions knowledge</li>
+        <li><strong>Pan-India Top 17</strong> · Best Counselor — Silver Category recognition</li>
+        <li><strong>Free first counseling</strong> — transparent process with no hidden fees</li>
+      </ul>
+    </div>
+  </div>
+  <div class="vision-mission" style="margin-top:14px;">
+    <div class="vm-box">
+      <h4>Our Vision</h4>
+      <p>To become India's most trusted boutique study abroad brand — where every ambitious student receives expert, honest, and personalized guidance to access world-class education and build a global career.</p>
+    </div>
+    <div class="vm-box">
+      <h4>Our Mission</h4>
+      <p>To simplify the international education journey through our proprietary MANTRA Framework — delivering end-to-end support from career counseling and university admissions to visa processing, relocation, and long-term student success.</p>
+    </div>
+  </div>
+  <div class="four-col" style="margin-top:12px;">
+    <div class="stat-box"><div class="val">700+</div><div class="lbl">Students Guided</div></div>
+    <div class="stat-box"><div class="val">15+</div><div class="lbl">Partner Universities</div></div>
+    <div class="stat-box"><div class="val">19+</div><div class="lbl">Study Destinations</div></div>
+    <div class="stat-box"><div class="val">94%</div><div class="lbl">Partner Satisfaction</div></div>
+  </div>
+  <div class="page-foot"><span>Mantra Global Education · Company Profile</span><span>admin@mantraai.cloud</span></div>
+</div>
+
+<!-- PAGE 3: MANTRA FRAMEWORK -->
+<div class="page inner">
+  <div class="page-header">
+    <div class="brand-small">Mantra <span>Global</span> Education</div>
+    <div class="page-num">03</div>
+  </div>
+  <div class="section-label">Proprietary Methodology</div>
+  <h2 class="section-title">The MANTRA Framework</h2>
+  <p class="section-sub">
+    Our six-stage success system ensures every student receives structured, end-to-end support.
+    Unlike generic agents who stop at the application, Mantra walks with students from first counseling
+    session through enrollment, visa approval, relocation, and career success abroad.
+  </p>
+  <div class="framework-grid">
+    <div class="fw-card">
+      <div class="letter">M</div><div class="word">Mentor</div>
+      <div class="fw-title">Discover Your Future</div>
+      <div class="fw-desc">1-on-1 career counseling, academic profile audit, budget assessment, and personalized study-abroad roadmap creation.</div>
+      <div class="fw-out">→ Personalized Study Plan</div>
+    </div>
+    <div class="fw-card">
+      <div class="letter">A</div><div class="word">Assess</div>
+      <div class="fw-title">Choose the Right University</div>
+      <div class="fw-desc">Data-driven shortlisting from 15+ partner universities matched to GPA, test scores, budget, and career goals.</div>
+      <div class="fw-out">→ Best-Fit Universities</div>
+    </div>
+    <div class="fw-card">
+      <div class="letter">N</div><div class="word">Navigate</div>
+      <div class="fw-title">Build a Winning Application</div>
+      <div class="fw-desc">Expert SOP writing, LOR guidance, resume enhancement, and comprehensive document review before submission.</div>
+      <div class="fw-out">→ Competitive Applications</div>
+    </div>
+    <div class="fw-card">
+      <div class="letter">T</div><div class="word">Transition</div>
+      <div class="fw-title">Visa, Finance & Pre-Departure</div>
+      <div class="fw-desc">Visa documentation, mock interviews, education loan facilitation, scholarship applications, and family financial planning.</div>
+      <div class="fw-out">→ Visa Approved & Ready</div>
+    </div>
+    <div class="fw-card">
+      <div class="letter">R</div><div class="word">Relocate</div>
+      <div class="fw-title">Settle Abroad Confidently</div>
+      <div class="fw-desc">Accommodation guidance, airport coordination, forex, SIM setup, banking, and pre-departure orientation for students and parents.</div>
+      <div class="fw-out">→ Successfully Settled</div>
+    </div>
+    <div class="fw-card">
+      <div class="letter">A</div><div class="word">Arrive</div>
+      <div class="fw-title">Thrive Beyond Admission</div>
+      <div class="fw-desc">Orientation support, alumni network access, and ongoing mentorship. Our commitment continues after you land.</div>
+      <div class="fw-out">→ Career Success Abroad</div>
+    </div>
+  </div>
+  <div class="highlight-band" style="margin-top:14px;">
+    <p><strong>Why it matters:</strong> Most consultancies cover only 20% of the journey (application filing). MANTRA covers 100% — from confused student to thriving graduate. This is our competitive moat and your guarantee of support.</p>
+  </div>
+  <div class="values-row">
+    <div class="val-card"><h4>Student-First</h4><p>Every decision starts with what's best for the student and family</p></div>
+    <div class="val-card"><h4>Focused Excellence</h4><p>Deep expertise in 3 countries — not scattered across dozens</p></div>
+    <div class="val-card"><h4>Proven Results</h4><p>700+ placements with award-winning credentials</p></div>
+    <div class="val-card"><h4>Certified Trust</h4><p>British Council certified, transparent, accountable</p></div>
+  </div>
+  <div class="page-foot"><span>MANTRA Framework — Proprietary</span><span>admin@mantraai.cloud</span></div>
+</div>
+
+<!-- PAGE 4: COUNTRIES -->
+<div class="page inner">
+  <div class="page-header">
+    <div class="brand-small">Mantra <span>Global</span> Education</div>
+    <div class="page-num">04</div>
+  </div>
+  <div class="section-label">Global Reach</div>
+  <h2 class="section-title">Countries We Process</h2>
+  <p class="section-sub">
+    Mantra Global Education processes university applications across 19+ study destinations worldwide.
+    From North America and Europe to Asia-Pacific and the Middle East — we provide country-specific
+    expertise, visa guidance, and university partnerships for every major international education market.
+  </p>
+  <div class="three-col" style="margin-bottom:10px;">
+    <div class="country-card">
+      <div class="c-img"><img src="profile-assets/usa.jpg" alt="USA universities" /></div>
+      <div class="c-body"><div class="c-flag">🇺🇸</div><h4>United States</h4><p style="font-size:8.5px;color:var(--muted);line-height:1.45;">MS, MBA, STEM OPT, merit scholarships. MIT, Stanford, UC Berkeley partners.</p></div>
+    </div>
+    <div class="country-card">
+      <div class="c-img"><img src="profile-assets/uk.jpg" alt="UK universities" /></div>
+      <div class="c-body"><div class="c-flag">🇬🇧</div><h4>United Kingdom</h4><p style="font-size:8.5px;color:var(--muted);line-height:1.45;">1-year Masters, Graduate Route visa. Oxford, Imperial, UCL partners.</p></div>
+    </div>
+    <div class="country-card">
+      <div class="c-img"><img src="profile-assets/campus-students.jpg" alt="International students on campus" /></div>
+      <div class="c-body"><div class="c-flag">🌍</div><h4>Global Campuses</h4><p style="font-size:8.5px;color:var(--muted);line-height:1.45;">25+ universities across 19 countries. UG, PG, PhD & pathway programs.</p></div>
+    </div>
+  </div>
+  <div class="section-label">All Destinations We Process</div>
+  <div class="country-grid">
+    <div class="country-mini"><div class="flag">🇺🇸</div><h4>USA</h4><p>MS, MBA, STEM OPT, top research universities</p></div>
+    <div class="country-mini"><div class="flag">🇬🇧</div><h4>United Kingdom</h4><p>1-year MSc, Graduate Route, Russell Group</p></div>
+    <div class="country-mini"><div class="flag">🇦🇺</div><h4>Australia</h4><p>PSW visa, Group of Eight universities</p></div>
+    <div class="country-mini"><div class="flag">🇨🇦</div><h4>Canada</h4><p>PGWP, PR pathway, affordable tuition</p></div>
+    <div class="country-mini"><div class="flag">🇩🇪</div><h4>Germany</h4><p>Low tuition, engineering excellence, EU jobs</p></div>
+    <div class="country-mini"><div class="flag">🇫🇷</div><h4>France</h4><p>Grandes écoles, English-taught Masters</p></div>
+    <div class="country-mini"><div class="flag">🇮🇪</div><h4>Ireland</h4><p>EU tech hub, 2-year graduate visa</p></div>
+    <div class="country-mini"><div class="flag">🇳🇿</div><h4>New Zealand</h4><p>Post-study work, quality of life</p></div>
+    <div class="country-mini"><div class="flag">🇸🇬</div><h4>Singapore</h4><p>Asia's education hub, NUS & NTU</p></div>
+    <div class="country-mini"><div class="flag">🇳🇱</div><h4>Netherlands</h4><p>2,000+ English programs, orientation year</p></div>
+    <div class="country-mini"><div class="flag">🇮🇹</div><h4>Italy</h4><p>Affordable EU education, design & engineering</p></div>
+    <div class="country-mini"><div class="flag">🇨🇭</div><h4>Switzerland</h4><p>ETH Zurich, hospitality, finance</p></div>
+    <div class="country-mini"><div class="flag">🇦🇪</div><h4>UAE</h4><p>Dubai branch campuses, tax-free careers</p></div>
+    <div class="country-mini"><div class="flag">🇯🇵</div><h4>Japan</h4><p>MEXT scholarships, technology programs</p></div>
+    <div class="country-mini"><div class="flag">🇰🇷</div><h4>South Korea</h4><p>KGSP scholarships, STEM excellence</p></div>
+    <div class="country-mini"><div class="flag">🇲🇾</div><h4>Malaysia</h4><p>Affordable, UK/AUS branch campuses</p></div>
+    <div class="country-mini"><div class="flag">🇸🇪</div><h4>Sweden</h4><p>Innovation, sustainability, English Masters</p></div>
+    <div class="country-mini"><div class="flag">🇪🇸</div><h4>Spain</h4><p>Affordable EU tuition, business programs</p></div>
+    <div class="country-mini"><div class="flag">🇫🇮</div><h4>Finland</h4><p>World-class education, tech & design</p></div>
+  </div>
+  <div class="two-col" style="margin-top:10px;">
+    <ul class="bullet-list">
+      <li><strong>Undergraduate & Postgraduate</strong> — Bachelors, Masters, MBA, MS, PhD</li>
+      <li><strong>Engineering & Technology</strong> — CS, Data Science, AI, Mechanical, Civil</li>
+      <li><strong>Business & Finance</strong> — MBA, Analytics, Marketing, Accounting</li>
+    </ul>
+    <ul class="bullet-list">
+      <li><strong>Healthcare & Sciences</strong> — Nursing, Public Health, Life Sciences</li>
+      <li><strong>Visa & Documentation</strong> — Country-specific filing for all destinations</li>
+      <li><strong>25+ partner universities</strong> with verified fee and course data</li>
+    </ul>
+  </div>
+  <div class="page-foot"><span>19+ Global Study Destinations</span><span>admin@mantraai.cloud</span></div>
+</div>
+
+<!-- PAGE 5: SERVICES -->
+<div class="page inner">
+  <div class="page-header">
+    <div class="brand-small">Mantra <span>Global</span> Education</div>
+    <div class="page-num">05</div>
+  </div>
+  <div class="section-label">What We Deliver</div>
+  <h2 class="section-title">Comprehensive Student Services</h2>
+  <p class="section-sub">
+    Every service is designed to remove friction from the study abroad journey.
+    Students and families receive a single point of accountability — not a chain of handoffs.
+  </p>
+  <div class="service-grid" style="margin-bottom:14px;">
+    <div class="svc"><div class="svc-icon">🧭</div><h4>Study Abroad Counseling</h4></div>
+    <div class="svc"><div class="svc-icon">🎓</div><h4>University Admissions</h4></div>
+    <div class="svc"><div class="svc-icon">🏆</div><h4>Scholarship Assistance</h4></div>
+    <div class="svc"><div class="svc-icon">📋</div><h4>Visa Documentation</h4></div>
+    <div class="svc"><div class="svc-icon">✈️</div><h4>Pre-Departure Support</h4></div>
+    <div class="svc"><div class="svc-icon">💼</div><h4>Career Guidance</h4></div>
+    <div class="svc"><div class="svc-icon">📝</div><h4>SOP & LOR Support</h4></div>
+    <div class="svc"><div class="svc-icon">🏦</div><h4>Education Loan Assistance</h4></div>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <h4>For Students</h4>
+      <p>Free profile assessment · Personalized university shortlist · Application strategy · SOP & document review · Visa filing support · Pre-departure briefing · Alumni network access · Ongoing mentorship after arrival</p>
+    </div>
+    <div class="card">
+      <h4>For Colleges & Partners</h4>
+      <p>Campus seminars & webinars · Graduate pathway programs · Faculty workshops · Co-branded marketing · Pipeline & enrolment reports · MOU-based partnerships · Engineering-to-MS pathways · Placement cell collaboration</p>
+    </div>
+  </div>
+  <div class="split-img-text" style="margin-top:14px;">
+    <div>
+      <div class="section-label">Why Partner With Mantra</div>
+      <h2 class="section-title" style="font-size:16px;">The Mantra Advantage</h2>
+      <div class="compare">
+        <div class="cmp-col cmp-bad">
+          <div class="cmp-head">Typical Agency</div>
+          <div class="cmp-body">
+            <div class="cmp-item">✗ Call-center model, rotating counselors</div>
+            <div class="cmp-item">✗ Commission-driven university pushes</div>
+            <div class="cmp-item">✗ Application-only support</div>
+            <div class="cmp-item">✗ Hidden fees mid-process</div>
+          </div>
+        </div>
+        <div class="cmp-col cmp-good">
+          <div class="cmp-head">Mantra Global Education</div>
+          <div class="cmp-body">
+            <div class="cmp-item">✓ 1:1 certified counselor from day one</div>
+            <div class="cmp-item">✓ Profile-matched university selection</div>
+            <div class="cmp-item">✓ Full MANTRA journey — counseling to career</div>
+            <div class="cmp-item">✓ 19+ countries worldwide — 25+ partner universities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="img-block" style="height:220px;">
+      <img src="profile-assets/campus-students.jpg" alt="University campus" />
+    </div>
+  </div>
+  <div class="page-foot"><span>End-to-End Student Services</span><span>admin@mantraai.cloud</span></div>
+</div>
+
+<!-- PAGE 6: TEAM -->
+<div class="page inner">
+  <div class="page-header">
+    <div class="brand-small">Mantra <span>Global</span> Education</div>
+    <div class="page-num">06</div>
+  </div>
+  <div class="section-label">Our People</div>
+  <h2 class="section-title">Team Structure & Leadership</h2>
+  <p class="section-sub">
+    Mantra Global Education operates with a lean, expert-driven team structure — ensuring every student
+    and partner interacts with qualified professionals, not generic support staff.
+    Our headquarters in Coimbatore, Tamil Nadu serves as the central hub for counseling, operations, and partner relations.
+  </p>
+  <div class="team-org">
+    <div class="team-top">
+      <h4>Founder & Lead Counsellor</h4>
+      <p>Vinodhini Y. — British Council Certified · Former IDP · 10+ Years · 700+ Students Placed</p>
+    </div>
+    <div class="team-line"></div>
+    <div class="team-row">
+      <div class="team-box">
+        <h4>CTO</h4>
+        <p>Technology & Platform<br/>Digital systems, student portal, data management</p>
+      </div>
+      <div class="team-box">
+        <h4>HR Team</h4>
+        <p>People Operations<br/>Counselor onboarding, training & quality standards</p>
+      </div>
+      <div class="team-box">
+        <h4>Finance Team</h4>
+        <p>Financial Operations<br/>Fee management, loan coordination & compliance</p>
+      </div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:16px;">
+    <div class="card">
+      <h4>Founder & Counsellor — Vinodhini Y.</h4>
+      <p>Leads all counseling operations with direct student engagement. British Council Certified study abroad counselor with 10+ years of experience including tenure at IDP Education. Recognized as Pan-India Top 17 Best Counselor (Silver Category). Personally oversees student profile assessments, university shortlisting, and admission strategy for every Mantra student.</p>
+    </div>
+    <div class="card">
+      <h4>Chief Technology Officer</h4>
+      <p>Oversees Mantra's digital education platform — including the student portal, application tracking system, university database, and partner integration tools. Ensures data accuracy, process automation, and a seamless digital experience for students, counselors, and institutional partners.</p>
+    </div>
+    <div class="card">
+      <h4>Human Resources</h4>
+      <p>Manages counselor recruitment, British Council certification compliance, ongoing training programs, and quality assurance. Ensures every Mantra team member meets our standards for student-first service, ethical counseling, and professional accountability.</p>
+    </div>
+    <div class="card">
+      <h4>Finance Team</h4>
+      <p>Handles transparent fee structures, education loan facilitation with partner banks (SBI, HDFC Credila, Prodigy Finance), scholarship fund tracking, and financial planning support for student families. Maintains full compliance and clear billing with zero hidden charges.</p>
+    </div>
+  </div>
+  <div class="highlight-band">
+    <p><strong>Headquarters:</strong> Coimbatore, Tamil Nadu, India — serving students and college partners across India with both in-person and online counseling capabilities.</p>
+  </div>
+  <div class="page-foot"><span>Team · HQ Coimbatore</span><span>admin@mantraai.cloud</span></div>
+</div>
+
+<!-- PAGE 7: CONTACT -->
+<div class="page contact-page">
+  <div class="contact-inner">
+    <div>
+      <div class="cover-label">Partner With Us</div>
+      <h2 class="contact-title">Let's Build <span>Global Pathways</span> Together</h2>
+      <p style="font-size:12px;color:rgba(255,255,255,0.65);margin-top:12px;line-height:1.7;max-width:480px;">
+        Whether you are a student exploring international education, an engineering college seeking
+        a graduate pathway partner, or a university looking to recruit qualified Indian students —
+        Mantra Global Education is ready to deliver results.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-block">
+          <strong>Email</strong>
+          <div class="contact-email">admin@mantraai.cloud</div>
+          <p style="margin-top:10px;font-size:10px;">For partnerships, counseling inquiries, college collaborations, and general information.</p>
+        </div>
+        <div class="contact-block">
+          <strong>Headquarters</strong>
+          <p>Coimbatore<br/>Tamil Nadu, India</p>
+          <strong style="margin-top:14px;">Website</strong>
+          <p>mantraglobaledu.com</p>
+        </div>
+        <div class="contact-block">
+          <strong>Countries We Process</strong>
+          <p>🇺🇸 USA · 🇬🇧 UK · 🇦🇺 Australia · 🇨🇦 Canada · 🇩🇪 Germany · 🇫🇷 France · 🇮🇪 Ireland · 🇳🇿 New Zealand · 🇸🇬 Singapore · 🇳🇱 Netherlands · 🇮🇹 Italy · 🇨🇭 Switzerland · 🇦🇪 UAE · 🇯🇵 Japan · 🇰🇷 South Korea · 🇲🇾 Malaysia · 🇸🇪 Sweden · 🇪🇸 Spain · 🇫🇮 Finland</p>
+        </div>
+        <div class="contact-block">
+          <strong>Partnership Types</strong>
+          <p>University Partnership<br/>Engineering College Partnership<br/>Placement Partnership<br/>Student Counseling</p>
+        </div>
+      </div>
+      <div class="cta-box">
+        <p><strong style="color:var(--accent);">Free Counseling Available</strong><br/>
+        Every student receives a complimentary 1-on-1 profile assessment with a British Council certified counselor. College partners receive a dedicated MOU, co-marketing support, and quarterly pipeline reports.</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;">Mantra <span style="color:var(--accent);">Global</span> Education</div>
+        <div style="font-size:9px;color:rgba(255,255,255,0.45);margin-top:4px;">Your Journey. Our Guidance. Global Success.</div>
+      </div>
+      <div style="text-align:right;font-size:9px;color:rgba(255,255,255,0.45);">
+        © 2026 Mantra Global Education<br/>Confidential — Company Profile
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

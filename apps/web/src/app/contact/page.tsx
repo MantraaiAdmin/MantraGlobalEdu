@@ -48,7 +48,7 @@ function ContactForm() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display text-4xl font-bold text-primary">Contact {APP_CONFIG.name}</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Questions about USA, UK, or Australia? Reach our team — we respond within 24 hours.
+            Questions about studying abroad? Reach our team — we respond within 24 hours.
           </p>
         </div>
       </section>

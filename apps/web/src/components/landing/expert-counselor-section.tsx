@@ -110,7 +110,7 @@ export function ExpertCounselorSection() {
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
               {FOUNDER.name} founded {APP_CONFIG.name} to give every student the kind of personal, expert
               guidance she wished more families had access to. Today, {APP_CONFIG.shortName} helps ambitious students pursue
-              degrees in the USA, UK, and Australia — from profile assessment and university shortlisting
+              degrees across 19+ countries worldwide — from profile assessment and university shortlisting
               to applications, scholarships, visas, and pre-departure planning.
             </p>
 

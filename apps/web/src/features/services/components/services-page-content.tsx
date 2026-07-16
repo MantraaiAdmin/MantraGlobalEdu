@@ -19,7 +19,7 @@ const iconMap: Record<string, ComponentType<{ className?: string }>> = {
 };
 
 const descriptions: Record<string, string> = {
-  counseling: 'One-on-one sessions with certified counselors to map your USA, UK, or Australia study plan.',
+  counseling: 'One-on-one sessions with certified counselors to map your global study plan across 19+ countries.',
   admissions: 'End-to-end application support — shortlisting, essays, deadlines, and offer evaluation.',
   scholarships: 'Discover merit and need-based scholarships matched to your profile and destination.',
   visa: 'Document checklists, financial proof guidance, and mock visa interview preparation.',
@@ -31,7 +31,7 @@ const descriptions: Record<string, string> = {
 
 const processSteps = [
   { step: '01', title: 'Free Assessment', desc: 'Understand your goals, budget, and destination fit.' },
-  { step: '02', title: 'Personalised Plan', desc: 'Shortlist universities and courses across USA, UK & Australia.' },
+  { step: '02', title: 'Personalised Plan', desc: 'Shortlist universities and courses across your target countries worldwide.' },
   { step: '03', title: 'Application Support', desc: 'Submit strong applications with expert document review.' },
   { step: '04', title: 'Visa & Departure', desc: 'Secure your visa and prepare for campus arrival.' },
 ];
@@ -73,8 +73,8 @@ export function ServicesPageContent() {
                 support system
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl">
-                From first counseling session to campus arrival — expert guidance for USA, UK,
-                and Australia at every step of your journey.
+                From first counseling session to campus arrival — expert guidance for 19+ countries
+                at every step of your journey.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button variant="accent" size="lg" asChild>
@@ -89,7 +89,7 @@ export function ServicesPageContent() {
               <div className="mt-10 flex flex-wrap gap-6">
                 {[
                   { icon: Users, label: `${STUDENTS_PLACED_STAT} students placed` },
-                  { icon: Globe2, label: 'USA · UK · Australia' },
+                  { icon: Globe2, label: '19+ Countries' },
                   { icon: CheckCircle2, label: '94% visa success' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -198,7 +198,7 @@ export function ServicesPageContent() {
           <SectionHeader
             eyebrow="Student Life"
             title="Walk Into World-Class Campuses"
-            description="Our students thrive at top universities across USA, UK, and Australia"
+            description="Our students thrive at top universities across the globe"
             className="mb-12"
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -271,7 +271,7 @@ export function ServicesPageContent() {
                 Ready for expert guidance?
               </h2>
               <p className="mt-4 text-white/70 max-w-lg mx-auto">
-                Book a free counseling session and get a personalised roadmap for USA, UK, or Australia.
+                Book a free counseling session and get a personalised roadmap for your target country.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" variant="accent" asChild>

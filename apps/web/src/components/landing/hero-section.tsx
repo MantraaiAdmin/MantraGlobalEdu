@@ -31,7 +31,7 @@ export function HeroSection() {
               <Sparkles className="h-4 w-4 text-accent" />
               <span>{APP_CONFIG.name}</span>
               <span className="h-1 w-1 rounded-full bg-accent" />
-              <span className="text-accent font-medium">USA · UK · Australia</span>
+              <span className="text-accent font-medium">19+ Countries Worldwide</span>
             </motion.div>
 
             <motion.h1

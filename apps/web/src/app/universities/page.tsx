@@ -13,7 +13,7 @@ export default function UniversitiesPage() {
         <PageHero
           eyebrow="Explore"
           title="University Explorer"
-          description="Discover top universities across USA, UK, and Australia with official tuition and scholarship data."
+          description="Discover top universities across 19+ countries with official tuition and scholarship data."
         />
         <Suspense fallback={
           <div className="flex justify-center py-20">

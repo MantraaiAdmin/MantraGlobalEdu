@@ -25,7 +25,7 @@ export function DestinationsSection() {
           <SectionHeader
             eyebrow="Destinations"
             title="Study Destinations"
-            description="USA, UK, and Australia — our focus destinations with official university data"
+            description="Explore 19+ study destinations worldwide — official university data, visa guides, and career pathways"
             align="left"
             className="mb-0"
           />
@@ -37,9 +37,9 @@ export function DestinationsSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {DESTINATIONS.map((dest, i) => {
-            const meta = destinationMeta[dest.code] || { students: '1,000+', unis: '50+', gradient: 'from-primary/10 to-accent/5' };
+            const meta = destinationMeta[dest.code] || { students: '500+', unis: '3+', gradient: 'from-primary/10 to-accent/5' };
             return (
               <motion.div
                 key={dest.code}

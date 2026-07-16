@@ -30,7 +30,7 @@ export default function DocumentChecklistPage() {
             Document Checklist
           </span>
           <h1 className="font-display text-3xl font-bold text-primary">Application Document Checklist</h1>
-          <p className="mt-2 text-muted-foreground">Everything you need to prepare for USA, UK, or Australia applications.</p>
+          <p className="mt-2 text-muted-foreground">Everything you need to prepare for applications to universities worldwide.</p>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>

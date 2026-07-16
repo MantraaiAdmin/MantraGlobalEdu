@@ -17,7 +17,7 @@ export default function CountriesPage() {
         <PageHero
           eyebrow="Destinations"
           title="Study Destinations"
-          description="Explore detailed guides for each destination — universities, costs, visa requirements, and career opportunities."
+          description="Explore detailed guides for 19+ study destinations — universities, costs, visa requirements, and career opportunities."
         />
 
         <section className="section-padding bg-muted/30">

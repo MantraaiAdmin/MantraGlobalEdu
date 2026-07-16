@@ -52,7 +52,7 @@ export function CourseFinderHero() {
               className="mt-8 flex flex-wrap gap-4"
             >
               {[
-                { icon: Globe2, label: '3 Focus Destinations' },
+                { icon: Globe2, label: '19+ Study Destinations' },
                 { icon: GraduationCap, label: 'All Study Levels' },
                 { icon: BookOpen, label: 'Scholarship Ready' },
               ].map((item) => (

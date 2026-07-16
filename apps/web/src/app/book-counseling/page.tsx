@@ -75,7 +75,7 @@ export default function BookCounselingPage() {
                 <span className="text-gradient">{FOUNDER.name}</span>
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                Get personalised guidance for USA, UK, and Australia — university shortlisting,
+                Get personalised guidance for your target country — university shortlisting,
                 applications, scholarships, and visa planning. Sessions are free and conducted
                 online or in-office.
               </p>

@@ -7,7 +7,7 @@ import { PartnersPageContent } from '@/features/partners/components/partners-pag
 export const metadata: Metadata = {
   title: 'Partners',
   description:
-    `Partner with ${APP_CONFIG.name} — university, college, and placement partnerships for USA, UK, and Australia student recruitment.`,
+    `Partner with ${APP_CONFIG.name} — university, college, and placement partnerships for global student recruitment across 19+ countries.`,
 };
 
 export default function PartnersPage() {

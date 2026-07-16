@@ -28,7 +28,7 @@ const partnerships = [
     id: 'college',
     title: 'Engineering College Partnership',
     description:
-      'Bridge your engineering graduates to top MS and postgraduate programs in USA, UK, and Australia with dedicated pathway counseling and application support.',
+      'Bridge your engineering graduates to top MS and postgraduate programs worldwide with dedicated pathway counseling and application support.',
     cta: 'Partner Your College',
     icon: Handshake,
     highlights: ['Graduate pathways', 'Faculty workshops', 'Alumni network'],
@@ -47,7 +47,7 @@ const partnerships = [
 ];
 
 const benefits = [
-  { icon: Globe2, title: 'Global Reach', desc: 'Access students targeting USA, UK & Australia' },
+  { icon: Globe2, title: 'Global Reach', desc: 'Access students targeting 19+ study destinations worldwide' },
   { icon: Users, title: `${STUDENTS_PLACED_STAT} Students`, desc: 'Successfully guided to universities worldwide' },
   { icon: TrendingUp, title: 'Higher Enrolments', desc: 'Proven conversion from inquiry to offer' },
   { icon: Shield, title: 'Trusted Brand', desc: `${APP_CONFIG.name} — ${APP_CONFIG.tagline}` },
@@ -62,7 +62,7 @@ const partnerSteps = [
 
 const networkStats = [
   { value: '15+', label: 'Partner Universities' },
-  { value: '3', label: 'Focus Countries' },
+  { value: '19+', label: 'Study Destinations' },
   { value: STUDENTS_PLACED_STAT, label: 'Students Placed' },
   { value: '94%', label: 'Partner Satisfaction' },
 ];
@@ -98,7 +98,7 @@ export function PartnersPageContent() {
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl">
                 Join our network of universities, colleges, and placement partners.
-                Together we connect talented students to world-class education in USA, UK, and Australia.
+                Together we connect talented students to world-class education across 19+ countries worldwide.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button variant="accent" size="lg" asChild>
@@ -136,7 +136,7 @@ export function PartnersPageContent() {
               </div>
               <div className="absolute -top-3 -right-3 glass rounded-2xl px-5 py-4 shadow-premium-lg">
                 <p className="text-xs text-muted-foreground">Countries</p>
-                <p className="text-2xl font-bold text-accent">USA · UK · AUS</p>
+                <p className="text-2xl font-bold text-accent">19+ Countries</p>
               </div>
             </motion.div>
           </div>

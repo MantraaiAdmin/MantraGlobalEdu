@@ -1,7 +1,7 @@
-import { APP_CONFIG } from '@mge/config';
+import { APP_CONFIG, DESTINATIONS } from '@mge/config';
 
 export interface ProfileCheckInput {
-  destination: 'US' | 'GB' | 'AU';
+  destination: string;
   degreeLevel: 'BACHELORS' | 'MASTERS';
   academicScore: number;
   englishScore?: number;
@@ -52,18 +52,18 @@ export function evaluateProfile(input: ProfileCheckInput): ProfileCheckResult {
 
   const readiness = score >= 80 ? 'Strong' : score >= 65 ? 'Good' : 'Developing';
 
-  const countryNames: Record<string, string> = {
-    US: 'USA',
-    GB: 'United Kingdom',
-    AU: 'Australia',
-  };
+  const countryNames = Object.fromEntries(
+    DESTINATIONS.map((d) => [d.code, d.name])
+  ) as Record<string, string>;
+
+  const countryLabel = countryNames[input.destination] ?? 'your target country';
 
   const summary =
     readiness === 'Strong'
-      ? `Your profile shows strong readiness for ${countryNames[input.destination]} ${input.degreeLevel === 'MASTERS' ? 'postgraduate' : 'undergraduate'} programs in ${input.field}.`
+      ? `Your profile shows strong readiness for ${countryLabel} ${input.degreeLevel === 'MASTERS' ? 'postgraduate' : 'undergraduate'} programs in ${input.field}.`
       : readiness === 'Good'
-        ? `You have a solid foundation for ${countryNames[input.destination]}. A few improvements could strengthen your applications.`
-        : `You're at the start of a great journey. ${APP_CONFIG.shortName} counselors can help build a realistic plan for ${countryNames[input.destination]}.`;
+        ? `You have a solid foundation for ${countryLabel}. A few improvements could strengthen your applications.`
+        : `You're at the start of a great journey. ${APP_CONFIG.shortName} counselors can help build a realistic plan for ${countryLabel}.`;
 
   if (recommendations.length === 0) {
     recommendations.push('Book a free counseling session to get a personalised university shortlist.');

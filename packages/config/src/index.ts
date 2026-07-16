@@ -69,7 +69,26 @@ export const DESTINATIONS = [
   { code: 'US', name: 'USA', flag: '🇺🇸' },
   { code: 'GB', name: 'United Kingdom', flag: '🇬🇧' },
   { code: 'AU', name: 'Australia', flag: '🇦🇺' },
+  { code: 'CA', name: 'Canada', flag: '🇨🇦' },
+  { code: 'DE', name: 'Germany', flag: '🇩🇪' },
+  { code: 'FR', name: 'France', flag: '🇫🇷' },
+  { code: 'IE', name: 'Ireland', flag: '🇮🇪' },
+  { code: 'NZ', name: 'New Zealand', flag: '🇳🇿' },
+  { code: 'SG', name: 'Singapore', flag: '🇸🇬' },
+  { code: 'NL', name: 'Netherlands', flag: '🇳🇱' },
+  { code: 'IT', name: 'Italy', flag: '🇮🇹' },
+  { code: 'CH', name: 'Switzerland', flag: '🇨🇭' },
+  { code: 'AE', name: 'UAE', flag: '🇦🇪' },
+  { code: 'JP', name: 'Japan', flag: '🇯🇵' },
+  { code: 'KR', name: 'South Korea', flag: '🇰🇷' },
+  { code: 'MY', name: 'Malaysia', flag: '🇲🇾' },
+  { code: 'SE', name: 'Sweden', flag: '🇸🇪' },
+  { code: 'ES', name: 'Spain', flag: '🇪🇸' },
+  { code: 'FI', name: 'Finland', flag: '🇫🇮' },
 ] as const;
+
+export const GLOBAL_DESTINATIONS_LABEL =
+  'USA, UK, Canada, Australia, Germany, Ireland, and 13+ countries worldwide' as const;
 
 export const SERVICES = [
   { id: 'counseling', title: 'Study Abroad Counseling', icon: 'Compass' },
@@ -84,7 +103,7 @@ export const SERVICES = [
 
 export const TRUST_METRICS = [
   { value: '15+', label: 'Top Universities' },
-  { value: '3', label: 'Focus Destinations' },
+  { value: '19+', label: 'Study Destinations' },
   { value: '40+', label: 'UG & PG Courses' },
   { value: 'Full', label: 'Scholarship Assistance' },
   { value: 'Expert', label: 'Career Guidance' },
@@ -113,7 +132,7 @@ export const RESOURCE_CATEGORIES = [
 
 export const CONTACT = {
   whatsapp: '919876543210',
-  whatsappMessage: 'Hi Mantra Global Education, I would like guidance on studying in USA, UK or Australia.',
+  whatsappMessage: 'Hi Mantra Global Education, I would like guidance on studying abroad.',
   supportPhone: '+91 98765 43210',
   supportEmail: 'support@mantraglobaledu.com',
   website: 'mantraglobaledu.com',
