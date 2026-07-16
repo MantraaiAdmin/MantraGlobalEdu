@@ -6,7 +6,6 @@
     "predev": "pkill -f 'next dev' 2>/dev/null || true; pkill -f 'next start' 2>/dev/null || true; lsof -ti:3000 | xargs kill -9 2>/dev/null || true; rm -rf .next",
     "dev": "next dev --turbopack -p 3000 --hostname 127.0.0.1",
     "dev:webpack": "next dev -p 3000 --hostname 127.0.0.1",
-    "prebuild": "cd ../.. && npx tsx scripts/generate-web-catalog.ts",
     "build": "next build",
     "start": "next start -p 3000 --hostname 127.0.0.1",
     "lint": "next lint",
