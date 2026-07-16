@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { PageHero } from '@/components/layout/page-hero';
@@ -12,9 +13,17 @@ import { Input } from '@/components/ui/input';
 import type { ScholarshipFilters } from '@/services/api.service';
 
 export default function ScholarshipsPage() {
+  const searchParams = useSearchParams();
   const [filters, setFilters] = useState<ScholarshipFilters>({ page: 1, limit: 20 });
   const { data, isLoading, isError } = useScholarships(filters);
   const { data: countries } = useCountries();
+
+  useEffect(() => {
+    const countryId = searchParams.get('country');
+    if (countryId) {
+      setFilters((f) => ({ ...f, countryId, page: 1 }));
+    }
+  }, [searchParams]);
 
   return (
     <>

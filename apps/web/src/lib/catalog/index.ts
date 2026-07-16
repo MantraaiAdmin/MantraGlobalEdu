@@ -9,6 +9,39 @@ export type CatalogScholarship = (typeof catalogData.scholarships)[number];
 
 const { countries, universities, courses, scholarships } = catalogData;
 
+const CODE_ALIASES: Record<string, string> = {
+  USA: 'US',
+  UK: 'GB',
+  ENGLAND: 'GB',
+  CANADA: 'CA',
+  AUSTRALIA: 'AU',
+  GERMANY: 'DE',
+  FRANCE: 'FR',
+  IRELAND: 'IE',
+  SINGAPORE: 'SG',
+  JAPAN: 'JP',
+  KOREA: 'KR',
+  'SOUTH-KOREA': 'KR',
+  MALAYSIA: 'MY',
+  SWEDEN: 'SE',
+  SPAIN: 'ES',
+  FINLAND: 'FI',
+  ITALY: 'IT',
+  SWITZERLAND: 'CH',
+  UAE: 'AE',
+  DUBAI: 'AE',
+};
+
+function resolveCountryCode(code: string): string {
+  const normalized = code.trim().toUpperCase().replace(/\s+/g, '-');
+  return CODE_ALIASES[normalized] ?? normalized;
+}
+
+function findCountryByCode(code: string) {
+  const resolved = resolveCountryCode(code);
+  return countries.find((item) => item.code.toUpperCase() === resolved) ?? null;
+}
+
 export function getCatalogCountries(params: PaginationParams = {}) {
   const meta = calculatePagination(countries.length, params);
   const { skip, take } = getSlice(params);
@@ -16,15 +49,32 @@ export function getCatalogCountries(params: PaginationParams = {}) {
 }
 
 export function getCatalogCountryByCode(code: string) {
-  const country = countries.find((item) => item.code.toUpperCase() === code.toUpperCase());
+  const country = findCountryByCode(code);
   if (!country) return null;
 
   const countryUniversities = universities
     .filter((university) => university.countryId === country.id)
-    .sort((a, b) => (a.worldRanking ?? 999) - (b.worldRanking ?? 999))
-    .slice(0, 10);
+    .sort((a, b) => (a.worldRanking ?? 999) - (b.worldRanking ?? 999));
 
-  return { ...country, universities: countryUniversities };
+  const countryCourses = courses
+    .filter((course) => course.university.countryId === country.id)
+    .sort((a, b) => a.tuition - b.tuition);
+
+  const countryScholarships = scholarships
+    .filter((scholarship) => scholarship.countryId === country.id)
+    .sort((a, b) => b.awardAmount - a.awardAmount);
+
+  const popularPrograms = [
+    ...new Set(countryUniversities.flatMap((university) => university.popularPrograms)),
+  ].slice(0, 12);
+
+  return {
+    ...country,
+    universities: countryUniversities,
+    courses: countryCourses,
+    scholarships: countryScholarships,
+    popularPrograms,
+  };
 }
 
 export function getCatalogUniversities(params: {
@@ -195,7 +245,7 @@ export function getCatalogScholarshipById(id: string) {
 }
 
 export function getUniversityCountByCountryCode(code: string): number {
-  const country = countries.find((item) => item.code === code);
+  const country = findCountryByCode(code);
   if (!country) return 0;
   return universities.filter((university) => university.countryId === country.id).length;
 }

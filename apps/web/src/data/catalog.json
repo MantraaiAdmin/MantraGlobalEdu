@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T06:25:23.040Z",
+  "generatedAt": "2026-07-16T06:32:49.581Z",
   "countries": [
     {
       "id": "country-us",
@@ -1162,6 +1162,602 @@
           "JANUARY"
         ],
         "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+      }
+    },
+    {
+      "id": "uni-politecnico-di-milano",
+      "name": "Politecnico di Milano",
+      "slug": "politecnico-di-milano",
+      "countryId": "country-it",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 111,
+      "tuitionMin": 4000,
+      "tuitionMax": 12000,
+      "acceptanceRate": 40,
+      "description": "Italy's top technical university for engineering, architecture, and design with English-taught masters.",
+      "website": "https://www.polimi.it",
+      "popularPrograms": [
+        "Engineering",
+        "Architecture",
+        "Design",
+        "Computer Science"
+      ],
+      "country": {
+        "id": "country-it",
+        "code": "IT",
+        "name": "Italy",
+        "flag": "🇮🇹",
+        "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+        "tuitionRange": "€1,000 – €15,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+      }
+    },
+    {
+      "id": "uni-university-of-bologna",
+      "name": "University of Bologna",
+      "slug": "university-of-bologna",
+      "countryId": "country-it",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 133,
+      "tuitionMin": 3000,
+      "tuitionMax": 8000,
+      "acceptanceRate": 55,
+      "description": "Europe's oldest university with affordable tuition and growing English-taught programmes.",
+      "website": "https://www.unibo.it",
+      "popularPrograms": [
+        "Economics",
+        "Engineering",
+        "Law",
+        "Data Science"
+      ],
+      "country": {
+        "id": "country-it",
+        "code": "IT",
+        "name": "Italy",
+        "flag": "🇮🇹",
+        "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+        "tuitionRange": "€1,000 – €15,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+      }
+    },
+    {
+      "id": "uni-university-of-tokyo",
+      "name": "University of Tokyo",
+      "slug": "university-of-tokyo",
+      "countryId": "country-jp",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 28,
+      "tuitionMin": 500000,
+      "tuitionMax": 1500000,
+      "acceptanceRate": 20,
+      "description": "Japan's most prestigious university with PEAK English programmes and MEXT scholarship pathways.",
+      "website": "https://www.u-tokyo.ac.jp",
+      "popularPrograms": [
+        "Engineering",
+        "Economics",
+        "Computer Science",
+        "International Relations"
+      ],
+      "country": {
+        "id": "country-jp",
+        "code": "JP",
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+        "tuitionRange": "¥535,800 – ¥1,500,000/year",
+        "livingCost": "¥1,000,000 – ¥1,500,000/year",
+        "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+        "intakePeriods": [
+          "APRIL",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+      }
+    },
+    {
+      "id": "uni-kyoto-university",
+      "name": "Kyoto University",
+      "slug": "kyoto-university",
+      "countryId": "country-jp",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 46,
+      "tuitionMin": 500000,
+      "tuitionMax": 1200000,
+      "acceptanceRate": 25,
+      "description": "Top national university known for research excellence in science, medicine, and humanities.",
+      "website": "https://www.kyoto-u.ac.jp",
+      "popularPrograms": [
+        "Engineering",
+        "Medicine",
+        "Environmental Science",
+        "Economics"
+      ],
+      "country": {
+        "id": "country-jp",
+        "code": "JP",
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+        "tuitionRange": "¥535,800 – ¥1,500,000/year",
+        "livingCost": "¥1,000,000 – ¥1,500,000/year",
+        "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+        "intakePeriods": [
+          "APRIL",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+      }
+    },
+    {
+      "id": "uni-seoul-national-university",
+      "name": "Seoul National University",
+      "slug": "seoul-national-university",
+      "countryId": "country-kr",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 29,
+      "tuitionMin": 4000000,
+      "tuitionMax": 12000000,
+      "acceptanceRate": 22,
+      "description": "South Korea's flagship university with GKS scholarships and strong STEM programmes.",
+      "website": "https://www.snu.ac.kr",
+      "popularPrograms": [
+        "Engineering",
+        "Business",
+        "Computer Science",
+        "International Studies"
+      ],
+      "country": {
+        "id": "country-kr",
+        "code": "KR",
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+        "tuitionRange": "KRW 4M – 12M/year",
+        "livingCost": "KRW 8M – 12M/year",
+        "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+        "intakePeriods": [
+          "MARCH",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+      }
+    },
+    {
+      "id": "uni-kaist",
+      "name": "KAIST",
+      "slug": "kaist",
+      "countryId": "country-kr",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 53,
+      "tuitionMin": 3000000,
+      "tuitionMax": 8000000,
+      "acceptanceRate": 18,
+      "description": "Korea Advanced Institute of Science and Technology — Asia's MIT for engineering and technology.",
+      "website": "https://www.kaist.ac.kr",
+      "popularPrograms": [
+        "Computer Science",
+        "Electrical Engineering",
+        "Robotics",
+        "Biotech"
+      ],
+      "country": {
+        "id": "country-kr",
+        "code": "KR",
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+        "tuitionRange": "KRW 4M – 12M/year",
+        "livingCost": "KRW 8M – 12M/year",
+        "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+        "intakePeriods": [
+          "MARCH",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+      }
+    },
+    {
+      "id": "uni-university-of-malaya",
+      "name": "University of Malaya",
+      "slug": "university-of-malaya",
+      "countryId": "country-my",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 65,
+      "tuitionMin": 20000,
+      "tuitionMax": 50000,
+      "acceptanceRate": 50,
+      "description": "Malaysia's oldest and highest-ranked university with affordable fees and multicultural campus.",
+      "website": "https://www.um.edu.my",
+      "popularPrograms": [
+        "Engineering",
+        "Medicine",
+        "Business",
+        "Computer Science"
+      ],
+      "country": {
+        "id": "country-my",
+        "code": "MY",
+        "name": "Malaysia",
+        "flag": "🇲🇾",
+        "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+        "tuitionRange": "MYR 20,000 – 60,000/year",
+        "livingCost": "MYR 15,000 – 25,000/year",
+        "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+      }
+    },
+    {
+      "id": "uni-monash-university-malaysia",
+      "name": "Monash University Malaysia",
+      "slug": "monash-university-malaysia",
+      "countryId": "country-my",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 42,
+      "tuitionMin": 40000,
+      "tuitionMax": 90000,
+      "acceptanceRate": 60,
+      "description": "Australian branch campus in Malaysia offering globally recognised degrees at lower cost.",
+      "website": "https://www.monash.edu.my",
+      "popularPrograms": [
+        "Engineering",
+        "Business",
+        "Medicine",
+        "IT"
+      ],
+      "country": {
+        "id": "country-my",
+        "code": "MY",
+        "name": "Malaysia",
+        "flag": "🇲🇾",
+        "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+        "tuitionRange": "MYR 20,000 – 60,000/year",
+        "livingCost": "MYR 15,000 – 25,000/year",
+        "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+      }
+    },
+    {
+      "id": "uni-kth-royal-institute-technology",
+      "name": "KTH Royal Institute of Technology",
+      "slug": "kth-royal-institute-technology",
+      "countryId": "country-se",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 73,
+      "tuitionMin": 150000,
+      "tuitionMax": 350000,
+      "acceptanceRate": 45,
+      "description": "Sweden's largest technical university with innovation focus and English-taught masters.",
+      "website": "https://www.kth.se",
+      "popularPrograms": [
+        "Computer Science",
+        "Electrical Engineering",
+        "Sustainability",
+        "Architecture"
+      ],
+      "country": {
+        "id": "country-se",
+        "code": "SE",
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+        "tuitionRange": "SEK 80,000 – 295,000/year",
+        "livingCost": "SEK 90,000 – 120,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+        "intakePeriods": [
+          "AUGUST",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "6-month residence permit extension to seek employment."
+      }
+    },
+    {
+      "id": "uni-lund-university",
+      "name": "Lund University",
+      "slug": "lund-university",
+      "countryId": "country-se",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 85,
+      "tuitionMin": 100000,
+      "tuitionMax": 300000,
+      "acceptanceRate": 50,
+      "description": "One of Scandinavia's oldest universities with strong research and international student community.",
+      "website": "https://www.lu.se",
+      "popularPrograms": [
+        "Engineering",
+        "Economics",
+        "International Business",
+        "Data Analytics"
+      ],
+      "country": {
+        "id": "country-se",
+        "code": "SE",
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+        "tuitionRange": "SEK 80,000 – 295,000/year",
+        "livingCost": "SEK 90,000 – 120,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+        "intakePeriods": [
+          "AUGUST",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "6-month residence permit extension to seek employment."
+      }
+    },
+    {
+      "id": "uni-university-of-barcelona",
+      "name": "University of Barcelona",
+      "slug": "university-of-barcelona",
+      "countryId": "country-es",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 164,
+      "tuitionMin": 2000,
+      "tuitionMax": 8000,
+      "acceptanceRate": 55,
+      "description": "Leading Spanish public university in vibrant Barcelona with affordable EU tuition.",
+      "website": "https://www.ub.edu",
+      "popularPrograms": [
+        "Economics",
+        "Biology",
+        "Computer Science",
+        "Tourism"
+      ],
+      "country": {
+        "id": "country-es",
+        "code": "ES",
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+        "tuitionRange": "€1,000 – €18,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month post-study residence authorization for job search."
+      }
+    },
+    {
+      "id": "uni-ie-university",
+      "name": "IE University",
+      "slug": "ie-university",
+      "countryId": "country-es",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 0,
+      "tuitionMin": 25000,
+      "tuitionMax": 45000,
+      "acceptanceRate": 35,
+      "description": "Private Spanish university renowned for business, law, and technology with global outlook.",
+      "website": "https://www.ie.edu",
+      "popularPrograms": [
+        "MBA",
+        "Business Analytics",
+        "Law",
+        "Architecture"
+      ],
+      "country": {
+        "id": "country-es",
+        "code": "ES",
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+        "tuitionRange": "€1,000 – €18,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month post-study residence authorization for job search."
+      }
+    },
+    {
+      "id": "uni-university-of-helsinki",
+      "name": "University of Helsinki",
+      "slug": "university-of-helsinki",
+      "countryId": "country-fi",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 107,
+      "tuitionMin": 13000,
+      "tuitionMax": 18000,
+      "acceptanceRate": 48,
+      "description": "Finland's oldest and largest university with English-taught masters and high research output.",
+      "website": "https://www.helsinki.fi",
+      "popularPrograms": [
+        "Computer Science",
+        "Environmental Science",
+        "Medicine",
+        "Education"
+      ],
+      "country": {
+        "id": "country-fi",
+        "code": "FI",
+        "name": "Finland",
+        "flag": "🇫🇮",
+        "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+        "tuitionRange": "€8,000 – €18,000/year",
+        "livingCost": "€9,000 – €13,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+      }
+    },
+    {
+      "id": "uni-aalto-university",
+      "name": "Aalto University",
+      "slug": "aalto-university",
+      "countryId": "country-fi",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 109,
+      "tuitionMin": 12000,
+      "tuitionMax": 18000,
+      "acceptanceRate": 42,
+      "description": "Finnish multidisciplinary university combining technology, business, and design.",
+      "website": "https://www.aalto.fi",
+      "popularPrograms": [
+        "Computer Science",
+        "Design",
+        "Business",
+        "Engineering"
+      ],
+      "country": {
+        "id": "country-fi",
+        "code": "FI",
+        "name": "Finland",
+        "flag": "🇫🇮",
+        "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+        "tuitionRange": "€8,000 – €18,000/year",
+        "livingCost": "€9,000 – €13,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+      }
+    },
+    {
+      "id": "uni-mcgill-university",
+      "name": "McGill University",
+      "slug": "mcgill-university",
+      "countryId": "country-ca",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 30,
+      "tuitionMin": 22000,
+      "tuitionMax": 55000,
+      "acceptanceRate": 46,
+      "description": "Canada's top-ranked university in Montreal with global reputation in medicine, law, and engineering.",
+      "website": "https://www.mcgill.ca",
+      "popularPrograms": [
+        "Medicine",
+        "Engineering",
+        "Computer Science",
+        "Management"
+      ],
+      "country": {
+        "id": "country-ca",
+        "code": "CA",
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+        "tuitionRange": "CAD 18,000 – 45,000/year",
+        "livingCost": "CAD 12,000 – 18,000/year",
+        "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY",
+          "MAY"
+        ],
+        "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+      }
+    },
+    {
+      "id": "uni-rwth-aachen-university",
+      "name": "RWTH Aachen University",
+      "slug": "rwth-aachen-university",
+      "countryId": "country-de",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 99,
+      "tuitionMin": 0,
+      "tuitionMax": 5000,
+      "acceptanceRate": 50,
+      "description": "Germany's largest technical university with industry partnerships and low tuition fees.",
+      "website": "https://www.rwth-aachen.de",
+      "popularPrograms": [
+        "Mechanical Engineering",
+        "Computer Science",
+        "Electrical Engineering",
+        "Physics"
+      ],
+      "country": {
+        "id": "country-de",
+        "code": "DE",
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+        "tuitionRange": "€0 – €20,000/year (public unis often free)",
+        "livingCost": "€10,000 – €12,000/year",
+        "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+        "intakePeriods": [
+          "OCTOBER",
+          "APRIL"
+        ],
+        "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+      }
+    },
+    {
+      "id": "uni-university-college-dublin",
+      "name": "University College Dublin",
+      "slug": "university-college-dublin",
+      "countryId": "country-ie",
+      "logo": null,
+      "campusImage": null,
+      "worldRanking": 126,
+      "tuitionMin": 18000,
+      "tuitionMax": 32000,
+      "acceptanceRate": 52,
+      "description": "Ireland's largest university with strong business, computing, and pharma programmes.",
+      "website": "https://www.ucd.ie",
+      "popularPrograms": [
+        "Business",
+        "Computer Science",
+        "Pharmacy",
+        "Veterinary Science"
+      ],
+      "country": {
+        "id": "country-ie",
+        "code": "IE",
+        "name": "Ireland",
+        "flag": "🇮🇪",
+        "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+        "tuitionRange": "€12,000 – €35,000/year",
+        "livingCost": "€10,000 – €15,000/year",
+        "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
       }
     }
   ],
@@ -3473,7 +4069,1413 @@
           "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
         }
       },
-      "scholarships": []
+      "scholarships": [
+        {
+          "id": "sch-ud-excellence",
+          "name": "University of Dubai Merit Scholarship",
+          "awardAmount": 20000,
+          "currency": "AED"
+        }
+      ]
+    },
+    {
+      "id": "course-polimi-msc-cse",
+      "name": "MSc Computer Science and Engineering",
+      "slug": "polimi-msc-cse",
+      "universityId": "uni-politecnico-di-milano",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 3894,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS or engineering bachelor's. IELTS 6.0.",
+      "description": "English-taught computer science masters at Politecnico di Milano.",
+      "university": {
+        "id": "uni-politecnico-di-milano",
+        "name": "Politecnico di Milano",
+        "slug": "politecnico-di-milano",
+        "countryId": "country-it",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 111,
+        "tuitionMin": 4000,
+        "tuitionMax": 12000,
+        "acceptanceRate": 40,
+        "description": "Italy's top technical university for engineering, architecture, and design with English-taught masters.",
+        "website": "https://www.polimi.it",
+        "popularPrograms": [
+          "Engineering",
+          "Architecture",
+          "Design",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-it",
+          "code": "IT",
+          "name": "Italy",
+          "flag": "🇮🇹",
+          "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+          "tuitionRange": "€1,000 – €15,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-polimi-gold",
+          "name": "Polimi Gold Medal Scholarship",
+          "awardAmount": 10000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-polimi-msc-management-engineering",
+      "name": "MSc Management Engineering",
+      "slug": "polimi-msc-management-engineering",
+      "universityId": "uni-politecnico-di-milano",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 3894,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Engineering or economics bachelor's. IELTS 6.0.",
+      "description": "Interdisciplinary management and engineering programme.",
+      "university": {
+        "id": "uni-politecnico-di-milano",
+        "name": "Politecnico di Milano",
+        "slug": "politecnico-di-milano",
+        "countryId": "country-it",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 111,
+        "tuitionMin": 4000,
+        "tuitionMax": 12000,
+        "acceptanceRate": 40,
+        "description": "Italy's top technical university for engineering, architecture, and design with English-taught masters.",
+        "website": "https://www.polimi.it",
+        "popularPrograms": [
+          "Engineering",
+          "Architecture",
+          "Design",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-it",
+          "code": "IT",
+          "name": "Italy",
+          "flag": "🇮🇹",
+          "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+          "tuitionRange": "€1,000 – €15,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-polimi-gold",
+          "name": "Polimi Gold Medal Scholarship",
+          "awardAmount": 10000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-unibo-msc-ai",
+      "name": "MSc in Artificial Intelligence",
+      "slug": "unibo-msc-ai",
+      "universityId": "uni-university-of-bologna",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 3500,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS or related bachelor's. IELTS 6.0.",
+      "description": "AI masters combining machine learning, NLP, and robotics.",
+      "university": {
+        "id": "uni-university-of-bologna",
+        "name": "University of Bologna",
+        "slug": "university-of-bologna",
+        "countryId": "country-it",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 133,
+        "tuitionMin": 3000,
+        "tuitionMax": 8000,
+        "acceptanceRate": 55,
+        "description": "Europe's oldest university with affordable tuition and growing English-taught programmes.",
+        "website": "https://www.unibo.it",
+        "popularPrograms": [
+          "Economics",
+          "Engineering",
+          "Law",
+          "Data Science"
+        ],
+        "country": {
+          "id": "country-it",
+          "code": "IT",
+          "name": "Italy",
+          "flag": "🇮🇹",
+          "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+          "tuitionRange": "€1,000 – €15,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-unibo-study-grant",
+          "name": "Unibo Action 1 Study Grant",
+          "awardAmount": 11000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-utokyo-peak-balis",
+      "name": "Bachelor of Arts in International Liberal Studies (PEAK)",
+      "slug": "utokyo-peak-balis",
+      "universityId": "uni-university-of-tokyo",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 535800,
+      "currency": "JPY",
+      "intakePeriods": [
+        "APRIL"
+      ],
+      "eligibility": "Strong high school record. IELTS 7.0+. No Japanese required.",
+      "description": "All-English liberal arts undergraduate at University of Tokyo.",
+      "university": {
+        "id": "uni-university-of-tokyo",
+        "name": "University of Tokyo",
+        "slug": "university-of-tokyo",
+        "countryId": "country-jp",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 28,
+        "tuitionMin": 500000,
+        "tuitionMax": 1500000,
+        "acceptanceRate": 20,
+        "description": "Japan's most prestigious university with PEAK English programmes and MEXT scholarship pathways.",
+        "website": "https://www.u-tokyo.ac.jp",
+        "popularPrograms": [
+          "Engineering",
+          "Economics",
+          "Computer Science",
+          "International Relations"
+        ],
+        "country": {
+          "id": "country-jp",
+          "code": "JP",
+          "name": "Japan",
+          "flag": "🇯🇵",
+          "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+          "tuitionRange": "¥535,800 – ¥1,500,000/year",
+          "livingCost": "¥1,000,000 – ¥1,500,000/year",
+          "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+          "intakePeriods": [
+            "APRIL",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-mext-japan",
+          "name": "MEXT (Monbukagakusho) Scholarship",
+          "awardAmount": 1500000,
+          "currency": "JPY"
+        }
+      ]
+    },
+    {
+      "id": "course-utokyo-msc-ist",
+      "name": "MSc in Information Science and Technology",
+      "slug": "utokyo-msc-ist",
+      "universityId": "uni-university-of-tokyo",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 535800,
+      "currency": "JPY",
+      "intakePeriods": [
+        "APRIL",
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS bachelor's. English proficiency required.",
+      "description": "Graduate programme in information science at UTokyo.",
+      "university": {
+        "id": "uni-university-of-tokyo",
+        "name": "University of Tokyo",
+        "slug": "university-of-tokyo",
+        "countryId": "country-jp",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 28,
+        "tuitionMin": 500000,
+        "tuitionMax": 1500000,
+        "acceptanceRate": 20,
+        "description": "Japan's most prestigious university with PEAK English programmes and MEXT scholarship pathways.",
+        "website": "https://www.u-tokyo.ac.jp",
+        "popularPrograms": [
+          "Engineering",
+          "Economics",
+          "Computer Science",
+          "International Relations"
+        ],
+        "country": {
+          "id": "country-jp",
+          "code": "JP",
+          "name": "Japan",
+          "flag": "🇯🇵",
+          "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+          "tuitionRange": "¥535,800 – ¥1,500,000/year",
+          "livingCost": "¥1,000,000 – ¥1,500,000/year",
+          "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+          "intakePeriods": [
+            "APRIL",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-mext-japan",
+          "name": "MEXT (Monbukagakusho) Scholarship",
+          "awardAmount": 1500000,
+          "currency": "JPY"
+        }
+      ]
+    },
+    {
+      "id": "course-kyoto-msc-civil-engineering",
+      "name": "MSc in Civil and Earth Resources Engineering",
+      "slug": "kyoto-msc-civil-engineering",
+      "universityId": "uni-kyoto-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 535800,
+      "currency": "JPY",
+      "intakePeriods": [
+        "APRIL"
+      ],
+      "eligibility": "Engineering bachelor's. IELTS 6.5.",
+      "description": "English-track civil engineering masters at Kyoto University.",
+      "university": {
+        "id": "uni-kyoto-university",
+        "name": "Kyoto University",
+        "slug": "kyoto-university",
+        "countryId": "country-jp",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 46,
+        "tuitionMin": 500000,
+        "tuitionMax": 1200000,
+        "acceptanceRate": 25,
+        "description": "Top national university known for research excellence in science, medicine, and humanities.",
+        "website": "https://www.kyoto-u.ac.jp",
+        "popularPrograms": [
+          "Engineering",
+          "Medicine",
+          "Environmental Science",
+          "Economics"
+        ],
+        "country": {
+          "id": "country-jp",
+          "code": "JP",
+          "name": "Japan",
+          "flag": "🇯🇵",
+          "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+          "tuitionRange": "¥535,800 – ¥1,500,000/year",
+          "livingCost": "¥1,000,000 – ¥1,500,000/year",
+          "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+          "intakePeriods": [
+            "APRIL",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-kyoto-international",
+          "name": "Kyoto University International Scholarship",
+          "awardAmount": 800000,
+          "currency": "JPY"
+        }
+      ]
+    },
+    {
+      "id": "course-snu-msc-cse",
+      "name": "MSc in Computer Science and Engineering",
+      "slug": "snu-msc-cse",
+      "universityId": "uni-seoul-national-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 6500000,
+      "currency": "KRW",
+      "intakePeriods": [
+        "MARCH",
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS bachelor's. IELTS 6.5 or TOEFL 80.",
+      "description": "Graduate computer science at Seoul National University.",
+      "university": {
+        "id": "uni-seoul-national-university",
+        "name": "Seoul National University",
+        "slug": "seoul-national-university",
+        "countryId": "country-kr",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 29,
+        "tuitionMin": 4000000,
+        "tuitionMax": 12000000,
+        "acceptanceRate": 22,
+        "description": "South Korea's flagship university with GKS scholarships and strong STEM programmes.",
+        "website": "https://www.snu.ac.kr",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Computer Science",
+          "International Studies"
+        ],
+        "country": {
+          "id": "country-kr",
+          "code": "KR",
+          "name": "South Korea",
+          "flag": "🇰🇷",
+          "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+          "tuitionRange": "KRW 4M – 12M/year",
+          "livingCost": "KRW 8M – 12M/year",
+          "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+          "intakePeriods": [
+            "MARCH",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-gks-korea",
+          "name": "Global Korea Scholarship (GKS)",
+          "awardAmount": 10000000,
+          "currency": "KRW"
+        }
+      ]
+    },
+    {
+      "id": "course-snu-mba",
+      "name": "MBA",
+      "slug": "snu-mba",
+      "universityId": "uni-seoul-national-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 12000000,
+      "currency": "KRW",
+      "intakePeriods": [
+        "MARCH"
+      ],
+      "eligibility": "Bachelor's + work experience. GMAT/GRE. IELTS 7.0.",
+      "description": "SNU Business School MBA programme.",
+      "university": {
+        "id": "uni-seoul-national-university",
+        "name": "Seoul National University",
+        "slug": "seoul-national-university",
+        "countryId": "country-kr",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 29,
+        "tuitionMin": 4000000,
+        "tuitionMax": 12000000,
+        "acceptanceRate": 22,
+        "description": "South Korea's flagship university with GKS scholarships and strong STEM programmes.",
+        "website": "https://www.snu.ac.kr",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Computer Science",
+          "International Studies"
+        ],
+        "country": {
+          "id": "country-kr",
+          "code": "KR",
+          "name": "South Korea",
+          "flag": "🇰🇷",
+          "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+          "tuitionRange": "KRW 4M – 12M/year",
+          "livingCost": "KRW 8M – 12M/year",
+          "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+          "intakePeriods": [
+            "MARCH",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-gks-korea",
+          "name": "Global Korea Scholarship (GKS)",
+          "awardAmount": 10000000,
+          "currency": "KRW"
+        }
+      ]
+    },
+    {
+      "id": "course-kaist-msc-cs",
+      "name": "MSc in Computer Science",
+      "slug": "kaist-msc-cs",
+      "universityId": "uni-kaist",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 5000000,
+      "currency": "KRW",
+      "intakePeriods": [
+        "MARCH",
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS bachelor's with strong GPA. IELTS 6.5.",
+      "description": "Research-focused CS masters at KAIST School of Computing.",
+      "university": {
+        "id": "uni-kaist",
+        "name": "KAIST",
+        "slug": "kaist",
+        "countryId": "country-kr",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 53,
+        "tuitionMin": 3000000,
+        "tuitionMax": 8000000,
+        "acceptanceRate": 18,
+        "description": "Korea Advanced Institute of Science and Technology — Asia's MIT for engineering and technology.",
+        "website": "https://www.kaist.ac.kr",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Robotics",
+          "Biotech"
+        ],
+        "country": {
+          "id": "country-kr",
+          "code": "KR",
+          "name": "South Korea",
+          "flag": "🇰🇷",
+          "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+          "tuitionRange": "KRW 4M – 12M/year",
+          "livingCost": "KRW 8M – 12M/year",
+          "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+          "intakePeriods": [
+            "MARCH",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-kaist-international",
+          "name": "KAIST International Student Scholarship",
+          "awardAmount": 5000000,
+          "currency": "KRW"
+        }
+      ]
+    },
+    {
+      "id": "course-um-bsc-computer-science",
+      "name": "BSc in Computer Science",
+      "slug": "um-bsc-computer-science",
+      "universityId": "uni-university-of-malaya",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 35000,
+      "currency": "MYR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "STPM/A-levels with mathematics. IELTS 5.5.",
+      "description": "Undergraduate computer science at University of Malaya.",
+      "university": {
+        "id": "uni-university-of-malaya",
+        "name": "University of Malaya",
+        "slug": "university-of-malaya",
+        "countryId": "country-my",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 65,
+        "tuitionMin": 20000,
+        "tuitionMax": 50000,
+        "acceptanceRate": 50,
+        "description": "Malaysia's oldest and highest-ranked university with affordable fees and multicultural campus.",
+        "website": "https://www.um.edu.my",
+        "popularPrograms": [
+          "Engineering",
+          "Medicine",
+          "Business",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-my",
+          "code": "MY",
+          "name": "Malaysia",
+          "flag": "🇲🇾",
+          "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+          "tuitionRange": "MYR 20,000 – 60,000/year",
+          "livingCost": "MYR 15,000 – 25,000/year",
+          "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-um-international",
+          "name": "UM International Student Scholarship",
+          "awardAmount": 15000,
+          "currency": "MYR"
+        }
+      ]
+    },
+    {
+      "id": "course-um-msc-data-science",
+      "name": "MSc in Data Science",
+      "slug": "um-msc-data-science",
+      "universityId": "uni-university-of-malaya",
+      "degreeLevel": "MASTERS",
+      "duration": "1.5 years",
+      "tuition": 42000,
+      "currency": "MYR",
+      "intakePeriods": [
+        "SEPTEMBER",
+        "FEBRUARY"
+      ],
+      "eligibility": "Quantitative bachelor's. IELTS 6.0.",
+      "description": "Data science masters combining statistics, ML, and analytics.",
+      "university": {
+        "id": "uni-university-of-malaya",
+        "name": "University of Malaya",
+        "slug": "university-of-malaya",
+        "countryId": "country-my",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 65,
+        "tuitionMin": 20000,
+        "tuitionMax": 50000,
+        "acceptanceRate": 50,
+        "description": "Malaysia's oldest and highest-ranked university with affordable fees and multicultural campus.",
+        "website": "https://www.um.edu.my",
+        "popularPrograms": [
+          "Engineering",
+          "Medicine",
+          "Business",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-my",
+          "code": "MY",
+          "name": "Malaysia",
+          "flag": "🇲🇾",
+          "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+          "tuitionRange": "MYR 20,000 – 60,000/year",
+          "livingCost": "MYR 15,000 – 25,000/year",
+          "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-um-international",
+          "name": "UM International Student Scholarship",
+          "awardAmount": 15000,
+          "currency": "MYR"
+        }
+      ]
+    },
+    {
+      "id": "course-monash-my-bcs",
+      "name": "Bachelor of Computer Science",
+      "slug": "monash-my-bcs",
+      "universityId": "uni-monash-university-malaysia",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 55000,
+      "currency": "MYR",
+      "intakePeriods": [
+        "FEBRUARY",
+        "SEPTEMBER"
+      ],
+      "eligibility": "A-levels or equivalent. IELTS 6.5.",
+      "description": "Monash CS degree awarded at Malaysia campus.",
+      "university": {
+        "id": "uni-monash-university-malaysia",
+        "name": "Monash University Malaysia",
+        "slug": "monash-university-malaysia",
+        "countryId": "country-my",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 42,
+        "tuitionMin": 40000,
+        "tuitionMax": 90000,
+        "acceptanceRate": 60,
+        "description": "Australian branch campus in Malaysia offering globally recognised degrees at lower cost.",
+        "website": "https://www.monash.edu.my",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Medicine",
+          "IT"
+        ],
+        "country": {
+          "id": "country-my",
+          "code": "MY",
+          "name": "Malaysia",
+          "flag": "🇲🇾",
+          "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+          "tuitionRange": "MYR 20,000 – 60,000/year",
+          "livingCost": "MYR 15,000 – 25,000/year",
+          "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-monash-my-merit",
+          "name": "Monash Malaysia High Achiever Scholarship",
+          "awardAmount": 25000,
+          "currency": "MYR"
+        }
+      ]
+    },
+    {
+      "id": "course-kth-msc-cs",
+      "name": "MSc Computer Science",
+      "slug": "kth-msc-cs",
+      "universityId": "uni-kth-royal-institute-technology",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 310000,
+      "currency": "SEK",
+      "intakePeriods": [
+        "AUGUST"
+      ],
+      "eligibility": "CS bachelor's. IELTS 6.5.",
+      "description": "English-taught computer science masters at KTH.",
+      "university": {
+        "id": "uni-kth-royal-institute-technology",
+        "name": "KTH Royal Institute of Technology",
+        "slug": "kth-royal-institute-technology",
+        "countryId": "country-se",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 73,
+        "tuitionMin": 150000,
+        "tuitionMax": 350000,
+        "acceptanceRate": 45,
+        "description": "Sweden's largest technical university with innovation focus and English-taught masters.",
+        "website": "https://www.kth.se",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Sustainability",
+          "Architecture"
+        ],
+        "country": {
+          "id": "country-se",
+          "code": "SE",
+          "name": "Sweden",
+          "flag": "🇸🇪",
+          "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+          "tuitionRange": "SEK 80,000 – 295,000/year",
+          "livingCost": "SEK 90,000 – 120,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+          "intakePeriods": [
+            "AUGUST",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "6-month residence permit extension to seek employment."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-kth-india",
+          "name": "KTH India Scholarship",
+          "awardAmount": 310000,
+          "currency": "SEK"
+        }
+      ]
+    },
+    {
+      "id": "course-kth-msc-sustainable-energy",
+      "name": "MSc Sustainable Energy Engineering",
+      "slug": "kth-msc-sustainable-energy",
+      "universityId": "uni-kth-royal-institute-technology",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 310000,
+      "currency": "SEK",
+      "intakePeriods": [
+        "AUGUST"
+      ],
+      "eligibility": "Engineering bachelor's. IELTS 6.5.",
+      "description": "Sustainability and energy systems masters programme.",
+      "university": {
+        "id": "uni-kth-royal-institute-technology",
+        "name": "KTH Royal Institute of Technology",
+        "slug": "kth-royal-institute-technology",
+        "countryId": "country-se",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 73,
+        "tuitionMin": 150000,
+        "tuitionMax": 350000,
+        "acceptanceRate": 45,
+        "description": "Sweden's largest technical university with innovation focus and English-taught masters.",
+        "website": "https://www.kth.se",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Sustainability",
+          "Architecture"
+        ],
+        "country": {
+          "id": "country-se",
+          "code": "SE",
+          "name": "Sweden",
+          "flag": "🇸🇪",
+          "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+          "tuitionRange": "SEK 80,000 – 295,000/year",
+          "livingCost": "SEK 90,000 – 120,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+          "intakePeriods": [
+            "AUGUST",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "6-month residence permit extension to seek employment."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-kth-india",
+          "name": "KTH India Scholarship",
+          "awardAmount": 310000,
+          "currency": "SEK"
+        }
+      ]
+    },
+    {
+      "id": "course-lund-msc-data-analytics",
+      "name": "MSc in Data Analytics and Business Economics",
+      "slug": "lund-msc-data-analytics",
+      "universityId": "uni-lund-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 265000,
+      "currency": "SEK",
+      "intakePeriods": [
+        "AUGUST"
+      ],
+      "eligibility": "Economics or quantitative bachelor's. IELTS 6.5.",
+      "description": "Interdisciplinary data analytics and business programme.",
+      "university": {
+        "id": "uni-lund-university",
+        "name": "Lund University",
+        "slug": "lund-university",
+        "countryId": "country-se",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 85,
+        "tuitionMin": 100000,
+        "tuitionMax": 300000,
+        "acceptanceRate": 50,
+        "description": "One of Scandinavia's oldest universities with strong research and international student community.",
+        "website": "https://www.lu.se",
+        "popularPrograms": [
+          "Engineering",
+          "Economics",
+          "International Business",
+          "Data Analytics"
+        ],
+        "country": {
+          "id": "country-se",
+          "code": "SE",
+          "name": "Sweden",
+          "flag": "🇸🇪",
+          "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+          "tuitionRange": "SEK 80,000 – 295,000/year",
+          "livingCost": "SEK 90,000 – 120,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+          "intakePeriods": [
+            "AUGUST",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "6-month residence permit extension to seek employment."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-lund-global",
+          "name": "Lund University Global Scholarship",
+          "awardAmount": 200000,
+          "currency": "SEK"
+        }
+      ]
+    },
+    {
+      "id": "course-ub-msc-data-science",
+      "name": "MSc in Data Science",
+      "slug": "ub-msc-data-science",
+      "universityId": "uni-university-of-barcelona",
+      "degreeLevel": "MASTERS",
+      "duration": "1 year",
+      "tuition": 4500,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Quantitative bachelor's. IELTS 6.5 or Spanish B2.",
+      "description": "Data science masters at University of Barcelona.",
+      "university": {
+        "id": "uni-university-of-barcelona",
+        "name": "University of Barcelona",
+        "slug": "university-of-barcelona",
+        "countryId": "country-es",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 164,
+        "tuitionMin": 2000,
+        "tuitionMax": 8000,
+        "acceptanceRate": 55,
+        "description": "Leading Spanish public university in vibrant Barcelona with affordable EU tuition.",
+        "website": "https://www.ub.edu",
+        "popularPrograms": [
+          "Economics",
+          "Biology",
+          "Computer Science",
+          "Tourism"
+        ],
+        "country": {
+          "id": "country-es",
+          "code": "ES",
+          "name": "Spain",
+          "flag": "🇪🇸",
+          "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+          "tuitionRange": "€1,000 – €18,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month post-study residence authorization for job search."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-ub-mobility",
+          "name": "UB International Mobility Grant",
+          "awardAmount": 5000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-ub-bsc-computer-engineering",
+      "name": "BSc in Computer Engineering",
+      "slug": "ub-bsc-computer-engineering",
+      "universityId": "uni-university-of-barcelona",
+      "degreeLevel": "BACHELORS",
+      "duration": "4 years",
+      "tuition": 2500,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Baccalaureate with mathematics. Spanish or English track.",
+      "description": "Computer engineering undergraduate at UB.",
+      "university": {
+        "id": "uni-university-of-barcelona",
+        "name": "University of Barcelona",
+        "slug": "university-of-barcelona",
+        "countryId": "country-es",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 164,
+        "tuitionMin": 2000,
+        "tuitionMax": 8000,
+        "acceptanceRate": 55,
+        "description": "Leading Spanish public university in vibrant Barcelona with affordable EU tuition.",
+        "website": "https://www.ub.edu",
+        "popularPrograms": [
+          "Economics",
+          "Biology",
+          "Computer Science",
+          "Tourism"
+        ],
+        "country": {
+          "id": "country-es",
+          "code": "ES",
+          "name": "Spain",
+          "flag": "🇪🇸",
+          "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+          "tuitionRange": "€1,000 – €18,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month post-study residence authorization for job search."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-ub-mobility",
+          "name": "UB International Mobility Grant",
+          "awardAmount": 5000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-ie-mba-big-data",
+      "name": "Master in Business Analytics & Big Data",
+      "slug": "ie-mba-big-data",
+      "universityId": "uni-ie-university",
+      "degreeLevel": "MASTERS",
+      "duration": "11 months",
+      "tuition": 42000,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Quantitative bachelor's. IELTS 7.0. GMAT optional.",
+      "description": "Intensive business analytics masters at IE Madrid.",
+      "university": {
+        "id": "uni-ie-university",
+        "name": "IE University",
+        "slug": "ie-university",
+        "countryId": "country-es",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 0,
+        "tuitionMin": 25000,
+        "tuitionMax": 45000,
+        "acceptanceRate": 35,
+        "description": "Private Spanish university renowned for business, law, and technology with global outlook.",
+        "website": "https://www.ie.edu",
+        "popularPrograms": [
+          "MBA",
+          "Business Analytics",
+          "Law",
+          "Architecture"
+        ],
+        "country": {
+          "id": "country-es",
+          "code": "ES",
+          "name": "Spain",
+          "flag": "🇪🇸",
+          "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+          "tuitionRange": "€1,000 – €18,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month post-study residence authorization for job search."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-ie-talent",
+          "name": "IE Talent Scholarship",
+          "awardAmount": 15000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-helsinki-msc-cs",
+      "name": "MSc in Computer Science",
+      "slug": "helsinki-msc-cs",
+      "universityId": "uni-university-of-helsinki",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 15000,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS bachelor's. IELTS 6.5.",
+      "description": "English-taught computer science masters at University of Helsinki.",
+      "university": {
+        "id": "uni-university-of-helsinki",
+        "name": "University of Helsinki",
+        "slug": "university-of-helsinki",
+        "countryId": "country-fi",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 107,
+        "tuitionMin": 13000,
+        "tuitionMax": 18000,
+        "acceptanceRate": 48,
+        "description": "Finland's oldest and largest university with English-taught masters and high research output.",
+        "website": "https://www.helsinki.fi",
+        "popularPrograms": [
+          "Computer Science",
+          "Environmental Science",
+          "Medicine",
+          "Education"
+        ],
+        "country": {
+          "id": "country-fi",
+          "code": "FI",
+          "name": "Finland",
+          "flag": "🇫🇮",
+          "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+          "tuitionRange": "€8,000 – €18,000/year",
+          "livingCost": "€9,000 – €13,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-helsinki-merit",
+          "name": "University of Helsinki Scholarship",
+          "awardAmount": 10000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-helsinki-msc-data-science",
+      "name": "MSc in Data Science",
+      "slug": "helsinki-msc-data-science",
+      "universityId": "uni-university-of-helsinki",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 15000,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Quantitative bachelor's. IELTS 6.5.",
+      "description": "Interdisciplinary data science programme.",
+      "university": {
+        "id": "uni-university-of-helsinki",
+        "name": "University of Helsinki",
+        "slug": "university-of-helsinki",
+        "countryId": "country-fi",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 107,
+        "tuitionMin": 13000,
+        "tuitionMax": 18000,
+        "acceptanceRate": 48,
+        "description": "Finland's oldest and largest university with English-taught masters and high research output.",
+        "website": "https://www.helsinki.fi",
+        "popularPrograms": [
+          "Computer Science",
+          "Environmental Science",
+          "Medicine",
+          "Education"
+        ],
+        "country": {
+          "id": "country-fi",
+          "code": "FI",
+          "name": "Finland",
+          "flag": "🇫🇮",
+          "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+          "tuitionRange": "€8,000 – €18,000/year",
+          "livingCost": "€9,000 – €13,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-helsinki-merit",
+          "name": "University of Helsinki Scholarship",
+          "awardAmount": 10000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-aalto-msc-ccis",
+      "name": "MSc in Computer, Communication and Information Sciences",
+      "slug": "aalto-msc-ccis",
+      "universityId": "uni-aalto-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 15000,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "CS or EE bachelor's. IELTS 6.5.",
+      "description": "CCIS masters with specialisations in ML, security, and networks.",
+      "university": {
+        "id": "uni-aalto-university",
+        "name": "Aalto University",
+        "slug": "aalto-university",
+        "countryId": "country-fi",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 109,
+        "tuitionMin": 12000,
+        "tuitionMax": 18000,
+        "acceptanceRate": 42,
+        "description": "Finnish multidisciplinary university combining technology, business, and design.",
+        "website": "https://www.aalto.fi",
+        "popularPrograms": [
+          "Computer Science",
+          "Design",
+          "Business",
+          "Engineering"
+        ],
+        "country": {
+          "id": "country-fi",
+          "code": "FI",
+          "name": "Finland",
+          "flag": "🇫🇮",
+          "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+          "tuitionRange": "€8,000 – €18,000/year",
+          "livingCost": "€9,000 – €13,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-aalto-excellence",
+          "name": "Aalto University Excellence Scholarship",
+          "awardAmount": 12000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-mcgill-bsc-cs",
+      "name": "BSc in Computer Science",
+      "slug": "mcgill-bsc-cs",
+      "universityId": "uni-mcgill-university",
+      "degreeLevel": "BACHELORS",
+      "duration": "3 years",
+      "tuition": 48000,
+      "currency": "CAD",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Strong high school grades in math/science. IELTS 6.5.",
+      "description": "Computer science undergraduate at McGill Faculty of Science.",
+      "university": {
+        "id": "uni-mcgill-university",
+        "name": "McGill University",
+        "slug": "mcgill-university",
+        "countryId": "country-ca",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 30,
+        "tuitionMin": 22000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 46,
+        "description": "Canada's top-ranked university in Montreal with global reputation in medicine, law, and engineering.",
+        "website": "https://www.mcgill.ca",
+        "popularPrograms": [
+          "Medicine",
+          "Engineering",
+          "Computer Science",
+          "Management"
+        ],
+        "country": {
+          "id": "country-ca",
+          "code": "CA",
+          "name": "Canada",
+          "flag": "🇨🇦",
+          "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+          "tuitionRange": "CAD 18,000 – 45,000/year",
+          "livingCost": "CAD 12,000 – 18,000/year",
+          "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY",
+            "MAY"
+          ],
+          "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-mcgill-entrance",
+          "name": "McGill Entrance Scholarship",
+          "awardAmount": 12000,
+          "currency": "CAD"
+        }
+      ]
+    },
+    {
+      "id": "course-rwth-msc-cs",
+      "name": "MSc in Computer Science",
+      "slug": "rwth-msc-cs",
+      "universityId": "uni-rwth-aachen-university",
+      "degreeLevel": "MASTERS",
+      "duration": "2 years",
+      "tuition": 0,
+      "currency": "EUR",
+      "intakePeriods": [
+        "OCTOBER",
+        "APRIL"
+      ],
+      "eligibility": "CS bachelor's. IELTS 6.5 or German B2.",
+      "description": "English/German CS masters at RWTH Aachen.",
+      "university": {
+        "id": "uni-rwth-aachen-university",
+        "name": "RWTH Aachen University",
+        "slug": "rwth-aachen-university",
+        "countryId": "country-de",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 99,
+        "tuitionMin": 0,
+        "tuitionMax": 5000,
+        "acceptanceRate": 50,
+        "description": "Germany's largest technical university with industry partnerships and low tuition fees.",
+        "website": "https://www.rwth-aachen.de",
+        "popularPrograms": [
+          "Mechanical Engineering",
+          "Computer Science",
+          "Electrical Engineering",
+          "Physics"
+        ],
+        "country": {
+          "id": "country-de",
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+          "tuitionRange": "€0 – €20,000/year (public unis often free)",
+          "livingCost": "€10,000 – €12,000/year",
+          "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+          "intakePeriods": [
+            "OCTOBER",
+            "APRIL"
+          ],
+          "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-daad-germany",
+          "name": "DAAD Scholarship (Germany)",
+          "awardAmount": 12000,
+          "currency": "EUR"
+        }
+      ]
+    },
+    {
+      "id": "course-ucd-msc-cs-conversion",
+      "name": "MSc in Computer Science (Conversion)",
+      "slug": "ucd-msc-cs-conversion",
+      "universityId": "uni-university-college-dublin",
+      "degreeLevel": "MASTERS",
+      "duration": "1.5 years",
+      "tuition": 26000,
+      "currency": "EUR",
+      "intakePeriods": [
+        "SEPTEMBER"
+      ],
+      "eligibility": "Non-CS bachelor's with aptitude for computing. IELTS 6.5.",
+      "description": "Conversion masters for career changers into computer science.",
+      "university": {
+        "id": "uni-university-college-dublin",
+        "name": "University College Dublin",
+        "slug": "university-college-dublin",
+        "countryId": "country-ie",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 126,
+        "tuitionMin": 18000,
+        "tuitionMax": 32000,
+        "acceptanceRate": 52,
+        "description": "Ireland's largest university with strong business, computing, and pharma programmes.",
+        "website": "https://www.ucd.ie",
+        "popularPrograms": [
+          "Business",
+          "Computer Science",
+          "Pharmacy",
+          "Veterinary Science"
+        ],
+        "country": {
+          "id": "country-ie",
+          "code": "IE",
+          "name": "Ireland",
+          "flag": "🇮🇪",
+          "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+          "tuitionRange": "€12,000 – €35,000/year",
+          "livingCost": "€10,000 – €15,000/year",
+          "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
+        }
+      },
+      "scholarships": [
+        {
+          "id": "sch-ucd-global",
+          "name": "UCD Global Excellence Scholarship",
+          "awardAmount": 10000,
+          "currency": "EUR"
+        }
+      ]
     }
   ],
   "scholarships": [
@@ -4722,6 +6724,1200 @@
           }
         ]
       }
+    },
+    {
+      "id": "sch-ud-excellence",
+      "name": "University of Dubai Merit Scholarship",
+      "awardAmount": 20000,
+      "currency": "AED",
+      "deadline": "2026-08-15",
+      "eligibility": "High-achieving international applicants with GPA 3.5+.",
+      "requirements": "Admission application and scholarship essay.",
+      "universityId": "uni-university-of-dubai",
+      "countryId": "country-ae",
+      "courseId": "course-ud-mba",
+      "university": {
+        "id": "uni-university-of-dubai",
+        "name": "University of Dubai",
+        "slug": "university-of-dubai",
+        "countryId": "country-ae",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 0,
+        "tuitionMin": 35000,
+        "tuitionMax": 80000,
+        "acceptanceRate": 70,
+        "description": "Leading UAE institution offering accredited business, IT, and engineering programs in Dubai.",
+        "website": "https://www.ud.ac.ae",
+        "popularPrograms": [
+          "MBA",
+          "Information Technology",
+          "Business",
+          "Law"
+        ],
+        "country": {
+          "id": "country-ae",
+          "code": "AE",
+          "name": "UAE",
+          "flag": "🇦🇪",
+          "description": "Dubai and Abu Dhabi host branch campuses of global universities with tax-free earning potential and modern infrastructure.",
+          "tuitionRange": "AED 40,000 – 120,000/year",
+          "livingCost": "AED 30,000 – 50,000/year",
+          "visaRequirements": "Student residence visa sponsored by university. IELTS 5.5–6.5.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+        }
+      },
+      "country": {
+        "id": "country-ae",
+        "code": "AE",
+        "name": "UAE",
+        "flag": "🇦🇪",
+        "description": "Dubai and Abu Dhabi host branch campuses of global universities with tax-free earning potential and modern infrastructure.",
+        "tuitionRange": "AED 40,000 – 120,000/year",
+        "livingCost": "AED 30,000 – 50,000/year",
+        "visaRequirements": "Student residence visa sponsored by university. IELTS 5.5–6.5.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+      },
+      "course": {
+        "id": "course-ud-mba",
+        "name": "MBA",
+        "slug": "ud-mba",
+        "universityId": "uni-university-of-dubai",
+        "degreeLevel": "MASTERS",
+        "duration": "1 year",
+        "tuition": 65000,
+        "currency": "AED",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "eligibility": "Bachelor's + 2 years work experience. IELTS 6.0.",
+        "description": "Accelerated MBA program at University of Dubai.",
+        "university": {
+          "id": "uni-university-of-dubai",
+          "name": "University of Dubai",
+          "slug": "university-of-dubai",
+          "countryId": "country-ae",
+          "logo": null,
+          "campusImage": null,
+          "worldRanking": 0,
+          "tuitionMin": 35000,
+          "tuitionMax": 80000,
+          "acceptanceRate": 70,
+          "description": "Leading UAE institution offering accredited business, IT, and engineering programs in Dubai.",
+          "website": "https://www.ud.ac.ae",
+          "popularPrograms": [
+            "MBA",
+            "Information Technology",
+            "Business",
+            "Law"
+          ],
+          "country": {
+            "id": "country-ae",
+            "code": "AE",
+            "name": "UAE",
+            "flag": "🇦🇪",
+            "description": "Dubai and Abu Dhabi host branch campuses of global universities with tax-free earning potential and modern infrastructure.",
+            "tuitionRange": "AED 40,000 – 120,000/year",
+            "livingCost": "AED 30,000 – 50,000/year",
+            "visaRequirements": "Student residence visa sponsored by university. IELTS 5.5–6.5.",
+            "intakePeriods": [
+              "SEPTEMBER",
+              "JANUARY"
+            ],
+            "graduateOpportunities": "Employment visa sponsorship through UAE-based employers."
+          }
+        },
+        "scholarships": [
+          {
+            "id": "sch-ud-excellence",
+            "name": "University of Dubai Merit Scholarship",
+            "awardAmount": 20000,
+            "currency": "AED"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sch-polimi-gold",
+      "name": "Polimi Gold Medal Scholarship",
+      "awardAmount": 10000,
+      "currency": "EUR",
+      "deadline": "2026-05-30",
+      "eligibility": "Outstanding international MSc applicants.",
+      "requirements": "Merit-based selection with admission application.",
+      "universityId": "uni-politecnico-di-milano",
+      "countryId": "country-it",
+      "courseId": null,
+      "university": {
+        "id": "uni-politecnico-di-milano",
+        "name": "Politecnico di Milano",
+        "slug": "politecnico-di-milano",
+        "countryId": "country-it",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 111,
+        "tuitionMin": 4000,
+        "tuitionMax": 12000,
+        "acceptanceRate": 40,
+        "description": "Italy's top technical university for engineering, architecture, and design with English-taught masters.",
+        "website": "https://www.polimi.it",
+        "popularPrograms": [
+          "Engineering",
+          "Architecture",
+          "Design",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-it",
+          "code": "IT",
+          "name": "Italy",
+          "flag": "🇮🇹",
+          "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+          "tuitionRange": "€1,000 – €15,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+        }
+      },
+      "country": {
+        "id": "country-it",
+        "code": "IT",
+        "name": "Italy",
+        "flag": "🇮🇹",
+        "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+        "tuitionRange": "€1,000 – €15,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-unibo-study-grant",
+      "name": "Unibo Action 1 Study Grant",
+      "awardAmount": 11000,
+      "currency": "EUR",
+      "deadline": "2026-04-30",
+      "eligibility": "International students with strong academic merit.",
+      "requirements": "Online scholarship application with admission.",
+      "universityId": "uni-university-of-bologna",
+      "countryId": "country-it",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-bologna",
+        "name": "University of Bologna",
+        "slug": "university-of-bologna",
+        "countryId": "country-it",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 133,
+        "tuitionMin": 3000,
+        "tuitionMax": 8000,
+        "acceptanceRate": 55,
+        "description": "Europe's oldest university with affordable tuition and growing English-taught programmes.",
+        "website": "https://www.unibo.it",
+        "popularPrograms": [
+          "Economics",
+          "Engineering",
+          "Law",
+          "Data Science"
+        ],
+        "country": {
+          "id": "country-it",
+          "code": "IT",
+          "name": "Italy",
+          "flag": "🇮🇹",
+          "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+          "tuitionRange": "€1,000 – €15,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+        }
+      },
+      "country": {
+        "id": "country-it",
+        "code": "IT",
+        "name": "Italy",
+        "flag": "🇮🇹",
+        "description": "Affordable EU education, rich cultural heritage, and growing English-taught Masters in design, engineering, and business.",
+        "tuitionRange": "€1,000 – €15,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Study visa (D-type). IELTS or proof of English-medium prior degree.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month permesso di soggiorno for job search after graduation."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-mext-japan",
+      "name": "MEXT (Monbukagakusho) Scholarship",
+      "awardAmount": 1500000,
+      "currency": "JPY",
+      "deadline": "2026-09-01",
+      "eligibility": "International students applying to Japanese universities.",
+      "requirements": "Embassy recommendation or university recommendation track.",
+      "universityId": "uni-university-of-tokyo",
+      "countryId": "country-jp",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-tokyo",
+        "name": "University of Tokyo",
+        "slug": "university-of-tokyo",
+        "countryId": "country-jp",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 28,
+        "tuitionMin": 500000,
+        "tuitionMax": 1500000,
+        "acceptanceRate": 20,
+        "description": "Japan's most prestigious university with PEAK English programmes and MEXT scholarship pathways.",
+        "website": "https://www.u-tokyo.ac.jp",
+        "popularPrograms": [
+          "Engineering",
+          "Economics",
+          "Computer Science",
+          "International Relations"
+        ],
+        "country": {
+          "id": "country-jp",
+          "code": "JP",
+          "name": "Japan",
+          "flag": "🇯🇵",
+          "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+          "tuitionRange": "¥535,800 – ¥1,500,000/year",
+          "livingCost": "¥1,000,000 – ¥1,500,000/year",
+          "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+          "intakePeriods": [
+            "APRIL",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+        }
+      },
+      "country": {
+        "id": "country-jp",
+        "code": "JP",
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+        "tuitionRange": "¥535,800 – ¥1,500,000/year",
+        "livingCost": "¥1,000,000 – ¥1,500,000/year",
+        "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+        "intakePeriods": [
+          "APRIL",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-kyoto-international",
+      "name": "Kyoto University International Scholarship",
+      "awardAmount": 800000,
+      "currency": "JPY",
+      "deadline": "2026-03-15",
+      "eligibility": "Self-funded international graduate students with outstanding records.",
+      "requirements": "Graduate admission application.",
+      "universityId": "uni-kyoto-university",
+      "countryId": "country-jp",
+      "courseId": null,
+      "university": {
+        "id": "uni-kyoto-university",
+        "name": "Kyoto University",
+        "slug": "kyoto-university",
+        "countryId": "country-jp",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 46,
+        "tuitionMin": 500000,
+        "tuitionMax": 1200000,
+        "acceptanceRate": 25,
+        "description": "Top national university known for research excellence in science, medicine, and humanities.",
+        "website": "https://www.kyoto-u.ac.jp",
+        "popularPrograms": [
+          "Engineering",
+          "Medicine",
+          "Environmental Science",
+          "Economics"
+        ],
+        "country": {
+          "id": "country-jp",
+          "code": "JP",
+          "name": "Japan",
+          "flag": "🇯🇵",
+          "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+          "tuitionRange": "¥535,800 – ¥1,500,000/year",
+          "livingCost": "¥1,000,000 – ¥1,500,000/year",
+          "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+          "intakePeriods": [
+            "APRIL",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+        }
+      },
+      "country": {
+        "id": "country-jp",
+        "code": "JP",
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "description": "Cutting-edge technology, MEXT scholarships, and increasing English-taught programs at top national universities.",
+        "tuitionRange": "¥535,800 – ¥1,500,000/year",
+        "livingCost": "¥1,000,000 – ¥1,500,000/year",
+        "visaRequirements": "Student visa (COE required). JLPT or IELTS depending on program language.",
+        "intakePeriods": [
+          "APRIL",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Designated Activities visa for job hunting up to 1 year post-graduation."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-gks-korea",
+      "name": "Global Korea Scholarship (GKS)",
+      "awardAmount": 10000000,
+      "currency": "KRW",
+      "deadline": "2026-03-01",
+      "eligibility": "International students pursuing degree programmes in Korea.",
+      "requirements": "GKS application through Korean embassy or university.",
+      "universityId": "uni-seoul-national-university",
+      "countryId": "country-kr",
+      "courseId": null,
+      "university": {
+        "id": "uni-seoul-national-university",
+        "name": "Seoul National University",
+        "slug": "seoul-national-university",
+        "countryId": "country-kr",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 29,
+        "tuitionMin": 4000000,
+        "tuitionMax": 12000000,
+        "acceptanceRate": 22,
+        "description": "South Korea's flagship university with GKS scholarships and strong STEM programmes.",
+        "website": "https://www.snu.ac.kr",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Computer Science",
+          "International Studies"
+        ],
+        "country": {
+          "id": "country-kr",
+          "code": "KR",
+          "name": "South Korea",
+          "flag": "🇰🇷",
+          "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+          "tuitionRange": "KRW 4M – 12M/year",
+          "livingCost": "KRW 8M – 12M/year",
+          "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+          "intakePeriods": [
+            "MARCH",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+        }
+      },
+      "country": {
+        "id": "country-kr",
+        "code": "KR",
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+        "tuitionRange": "KRW 4M – 12M/year",
+        "livingCost": "KRW 8M – 12M/year",
+        "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+        "intakePeriods": [
+          "MARCH",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-kaist-international",
+      "name": "KAIST International Student Scholarship",
+      "awardAmount": 5000000,
+      "currency": "KRW",
+      "deadline": "2026-04-15",
+      "eligibility": "Outstanding international graduate applicants.",
+      "requirements": "Automatic consideration with graduate admission.",
+      "universityId": "uni-kaist",
+      "countryId": "country-kr",
+      "courseId": null,
+      "university": {
+        "id": "uni-kaist",
+        "name": "KAIST",
+        "slug": "kaist",
+        "countryId": "country-kr",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 53,
+        "tuitionMin": 3000000,
+        "tuitionMax": 8000000,
+        "acceptanceRate": 18,
+        "description": "Korea Advanced Institute of Science and Technology — Asia's MIT for engineering and technology.",
+        "website": "https://www.kaist.ac.kr",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Robotics",
+          "Biotech"
+        ],
+        "country": {
+          "id": "country-kr",
+          "code": "KR",
+          "name": "South Korea",
+          "flag": "🇰🇷",
+          "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+          "tuitionRange": "KRW 4M – 12M/year",
+          "livingCost": "KRW 8M – 12M/year",
+          "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+          "intakePeriods": [
+            "MARCH",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+        }
+      },
+      "country": {
+        "id": "country-kr",
+        "code": "KR",
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "description": "Rising destination for engineering, K-culture studies, and STEM with KGSP scholarships and English-taught programs.",
+        "tuitionRange": "KRW 4M – 12M/year",
+        "livingCost": "KRW 8M – 12M/year",
+        "visaRequirements": "D-2 Student visa. IELTS/TOEFL for English programs; TOPIK for Korean programs.",
+        "intakePeriods": [
+          "MARCH",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "D-10 job-seeker visa for graduates seeking employment."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-um-international",
+      "name": "UM International Student Scholarship",
+      "awardAmount": 15000,
+      "currency": "MYR",
+      "deadline": "2026-06-30",
+      "eligibility": "International students with academic excellence.",
+      "requirements": "Admission application and scholarship form.",
+      "universityId": "uni-university-of-malaya",
+      "countryId": "country-my",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-malaya",
+        "name": "University of Malaya",
+        "slug": "university-of-malaya",
+        "countryId": "country-my",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 65,
+        "tuitionMin": 20000,
+        "tuitionMax": 50000,
+        "acceptanceRate": 50,
+        "description": "Malaysia's oldest and highest-ranked university with affordable fees and multicultural campus.",
+        "website": "https://www.um.edu.my",
+        "popularPrograms": [
+          "Engineering",
+          "Medicine",
+          "Business",
+          "Computer Science"
+        ],
+        "country": {
+          "id": "country-my",
+          "code": "MY",
+          "name": "Malaysia",
+          "flag": "🇲🇾",
+          "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+          "tuitionRange": "MYR 20,000 – 60,000/year",
+          "livingCost": "MYR 15,000 – 25,000/year",
+          "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+        }
+      },
+      "country": {
+        "id": "country-my",
+        "code": "MY",
+        "name": "Malaysia",
+        "flag": "🇲🇾",
+        "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+        "tuitionRange": "MYR 20,000 – 60,000/year",
+        "livingCost": "MYR 15,000 – 25,000/year",
+        "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-monash-my-merit",
+      "name": "Monash Malaysia High Achiever Scholarship",
+      "awardAmount": 25000,
+      "currency": "MYR",
+      "deadline": "2026-05-15",
+      "eligibility": "High-achieving international undergraduate applicants.",
+      "requirements": "Automatic merit assessment with application.",
+      "universityId": "uni-monash-university-malaysia",
+      "countryId": "country-my",
+      "courseId": null,
+      "university": {
+        "id": "uni-monash-university-malaysia",
+        "name": "Monash University Malaysia",
+        "slug": "monash-university-malaysia",
+        "countryId": "country-my",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 42,
+        "tuitionMin": 40000,
+        "tuitionMax": 90000,
+        "acceptanceRate": 60,
+        "description": "Australian branch campus in Malaysia offering globally recognised degrees at lower cost.",
+        "website": "https://www.monash.edu.my",
+        "popularPrograms": [
+          "Engineering",
+          "Business",
+          "Medicine",
+          "IT"
+        ],
+        "country": {
+          "id": "country-my",
+          "code": "MY",
+          "name": "Malaysia",
+          "flag": "🇲🇾",
+          "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+          "tuitionRange": "MYR 20,000 – 60,000/year",
+          "livingCost": "MYR 15,000 – 25,000/year",
+          "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+          "intakePeriods": [
+            "FEBRUARY",
+            "SEPTEMBER"
+          ],
+          "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+        }
+      },
+      "country": {
+        "id": "country-my",
+        "code": "MY",
+        "name": "Malaysia",
+        "flag": "🇲🇾",
+        "description": "Affordable Asian destination with UK/Australian branch campuses, multicultural environment, and easy visa processing.",
+        "tuitionRange": "MYR 20,000 – 60,000/year",
+        "livingCost": "MYR 15,000 – 25,000/year",
+        "visaRequirements": "Student Pass. IELTS 5.5–6.0 for most programs.",
+        "intakePeriods": [
+          "FEBRUARY",
+          "SEPTEMBER"
+        ],
+        "graduateOpportunities": "Employment Pass for graduates with qualifying job offers."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-kth-india",
+      "name": "KTH India Scholarship",
+      "awardAmount": 310000,
+      "currency": "SEK",
+      "deadline": "2026-01-15",
+      "eligibility": "Fee-paying Indian students admitted to KTH masters.",
+      "requirements": "Automatic consideration with masters application.",
+      "universityId": "uni-kth-royal-institute-technology",
+      "countryId": "country-se",
+      "courseId": null,
+      "university": {
+        "id": "uni-kth-royal-institute-technology",
+        "name": "KTH Royal Institute of Technology",
+        "slug": "kth-royal-institute-technology",
+        "countryId": "country-se",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 73,
+        "tuitionMin": 150000,
+        "tuitionMax": 350000,
+        "acceptanceRate": 45,
+        "description": "Sweden's largest technical university with innovation focus and English-taught masters.",
+        "website": "https://www.kth.se",
+        "popularPrograms": [
+          "Computer Science",
+          "Electrical Engineering",
+          "Sustainability",
+          "Architecture"
+        ],
+        "country": {
+          "id": "country-se",
+          "code": "SE",
+          "name": "Sweden",
+          "flag": "🇸🇪",
+          "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+          "tuitionRange": "SEK 80,000 – 295,000/year",
+          "livingCost": "SEK 90,000 – 120,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+          "intakePeriods": [
+            "AUGUST",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "6-month residence permit extension to seek employment."
+        }
+      },
+      "country": {
+        "id": "country-se",
+        "code": "SE",
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+        "tuitionRange": "SEK 80,000 – 295,000/year",
+        "livingCost": "SEK 90,000 – 120,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+        "intakePeriods": [
+          "AUGUST",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "6-month residence permit extension to seek employment."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-lund-global",
+      "name": "Lund University Global Scholarship",
+      "awardAmount": 200000,
+      "currency": "SEK",
+      "deadline": "2026-02-15",
+      "eligibility": "Top academic international masters applicants.",
+      "requirements": "Merit-based selection during admission.",
+      "universityId": "uni-lund-university",
+      "countryId": "country-se",
+      "courseId": null,
+      "university": {
+        "id": "uni-lund-university",
+        "name": "Lund University",
+        "slug": "lund-university",
+        "countryId": "country-se",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 85,
+        "tuitionMin": 100000,
+        "tuitionMax": 300000,
+        "acceptanceRate": 50,
+        "description": "One of Scandinavia's oldest universities with strong research and international student community.",
+        "website": "https://www.lu.se",
+        "popularPrograms": [
+          "Engineering",
+          "Economics",
+          "International Business",
+          "Data Analytics"
+        ],
+        "country": {
+          "id": "country-se",
+          "code": "SE",
+          "name": "Sweden",
+          "flag": "🇸🇪",
+          "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+          "tuitionRange": "SEK 80,000 – 295,000/year",
+          "livingCost": "SEK 90,000 – 120,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+          "intakePeriods": [
+            "AUGUST",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "6-month residence permit extension to seek employment."
+        }
+      },
+      "country": {
+        "id": "country-se",
+        "code": "SE",
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "description": "Innovation-driven education, sustainability focus, and English-taught Masters at globally respected universities.",
+        "tuitionRange": "SEK 80,000 – 295,000/year",
+        "livingCost": "SEK 90,000 – 120,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.5 for English programs.",
+        "intakePeriods": [
+          "AUGUST",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "6-month residence permit extension to seek employment."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-ub-mobility",
+      "name": "UB International Mobility Grant",
+      "awardAmount": 5000,
+      "currency": "EUR",
+      "deadline": "2026-05-31",
+      "eligibility": "International students with financial need.",
+      "requirements": "Admission and grant application.",
+      "universityId": "uni-university-of-barcelona",
+      "countryId": "country-es",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-barcelona",
+        "name": "University of Barcelona",
+        "slug": "university-of-barcelona",
+        "countryId": "country-es",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 164,
+        "tuitionMin": 2000,
+        "tuitionMax": 8000,
+        "acceptanceRate": 55,
+        "description": "Leading Spanish public university in vibrant Barcelona with affordable EU tuition.",
+        "website": "https://www.ub.edu",
+        "popularPrograms": [
+          "Economics",
+          "Biology",
+          "Computer Science",
+          "Tourism"
+        ],
+        "country": {
+          "id": "country-es",
+          "code": "ES",
+          "name": "Spain",
+          "flag": "🇪🇸",
+          "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+          "tuitionRange": "€1,000 – €18,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month post-study residence authorization for job search."
+        }
+      },
+      "country": {
+        "id": "country-es",
+        "code": "ES",
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+        "tuitionRange": "€1,000 – €18,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month post-study residence authorization for job search."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-ie-talent",
+      "name": "IE Talent Scholarship",
+      "awardAmount": 15000,
+      "currency": "EUR",
+      "deadline": "2026-06-15",
+      "eligibility": "Outstanding international masters applicants.",
+      "requirements": "Merit-based award with programme application.",
+      "universityId": "uni-ie-university",
+      "countryId": "country-es",
+      "courseId": null,
+      "university": {
+        "id": "uni-ie-university",
+        "name": "IE University",
+        "slug": "ie-university",
+        "countryId": "country-es",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 0,
+        "tuitionMin": 25000,
+        "tuitionMax": 45000,
+        "acceptanceRate": 35,
+        "description": "Private Spanish university renowned for business, law, and technology with global outlook.",
+        "website": "https://www.ie.edu",
+        "popularPrograms": [
+          "MBA",
+          "Business Analytics",
+          "Law",
+          "Architecture"
+        ],
+        "country": {
+          "id": "country-es",
+          "code": "ES",
+          "name": "Spain",
+          "flag": "🇪🇸",
+          "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+          "tuitionRange": "€1,000 – €18,000/year",
+          "livingCost": "€8,000 – €12,000/year",
+          "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "FEBRUARY"
+          ],
+          "graduateOpportunities": "12-month post-study residence authorization for job search."
+        }
+      },
+      "country": {
+        "id": "country-es",
+        "code": "ES",
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "description": "Affordable EU tuition, vibrant student cities, and growing English-taught business and engineering programs.",
+        "tuitionRange": "€1,000 – €18,000/year",
+        "livingCost": "€8,000 – €12,000/year",
+        "visaRequirements": "Student visa (Type D). IELTS for English programs; Spanish for others.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "FEBRUARY"
+        ],
+        "graduateOpportunities": "12-month post-study residence authorization for job search."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-helsinki-merit",
+      "name": "University of Helsinki Scholarship",
+      "awardAmount": 10000,
+      "currency": "EUR",
+      "deadline": "2026-01-31",
+      "eligibility": "Non-EU/EEA students with excellent academic records.",
+      "requirements": "Automatic consideration with masters application.",
+      "universityId": "uni-university-of-helsinki",
+      "countryId": "country-fi",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-of-helsinki",
+        "name": "University of Helsinki",
+        "slug": "university-of-helsinki",
+        "countryId": "country-fi",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 107,
+        "tuitionMin": 13000,
+        "tuitionMax": 18000,
+        "acceptanceRate": 48,
+        "description": "Finland's oldest and largest university with English-taught masters and high research output.",
+        "website": "https://www.helsinki.fi",
+        "popularPrograms": [
+          "Computer Science",
+          "Environmental Science",
+          "Medicine",
+          "Education"
+        ],
+        "country": {
+          "id": "country-fi",
+          "code": "FI",
+          "name": "Finland",
+          "flag": "🇫🇮",
+          "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+          "tuitionRange": "€8,000 – €18,000/year",
+          "livingCost": "€9,000 – €13,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+        }
+      },
+      "country": {
+        "id": "country-fi",
+        "code": "FI",
+        "name": "Finland",
+        "flag": "🇫🇮",
+        "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+        "tuitionRange": "€8,000 – €18,000/year",
+        "livingCost": "€9,000 – €13,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-aalto-excellence",
+      "name": "Aalto University Excellence Scholarship",
+      "awardAmount": 12000,
+      "currency": "EUR",
+      "deadline": "2026-01-15",
+      "eligibility": "Non-EU masters applicants with outstanding merit.",
+      "requirements": "Merit-based tuition waiver with admission.",
+      "universityId": "uni-aalto-university",
+      "countryId": "country-fi",
+      "courseId": null,
+      "university": {
+        "id": "uni-aalto-university",
+        "name": "Aalto University",
+        "slug": "aalto-university",
+        "countryId": "country-fi",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 109,
+        "tuitionMin": 12000,
+        "tuitionMax": 18000,
+        "acceptanceRate": 42,
+        "description": "Finnish multidisciplinary university combining technology, business, and design.",
+        "website": "https://www.aalto.fi",
+        "popularPrograms": [
+          "Computer Science",
+          "Design",
+          "Business",
+          "Engineering"
+        ],
+        "country": {
+          "id": "country-fi",
+          "code": "FI",
+          "name": "Finland",
+          "flag": "🇫🇮",
+          "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+          "tuitionRange": "€8,000 – €18,000/year",
+          "livingCost": "€9,000 – €13,000/year",
+          "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+        }
+      },
+      "country": {
+        "id": "country-fi",
+        "code": "FI",
+        "name": "Finland",
+        "flag": "🇫🇮",
+        "description": "World-leading education system, English-taught programs, and high quality of life with strong tech and design sectors.",
+        "tuitionRange": "€8,000 – €18,000/year",
+        "livingCost": "€9,000 – €13,000/year",
+        "visaRequirements": "Residence permit for studies. IELTS 6.0–6.5 for English programs.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "2-year residence permit extension to find work after graduation."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-mcgill-entrance",
+      "name": "McGill Entrance Scholarship",
+      "awardAmount": 12000,
+      "currency": "CAD",
+      "deadline": "2026-03-01",
+      "eligibility": "High-achieving international undergraduate applicants.",
+      "requirements": "Automatic consideration with admission application.",
+      "universityId": "uni-mcgill-university",
+      "countryId": "country-ca",
+      "courseId": null,
+      "university": {
+        "id": "uni-mcgill-university",
+        "name": "McGill University",
+        "slug": "mcgill-university",
+        "countryId": "country-ca",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 30,
+        "tuitionMin": 22000,
+        "tuitionMax": 55000,
+        "acceptanceRate": 46,
+        "description": "Canada's top-ranked university in Montreal with global reputation in medicine, law, and engineering.",
+        "website": "https://www.mcgill.ca",
+        "popularPrograms": [
+          "Medicine",
+          "Engineering",
+          "Computer Science",
+          "Management"
+        ],
+        "country": {
+          "id": "country-ca",
+          "code": "CA",
+          "name": "Canada",
+          "flag": "🇨🇦",
+          "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+          "tuitionRange": "CAD 18,000 – 45,000/year",
+          "livingCost": "CAD 12,000 – 18,000/year",
+          "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY",
+            "MAY"
+          ],
+          "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+        }
+      },
+      "country": {
+        "id": "country-ca",
+        "code": "CA",
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "description": "World-class universities, affordable tuition, multicultural cities, and clear post-graduation work permit pathways for international students.",
+        "tuitionRange": "CAD 18,000 – 45,000/year",
+        "livingCost": "CAD 12,000 – 18,000/year",
+        "visaRequirements": "Study Permit. IELTS 6.0–6.5 or equivalent English proof.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY",
+          "MAY"
+        ],
+        "graduateOpportunities": "PGWP allows up to 3 years of post-study work; strong PR pathway."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-daad-germany",
+      "name": "DAAD Scholarship (Germany)",
+      "awardAmount": 12000,
+      "currency": "EUR",
+      "deadline": "2026-10-15",
+      "eligibility": "International students pursuing graduate study in Germany.",
+      "requirements": "DAAD online application with university admission.",
+      "universityId": "uni-rwth-aachen-university",
+      "countryId": "country-de",
+      "courseId": null,
+      "university": {
+        "id": "uni-rwth-aachen-university",
+        "name": "RWTH Aachen University",
+        "slug": "rwth-aachen-university",
+        "countryId": "country-de",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 99,
+        "tuitionMin": 0,
+        "tuitionMax": 5000,
+        "acceptanceRate": 50,
+        "description": "Germany's largest technical university with industry partnerships and low tuition fees.",
+        "website": "https://www.rwth-aachen.de",
+        "popularPrograms": [
+          "Mechanical Engineering",
+          "Computer Science",
+          "Electrical Engineering",
+          "Physics"
+        ],
+        "country": {
+          "id": "country-de",
+          "code": "DE",
+          "name": "Germany",
+          "flag": "🇩🇪",
+          "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+          "tuitionRange": "€0 – €20,000/year (public unis often free)",
+          "livingCost": "€10,000 – €12,000/year",
+          "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+          "intakePeriods": [
+            "OCTOBER",
+            "APRIL"
+          ],
+          "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+        }
+      },
+      "country": {
+        "id": "country-de",
+        "code": "DE",
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "description": "Low or no tuition at public universities, Europe's engineering powerhouse, and strong industry links for STEM graduates.",
+        "tuitionRange": "€0 – €20,000/year (public unis often free)",
+        "livingCost": "€10,000 – €12,000/year",
+        "visaRequirements": "Student visa + blocked account. IELTS/TOEFL or German proficiency depending on program.",
+        "intakePeriods": [
+          "OCTOBER",
+          "APRIL"
+        ],
+        "graduateOpportunities": "18-month job-seeker visa after graduation; EU Blue Card pathway."
+      },
+      "course": null
+    },
+    {
+      "id": "sch-ucd-global",
+      "name": "UCD Global Excellence Scholarship",
+      "awardAmount": 10000,
+      "currency": "EUR",
+      "deadline": "2026-04-30",
+      "eligibility": "International students with first-class academic records.",
+      "requirements": "Automatic merit review with admission.",
+      "universityId": "uni-university-college-dublin",
+      "countryId": "country-ie",
+      "courseId": null,
+      "university": {
+        "id": "uni-university-college-dublin",
+        "name": "University College Dublin",
+        "slug": "university-college-dublin",
+        "countryId": "country-ie",
+        "logo": null,
+        "campusImage": null,
+        "worldRanking": 126,
+        "tuitionMin": 18000,
+        "tuitionMax": 32000,
+        "acceptanceRate": 52,
+        "description": "Ireland's largest university with strong business, computing, and pharma programmes.",
+        "website": "https://www.ucd.ie",
+        "popularPrograms": [
+          "Business",
+          "Computer Science",
+          "Pharmacy",
+          "Veterinary Science"
+        ],
+        "country": {
+          "id": "country-ie",
+          "code": "IE",
+          "name": "Ireland",
+          "flag": "🇮🇪",
+          "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+          "tuitionRange": "€12,000 – €35,000/year",
+          "livingCost": "€10,000 – €15,000/year",
+          "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+          "intakePeriods": [
+            "SEPTEMBER",
+            "JANUARY"
+          ],
+          "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
+        }
+      },
+      "country": {
+        "id": "country-ie",
+        "code": "IE",
+        "name": "Ireland",
+        "flag": "🇮🇪",
+        "description": "EU tech hub with 1-year Masters, English-medium education, and strong graduate visa options for IT and pharma sectors.",
+        "tuitionRange": "€12,000 – €35,000/year",
+        "livingCost": "€10,000 – €15,000/year",
+        "visaRequirements": "Study visa. IELTS 6.5 typically required.",
+        "intakePeriods": [
+          "SEPTEMBER",
+          "JANUARY"
+        ],
+        "graduateOpportunities": "Third Level Graduate Scheme — up to 2 years post-study work."
+      },
+      "course": null
     }
   ]
 }

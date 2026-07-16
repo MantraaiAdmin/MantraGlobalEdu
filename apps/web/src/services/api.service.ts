@@ -1,5 +1,15 @@
 import type { ApiResponse, PaginatedResponse } from '@mge/types';
 import { apiClient } from '@/lib/api';
+import {
+  getCatalogCountries,
+  getCatalogCountryByCode,
+  getCatalogUniversities,
+  getCatalogUniversityBySlug,
+  getCatalogCourses,
+  getCatalogCourseBySlug,
+  getCatalogScholarships,
+  getCatalogScholarshipById,
+} from '@/lib/catalog';
 
 export interface Country {
   id: string;
@@ -117,48 +127,42 @@ function buildQuery(params: Record<string, string | number | undefined>): string
 }
 
 export async function fetchUniversities(filters: UniversityFilters = {}) {
-  const res = await apiClient<ApiResponse<PaginatedResponse<University>>>(
-    `/universities${buildQuery(filters as Record<string, string | number | undefined>)}`
-  );
-  return res.data!;
+  return getCatalogUniversities(filters) as PaginatedResponse<University>;
 }
 
 export async function fetchUniversityBySlug(slug: string) {
-  const res = await apiClient<ApiResponse<University>>(`/universities/slug/${slug}`);
-  return res.data!;
+  const university = getCatalogUniversityBySlug(slug);
+  if (!university) throw new Error('University not found');
+  return university as University;
 }
 
 export async function fetchCountries(page = 1, limit = 50) {
-  const res = await apiClient<ApiResponse<PaginatedResponse<Country>>>(
-    `/countries${buildQuery({ page, limit })}`
-  );
-  return res.data!;
+  return getCatalogCountries({ page, limit }) as PaginatedResponse<Country>;
 }
 
 export async function fetchCountryByCode(code: string) {
-  const res = await apiClient<ApiResponse<Country & { universities: University[] }>>(
-    `/countries/${code}`
-  );
-  return res.data!;
+  const country = getCatalogCountryByCode(code);
+  if (!country) throw new Error('Country not found');
+  return country as Country & {
+    universities: University[];
+    courses: Course[];
+    scholarships: Scholarship[];
+    popularPrograms: string[];
+  };
 }
 
 export async function fetchCourses(filters: CourseFilters = {}) {
-  const res = await apiClient<ApiResponse<PaginatedResponse<Course>>>(
-    `/courses${buildQuery(filters as Record<string, string | number | undefined>)}`
-  );
-  return res.data!;
+  return getCatalogCourses(filters) as PaginatedResponse<Course>;
 }
 
 export async function fetchCourseBySlug(slug: string) {
-  const res = await apiClient<ApiResponse<Course>>(`/courses/${slug}`);
-  return res.data!;
+  const course = getCatalogCourseBySlug(slug);
+  if (!course) throw new Error('Course not found');
+  return course as Course;
 }
 
 export async function fetchScholarships(filters: ScholarshipFilters = {}) {
-  const res = await apiClient<ApiResponse<PaginatedResponse<Scholarship>>>(
-    `/scholarships${buildQuery(filters as Record<string, string | number | undefined>)}`
-  );
-  return res.data!;
+  return getCatalogScholarships(filters) as PaginatedResponse<Scholarship>;
 }
 
 export async function fetchArticles(category?: string) {
@@ -218,8 +222,9 @@ export async function login(email: string, password: string) {
 }
 
 export async function fetchScholarshipById(id: string) {
-  const res = await apiClient<ApiResponse<Scholarship>>(`/scholarships/${id}`);
-  return res.data!;
+  const scholarship = getCatalogScholarshipById(id);
+  if (!scholarship) throw new Error('Scholarship not found');
+  return scholarship as Scholarship;
 }
 
 export async function fetchArticleBySlug(slug: string) {

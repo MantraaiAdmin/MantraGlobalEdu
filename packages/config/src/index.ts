@@ -102,9 +102,9 @@ export const SERVICES = [
 ] as const;
 
 export const TRUST_METRICS = [
-  { value: '15+', label: 'Top Universities' },
+  { value: '42+', label: 'Top Universities' },
   { value: '19+', label: 'Study Destinations' },
-  { value: '40+', label: 'UG & PG Courses' },
+  { value: '65+', label: 'UG & PG Courses' },
   { value: 'Full', label: 'Scholarship Assistance' },
   { value: 'Expert', label: 'Career Guidance' },
   { value: 'Official', label: 'Fee Data from Universities' },

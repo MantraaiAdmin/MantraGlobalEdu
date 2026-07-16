@@ -87,7 +87,7 @@ export function HeroSection() {
               {[
                 { value: `${DESTINATIONS.length}+`, label: 'Study Destinations' },
                 { value: STUDENTS_PLACED_STAT, label: 'Students Guided' },
-                { value: '25+', label: 'Partner Universities' },
+                { value: '42+', label: 'Partner Universities' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl font-bold text-white">{stat.value}</div>
