@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CONTACT, DESTINATIONS, FOUNDER } from '@mge/config';
 import { bookCounseling } from '@/services/api.service';
+import { parseCounselingPreferredDate } from '@/lib/counseling-booking';
 
 const TIME_SLOTS = [
   '10:00 AM', '11:00 AM', '12:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM',
@@ -38,13 +39,11 @@ export default function BookCounselingPage() {
     setLoading(true);
     setError('');
     try {
-      const preferredDate = form.date
-        ? new Date(`${form.date}T${form.time || '10:00'}`).toISOString()
-        : undefined;
+      const preferredDate = parseCounselingPreferredDate(form.date, form.time);
       await bookCounseling({
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
         preferredDate,
         countryOfInterest: form.countryOfInterest || undefined,
         message: form.time
@@ -52,8 +51,12 @@ export default function BookCounselingPage() {
           : form.message || undefined,
       });
       setSubmitted(true);
-    } catch {
-      setError('Unable to book right now. Please try WhatsApp or call us directly.');
+    } catch (err) {
+      setError(
+        err instanceof Error && err.message && !err.message.includes('fetch')
+          ? err.message
+          : 'Unable to book right now. Please try WhatsApp or call us directly.'
+      );
     } finally {
       setLoading(false);
     }
