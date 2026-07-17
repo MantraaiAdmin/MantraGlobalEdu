@@ -6,7 +6,7 @@ export const APP_CONFIG = {
     'Explore world-class universities, compare programs, discover scholarships, and confidently plan your international study abroad journey.',
   version: '1.0.0',
   website: 'www.mantraglobaledu.com',
-  supportEmail: 'support@mantraglobaledu.com',
+  supportEmail: 'vinodhini@mantraglobaledu.com',
   supportPhone: '+1 (800) 123-4567',
 } as const;
 
@@ -134,7 +134,7 @@ export const CONTACT = {
   whatsapp: '919876543210',
   whatsappMessage: 'Hi Mantra Global Education, I would like guidance on studying abroad.',
   supportPhone: '+91 98765 43210',
-  supportEmail: 'support@mantraglobaledu.com',
+  supportEmail: 'vinodhini@mantraglobaledu.com',
   website: 'mantraglobaledu.com',
   hq: 'Coimbatore, TN',
 } as const;
