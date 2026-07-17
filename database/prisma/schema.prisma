@@ -308,6 +308,7 @@ model Document {
   url              String
   mimeType         String
   size             Int
+  fileData         Bytes?
   isVerified       Boolean  @default(false)
   uploadedAt       DateTime @default(now())
 

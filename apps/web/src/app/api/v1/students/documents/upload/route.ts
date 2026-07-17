@@ -1,18 +1,22 @@
 import { NextRequest } from 'next/server';
+import { AuthError } from '@/lib/server/auth';
 import { uploadStudentDocument } from '@/lib/server/student-documents';
 import { getBearerToken, jsonError, jsonSuccess } from '@/lib/server/api-response';
+
+export const runtime = 'nodejs';
+export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   try {
     const token = getBearerToken(request);
     if (!token) {
-      return jsonError(new Error('Access token required'), 'Unauthorized');
+      throw new AuthError('Access token required', 401, 'UNAUTHORIZED');
     }
 
     const formData = await request.formData();
     const file = formData.get('file');
     if (!(file instanceof File)) {
-      return jsonError(new Error('File is required'), 'Bad Request');
+      throw new AuthError('File is required', 400, 'VALIDATION');
     }
 
     const name = String(formData.get('name') || file.name);

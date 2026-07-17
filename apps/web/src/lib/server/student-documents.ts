@@ -1,9 +1,15 @@
-import { buildChecklistProgress, DESTINATIONS, UPLOAD_CONFIG } from '@mge/config';
+import { buildChecklistProgress, DESTINATIONS } from '@mge/config';
 import { UserRole } from '@mge/types';
 import { mkdir, writeFile } from 'fs/promises';
 import path from 'path';
 import { prisma } from './prisma';
 import { AuthError, getUserFromAccessToken } from './auth';
+import {
+  buildDocumentFileUrl,
+  resolveDocumentType,
+  useDatabaseFileStorage,
+  validateUploadFile,
+} from './document-storage';
 
 export async function getStudentDocumentWorkspace(accessToken: string) {
   const user = await getUserFromAccessToken(accessToken);
@@ -60,7 +66,7 @@ export async function getStudentDocumentWorkspace(accessToken: string) {
       checklistItemKey: doc.checklistItemKey,
       isVerified: doc.isVerified,
       uploadedAt: doc.uploadedAt.toISOString(),
-      url: doc.url,
+      url: doc.fileData ? buildDocumentFileUrl(doc.id) : doc.url,
       mimeType: doc.mimeType,
       size: doc.size,
     }))
@@ -105,7 +111,10 @@ export async function getStudentDocumentWorkspace(accessToken: string) {
     summary: checklist.summary,
     checklist,
     applications,
-    documents: student.documents,
+    documents: student.documents.map((doc) => ({
+      ...doc,
+      url: doc.fileData ? buildDocumentFileUrl(doc.id) : doc.url,
+    })),
   };
 }
 
@@ -123,13 +132,7 @@ export async function uploadStudentDocument(
     throw new AuthError('Student access required', 403, 'FORBIDDEN');
   }
 
-  if (file.size > UPLOAD_CONFIG.maxFileSize) {
-    throw new AuthError(`File exceeds maximum size of ${UPLOAD_CONFIG.maxFileSizeLabel}`, 400, 'VALIDATION');
-  }
-
-  if (!UPLOAD_CONFIG.allowedMimeTypes.includes(file.type as (typeof UPLOAD_CONFIG.allowedMimeTypes)[number])) {
-    throw new AuthError('File type not allowed. Accepted: PDF, JPEG, PNG, WebP, DOC, DOCX', 400, 'VALIDATION');
-  }
+  const mimeType = validateUploadFile(file);
 
   const student = await prisma.student.findUnique({ where: { userId: user.id } });
   if (!student) {
@@ -138,6 +141,36 @@ export async function uploadStudentDocument(
 
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
+  const checklistItemKey = meta.checklistItemKey || null;
+  const docType = meta.type || (checklistItemKey ? resolveDocumentType(checklistItemKey) : 'other');
+
+  if (useDatabaseFileStorage()) {
+    const document = await prisma.document.create({
+      data: {
+        studentId: student.id,
+        applicationId: meta.applicationId || null,
+        checklistItemKey,
+        name: meta.name || file.name,
+        type: docType,
+        url: 'pending',
+        mimeType,
+        size: file.size,
+        fileData: buffer,
+      },
+    });
+
+    const url = buildDocumentFileUrl(document.id);
+    const updated = await prisma.document.update({
+      where: { id: document.id },
+      data: { url },
+    });
+
+    return {
+      ...updated,
+      url,
+    };
+  }
+
   const filename = `${Date.now()}-${sanitizeFilename(file.name)}`;
   const uploadDir = path.join(process.cwd(), 'public', 'uploads', 'students', student.id);
   await mkdir(uploadDir, { recursive: true });
@@ -149,12 +182,42 @@ export async function uploadStudentDocument(
     data: {
       studentId: student.id,
       applicationId: meta.applicationId || null,
-      checklistItemKey: meta.checklistItemKey || null,
+      checklistItemKey,
       name: meta.name || file.name,
-      type: meta.type,
+      type: docType,
       url,
-      mimeType: file.type,
+      mimeType,
       size: file.size,
     },
   });
+}
+
+export async function getStudentDocumentFile(accessToken: string, documentId: string) {
+  const user = await getUserFromAccessToken(accessToken);
+
+  const document = await prisma.document.findUnique({
+    where: { id: documentId },
+    include: { student: { select: { userId: true } } },
+  });
+
+  if (!document) {
+    throw new AuthError('Document not found', 404, 'NOT_FOUND');
+  }
+
+  const isOwner = user.role === UserRole.STUDENT && document.student.userId === user.id;
+  const isStaff = user.role === UserRole.ADMIN || user.role === UserRole.COUNSELOR;
+
+  if (!isOwner && !isStaff) {
+    throw new AuthError('Access denied', 403, 'FORBIDDEN');
+  }
+
+  if (!document.fileData) {
+    throw new AuthError('Document file is not available in storage', 404, 'NOT_FOUND');
+  }
+
+  return {
+    buffer: Buffer.from(document.fileData),
+    mimeType: document.mimeType,
+    name: document.name,
+  };
 }

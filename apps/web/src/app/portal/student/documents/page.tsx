@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Loader2 } from 'lucide-react';
-import { getAccessToken } from '@/lib/auth';
+import { getAccessToken, hydrateAuthSession } from '@/lib/auth';
 import { fetchStudentDocumentWorkspace } from '@/services/api.service';
 import { DocumentSummaryCards } from '@/features/student-documents/components/document-summary-cards';
 import { ApplicationJourneyPanel } from '@/features/student-documents/components/application-journey-panel';
@@ -23,7 +23,7 @@ export default function StudentDocumentsPage() {
   };
 
   useEffect(() => {
-    loadWorkspace();
+    hydrateAuthSession().finally(loadWorkspace);
   }, []);
 
   if (loading) {
