@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client';
 import { UserRole } from '@mge/types';
-import { requireDatabase } from './auth';
+import { isDatabaseConfigured, requireDatabase } from './auth';
 import { prisma } from './prisma';
 
 type ListOptions = {
@@ -24,6 +24,59 @@ function paginateMeta(total: number, page: number, limit: number) {
     totalPages: Math.ceil(total / limit) || 1,
     hasNextPage: page * limit < total,
     hasPrevPage: page > 1,
+  };
+}
+
+export async function getAdminSettings() {
+  const databaseConnected = isDatabaseConfigured();
+  let tableCounts: Record<string, number> | null = null;
+
+  if (databaseConnected) {
+    try {
+      const [users, students, applications, leads, universities] = await Promise.all([
+        prisma.user.count(),
+        prisma.student.count(),
+        prisma.application.count(),
+        prisma.lead.count(),
+        prisma.university.count(),
+      ]);
+      tableCounts = { users, students, applications, leads, universities };
+    } catch {
+      tableCounts = null;
+    }
+  }
+
+  return {
+    databaseConnected,
+    smtpConfigured: Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS),
+    smtpHost: process.env.SMTP_HOST || null,
+    embeddedApi: process.env.NEXT_PUBLIC_USE_EMBEDDED_API === 'true',
+    appUrl: process.env.NEXT_PUBLIC_APP_URL || 'https://mantraglobaledu.com',
+    tableCounts,
+  };
+}
+
+export async function updateAdminLead(
+  leadId: string,
+  data: { status?: string; notes?: string; assignedTo?: string }
+) {
+  requireDatabase();
+  const lead = await prisma.lead.update({
+    where: { id: leadId },
+    data: {
+      status: data.status as Prisma.EnumLeadStatusFilter['equals'],
+      notes: data.notes,
+      assignedTo: data.assignedTo,
+    },
+  });
+  return {
+    id: lead.id,
+    name: lead.name,
+    email: lead.email,
+    status: lead.status,
+    notes: lead.notes,
+    assignedTo: lead.assignedTo,
+    updatedAt: lead.updatedAt.toISOString(),
   };
 }
 

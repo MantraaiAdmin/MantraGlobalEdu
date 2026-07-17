@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import { getAccessToken } from '@/lib/auth';
+import { getAccessToken, hydrateAuthSession } from '@/lib/auth';
 import { LookupTable, LookupColumn } from '@/components/admin/lookup-table';
 
 type ListMeta = {
@@ -43,6 +43,11 @@ export function AdminLookupPage<T extends Record<string, unknown>>({
   const [page, setPage] = useState(1);
   const [sortBy, setSortBy] = useState<string | undefined>();
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  const [authReady, setAuthReady] = useState(false);
+
+  useEffect(() => {
+    hydrateAuthSession().finally(() => setAuthReady(true));
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setDebouncedSearch(search), 300);
@@ -50,8 +55,13 @@ export function AdminLookupPage<T extends Record<string, unknown>>({
   }, [search]);
 
   const load = useCallback(async () => {
+    if (!authReady) return;
     const token = getAccessToken();
-    if (!token) return;
+    if (!token) {
+      setError('Session expired. Please log in again.');
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError('');
     try {
@@ -70,6 +80,10 @@ export function AdminLookupPage<T extends Record<string, unknown>>({
         headers: { Authorization: `Bearer ${token}` },
       });
       const json = await res.json();
+      if (res.status === 401) {
+        setError('Session expired. Please log out and sign in again.');
+        return;
+      }
       if (!res.ok) throw new Error(json.error || 'Failed to load records');
       setRows(json.data?.data || []);
       setMeta(json.data?.meta || null);
@@ -79,7 +93,7 @@ export function AdminLookupPage<T extends Record<string, unknown>>({
     } finally {
       setLoading(false);
     }
-  }, [endpoint, page, debouncedSearch, sortBy, sortOrder, extraQuery]);
+  }, [endpoint, page, debouncedSearch, sortBy, sortOrder, extraQuery, authReady]);
 
   useEffect(() => {
     load();
@@ -123,7 +137,7 @@ export function AdminLookupPage<T extends Record<string, unknown>>({
 
 export function IdCell({ id, short = true }: { id: string; short?: boolean }) {
   return (
-    <code className="rounded bg-muted px-1.5 py-0.5 text-xs text-primary">
+    <code className="rounded bg-muted px-1.5 py-0.5 text-xs text-primary" title={id}>
       {short ? id.slice(0, 8) : id}
     </code>
   );

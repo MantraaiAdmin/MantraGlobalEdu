@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AdminLookupPage, IdCell } from '@/components/admin/admin-lookup-page';
+import { getAccessToken } from '@/lib/auth';
 
 type LeadRow = {
   id: string;
@@ -14,15 +15,57 @@ type LeadRow = {
   createdAt: string;
 };
 
-const STATUS_OPTIONS = ['', 'NEW', 'CONTACTED', 'QUALIFIED', 'CONVERTED', 'LOST'];
+const STATUS_OPTIONS = ['NEW', 'CONTACTED', 'QUALIFIED', 'CONVERTED', 'LOST'];
+
+function LeadStatusSelect({ lead, onUpdated }: { lead: LeadRow; onUpdated: () => void }) {
+  const [saving, setSaving] = useState(false);
+
+  const updateStatus = async (status: string) => {
+    const token = getAccessToken();
+    if (!token) return;
+    setSaving(true);
+    try {
+      const res = await fetch(`/api/v1/admin/leads/${lead.id}`, {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Update failed');
+      onUpdated();
+    } catch {
+      // parent table reloads on next navigation
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <select
+      className="h-8 rounded-md border border-input bg-background px-2 text-xs"
+      value={lead.status}
+      disabled={saving}
+      onChange={(e) => updateStatus(e.target.value)}
+    >
+      {STATUS_OPTIONS.map((s) => (
+        <option key={s} value={s}>{s}</option>
+      ))}
+    </select>
+  );
+}
 
 export default function AdminCrmPage() {
   const [status, setStatus] = useState('');
+  const [reloadKey, setReloadKey] = useState(0);
 
   return (
     <AdminLookupPage<LeadRow>
+      key={`${status}-${reloadKey}`}
       title="CRM / Leads"
-      description="Inquiry and lead pipeline with search, status filter, and lead IDs."
+      description="Inquiry and lead pipeline with search, status filter, lead IDs, and inline status updates."
       endpoint="leads"
       searchPlaceholder="Search by name, email, phone, or country…"
       extraQuery={{ filterStatus: status || undefined }}
@@ -33,7 +76,7 @@ export default function AdminCrmPage() {
           onChange={(e) => setStatus(e.target.value)}
         >
           <option value="">All statuses</option>
-          {STATUS_OPTIONS.filter(Boolean).map((s) => (
+          {STATUS_OPTIONS.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
         </select>
@@ -45,7 +88,13 @@ export default function AdminCrmPage() {
         { key: 'phone', label: 'Phone', render: (r) => r.phone || '—' },
         { key: 'countryOfInterest', label: 'Country', render: (r) => r.countryOfInterest || '—' },
         { key: 'source', label: 'Source', render: (r) => r.source || '—' },
-        { key: 'status', label: 'Status' },
+        {
+          key: 'status',
+          label: 'Status',
+          render: (r) => (
+            <LeadStatusSelect lead={r} onUpdated={() => setReloadKey((k) => k + 1)} />
+          ),
+        },
         {
           key: 'createdAt',
           label: 'Created',

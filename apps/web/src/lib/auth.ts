@@ -1,6 +1,43 @@
+function readCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
 export function getAccessToken(): string | null {
   if (typeof window === 'undefined') return null;
-  return localStorage.getItem('accessToken');
+  return localStorage.getItem('accessToken') || readCookie('mge_token');
+}
+
+/** Restore localStorage session from auth cookies (e.g. after hard refresh edge cases). */
+export async function hydrateAuthSession(): Promise<boolean> {
+  if (typeof window === 'undefined') return false;
+  if (localStorage.getItem('accessToken') && localStorage.getItem('user')) {
+    return true;
+  }
+
+  const token = readCookie('mge_token');
+  const role = readCookie('mge_role');
+  if (!token || !role) return false;
+
+  try {
+    const res = await fetch('/api/v1/auth/me', {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const json = await res.json();
+    if (!res.ok || !json.data) return false;
+
+    localStorage.setItem('accessToken', token);
+    localStorage.setItem('user', JSON.stringify(json.data));
+    if (!localStorage.getItem('refreshToken')) {
+      localStorage.setItem('refreshToken', '');
+    }
+    invalidateUserCache();
+    notifyAuthChange();
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export type StoredUser = {
