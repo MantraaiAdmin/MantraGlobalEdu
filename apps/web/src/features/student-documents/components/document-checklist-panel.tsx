@@ -3,7 +3,7 @@
 import { useCallback, useRef, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MGE_DOCUMENT_CHECKLIST, UPLOAD_CONFIG } from '@mge/config';
+import { UPLOAD_CONFIG } from '@mge/config';
 import { CheckCircle2, Clock3, ExternalLink, FileUp, Loader2, Upload, X } from 'lucide-react';
 import { API_URL } from '@/lib/api';
 import { getAccessToken } from '@/lib/auth';

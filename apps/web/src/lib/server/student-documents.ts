@@ -163,12 +163,22 @@ export async function uploadStudentDocument(
     const updated = await prisma.document.update({
       where: { id: document.id },
       data: { url },
+      select: {
+        id: true,
+        studentId: true,
+        applicationId: true,
+        checklistItemKey: true,
+        name: true,
+        type: true,
+        url: true,
+        mimeType: true,
+        size: true,
+        isVerified: true,
+        uploadedAt: true,
+      },
     });
 
-    return {
-      ...updated,
-      url,
-    };
+    return updated;
   }
 
   const filename = `${Date.now()}-${sanitizeFilename(file.name)}`;
