@@ -1,3 +1,4 @@
+import { buildChecklistProgress, DESTINATIONS } from '@mge/config';
 import { StudentRepository } from './student.repository';
 
 export class StudentService {
@@ -55,7 +56,7 @@ export class StudentService {
   async uploadDocument(
     userId: string,
     file: Express.Multer.File,
-    meta: { name: string; type: string; applicationId?: string }
+    meta: { name: string; type: string; applicationId?: string; checklistItemKey?: string }
   ) {
     const student = await this.repository.findStudentByUserId(userId);
     const url = `/uploads/${file.filename}`;
@@ -67,7 +68,78 @@ export class StudentService {
       mimeType: file.mimetype,
       size: file.size,
       applicationId: meta.applicationId,
+      checklistItemKey: meta.checklistItemKey,
     });
+  }
+
+  async getDocumentWorkspace(userId: string) {
+    const student = await this.repository.findStudentByUserId(userId);
+    const [documents, applications] = await Promise.all([
+      this.repository.getDocuments(student.id),
+      this.repository.getApplications(student.id),
+    ]);
+
+    const preferredCountries = student.preferredCountries.map((code) => {
+      const match = DESTINATIONS.find((d) => d.code === code);
+      return {
+        code,
+        name: match?.name || code,
+        flag: match?.flag || '🌍',
+      };
+    });
+
+    const checklist = buildChecklistProgress(
+      documents.map((doc) => ({
+        id: doc.id,
+        name: doc.name,
+        checklistItemKey: doc.checklistItemKey,
+        isVerified: doc.isVerified,
+        uploadedAt: doc.uploadedAt.toISOString(),
+        url: doc.url,
+        mimeType: doc.mimeType,
+        size: doc.size,
+      }))
+    );
+
+    const mappedApplications = applications.map((app) => ({
+      id: app.id,
+      status: app.status,
+      visaStatus: app.visaStatus,
+      submittedAt: app.submittedAt?.toISOString() || null,
+      offerReceivedAt: app.offerReceivedAt?.toISOString() || null,
+      university: {
+        id: app.university.id,
+        name: app.university.name,
+        slug: app.university.slug,
+      },
+      course: {
+        id: app.course.id,
+        name: app.course.name,
+        degreeLevel: app.course.degreeLevel,
+      },
+      country: {
+        code: app.university.country.code,
+        name: app.university.country.name,
+        flag: app.university.country.flag || '🌍',
+      },
+      documentCount: documents.filter((d) => d.applicationId === app.id).length,
+    }));
+
+    return {
+      student: {
+        id: student.id,
+        registrationNo: student.id.slice(0, 8).toUpperCase(),
+        preferredCountries,
+        appliedCountries: Array.from(
+          new Map(mappedApplications.map((a) => [a.country.code, a.country])).values()
+        ),
+        profile: student.user,
+      },
+      summary: checklist.summary,
+      checklist,
+      applications: mappedApplications,
+      documents,
+    };
   }
 }
 

@@ -332,8 +332,14 @@ async function main() {
             universityId: mit.id,
             courseId: mitCourse.id,
             status: 'UNDER_REVIEW',
+            visaStatus: 'DOCUMENTS_PREPARING',
             submittedAt: new Date(),
           },
+        });
+      } else {
+        await prisma.application.update({
+          where: { id: existingApp.id },
+          data: { visaStatus: 'DOCUMENTS_PREPARING' },
         });
       }
     }
@@ -349,7 +355,13 @@ async function main() {
             universityId: oxford.id,
             courseId: oxfordCourse.id,
             status: 'DRAFT',
+            visaStatus: 'NOT_STARTED',
           },
+        });
+      } else {
+        await prisma.application.update({
+          where: { id: existingApp.id },
+          data: { visaStatus: 'NOT_STARTED' },
         });
       }
     }
@@ -400,6 +412,7 @@ async function main() {
             studentId: studentUser.student.id,
             name: 'Academic Transcript',
             type: 'transcript',
+            checklistItemKey: 'transcript',
             url: '/uploads/demo/transcript.pdf',
             mimeType: 'application/pdf',
             size: 245000,
@@ -409,6 +422,7 @@ async function main() {
             studentId: studentUser.student.id,
             name: 'Statement of Purpose (Draft)',
             type: 'sop',
+            checklistItemKey: 'sop',
             url: '/uploads/demo/sop.pdf',
             mimeType: 'application/pdf',
             size: 128000,
@@ -418,6 +432,7 @@ async function main() {
             studentId: studentUser.student.id,
             name: 'IELTS Score Report',
             type: 'test_score',
+            checklistItemKey: 'english_test',
             url: '/uploads/demo/ielts.pdf',
             mimeType: 'application/pdf',
             size: 98000,
@@ -425,6 +440,18 @@ async function main() {
           },
         ],
       });
+    } else {
+      const docUpdates: Array<{ name: string; key: string }> = [
+        { name: 'Academic Transcript', key: 'transcript' },
+        { name: 'Statement of Purpose (Draft)', key: 'sop' },
+        { name: 'IELTS Score Report', key: 'english_test' },
+      ];
+      for (const item of docUpdates) {
+        await prisma.document.updateMany({
+          where: { studentId: studentUser.student.id, name: item.name },
+          data: { checklistItemKey: item.key },
+        });
+      }
     }
 
     const existingNotifs = await prisma.notification.count({

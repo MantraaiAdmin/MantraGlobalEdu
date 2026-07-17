@@ -2,7 +2,7 @@ import * as crypto from 'crypto';
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcryptjs';
 import { UserRole as PrismaUserRole } from '@prisma/client';
-import { AUTH_CONFIG } from '@mge/config';
+import { AUTH_CONFIG, SEED_ADMIN_EMAIL } from '@mge/config';
 import { UserRole, JwtPayload, AuthTokens } from '@mge/types';
 import { prisma } from './prisma';
 import { sendOtpEmail, sendOtpSms } from './mailer';
@@ -12,6 +12,15 @@ const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'dev-refresh-secret
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
 const JWT_REFRESH_EXPIRES_IN = process.env.JWT_REFRESH_EXPIRES_IN || '30d';
 const RESET_TOKEN_SECRET = process.env.JWT_RESET_SECRET || JWT_SECRET;
+
+function isDatabaseConfigured(): boolean {
+  const url = process.env.DATABASE_URL?.trim();
+  if (!url) return false;
+  if (process.env.VERCEL === '1' && /localhost|127\.0\.0\.1/.test(url)) {
+    return false;
+  }
+  return true;
+}
 
 function sanitizeUser(user: {
   id: string;
@@ -52,9 +61,12 @@ async function generateTokens(userId: string, email: string, role: UserRole): Pr
 
   const expiresAt = new Date();
   expiresAt.setDate(expiresAt.getDate() + 30);
-  await prisma.refreshToken.create({
-    data: { userId, token: refreshToken, expiresAt },
-  });
+
+  if (isDatabaseConfigured()) {
+    await prisma.refreshToken.create({
+      data: { userId, token: refreshToken, expiresAt },
+    });
+  }
 
   return { accessToken, refreshToken };
 }
@@ -115,7 +127,36 @@ export async function registerStudent(data: {
 }
 
 export async function loginUser(email: string, password: string) {
-  const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
+  const normalizedEmail = email.toLowerCase();
+
+  if (!isDatabaseConfigured()) {
+    const adminPassword = process.env.ADMIN_INITIAL_PASSWORD;
+    if (
+      adminPassword &&
+      normalizedEmail === SEED_ADMIN_EMAIL &&
+      password === adminPassword
+    ) {
+      const tokens = await generateTokens('bootstrap-admin', SEED_ADMIN_EMAIL, UserRole.ADMIN);
+      return {
+        user: {
+          id: 'bootstrap-admin',
+          email: SEED_ADMIN_EMAIL,
+          firstName: 'Vinodhini',
+          lastName: 'Y.',
+          phone: null,
+          avatar: null,
+          role: UserRole.ADMIN,
+          isActive: true,
+          emailVerified: true,
+          createdAt: new Date(),
+        },
+        ...tokens,
+      };
+    }
+    throw new AuthError('Invalid email or password', 401, 'UNAUTHORIZED');
+  }
+
+  const user = await prisma.user.findUnique({ where: { email: normalizedEmail } });
   if (!user) {
     throw new AuthError('Invalid email or password', 401, 'UNAUTHORIZED');
   }

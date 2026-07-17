@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mantra Global Education — Student Webinar Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #00234e;
+      --accent: #c89116;
+      --accent-soft: #f5ead4;
+      --muted: #5a6b7d;
+      --white: #fff;
+      --slide-w: 1280px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #0a1628;
+      color: var(--primary);
+      min-height: 100vh;
+    }
+
+    /* Toolbar */
+    .toolbar {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 10px; z-index: 200;
+      background: rgba(0,35,78,0.94); border: 1px solid rgba(200,145,22,0.4);
+      padding: 8px 16px; border-radius: 999px; backdrop-filter: blur(10px);
+    }
+    .toolbar button, .toolbar .tbtn {
+      background: transparent; border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; height: 34px; padding: 0 12px; border-radius: 8px;
+      cursor: pointer; font-size: 12px; font-family: inherit;
+    }
+    .toolbar button.icon { width: 34px; padding: 0; border-radius: 50%; font-size: 15px; }
+    .toolbar button:hover, .toolbar .tbtn:hover { border-color: var(--accent); background: rgba(200,145,22,0.15); }
+    .toolbar span { color: rgba(255,255,255,0.7); font-size: 12px; min-width: 56px; text-align: center; }
+
+    .notes-panel {
+      position: fixed; right: 0; top: 0; bottom: 0; width: 320px;
+      background: #0d2240; color: rgba(255,255,255,0.85); padding: 24px 20px;
+      transform: translateX(100%); transition: transform 0.3s; z-index: 150;
+      overflow-y: auto; border-left: 1px solid rgba(200,145,22,0.3);
+    }
+    .notes-panel.open { transform: translateX(0); }
+    .notes-panel h4 { color: var(--accent); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
+    .notes-panel p { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.72); }
+
+    .deck { display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 20px 100px; }
+    .slide {
+      width: min(var(--slide-w), 100%); aspect-ratio: 16/9; background: var(--white);
+      display: none; flex-direction: column; position: relative; overflow: hidden;
+      border: 1px solid rgba(0,35,78,0.06);
+    }
+    .slide.active { display: flex; }
+    .accent-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); z-index: 2; }
+
+    .slide-body { flex: 1; display: flex; flex-direction: column; padding: 44px 60px 36px; position: relative; z-index: 1; }
+    .slide-foot {
+      position: absolute; bottom: 14px; left: 60px; right: 60px;
+      display: flex; justify-content: space-between; font-size: 10px; color: #a5b4c4;
+    }
+
+    .label { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+    .title { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; line-height: 1.15; margin-top: 4px; }
+    .sub { font-size: 14px; color: var(--muted); line-height: 1.55; margin-top: 8px; }
+    .head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,35,78,0.07); }
+    .num { font-size: 12px; color: #a5b4c4; font-weight: 600; }
+
+    /* Cover */
+    .slide-cover { background: var(--primary); color: #fff; }
+    .slide-cover .slide-body { justify-content: space-between; }
+    .cover-brand { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700; }
+    .cover-brand span { color: var(--accent); }
+    .cover-tag { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 6px; }
+    .cover-event { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 600; line-height: 1.25; max-width: 620px; }
+    .cover-event em { color: var(--accent); font-style: normal; }
+    .cover-bottom { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px; font-size: 13px; color: rgba(255,255,255,0.55); }
+    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(200,145,22,0.2); border: 1px solid rgba(200,145,22,0.4); padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .live-dot { width: 7px; height: 7px; background: #e74c3c; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* Agenda timeline */
+    .timeline { display: flex; gap: 0; flex: 1; align-items: stretch; margin-top: 8px; }
+    .tl-item { flex: 1; display: flex; flex-direction: column; position: relative; padding-right: 8px; }
+    .tl-item:not(:last-child)::after { content: ''; position: absolute; top: 18px; right: 0; width: 100%; height: 2px; background: var(--accent-soft); z-index: 0; left: 50%; }
+    .tl-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: var(--accent); font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; margin-bottom: 10px; }
+    .tl-item h4 { font-size: 11px; font-weight: 700; color: var(--primary); margin-bottom: 3px; }
+    .tl-item p { font-size: 10px; color: var(--muted); line-height: 1.4; }
+    .tl-time { font-size: 9px; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
+
+    /* Split image layout */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; align-items: center; }
+    .img-wrap { border-radius: 12px; overflow: hidden; height: 100%; min-height: 280px; position: relative; }
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(0,35,78,0.85)); color: #fff; font-size: 12px; font-weight: 600; }
+
+    /* Interactive poll */
+    .poll-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; flex: 1; align-items: center; }
+    .poll-btn {
+      padding: 28px 16px; text-align: center; border: 2px solid rgba(0,35,78,0.1);
+      border-radius: 12px; cursor: pointer; transition: all 0.2s; background: #f7f9fc;
+    }
+    .poll-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .poll-btn .emoji { font-size: 36px; margin-bottom: 8px; }
+    .poll-btn h4 { font-size: 16px; font-weight: 700; color: var(--primary); }
+    .poll-btn .count { font-size: 28px; font-weight: 700; color: var(--accent); margin-top: 8px; font-family: 'Playfair Display', serif; }
+    .poll-prompt { text-align: center; padding: 16px; background: var(--primary); color: #fff; border-radius: 10px; font-size: 15px; font-weight: 600; margin-bottom: 16px; }
+    .poll-prompt span { color: var(--accent); }
+
+    /* Myth cards */
+    .myth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex: 1; }
+    .flip-card { perspective: 800px; cursor: pointer; min-height: 120px; }
+    .flip-inner { position: relative; width: 100%; height: 100%; min-height: 120px; transition: transform 0.5s; transform-style: preserve-3d; }
+    .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+    .flip-front, .flip-back {
+      position: absolute; inset: 0; backface-visibility: hidden; border-radius: 10px;
+      padding: 18px 20px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .flip-front { background: #fde8e8; border-left: 4px solid #e74c3c; }
+    .flip-front .tag { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #e74c3c; margin-bottom: 6px; }
+    .flip-front p { font-size: 14px; font-weight: 600; color: var(--primary); }
+    .flip-back { background: #e8f5e9; border-left: 4px solid #27ae60; transform: rotateY(180deg); }
+    .flip-back .tag { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #27ae60; margin-bottom: 6px; }
+    .flip-back p { font-size: 13px; color: var(--primary); line-height: 1.45; }
+    .tap-hint { text-align: center; font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+    /* Video slide */
+    .video-wrap { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .video-frame { flex: 1; border-radius: 12px; overflow: hidden; background: #0a1628; position: relative; min-height: 320px; }
+    .video-frame iframe { width: 100%; height: 100%; border: 0; position: absolute; inset: 0; }
+    .video-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; color: rgba(255,255,255,0.7);
+      text-align: center; padding: 24px;
+    }
+    .video-placeholder .play { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; margin-bottom: 12px; cursor: pointer; }
+    .video-caption { font-size: 12px; color: var(--muted); text-align: center; }
+
+    /* Destination cards */
+    .dest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; flex: 1; }
+    .dest-card { border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(0,35,78,0.08); }
+    .dest-card .dest-img { height: 140px; overflow: hidden; }
+    .dest-card .dest-img img { width: 100%; height: 100%; object-fit: cover; }
+    .dest-card .dest-body { padding: 14px 16px; flex: 1; background: #f7f9fc; }
+    .dest-card .flag { font-size: 22px; margin-bottom: 4px; }
+    .dest-card h4 { font-size: 15px; font-weight: 700; color: var(--primary); }
+    .dest-card .facts { margin-top: 8px; }
+    .dest-card .fact { font-size: 11px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid rgba(0,35,78,0.06); }
+    .dest-card .fact strong { color: var(--primary); }
+
+    /* Quiz */
+    .quiz-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; flex: 1; align-items: center; }
+    .quiz-opt {
+      padding: 24px 18px; border: 2px solid rgba(0,35,78,0.1); border-radius: 12px;
+      cursor: pointer; text-align: center; transition: all 0.25s; background: #fff;
+    }
+    .quiz-opt:hover { border-color: var(--accent); }
+    .quiz-opt.selected { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .quiz-opt.selected h4, .quiz-opt.selected p { color: #fff; }
+    .quiz-opt h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .quiz-opt p { font-size: 11px; color: var(--muted); }
+    .quiz-result {
+      margin-top: 14px; padding: 16px 20px; background: var(--accent-soft);
+      border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0;
+      font-size: 14px; color: var(--primary); display: none;
+    }
+    .quiz-result.show { display: block; }
+
+    /* MANTRA journey */
+    .journey { display: flex; gap: 6px; flex: 1; align-items: stretch; }
+    .j-step {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      text-align: center; padding: 12px 8px; background: #f7f9fc;
+      border-top: 3px solid var(--primary); position: relative;
+    }
+    .j-step .letter { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--accent); }
+    .j-step .word { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin: 2px 0 6px; }
+    .j-step .step-title { font-size: 10px; font-weight: 700; color: var(--primary); line-height: 1.3; }
+    .j-step .arrow { position: absolute; right: -8px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 14px; z-index: 1; }
+    .j-step:last-child .arrow { display: none; }
+
+    /* Compare */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; }
+    .compare-col { border-radius: 12px; overflow: hidden; }
+    .compare-head { padding: 14px 18px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .compare-bad .compare-head { background: #fde8e8; color: #c0392b; }
+    .compare-good .compare-head { background: var(--primary); color: var(--accent); }
+    .compare-body { padding: 14px 18px; }
+    .compare-bad .compare-body { background: #fff5f5; }
+    .compare-good .compare-body { background: #f0f4f8; }
+    .compare-row { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(0,35,78,0.06); font-size: 12px; line-height: 1.4; }
+    .compare-row:last-child { border: none; }
+    .compare-row .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+    /* Stats band */
+    .stats-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+    .stat { text-align: center; padding: 16px 10px; background: var(--primary); color: #fff; border-radius: 8px; }
+    .stat .v { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--accent); }
+    .stat .l { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+    /* Founder */
+    .founder-split { display: grid; grid-template-columns: 280px 1fr; gap: 28px; flex: 1; align-items: center; }
+    .founder-img { border-radius: 12px; overflow: hidden; height: 300px; }
+    .founder-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    .cred { padding: 12px 14px; background: #f7f9fc; border-left: 3px solid var(--accent); font-size: 12px; color: var(--muted); }
+    .cred strong { color: var(--primary); display: block; font-size: 13px; margin-bottom: 2px; }
+
+    /* Q&A interactive */
+    .qa-box { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 20px; }
+    .qa-big { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--primary); max-width: 700px; line-height: 1.2; }
+    .qa-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 700px; }
+    .qa-chip { padding: 10px 18px; background: var(--accent-soft); border: 1px solid rgba(200,145,22,0.3); border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--primary); cursor: pointer; transition: all 0.2s; }
+    .qa-chip:hover { background: var(--primary); color: #fff; }
+    .hand-prompt { padding: 14px 24px; background: var(--primary); color: #fff; border-radius: 10px; font-size: 14px; }
+    .hand-prompt strong { color: var(--accent); }
+
+    /* CTA */
+    .cta-slide .slide-body { padding-bottom: 0; }
+    .cta-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; flex: 1; }
+    .cta-steps { display: flex; flex-direction: column; gap: 10px; }
+    .cta-step { display: flex; gap: 14px; align-items: center; padding: 14px 16px; background: #f7f9fc; border-radius: 8px; }
+    .cta-step .n { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cta-step h4 { font-size: 14px; font-weight: 700; color: var(--primary); }
+    .cta-step p { font-size: 11px; color: var(--muted); }
+    .cta-panel { background: var(--primary); color: #fff; border-radius: 12px; padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+    .cta-panel h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+    .cta-panel h3 span { color: var(--accent); }
+    .cta-panel .url { font-size: 18px; font-weight: 700; color: var(--accent); margin-top: 16px; }
+    .cta-panel .free { display: inline-block; margin-top: 12px; padding: 8px 16px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 6px; }
+
+    /* Raise hand slide */
+    .raise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; flex: 1; }
+    .raise-item {
+      display: flex; gap: 14px; align-items: center; padding: 18px 20px;
+      background: #f7f9fc; border-radius: 10px; cursor: pointer; transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+    .raise-item.active { border-color: var(--accent); background: var(--accent-soft); }
+    .raise-item .hand { font-size: 28px; }
+    .raise-item p { font-size: 14px; font-weight: 600; color: var(--primary); line-height: 1.4; }
+
+    @media print {
+      .toolbar, .notes-panel { display: none; }
+      .deck { padding: 0; gap: 0; }
+      .slide { display: flex !important; page-break-after: always; width: 100%; border: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="notes-panel" id="notes">
+  <h4>Speaker Notes</h4>
+  <p id="notes-text">Navigate slides to see presenter notes.</p>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide slide-cover active" data-notes="Welcome students warmly. Introduce yourself and Mantra. Set energy: 'In the next 45 minutes, we'll map your path to USA, UK or Australia — and I'll show you why thousands trust Mantra over generic agents.' Mention free counseling at the end.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div>
+        <div class="live-badge"><span class="live-dot"></span> Live Student Webinar</div>
+        <div class="cover-brand">Mantra <span>Global</span> Education</div>
+        <div class="cover-tag">Study Abroad Excellence</div>
+      </div>
+      <div class="cover-event">Your Global Future Starts <em>Here</em></div>
+      <div class="cover-bottom">
+        <div>USA · United Kingdom · Australia<br />Free Expert Counseling Session</div>
+        <div style="text-align:right">mantraglobaledu.com<br />HQ: Coimbatore, TN</div>
+      </div>
+    </div>
+    <div class="slide-foot" style="color:rgba(255,255,255,0.3)"><span>Confidential — Student Session</span><span>1 / 13</span></div>
+  </section>
+
+  <!-- 2 AGENDA -->
+  <section class="slide" data-notes="Walk through the agenda quickly. Tell students there will be 2 interactive moments and a short video — ask them to keep chat active. Total session ~45 mins.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Session Roadmap</div><h2 class="title">Today's Agenda</h2><p class="sub">45-minute journey — stay active in chat, we'll interact throughout.</p></div><div class="num">02 / 13</div></div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot">1</div><div class="tl-time">5 min</div><h4>Icebreaker Poll</h4><p>Where do you dream of studying?</p></div>
+        <div class="tl-item"><div class="tl-dot">2</div><div class="tl-time">8 min</div><h4>Why Go Global</h4><p>Opportunities & myth-busting</p></div>
+        <div class="tl-item"><div class="tl-dot">3</div><div class="tl-time">5 min</div><h4>Video Insight</h4><p>Real student journey</p></div>
+        <div class="tl-item"><div class="tl-dot">4</div><div class="tl-time">10 min</div><h4>Destinations</h4><p>USA, UK, Australia deep-dive</p></div>
+        <div class="tl-item"><div class="tl-dot">5</div><div class="tl-time">7 min</div><h4>MANTRA Framework</h4><p>Your 6-step success path</p></div>
+        <div class="tl-item"><div class="tl-dot">6</div><div class="tl-time">5 min</div><h4>Why Mantra</h4><p>What makes us different</p></div>
+        <div class="tl-item"><div class="tl-dot">7</div><div class="tl-time">5 min</div><h4>Q&A + Next Steps</h4><p>Free counseling booking</p></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Mantra Global Education</span><span>mantraglobaledu.com</span></div>
+  </section>
+
+  <!-- 3 ICEBREAKER POLL -->
+  <section class="slide" data-notes="INTERACTIVE: Ask students to type their choice in chat OR raise hand. Click the country buttons as responses come in to show live counts. Pause 2 minutes. Acknowledge the majority destination and tease that we'll cover all three.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Interactive · Icebreaker</div><h2 class="title">Where Do You Dream of Studying?</h2></div><div class="num">03 / 13</div></div>
+      <div class="poll-prompt">Type <span>USA</span>, <span>UK</span>, or <span>AUS</span> in the chat — or click below as I count hands!</div>
+      <div class="poll-grid">
+        <div class="poll-btn" onclick="addPoll('usa')"><div class="emoji">🇺🇸</div><h4>United States</h4><div class="count" id="c-usa">0</div></div>
+        <div class="poll-btn" onclick="addPoll('uk')"><div class="emoji">🇬🇧</div><h4>United Kingdom</h4><div class="count" id="c-uk">0</div></div>
+        <div class="poll-btn" onclick="addPoll('aus')"><div class="emoji">🇦🇺</div><h4>Australia</h4><div class="count" id="c-aus">0</div></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Click to tally responses</span><span>Interactive Poll</span></div>
+  </section>
+
+  <!-- 4 WHY STUDY ABROAD -->
+  <section class="slide" data-notes="Paint the vision — not just degrees but careers, networks, global exposure. Use the image to spark emotion. Mention ROI: MS in USA can lead to 3-5x salary growth for engineers.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">The Big Picture</div><h2 class="title">Why Your Degree Deserves a Global Stage</h2></div><div class="num">04 / 13</div></div>
+      <div class="split">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop" alt="Graduates celebrating" />
+          <div class="img-caption">Your degree opens doors — where will you walk through?</div>
+        </div>
+        <div>
+          <div class="stats-band" style="grid-template-columns:1fr 1fr; margin-top:0">
+            <div class="stat"><div class="v">3-5x</div><div class="l">Salary Growth Potential</div></div>
+            <div class="stat"><div class="v">85%</div><div class="l">Employers Value Global Exp.</div></div>
+            <div class="stat"><div class="v">40+</div><div class="l">PG Programs We Cover</div></div>
+            <div class="stat"><div class="v">15+</div><div class="l">Partner Universities</div></div>
+          </div>
+          <p class="sub" style="margin-top:16px">A postgraduate degree abroad isn't just education — it's a career accelerator, a global network, and a life-changing experience.</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Mantra Global Education</span><span>Your Journey. Our Guidance.</span></div>
+  </section>
+
+  <!-- 5 MYTH BUSTER -->
+  <section class="slide" data-notes="INTERACTIVE: Click each myth card to reveal the truth. Ask 'How many believed myth #1?' before flipping. This builds trust and positions Mantra as honest advisors.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Interactive · Myth Buster</div><h2 class="title">Study Abroad Myths — Click to Reveal the Truth</h2></div><div class="num">05 / 13</div></div>
+      <div class="myth-grid">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="tag">Myth</div><p>"Only rich students can afford to study abroad"</p></div><div class="flip-back"><div class="tag">Truth</div><p>Scholarships, education loans, and part-time work options make it accessible. We help you find funding you didn't know existed.</p></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="tag">Myth</div><p>"IELTS 8+ is mandatory for admission"</p></div><div class="flip-back"><div class="tag">Truth</div><p>Many universities accept 6.0–6.5 IELTS. Some offer conditional admission and pathway programs.</p></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="tag">Myth</div><p>"Agents just fill forms — I can do it myself"</p></div><div class="flip-back"><div class="tag">Truth</div><p>SOP strategy, university matching, visa documentation, and scholarship negotiation require expertise. Wrong choices cost years.</p></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-inner"><div class="flip-front"><div class="tag">Myth</div><p>"All consultancies are the same"</p></div><div class="flip-back"><div class="tag">Truth</div><p>Call-center agents vs. certified counselors with 700+ placements — the difference is personal guidance and proven outcomes.</p></div></div></div>
+      </div>
+      <p class="tap-hint">Click any card to flip · Ask students which myth they've heard most</p>
+    </div>
+    <div class="slide-foot"><span>Click cards to interact</span><span>Myth Buster</span></div>
+  </section>
+
+  <!-- 6 VIDEO -->
+  <section class="slide" data-notes="VIDEO BREAK (~2 min): Play the embedded video. Replace VIDEO_ID below with your own student testimonial or founder intro video. While playing, monitor chat. After video: 'What stood out to you?' — pick 2 chat responses to read aloud.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Video Insight</div><h2 class="title">Hear From Students Who Made It</h2><p class="sub">Real journeys. Real universities. Real results.</p></div><div class="num">06 / 13</div></div>
+      <div class="video-wrap">
+        <div class="video-frame" id="video-frame">
+          <!-- Replace dQw4w9WgXcQ with your YouTube video ID -->
+          <iframe id="yt-player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video-placeholder" id="video-placeholder">
+            <div class="play" onclick="playVideo()">▶</div>
+            <p style="font-size:15px;font-weight:600;color:#fff;margin-bottom:6px">Student Success Story</p>
+            <p style="font-size:12px">Click to play · Replace video ID in deck settings</p>
+          </div>
+        </div>
+        <p class="video-caption">Tip for presenter: Replace <code style="background:#eee;padding:2px 6px;border-radius:4px">WEBINAR_VIDEO_ID</code> at bottom of this file with your testimonial YouTube link.</p>
+      </div>
+    </div>
+    <div class="slide-foot"><span>2-minute video break</span><span>Stay engaged in chat</span></div>
+  </section>
+
+  <!-- 7 DESTINATIONS -->
+  <section class="slide" data-notes="Cover each destination in 3 minutes. Ask: 'Engineering students — USA or Germany?' (trick: we focus USA/UK/AUS). Highlight scholarships, post-study work visas, and program duration for each.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Destination Deep-Dive</div><h2 class="title">Three Countries. Unlimited Possibilities.</h2></div><div class="num">07 / 13</div></div>
+      <div class="dest-grid">
+        <div class="dest-card">
+          <div class="dest-img"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=200&fit=crop" alt="USA" /></div>
+          <div class="dest-body"><div class="flag">🇺🇸</div><h4>United States</h4><div class="facts"><div class="fact"><strong>Top for:</strong> MS CS, Data Science, MBA</div><div class="fact"><strong>Duration:</strong> 1.5–2 year programs</div><div class="fact"><strong>Work:</strong> 3-year OPT for STEM</div><div class="fact"><strong>Scholarships:</strong> Merit & assistantships</div></div></div>
+        </div>
+        <div class="dest-card">
+          <div class="dest-img"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=200&fit=crop" alt="UK" /></div>
+          <div class="dest-body"><div class="flag">🇬🇧</div><h4>United Kingdom</h4><div class="facts"><div class="fact"><strong>Top for:</strong> 1-year Masters programs</div><div class="fact"><strong>Duration:</strong> 12 months (save time & money)</div><div class="fact"><strong>Work:</strong> 2-year Graduate Route visa</div><div class="fact"><strong>Scholarships:</strong> Chevening, uni bursaries</div></div></div>
+        </div>
+        <div class="dest-card">
+          <div class="dest-img"><img src="https://images.unsplash.com/photo-1523482580672-f109ba8aba91?w=400&h=200&fit=crop" alt="Australia" /></div>
+          <div class="dest-body"><div class="flag">🇦🇺</div><h4>Australia</h4><div class="facts"><div class="fact"><strong>Top for:</strong> IT, Engineering, Health</div><div class="fact"><strong>Duration:</strong> 1.5–2 year programs</div><div class="fact"><strong>Work:</strong> Up to 4-year PSW visa</div><div class="fact"><strong>Scholarships:</strong> Australia Awards</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Mantra focuses exclusively on these 3 destinations</span><span>Deep expertise, not scattered advice</span></div>
+  </section>
+
+  <!-- 8 QUIZ -->
+  <section class="slide" data-notes="INTERACTIVE QUIZ: Ask students to pick the option that fits them. Click an option to reveal personalized advice. Engage chat: 'Who picked Research-focused?' — builds personal connection.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Interactive · Quick Quiz</div><h2 class="title">Which Path Fits YOU?</h2><p class="sub">Click your priority — see your recommended destination.</p></div><div class="num">08 / 13</div></div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="showQuiz(this,'usa')"><h4>Career & Salary</h4><p>I want maximum ROI and STEM opportunities</p></div>
+        <div class="quiz-opt" onclick="showQuiz(this,'uk')"><h4>Fast Track</h4><p>I want a 1-year Masters and quick return</p></div>
+        <div class="quiz-opt" onclick="showQuiz(this,'aus')"><h4>Work & Settle</h4><p>I want post-study work and lifestyle balance</p></div>
+      </div>
+      <div class="quiz-result" id="quiz-result"></div>
+    </div>
+    <div class="slide-foot"><span>Click to reveal recommendation</span><span>Student Quiz</span></div>
+  </section>
+
+  <!-- 9 RAISE HAND -->
+  <section class="slide" data-notes="INTERACTIVE: Read each statement. Ask students to raise hand or react if it applies. Click items as you see hands. This creates participation and surfaces concerns you'll address.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Interactive · Raise Your Hand</div><h2 class="title">Does This Sound Like You?</h2></div><div class="num">09 / 13</div></div>
+      <div class="hand-prompt" style="margin-bottom:16px">Raise your hand or type <strong>"ME"</strong> in chat if this is you!</div>
+      <div class="raise-grid">
+        <div class="raise-item" onclick="this.classList.toggle('active')"><span class="hand">🙋</span><p>I'm in final year and haven't started my application yet</p></div>
+        <div class="raise-item" onclick="this.classList.toggle('active')"><span class="hand">🙋</span><p>I'm confused between USA and UK for my Masters</p></div>
+        <div class="raise-item" onclick="this.classList.toggle('active')"><span class="hand">🙋</span><p>I'm worried about the cost and need scholarship guidance</p></div>
+        <div class="raise-item" onclick="this.classList.toggle('active')"><span class="hand">🙋</span><p>My parents want me to study abroad but I don't know where to start</p></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Click items as students respond</span><span>Engagement Check</span></div>
+  </section>
+
+  <!-- 10 MANTRA FRAMEWORK -->
+  <section class="slide" data-notes="This is your differentiator. Walk through each letter slowly. Emphasize: 'Other companies stop at application. We support until you arrive and thrive.' Students remember MANTRA acronym.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Our Methodology</div><h2 class="title">The MANTRA Framework</h2><p class="sub">Six stages. One trusted partner. Zero guesswork.</p></div><div class="num">10 / 13</div></div>
+      <div class="journey">
+        <div class="j-step"><div class="letter">M</div><div class="word">Mentor</div><div class="step-title">Discover Your Future</div><span class="arrow">→</span></div>
+        <div class="j-step"><div class="letter">A</div><div class="word">Assess</div><div class="step-title">Choose University</div><span class="arrow">→</span></div>
+        <div class="j-step"><div class="letter">N</div><div class="word">Navigate</div><div class="step-title">Winning Application</div><span class="arrow">→</span></div>
+        <div class="j-step"><div class="letter">T</div><div class="word">Transition</div><div class="step-title">Visa & Finance</div><span class="arrow">→</span></div>
+        <div class="j-step"><div class="letter">R</div><div class="word">Relocate</div><div class="step-title">Settle Abroad</div><span class="arrow">→</span></div>
+        <div class="j-step"><div class="letter">A</div><div class="word">Arrive</div><div class="step-title">Thrive & Succeed</div></div>
+      </div>
+      <div class="stats-band">
+        <div class="stat"><div class="v">700+</div><div class="l">Students Guided</div></div>
+        <div class="stat"><div class="v">End-to-End</div><div class="l">Not Just Applications</div></div>
+        <div class="stat"><div class="v">Free</div><div class="l">First Counseling</div></div>
+        <div class="stat"><div class="v">1:1</div><div class="l">Personal Counselor</div></div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>MANTRA Framework — Proprietary</span><span>Mantra Global Education</span></div>
+  </section>
+
+  <!-- 11 WHY MANTRA -->
+  <section class="slide" data-notes="This is the competitive slide. Don't name competitors — contrast 'typical agents' vs Mantra. Students and parents fear being cheated — British Council certification and 700+ placements are your proof points.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Why Choose Us</div><h2 class="title">Mantra vs. Typical Agents</h2></div><div class="num">11 / 13</div></div>
+      <div class="compare">
+        <div class="compare-col compare-bad">
+          <div class="compare-head">Typical Consultancy</div>
+          <div class="compare-body">
+            <div class="compare-row"><span class="icon">✗</span><span>Call-center counselors, different person every call</span></div>
+            <div class="compare-row"><span class="icon">✗</span><span>Pushes universities that pay highest commission</span></div>
+            <div class="compare-row"><span class="icon">✗</span><span>Stops support after application submitted</span></div>
+            <div class="compare-row"><span class="icon">✗</span><span>Hidden fees and vague promises</span></div>
+            <div class="compare-row"><span class="icon">✗</span><span>50+ countries — jack of all trades</span></div>
+          </div>
+        </div>
+        <div class="compare-col compare-good">
+          <div class="compare-head">Mantra Global Education</div>
+          <div class="compare-body">
+            <div class="compare-row"><span class="icon">✓</span><span>Dedicated 1:1 counselor — British Council certified</span></div>
+            <div class="compare-row"><span class="icon">✓</span><span>University matching based on YOUR profile & goals</span></div>
+            <div class="compare-row"><span class="icon">✓</span><span>Full journey: counseling → visa → arrival → alumni</span></div>
+            <div class="compare-row"><span class="icon">✓</span><span>Transparent process, free first counseling session</span></div>
+            <div class="compare-row"><span class="icon">✓</span><span>Deep focus: USA, UK & Australia only — 15+ partner unis</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>700+ students placed</span><span>Pan-India Top 17 Counselor</span></div>
+  </section>
+
+  <!-- 12 FOUNDER -->
+  <section class="slide" data-notes="Build trust through founder story. Vinodhini's IDP background and British Council certification matter to parents. Mention she's personally overseen 700+ placements. This humanizes the brand.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Meet Your Guide</div><h2 class="title">Led by a Certified Expert</h2></div><div class="num">12 / 13</div></div>
+      <div class="founder-split">
+        <div class="founder-img">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" alt="Founder - replace with Vinodhini photo" />
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--primary)">Vinodhini Y.</h3>
+          <p style="font-size:13px;color:var(--accent);font-weight:700;margin:4px 0 12px">Founder, Mantra Global Education</p>
+          <p class="sub" style="margin-top:0">Not a call center. Not a franchise. A boutique consultancy where every student gets personal attention from certified experts.</p>
+          <div class="cred-grid">
+            <div class="cred"><strong>10+ Years Experience</strong>International education counseling</div>
+            <div class="cred"><strong>Former IDP Counselor</strong>Global admissions expertise</div>
+            <div class="cred"><strong>British Council Certified</strong>Trusted, verified credentials</div>
+            <div class="cred"><strong>700+ Students Placed</strong>USA, UK & Australia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Replace founder image with your photo</span><span>Vinodhini Y.</span></div>
+  </section>
+
+  <!-- 13 Q&A + CTA -->
+  <section class="slide cta-slide" data-notes="Open floor for 5 min Q&A. Click topic chips to prompt discussion. Close with strong CTA: free counseling this week, limited slots. Share mantraglobaledu.com in chat. Thank the college for hosting.">
+    <div class="accent-bar"></div>
+    <div class="slide-body">
+      <div class="head"><div><div class="label">Your Next Step</div><h2 class="title">Questions & Free Counseling</h2></div><div class="num">13 / 13</div></div>
+      <div class="cta-grid">
+        <div>
+          <p class="sub" style="margin-bottom:14px">Drop your question in chat — or tap a topic:</p>
+          <div class="qa-chips" style="margin-bottom:20px">
+            <span class="qa-chip">Scholarships?</span>
+            <span class="qa-chip">IELTS score?</span>
+            <span class="qa-chip">Total cost?</span>
+            <span class="qa-chip">Which university?</span>
+            <span class="qa-chip">Visa process?</span>
+            <span class="qa-chip">Part-time work?</span>
+          </div>
+          <div class="cta-steps">
+            <div class="cta-step"><div class="n">1</div><div><h4>Book Free Counseling</h4><p>1-on-1 session with our certified team</p></div></div>
+            <div class="cta-step"><div class="n">2</div><div><h4>Get Your Profile Check</h4><p>Free evaluation of your study abroad readiness</p></div></div>
+            <div class="cta-step"><div class="n">3</div><div><h4>Start Your MANTRA Journey</h4><p>Personalized roadmap to your dream university</p></div></div>
+          </div>
+        </div>
+        <div class="cta-panel">
+          <h3>Your global future starts with <span>one conversation.</span></h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6">Join 700+ students who trusted Mantra Global Education for their study abroad journey.</p>
+          <div class="url">mantraglobaledu.com</div>
+          <div class="free">Free Counseling — Book Today</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot"><span>Thank you for joining!</span><span>Mantra Global Education</span></div>
+  </section>
+
+</div>
+
+<div class="toolbar">
+  <button class="icon" id="prev">←</button>
+  <span id="counter">1 / 13</span>
+  <button class="icon" id="next">→</button>
+  <button class="tbtn" id="toggle-notes">Notes</button>
+  <button class="tbtn" id="fullscreen">Fullscreen</button>
+</div>
+
+<script>
+  // ── CONFIG: Replace with your YouTube video ID ──
+  const WEBINAR_VIDEO_ID = 'aaruQv9b0G4'; // Study abroad motivation — replace with your testimonial
+
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  const pollCounts = { usa: 0, uk: 0, aus: 0 };
+
+  function show(i) {
+    current = Math.max(0, Math.min(i, slides.length - 1));
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    document.getElementById('counter').textContent = `${current + 1} / ${slides.length}`;
+    const notes = slides[current].dataset.notes || '';
+    document.getElementById('notes-text').textContent = notes;
+  }
+
+  document.getElementById('prev').onclick = () => show(current - 1);
+  document.getElementById('next').onclick = () => show(current + 1);
+  document.getElementById('toggle-notes').onclick = () => document.getElementById('notes').classList.toggle('open');
+  document.getElementById('fullscreen').onclick = () => {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); show(current + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(current - 1); }
+    if (e.key === 'n' || e.key === 'N') document.getElementById('notes').classList.toggle('open');
+  });
+
+  function addPoll(key) {
+    pollCounts[key]++;
+    document.getElementById('c-' + key).textContent = pollCounts[key];
+  }
+
+  const quizAnswers = {
+    usa: '🇺🇸 <strong>USA is your best fit!</strong> With 3-year STEM OPT and top-ranked universities, you\'ll maximize career ROI. Mantra has placed hundreds of engineers in US MS programs.',
+    uk: '🇬🇧 <strong>UK is your best fit!</strong> Complete your Masters in just 12 months, save on living costs, and use the 2-year Graduate Route to work. We partner with top UK universities.',
+    aus: '🇦🇺 <strong>Australia is your best fit!</strong> Enjoy quality education, post-study work up to 4 years, and a balanced lifestyle. Mantra guides you through every step.'
+  };
+
+  function showQuiz(el, key) {
+    document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    const r = document.getElementById('quiz-result');
+    r.innerHTML = quizAnswers[key];
+    r.classList.add('show');
+  }
+
+  function playVideo() {
+    const iframe = document.getElementById('yt-player');
+    iframe.src = `https://www.youtube.com/embed/${WEBINAR_VIDEO_ID}?autoplay=1&rel=0`;
+    document.getElementById('video-placeholder').style.display = 'none';
+  }
+
+  show(0);
+</script>
+</body>
+</html>

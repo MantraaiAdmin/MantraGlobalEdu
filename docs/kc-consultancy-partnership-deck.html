@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mantra Global Education — KC Consultancy Partnership Pitch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #00234e;
+      --primary-light: #0d3a6e;
+      --accent: #c89116;
+      --accent-soft: #f5ead4;
+      --neutral: #a5b4c4;
+      --white: #ffffff;
+      --muted: #5a6b7d;
+      --success: #1a7a4a;
+      --slide-w: 1280px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: #0a1628; color: var(--primary); min-height: 100vh; }
+
+    .toolbar {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(0,35,78,0.94); border: 1px solid rgba(200,145,22,0.35);
+      padding: 10px 18px; border-radius: 999px; z-index: 200; backdrop-filter: blur(8px);
+    }
+    .toolbar button {
+      background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--white);
+      width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 15px;
+    }
+    .toolbar button:hover { background: rgba(200,145,22,0.25); border-color: var(--accent); }
+    .toolbar span { color: rgba(255,255,255,0.8); font-size: 13px; min-width: 80px; text-align: center; font-variant-numeric: tabular-nums; }
+    .toolbar .notes-btn { width: auto; padding: 0 14px; border-radius: 20px; font-size: 12px; }
+
+    .notes-panel {
+      position: fixed; right: 0; top: 0; bottom: 0; width: 360px; max-width: 90vw;
+      background: #0d2240; color: #e8edf4; padding: 24px; overflow-y: auto; z-index: 150;
+      transform: translateX(100%); transition: transform 0.3s; border-left: 2px solid var(--accent);
+    }
+    .notes-panel.open { transform: translateX(0); }
+    .notes-panel h3 { font-size: 14px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .notes-panel p, .notes-panel li { font-size: 13px; line-height: 1.55; color: rgba(255,255,255,0.85); margin-bottom: 10px; }
+    .notes-panel .tip { background: rgba(200,145,22,0.12); border-left: 3px solid var(--accent); padding: 10px 12px; border-radius: 0 8px 8px 0; margin-top: 12px; font-size: 12px; }
+
+    .deck { display: flex; flex-direction: column; align-items: center; gap: 48px; padding: 48px 24px 120px; }
+    .slide {
+      width: min(var(--slide-w), 100%); aspect-ratio: 16/9; background: var(--white);
+      position: relative; overflow: hidden; display: none; flex-direction: column;
+      border: 1px solid rgba(0,35,78,0.08);
+    }
+    .slide.active { display: flex; }
+    .slide-inner { flex: 1; display: flex; flex-direction: column; padding: 48px 64px 40px; position: relative; z-index: 1; }
+    .accent-bar { height: 5px; background: linear-gradient(90deg, var(--accent), #e8b84a); flex-shrink: 0; }
+
+    .slide-cover { background: var(--primary); color: var(--white); }
+    .slide-cover .slide-inner { justify-content: space-between; }
+    .slide-section { background: var(--primary); color: var(--white); }
+    .slide-section .slide-inner { justify-content: center; }
+
+    .slide-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+    .slide-label { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .slide-title { font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 700; line-height: 1.15; color: var(--primary); }
+    .slide-cover .slide-title, .slide-section .slide-title { color: var(--white); }
+    .slide-num { font-size: 12px; color: var(--muted); font-weight: 600; }
+    .slide-cover .slide-num, .slide-section .slide-num { color: rgba(255,255,255,0.45); }
+    .exec-summary { font-size: 14px; color: var(--muted); line-height: 1.5; max-width: 90%; margin-bottom: 18px; }
+
+    .slide-footer {
+      display: flex; justify-content: space-between; padding: 10px 64px;
+      font-size: 10px; color: var(--muted); border-top: 1px solid rgba(0,35,78,0.06); background: #fafbfc;
+    }
+
+    .brand-mark .name { font-family: 'Playfair Display', Georgia, serif; font-size: 48px; font-weight: 700; line-height: 1.05; }
+    .brand-mark .tag { font-size: 15px; color: var(--accent); letter-spacing: 0.06em; margin-top: 8px; }
+    .cover-meta { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    .cover-badge {
+      display: inline-block; background: rgba(200,145,22,0.2); border: 1px solid rgba(200,145,22,0.5);
+      color: #f5d78e; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 4px; margin-bottom: 20px;
+    }
+    .cover-cta { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--accent); margin-top: 16px; }
+
+    .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 16px; }
+    .kpi { background: var(--primary); color: var(--white); border-radius: 10px; padding: 16px; text-align: center; }
+    .kpi .val { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .kpi .lbl { font-size: 11px; opacity: 0.8; margin-top: 4px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+    .card { background: #f7f9fc; border: 1px solid rgba(0,35,78,0.08); border-radius: 10px; padding: 14px 16px; }
+    .card h4 { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .card p, .card li { font-size: 11.5px; color: var(--muted); line-height: 1.45; }
+    .card ul { padding-left: 16px; }
+    .card.gold { background: var(--accent-soft); border-color: rgba(200,145,22,0.25); }
+    .card.navy { background: var(--primary); color: var(--white); }
+    .card.navy h4 { color: var(--accent); }
+    .card.navy p { color: rgba(255,255,255,0.75); }
+
+    .icon-card { display: flex; gap: 10px; align-items: flex-start; }
+    .icon-card .ico { width: 32px; height: 32px; background: var(--primary); color: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+
+    .flow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .flow-step {
+      background: var(--primary); color: var(--white); font-size: 10px; font-weight: 600;
+      padding: 6px 10px; border-radius: 6px; white-space: nowrap;
+    }
+    .flow-arrow { color: var(--accent); font-weight: 700; font-size: 14px; }
+
+    .flow-vertical { display: flex; flex-direction: column; gap: 4px; max-height: 380px; overflow: hidden; }
+    .flow-v-row { display: flex; align-items: center; gap: 8px; }
+    .flow-v-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+    .flow-v-line { width: 2px; height: 10px; background: rgba(0,35,78,0.15); margin-left: 3px; }
+    .flow-v-text { font-size: 11px; font-weight: 600; color: var(--primary); }
+
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .compare-table th { background: var(--primary); color: var(--white); padding: 10px 12px; text-align: left; font-weight: 600; }
+    .compare-table th:first-child { border-radius: 8px 0 0 0; }
+    .compare-table th:last-child { border-radius: 0 8px 0 0; }
+    .compare-table td { padding: 9px 12px; border-bottom: 1px solid #e8ecf1; color: var(--muted); }
+    .compare-table tr:nth-child(even) td { background: #f7f9fc; }
+    .compare-table .yes { color: var(--success); font-weight: 700; }
+    .compare-table .highlight { background: var(--accent-soft) !important; font-weight: 600; color: var(--primary); }
+
+    .timeline { display: flex; gap: 0; margin-top: 8px; }
+    .tl-phase { flex: 1; position: relative; padding: 14px 12px 12px; border-top: 4px solid var(--accent); background: #f7f9fc; margin-right: 8px; border-radius: 0 0 10px 10px; }
+    .tl-phase:last-child { margin-right: 0; }
+    .tl-phase .yr { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+    .tl-phase h4 { font-size: 13px; color: var(--primary); margin: 6px 0 8px; }
+    .tl-phase ul { font-size: 10.5px; color: var(--muted); padding-left: 14px; line-height: 1.5; }
+
+    .split-resp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .resp-col h4 { font-size: 12px; font-weight: 700; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 2px solid; }
+    .resp-col.kc h4 { color: #0d5c8c; border-color: #0d5c8c; }
+    .resp-col.mge h4 { color: var(--accent); border-color: var(--accent); }
+    .resp-item { font-size: 10.5px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid #eef1f5; display: flex; gap: 8px; }
+    .resp-item strong { color: var(--primary); min-width: 100px; font-size: 10px; }
+
+    .maturity { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin-top: 12px; }
+    .mat-bar { flex: 1; background: linear-gradient(180deg, var(--accent), #a67a10); border-radius: 6px 6px 0 0; position: relative; }
+    .mat-bar span { position: absolute; bottom: -22px; left: 0; right: 0; text-align: center; font-size: 9px; color: var(--muted); font-weight: 600; }
+    .mat-bar em { position: absolute; top: -18px; left: 0; right: 0; text-align: center; font-size: 10px; font-weight: 700; color: var(--primary); font-style: normal; }
+
+    .world-strip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .dest-chip { font-size: 10px; background: var(--primary); color: var(--white); padding: 4px 10px; border-radius: 20px; }
+
+    .cta-panel {
+      background: var(--primary); color: var(--white); border-radius: 12px; padding: 28px 36px;
+      text-align: center; margin-top: auto;
+    }
+    .cta-panel h3 { font-family: 'Playfair Display', serif; font-size: 26px; margin-bottom: 10px; }
+    .cta-panel p { font-size: 14px; opacity: 0.8; }
+    .cta-panel .contact { margin-top: 14px; font-size: 13px; color: var(--accent); }
+
+    .section-num { font-family: 'Playfair Display', serif; font-size: 72px; color: rgba(200,145,22,0.25); line-height: 1; margin-bottom: 8px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; }
+    .section-sub { font-size: 16px; opacity: 0.75; margin-top: 10px; max-width: 600px; }
+
+    .loan-highlight {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: linear-gradient(135deg, #1a5f3a, #2d8a55); color: white;
+      font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 20px; margin-left: 8px;
+    }
+
+    @media print {
+      body { background: white; }
+      .toolbar, .notes-panel { display: none !important; }
+      .slide { display: flex !important; page-break-after: always; break-after: page; margin: 0; border: none; }
+      .deck { padding: 0; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="notes-panel" id="notesPanel">
+    <h3>Speaker Notes</h3>
+    <div id="notesContent"><p>Select a slide to view notes.</p></div>
+  </div>
+
+  <div class="deck" id="deck">
+
+    <!-- 01 COVER -->
+    <section class="slide slide-cover active" data-slide="1"
+      data-summary="Position Mantra as a premium, process-driven recruitment partner — not a student sales pitch."
+      data-notes="Open with confidence and partnership framing. Address the KC Consultancy Regional Manager by name. Emphasise this is a B2B capability presentation, not a student seminar. Set tone: McKinsey-level rigour, education-sector depth."
+      data-tip="Pause after the title. Let the premium visual establish credibility before speaking.">
+      <div class="slide-inner">
+        <div>
+          <div class="cover-badge">Confidential · Partnership Proposal · 2026</div>
+          <div class="brand-mark">
+            <div class="name">Mantra Global Education</div>
+            <div class="tag">Your Journey. Our Guidance. Global Success.</div>
+          </div>
+          <p class="cover-cta" style="margin-top:32px;">Strategic Partnership Proposal</p>
+          <p style="font-size:20px; margin-top:8px; opacity:0.9;">For KC Consultancy</p>
+        </div>
+        <div class="cover-meta">
+          <p>Prepared for: Regional Manager, KC Consultancy</p>
+          <p>Presenter: Vinodhini Y., Founder</p>
+          <p>mantraglobaledu.com · Coimbatore, Tamil Nadu</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 AGENDA -->
+    <section class="slide" data-slide="2"
+      data-summary="Structured agenda signals consulting discipline and respects executive time."
+      data-notes="Walk through the 6 agenda blocks in 60 seconds. Signal that each section has clear outcomes. Mention loan assistance and financial services as a differentiated capability within the student journey."
+      data-tip="Use this slide to set expectations: 20–25 minute presentation, 10 minutes Q&A.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Executive Overview</div>
+            <h2 class="slide-title">Agenda</h2>
+            <p class="exec-summary">A structured review of Mantra's capabilities, operating model, and partnership value proposition for KC Consultancy.</p>
+          </div>
+          <div class="slide-num">02 / 17</div>
+        </div>
+        <div class="grid-3" style="flex:1;">
+          <div class="card gold"><h4>01 · Who We Are</h4><p>Leadership, mission, values, and track record in international education.</p></div>
+          <div class="card gold"><h4>02 · What We Deliver</h4><p>End-to-end services including counselling, admissions, visa, loans & post-arrival support.</p></div>
+          <div class="card gold"><h4>03 · How We Operate</h4><p>Technology platform, student journey workflow, and partnership model.</p></div>
+          <div class="card"><h4>04 · Operational Excellence</h4><p>SOPs, quality assurance, compliance, and escalation frameworks.</p></div>
+          <div class="card"><h4>05 · Growth & Scale</h4><p>3-year roadmap, global destinations, and scalable partnership economics.</p></div>
+          <div class="card navy"><h4>06 · Partnership Decision</h4><p>Why KC Consultancy + Mantra = stronger outcomes for students and both organisations.</p></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Mantra Global Education</span><span>KC Consultancy Partnership Pitch</span></div>
+    </section>
+
+    <!-- 03 COMPANY & FOUNDER -->
+    <section class="slide" data-slide="3"
+      data-summary="Founder-led boutique with IDP pedigree and 700+ students guided across 19+ destinations."
+      data-notes="Lead with founder credibility: 10+ years, former IDP professional. This is the trust anchor. Reference 700+ students guided and 19+ study destinations. Position as boutique quality with enterprise process discipline."
+      data-tip="Share one brief IDP-era anecdote that demonstrates operational rigour — not student sales stories.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Company Profile</div>
+            <h2 class="slide-title">Leadership & Credentials</h2>
+            <p class="exec-summary">Founder-led organisation combining international education expertise with technology and AI innovation.</p>
+          </div>
+          <div class="slide-num">03 / 17</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="val">10+</div><div class="lbl">Years in Intl. Education</div></div>
+          <div class="kpi"><div class="val">700+</div><div class="lbl">Students Guided</div></div>
+          <div class="kpi"><div class="val">19+</div><div class="lbl">Study Destinations</div></div>
+          <div class="kpi"><div class="val">42+</div><div class="lbl">Partner Universities</div></div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Founder — Vinodhini Y.</h4>
+            <ul>
+              <li>Former IDP Education professional</li>
+              <li>Student recruitment & university admissions</li>
+              <li>Visa guidance & student counselling</li>
+              <li>Technology & AI background</li>
+              <li>Process-driven, ethical operations</li>
+            </ul>
+          </div>
+          <div class="card navy">
+            <h4>Why This Matters for KC</h4>
+            <p>Partners gain access to IDP-grade operational knowledge without agency overhead — delivered through a dedicated, accountable leadership team that owns outcomes end-to-end.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Former IDP Expertise</span><span>Founder-Led Accountability</span></div>
+    </section>
+
+    <!-- 04 MISSION VISION VALUES -->
+    <section class="slide" data-slide="4"
+      data-summary="Mission, vision, and six core values aligned to partnership trust and long-term growth."
+      data-notes="Connect values directly to KC's reputation risk: Integrity and Transparency mean no hidden commissions or misleading promises. Long-term Partnerships signals you're building a channel, not chasing one-time referrals."
+      data-tip="Ask: 'What qualities matter most in your current recruitment partners?' — then map to values.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Strategic Foundation</div>
+            <h2 class="slide-title">Mission, Vision & Values</h2>
+          </div>
+          <div class="slide-num">04 / 17</div>
+        </div>
+        <div class="grid-2" style="margin-bottom:14px;">
+          <div class="card gold">
+            <h4>Mission</h4>
+            <p>Empowering students to achieve global education aspirations through transparent counselling, personalised guidance, and technology-driven services.</p>
+          </div>
+          <div class="card gold">
+            <h4>Vision</h4>
+            <p>To become one of India's most trusted and technology-enabled international education partners.</p>
+          </div>
+        </div>
+        <div class="grid-6">
+          <div class="card icon-card"><div class="ico">🎯</div><div><h4>Student First</h4><p>Outcomes over volume</p></div></div>
+          <div class="card icon-card"><div class="ico">⚖️</div><div><h4>Integrity</h4><p>Ethical counselling always</p></div></div>
+          <div class="card icon-card"><div class="ico">🔍</div><div><h4>Transparency</h4><p>Clear fees & processes</p></div></div>
+          <div class="card icon-card"><div class="ico">💼</div><div><h4>Professionalism</h4><p>Executive-grade delivery</p></div></div>
+          <div class="card icon-card"><div class="ico">⚡</div><div><h4>Innovation</h4><p>AI & digital workflows</p></div></div>
+          <div class="card icon-card"><div class="ico">🤝</div><div><h4>Long-term Partnerships</h4><p>Mutual growth mindset</p></div></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Values-Driven Operations</span><span>Partnership-Ready Culture</span></div>
+    </section>
+
+    <!-- 05 SERVICES -->
+    <section class="slide" data-slide="5"
+      data-summary="Full-stack study-abroad services including dedicated education loan assistance."
+      data-notes="Walk the service grid left-to-right. Pause on Education Loan Support — Mantra coordinates with partner banks/NBFCs, documentation for loan applications, and financial planning alongside scholarships. KC generates leads; Mantra executes the full service stack."
+      data-tip="Highlight loan assistance explicitly when KC manager asks 'what happens after offer letter?' — it's a major drop-off point.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Service Portfolio</div>
+            <h2 class="slide-title">End-to-End Student Services</h2>
+            <p class="exec-summary">Comprehensive delivery from first counselling session through post-arrival support — including financial services.</p>
+          </div>
+          <div class="slide-num">05 / 17</div>
+        </div>
+        <div class="grid-4">
+          <div class="card icon-card"><div class="ico">🧭</div><div><h4>Career Counselling</h4><p>Profile & pathway planning</p></div></div>
+          <div class="card icon-card"><div class="ico">🎓</div><div><h4>University Selection</h4><p>Data-driven shortlisting</p></div></div>
+          <div class="card icon-card"><div class="ico">📋</div><div><h4>Application Processing</h4><p>End-to-end submissions</p></div></div>
+          <div class="card icon-card"><div class="ico">✍️</div><div><h4>SOP & LOR Guidance</h4><p>Quality documentation</p></div></div>
+          <div class="card icon-card"><div class="ico">🏆</div><div><h4>Scholarship Assistance</h4><p>Funding optimisation</p></div></div>
+          <div class="card icon-card" style="border:2px solid #2d8a55; background:#edf7f0;"><div class="ico" style="background:#1a5f3a;">💰</div><div><h4>Education Loan Support <span class="loan-highlight">Key Service</span></h4><p>Bank coordination, loan documentation, collateral guidance & disbursement support</p></div></div>
+          <div class="card icon-card"><div class="ico">📄</div><div><h4>Visa Documentation</h4><p>Checklist & verification</p></div></div>
+          <div class="card icon-card"><div class="ico">✈️</div><div><h4>Visa Filing</h4><p>Submission & tracking</p></div></div>
+          <div class="card icon-card"><div class="ico">🏠</div><div><h4>Accommodation</h4><p>Housing assistance</p></div></div>
+          <div class="card icon-card"><div class="ico">🏥</div><div><h4>Health Insurance</h4><p>Overseas OSHC/OSHC</p></div></div>
+          <div class="card icon-card"><div class="ico">💱</div><div><h4>Forex Assistance</h4><p>Remittance support</p></div></div>
+          <div class="card icon-card"><div class="ico">🛫</div><div><h4>Pre-Departure Briefing</h4><p>Travel readiness</p></div></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Includes Education Loan Assistance</span><span>Full Lifecycle Coverage</span></div>
+    </section>
+
+    <!-- 06 TECHNOLOGY -->
+    <section class="slide" data-slide="6"
+      data-summary="Modern tech platform: CRM, portals, AI recommendations, and partner analytics."
+      data-notes="This is your differentiation slide. KC Consultancy needs visibility — partner dashboard, pipeline reporting, commission tracking. Emphasise CRM-driven lifecycle, not spreadsheets. AI recommendation engine improves shortlisting quality."
+      data-tip="Demo the live platform at mantraglobaledu.com if possible — even 2 minutes builds massive credibility.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Technology Advantage</div>
+            <h2 class="slide-title">Digital-First Operations Platform</h2>
+            <p class="exec-summary">Enterprise-grade technology enabling transparency, speed, and scalable partnership management.</p>
+          </div>
+          <div class="slide-num">06 / 17</div>
+        </div>
+        <div class="grid-3">
+          <div class="card"><h4>🗂️ CRM & Lifecycle</h4><p>Lead-to-alumni student lifecycle management with automated stage progression.</p></div>
+          <div class="card"><h4>👤 Student Portal</h4><p>Applications, documents, appointments, and notifications in one secure hub.</p></div>
+          <div class="card"><h4>📊 Application Dashboard</h4><p>Real-time tracking across universities, intakes, and decision statuses.</p></div>
+          <div class="card gold"><h4>🤖 AI University Engine</h4><p>Profile-based recommendations across 19+ destinations and 42+ universities.</p></div>
+          <div class="card"><h4>🔒 Document Management</h4><p>Secure upload, verification, and version-controlled student files.</p></div>
+          <div class="card"><h4>🔔 Automated Notifications</h4><p>Deadline alerts, status updates, and counsellor assignments.</p></div>
+          <div class="card"><h4>👩‍💼 Counsellor Dashboard</h4><p>Task management, student queues, and performance metrics.</p></div>
+          <div class="card navy"><h4>🤝 Partner Dashboard</h4><p>KC Consultancy visibility: leads, conversions, commissions, and pipeline reports.</p></div>
+          <div class="card"><h4>📈 Analytics & Automation</h4><p>Reporting, KPI tracking, and workflow automation across all stages.</p></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>mantraglobaledu.com</span><span>Technology-Enabled Partnership</span></div>
+    </section>
+
+    <!-- 07 STUDENT JOURNEY -->
+    <section class="slide" data-slide="7"
+      data-summary="19-stage end-to-end workflow from lead generation through alumni engagement."
+      data-notes="Walk the flow top-to-bottom. Highlight Education Loan Assistance between Scholarship and Visa — students often stall here. Mantra's loan desk coordinates with lending partners. KC's role: quality lead introduction; Mantra owns execution."
+      data-tip="Use a laser pointer on loan + visa stages — these are KC's biggest reputational risk points.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Process Architecture</div>
+            <h2 class="slide-title">Student Journey Workflow</h2>
+            <p class="exec-summary">Standardised, auditable process covering every touchpoint from lead to alumni.</p>
+          </div>
+          <div class="slide-num">07 / 17</div>
+        </div>
+        <div class="grid-2">
+          <div class="flow-vertical">
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Lead Generation</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">CRM Registration</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Counsellor Assignment</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Career Counselling</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Profile Evaluation</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">University Shortlisting</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Document Collection</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Application Submission</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Offer Letter</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Scholarship Guidance</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot" style="background:#2d8a55;width:10px;height:10px;"></div><div class="flow-v-text" style="color:#1a5f3a;">Education Loan Assistance ★</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Visa Documentation → Filing</div></div>
+          </div>
+          <div class="flow-vertical">
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Accommodation Assistance</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Forex Assistance</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Flight Booking Guidance</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Pre-Departure Session</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Arrival Support</div></div><div class="flow-v-line"></div>
+            <div class="flow-v-row"><div class="flow-v-dot"></div><div class="flow-v-text">Alumni Engagement</div></div>
+            <div class="card navy" style="margin-top:16px;">
+              <h4>Loan Assistance Detail</h4>
+              <p>Bank/NBFC coordination · Financial planning · Co-applicant documentation · Sanction follow-up · Disbursement alignment with visa timeline</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>19-Stage Workflow</span><span>Education Loan Integrated</span></div>
+    </section>
+
+    <!-- 08 WHY PARTNER -->
+    <section class="slide" data-slide="8"
+      data-summary="Ten partnership pillars: IDP expertise, technology, speed, and scalable model."
+      data-notes="This is your 'why us' slide. Don't rush. Hit three themes: (1) Leadership credibility, (2) Technology visibility for KC, (3) Loan + visa execution reduces KC's operational burden."
+      data-tip="Use the comparison table on the next slide for deeper discussion if they challenge on price or commission.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Value Proposition</div>
+            <h2 class="slide-title">Why Partner With Mantra</h2>
+          </div>
+          <div class="slide-num">08 / 17</div>
+        </div>
+        <div class="grid-3">
+          <div class="card icon-card"><div class="ico">👤</div><div><h4>Experienced Leadership</h4><p>10+ years, founder-led accountability</p></div></div>
+          <div class="card icon-card"><div class="ico">🏛️</div><div><h4>Former IDP Expertise</h4><p>Global-standard counselling practices</p></div></div>
+          <div class="card icon-card"><div class="ico">💻</div><div><h4>Technology-First</h4><p>CRM, portals, AI, partner dashboard</p></div></div>
+          <div class="card icon-card"><div class="ico">📐</div><div><h4>Standardised Processes</h4><p>SOPs at every stage</p></div></div>
+          <div class="card icon-card"><div class="ico">💬</div><div><h4>Transparent Communication</h4><p>Real-time partner reporting</p></div></div>
+          <div class="card icon-card"><div class="ico">⚡</div><div><h4>Fast Turnaround</h4><p>SLA-driven application cycles</p></div></div>
+          <div class="card icon-card"><div class="ico">👩‍🏫</div><div><h4>Dedicated Counsellors</h4><p>Named counsellor per student</p></div></div>
+          <div class="card icon-card"><div class="ico">📑</div><div><h4>Quality Documentation</h4><p>Verified SOP, LOR, visa files</p></div></div>
+          <div class="card icon-card" style="border-color:#2d8a55;"><div class="ico" style="background:#1a5f3a;">💰</div><div><h4>Loan Assistance</h4><p>Full financial services support</p></div></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Scalable Partnership Model</span><span>Student-Centric Delivery</span></div>
+    </section>
+
+    <!-- 09 COMPARISON -->
+    <section class="slide" data-slide="9"
+      data-summary="Side-by-side comparison: Mantra vs. typical agents on process, tech, and loan support."
+      data-notes="Let the table speak. KC managers have seen agent failures — use this to contrast. Emphasise Partner Dashboard and Loan Assistance rows. Don't disparage competitors; focus on operational facts."
+      data-tip="If time is short, highlight only the green-highlighted Mantra column rows.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Competitive Positioning</div>
+            <h2 class="slide-title">Partnership Comparison</h2>
+            <p class="exec-summary">How Mantra Global Education compares to typical recruitment agents.</p>
+          </div>
+          <div class="slide-num">09 / 17</div>
+        </div>
+        <table class="compare-table">
+          <thead><tr><th>Capability</th><th>Typical Agent</th><th class="highlight">Mantra Global Education</th></tr></thead>
+          <tbody>
+            <tr><td>CRM & Pipeline Visibility</td><td>Spreadsheets / WhatsApp</td><td class="highlight yes">✓ Partner Dashboard</td></tr>
+            <tr><td>Former IDP-Level Processes</td><td>Rare</td><td class="highlight yes">✓ Founder-Led</td></tr>
+            <tr><td>AI University Shortlisting</td><td>Manual guesswork</td><td class="highlight yes">✓ AI Engine</td></tr>
+            <tr><td>Education Loan Assistance</td><td>Referral only</td><td class="highlight yes">✓ Full Coordination</td></tr>
+            <tr><td>Document Verification</td><td>Basic check</td><td class="highlight yes">✓ QA Workflow</td></tr>
+            <tr><td>Visa Filing Support</td><td>Partial</td><td class="highlight yes">✓ End-to-End</td></tr>
+            <tr><td>Post-Arrival Support</td><td>None</td><td class="highlight yes">✓ Structured Programme</td></tr>
+            <tr><td>Partner Reporting</td><td>Ad hoc</td><td class="highlight yes">✓ Analytics & KPIs</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="slide-footer"><span>Fact-Based Positioning</span><span>Operational Differentiation</span></div>
+    </section>
+
+    <!-- 10 PARTNERSHIP MODEL -->
+    <section class="slide" data-slide="10"
+      data-summary="Clear RACI: KC Consultancy leads generation; Mantra executes counselling through enrollment."
+      data-notes="This is the most important operational slide for KC's Regional Manager. Walk each stage. Commission Settlement: define trigger points (enrollment confirmation). Loan Assistance is Mantra-owned — KC is not expected to coordinate banks."
+      data-tip="Bring a draft MOU framework to the meeting — even a one-pager shows you're partnership-ready.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Partnership Architecture</div>
+            <h2 class="slide-title">Partnership Workflow & Responsibilities</h2>
+          </div>
+          <div class="slide-num">10 / 17</div>
+        </div>
+        <div class="flow" style="margin-bottom:14px; justify-content:center;">
+          <span class="flow-step">Student Lead</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Qualification</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Counselling</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Application</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Offer</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Loan & Visa</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Enrollment</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Commission</span><span class="flow-arrow">→</span>
+          <span class="flow-step">Ongoing Support</span>
+        </div>
+        <div class="split-resp">
+          <div class="resp-col kc">
+            <h4>KC Consultancy</h4>
+            <div class="resp-item"><strong>Lead Gen</strong> Regional student outreach & brand presence</div>
+            <div class="resp-item"><strong>Qualification</strong> Initial screening & warm handover</div>
+            <div class="resp-item"><strong>Reporting</strong> Regional market intelligence</div>
+            <div class="resp-item"><strong>Co-Marketing</strong> Joint events & campaigns</div>
+            <div class="resp-item"><strong>Relationship</strong> Institutional & community ties</div>
+          </div>
+          <div class="resp-col mge">
+            <h4>Mantra Global Education</h4>
+            <div class="resp-item"><strong>Counselling</strong> Career guidance & university shortlisting</div>
+            <div class="resp-item"><strong>Applications</strong> Documentation, SOP/LOR, submissions</div>
+            <div class="resp-item"><strong>Financial</strong> Scholarships + education loan assistance</div>
+            <div class="resp-item"><strong>Visa</strong> Documentation, filing & interview prep</div>
+            <div class="resp-item"><strong>Pre/Post Arrival</strong> Forex, accommodation, orientation</div>
+            <div class="resp-item"><strong>Technology</strong> CRM, tracking, partner dashboard & payouts</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Clear RACI Framework</span><span>Commission on Enrollment</span></div>
+    </section>
+
+    <!-- 11 OPERATIONAL EXCELLENCE -->
+    <section class="slide" data-slide="11"
+      data-summary="Eight SOP domains with process maturity progression from reactive to optimised."
+      data-notes="Position maturity diagram: Mantra is at 'Managed/Optimising' stage — not startup chaos. Cover escalation matrix: L1 counsellor → L2 senior → L3 founder within defined SLAs."
+      data-tip="KC managers care about escalation most — give a concrete example: visa delay → 48hr resolution SLA.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Operating Model</div>
+            <h2 class="slide-title">Operational Excellence</h2>
+          </div>
+          <div class="slide-num">11 / 17</div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <div class="grid-2" style="gap:8px;">
+              <div class="card"><h4>Lead Management</h4><p>CRM intake, scoring, assignment SLAs</p></div>
+              <div class="card"><h4>Counselling</h4><p>Structured sessions, profile templates</p></div>
+              <div class="card"><h4>Document Verification</h4><p>Checklist, QA sign-off</p></div>
+              <div class="card"><h4>Application Processing</h4><p>Deadline tracking, status updates</p></div>
+              <div class="card" style="border-color:#2d8a55;"><h4>Loan & Visa Support</h4><p>Financial + immigration workflows</p></div>
+              <div class="card"><h4>Student Communication</h4><p>Multi-channel, logged interactions</p></div>
+              <div class="card"><h4>Escalation Matrix</h4><p>L1 → L2 → L3 with SLAs</p></div>
+              <div class="card"><h4>Quality Assurance</h4><p>Audit cycles, feedback loops</p></div>
+            </div>
+          </div>
+          <div class="card">
+            <h4>Process Maturity Model</h4>
+            <div class="maturity">
+              <div class="mat-bar" style="height:35%;"><em>1</em><span>Ad Hoc</span></div>
+              <div class="mat-bar" style="height:50%;"><em>2</em><span>Defined</span></div>
+              <div class="mat-bar" style="height:75%;"><em>3</em><span>Managed</span></div>
+              <div class="mat-bar" style="height:95%; background:linear-gradient(180deg,#2d8a55,#1a5f3a);"><em>4</em><span>Optimising</span></div>
+            </div>
+            <p style="margin-top:32px; font-size:11px; color:var(--muted);">Mantra operates at Level 3–4 across core processes, with technology enabling continuous improvement.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>SOP-Driven Delivery</span><span>Measurable Quality</span></div>
+    </section>
+
+    <!-- 12 QUALITY & COMPLIANCE -->
+    <section class="slide" data-slide="12"
+      data-summary="Ethical counselling, data privacy, and compliance-driven operations protect KC's brand."
+      data-notes="Reassure KC that their brand is safe. Data privacy: student records in secure portal, not shared drives. Ethical counselling: no false promises, no pressure selling. This protects KC's regional reputation."
+      data-tip="Reference GDPR-aligned data practices even for Indian operations — it signals global standards.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Risk & Governance</div>
+            <h2 class="slide-title">Quality & Compliance</h2>
+          </div>
+          <div class="slide-num">12 / 17</div>
+        </div>
+        <div class="grid-3">
+          <div class="card icon-card"><div class="ico">⚖️</div><div><h4>Ethical Counselling</h4><p>No misleading claims; student-first advice only</p></div></div>
+          <div class="card icon-card"><div class="ico">🔐</div><div><h4>Data Privacy</h4><p>Secure portal, access controls, encrypted storage</p></div></div>
+          <div class="card icon-card"><div class="ico">✅</div><div><h4>Document Verification</h4><p>Multi-point QA before submission</p></div></div>
+          <div class="card icon-card"><div class="ico">📢</div><div><h4>Process Transparency</h4><p>Visible stages for students and partners</p></div></div>
+          <div class="card icon-card"><div class="ico">⏱️</div><div><h4>Timely Communication</h4><p>SLA-backed response times</p></div></div>
+          <div class="card icon-card"><div class="ico">📁</div><div><h4>Record Management</h4><p>Complete audit trail per student</p></div></div>
+        </div>
+        <div class="card navy" style="margin-top:14px;">
+          <h4>Partnership Implication for KC Consultancy</h4>
+          <p>Associating with Mantra means KC's regional reputation is protected by documented, compliant processes — reducing brand risk from inconsistent agent behaviour.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Compliance-Driven</span><span>Brand-Safe Partnership</span></div>
+    </section>
+
+    <!-- 13 GLOBAL REACH -->
+    <section class="slide" data-slide="13"
+      data-summary="19+ study destinations with official university data across four continents."
+      data-notes="Briefly note global coverage. KC can refer students for USA, UK, Canada, Australia, Germany, and 14+ more. Technology platform has catalogued universities, courses, and scholarships."
+      data-tip="Tie destinations to KC's regional student demand patterns.">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Market Coverage</div>
+            <h2 class="slide-title">Global Study Destinations</h2>
+            <p class="exec-summary">19+ countries with university, course, scholarship, and loan pathway support.</p>
+          </div>
+          <div class="slide-num">13 / 17</div>
+        </div>
+        <div class="world-strip">
+          <span class="dest-chip">🇺🇸 USA</span><span class="dest-chip">🇬🇧 UK</span><span class="dest-chip">🇦🇺 Australia</span><span class="dest-chip">🇨🇦 Canada</span>
+          <span class="dest-chip">🇩🇪 Germany</span><span class="dest-chip">🇫🇷 France</span><span class="dest-chip">🇮🇪 Ireland</span><span class="dest-chip">🇳🇿 New Zealand</span>
+          <span class="dest-chip">🇸🇬 Singapore</span><span class="dest-chip">🇳🇱 Netherlands</span><span class="dest-chip">🇮🇹 Italy</span><span class="dest-chip">🇨🇭 Switzerland</span>
+          <span class="dest-chip">🇦🇪 UAE</span><span class="dest-chip">🇯🇵 Japan</span><span class="dest-chip">🇰🇷 South Korea</span><span class="dest-chip">🇲🇾 Malaysia</span>
+          <span class="dest-chip">🇸🇪 Sweden</span><span class="dest-chip">🇪🇸 Spain</span><span class="dest-chip">🇫🇮 Finland</span>
+        </div>
+        <div class="kpi-row" style="margin-top:20px;">
+          <div class="kpi"><div class="val">19+</div><div class="lbl">Countries</div></div>
+          <div class="kpi"><div class="val">42+</div><div class="lbl">Universities</div></div>
+          <div class="kpi"><div class="val">65+</div><div class="lbl">Courses Catalogued</div></div>
+          <div class="kpi"><div class="val">Full</div><div class="lbl">Loan Pathway Support</div></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>mantraglobaledu.com</span><span>Global Recruitment Capability</span></div>
+    </section>
+
+    <!-- 14 GROWTH ROADMAP -->
+    <section class="slide" data-slide="14"
+      data-summary="Three-year roadmap: CRM/AI (Y1), mobile & automation (Y2), multi-city & international (Y3)."
+      data-notes="Show KC they're partnering with a growing platform, not a static agency. Year 1 CRM + AI benefits KC immediately via partner dashboard. Year 2 mobile app improves student experience. Year 3 scale = more commission volume for KC."
+      data-tip="Frame roadmap as 'your partnership gets better every year.'">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Strategic Roadmap</div>
+            <h2 class="slide-title">Growth Roadmap</h2>
+          </div>
+          <div class="slide-num">14 / 17</div>
+        </div>
+        <div class="timeline">
+          <div class="tl-phase">
+            <div class="yr">Year 1 · 2026</div>
+            <h4>Foundation & Partners</h4>
+            <ul>
+              <li>Partner network expansion (KC + regional)</li>
+              <li>Full CRM implementation</li>
+              <li>AI-enabled counselling engine</li>
+              <li>Education loan desk operational</li>
+            </ul>
+          </div>
+          <div class="tl-phase">
+            <div class="yr">Year 2 · 2027</div>
+            <h4>Scale & Automation</h4>
+            <ul>
+              <li>Direct university partnerships</li>
+              <li>Student mobile application</li>
+              <li>Workflow automation platform</li>
+              <li>Enhanced partner analytics</li>
+            </ul>
+          </div>
+          <div class="tl-phase">
+            <div class="yr">Year 3 · 2028</div>
+            <h4>Expansion & Leadership</h4>
+            <ul>
+              <li>Multi-city India operations</li>
+              <li>International office presence</li>
+              <li>AI-powered admissions platform</li>
+              <li>Global alumni network</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Scalable Growth</span><span>Long-Term Partnership Value</span></div>
+    </section>
+
+    <!-- 15 WHY KC SHOULD PARTNER -->
+    <section class="slide" data-slide="15"
+      data-summary="Nine tangible benefits KC Consultancy gains from a Mantra partnership."
+      data-notes="Switch perspective: 'What does KC get?' Reliable execution, technology visibility, loan support, faster admissions, transparent reporting. This is the close-before-the-close slide."
+      data-tip="Ask: 'Which of these would have the biggest impact on your region this year?'">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">KC Consultancy Benefits</div>
+            <h2 class="slide-title">Why KC Consultancy Should Partner With Us</h2>
+          </div>
+          <div class="slide-num">15 / 17</div>
+        </div>
+        <div class="grid-3">
+          <div class="card gold"><h4>✓ Reliable Execution</h4><p>IDP-grade processes, founder accountability</p></div>
+          <div class="card gold"><h4>✓ Professional Operations</h4><p>SOPs, QA, escalation matrix</p></div>
+          <div class="card gold"><h4>✓ Technology Backbone</h4><p>Partner dashboard & live pipeline</p></div>
+          <div class="card"><h4>✓ Better Student Experience</h4><p>End-to-end journey, one counsellor</p></div>
+          <div class="card"><h4>✓ Faster Admissions</h4><p>SLA-driven application cycles</p></div>
+          <div class="card" style="border-color:#2d8a55;"><h4>✓ Loan Assistance</h4><p>Financial blockers removed pre-visa</p></div>
+          <div class="card"><h4>✓ Dedicated Support</h4><p>Named team for KC referrals</p></div>
+          <div class="card"><h4>✓ Transparent Reporting</h4><p>Commission & conversion analytics</p></div>
+          <div class="card navy"><h4>✓ Scalable Growth</h4><p>More destinations = more revenue</p></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Mutual Value Creation</span><span>Long-Term Revenue Growth</span></div>
+    </section>
+
+    <!-- 16 SECTION: NEXT STEPS -->
+    <section class="slide slide-section" data-slide="16"
+      data-summary="Transition to partnership discussion with clear next-step framework."
+      data-notes="Brief interstitial. Signal you're moving from 'why us' to 'let's begin.' Pause for questions before the final CTA."
+      data-tip="This is your checkpoint slide — invite questions here.">
+      <div class="slide-inner">
+        <div class="section-num">→</div>
+        <h2 class="section-title">Partnership Next Steps</h2>
+        <p class="section-sub">MOU Framework · Pilot Cohort · Partner Onboarding · Co-Marketing Launch · Quarterly Business Reviews</p>
+      </div>
+    </section>
+
+    <!-- 17 CLOSING -->
+    <section class="slide slide-cover" data-slide="17"
+      data-summary="Close with strategic partnership invitation and clear contact details."
+      data-notes="End with confidence, not desperation. 'We are selective about partnerships — KC Consultancy's regional presence aligns with our growth roadmap.' Invite a 30-day pilot with 10–20 students. Provide mantraglobaledu.com and Coimbatore HQ."
+      data-tip="Leave the deck open on this slide during discussion. Don't rush off stage.">
+      <div class="slide-inner" style="justify-content:center; align-items:center; text-align:center;">
+        <div>
+          <div class="cover-badge">Strategic Partnership Invitation</div>
+          <h2 style="font-family:'Playfair Display',serif; font-size:38px; line-height:1.2; margin-bottom:16px;">
+            Let's Build the Future of<br/>Global Education Together
+          </h2>
+          <p style="font-size:16px; opacity:0.85; max-width:640px; margin:0 auto 28px;">
+            We invite KC Consultancy to establish a strategic partnership with Mantra Global Education — combining your regional reach with our technology-enabled, process-driven international recruitment capabilities.
+          </p>
+          <div class="cta-panel" style="max-width:520px; margin:0 auto;">
+            <p>Proposed Next Step: 30-Day Pilot Partnership</p>
+            <div class="contact">
+              <strong>mantraglobaledu.com</strong><br/>
+              Coimbatore, Tamil Nadu, India<br/>
+              Vinodhini Y., Founder
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="toolbar">
+    <button id="prev" title="Previous">&#8592;</button>
+    <span id="counter">1 / 17</span>
+    <button id="next" title="Next">&#8594;</button>
+    <button class="notes-btn" id="notesBtn" title="Speaker notes">Notes</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const notesPanel = document.getElementById('notesPanel');
+    const notesContent = document.getElementById('notesContent');
+    let current = 0;
+
+    function showNotes(index) {
+      const s = slides[index];
+      const summary = s.dataset.summary || '';
+      const notes = s.dataset.notes || 'No notes for this slide.';
+      const tip = s.dataset.tip || '';
+      notesContent.innerHTML = `
+        ${summary ? `<p><strong>Executive Summary:</strong> ${summary}</p>` : ''}
+        <p><strong>Speaker Notes:</strong> ${notes}</p>
+        ${tip ? `<div class="tip"><strong>Tip:</strong> ${tip}</div>` : ''}
+      `;
+    }
+
+    function show(index) {
+      current = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+      document.getElementById('counter').textContent = `${current + 1} / ${slides.length}`;
+      showNotes(current);
+    }
+
+    document.getElementById('prev').addEventListener('click', () => show(current - 1));
+    document.getElementById('next').addEventListener('click', () => show(current + 1));
+    document.getElementById('notesBtn').addEventListener('click', () => notesPanel.classList.toggle('open'));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); show(current + 1); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(current - 1); }
+      if (e.key === 'n') notesPanel.classList.toggle('open');
+    });
+
+    show(0);
+  </script>
+</body>
+</html>

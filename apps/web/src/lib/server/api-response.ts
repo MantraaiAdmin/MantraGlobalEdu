@@ -7,6 +7,32 @@ export function jsonSuccess<T>(data: T, status = 200, message?: string) {
   return NextResponse.json(body, { status });
 }
 
+function sanitizeErrorMessage(error: unknown, fallback: string): string {
+  if (error instanceof AuthError) {
+    return error.message;
+  }
+
+  if (!(error instanceof Error)) {
+    return fallback;
+  }
+
+  const message = error.message;
+  const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL === '1';
+
+  if (isProduction) {
+    if (
+      message.includes('DATABASE_URL') ||
+      message.includes('localhost:5432') ||
+      message.includes('Prisma') ||
+      message.includes('database server')
+    ) {
+      return 'Authentication is temporarily unavailable. Please try again shortly or contact support.';
+    }
+  }
+
+  return message || fallback;
+}
+
 export function jsonError(error: unknown, fallback = 'Request failed') {
   if (error instanceof AuthError) {
     const body: ApiResponse<null> = {
@@ -20,7 +46,7 @@ export function jsonError(error: unknown, fallback = 'Request failed') {
   const body: ApiResponse<null> = {
     success: false,
     data: null,
-    error: error instanceof Error ? error.message : fallback,
+    error: sanitizeErrorMessage(error, fallback),
   };
   return NextResponse.json(body, { status: 500 });
 }

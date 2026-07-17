@@ -11,8 +11,9 @@ out/
 
 # Environment
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+.env.vercel.production
 
 # Logs
 logs/
@@ -44,3 +45,4 @@ database/prisma/migrations/
 
 # TypeScript
 *.tsbuildinfo
+.vercel

@@ -24,6 +24,16 @@ enum ApplicationStatus {
   WITHDRAWN
 }
 
+enum VisaStatus {
+  NOT_STARTED
+  DOCUMENTS_PREPARING
+  APPLIED
+  BIOMETRICS
+  INTERVIEW_SCHEDULED
+  APPROVED
+  REJECTED
+}
+
 enum AppointmentStatus {
   SCHEDULED
   CONFIRMED
@@ -268,16 +278,17 @@ model Scholarship {
 }
 
 model Application {
-  id            String            @id @default(uuid())
-  studentId     String
-  universityId  String
-  courseId      String
-  status        ApplicationStatus @default(DRAFT)
-  submittedAt   DateTime?
+  id              String            @id @default(uuid())
+  studentId       String
+  universityId    String
+  courseId        String
+  status          ApplicationStatus @default(DRAFT)
+  visaStatus      VisaStatus        @default(NOT_STARTED)
+  submittedAt     DateTime?
   offerReceivedAt DateTime?
-  notes         String?
-  createdAt     DateTime          @default(now())
-  updatedAt     DateTime          @updatedAt
+  notes           String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
 
   student    Student    @relation(fields: [studentId], references: [id])
   university University @relation(fields: [universityId], references: [id])
@@ -288,20 +299,22 @@ model Application {
 }
 
 model Document {
-  id            String   @id @default(uuid())
-  studentId     String
-  applicationId String?
-  name          String
-  type          String
-  url           String
-  mimeType      String
-  size          Int
-  isVerified    Boolean  @default(false)
-  uploadedAt    DateTime @default(now())
+  id               String   @id @default(uuid())
+  studentId        String
+  applicationId    String?
+  checklistItemKey String?
+  name             String
+  type             String
+  url              String
+  mimeType         String
+  size             Int
+  isVerified       Boolean  @default(false)
+  uploadedAt       DateTime @default(now())
 
   student     Student      @relation(fields: [studentId], references: [id])
   application Application? @relation(fields: [applicationId], references: [id])
 
+  @@index([studentId, checklistItemKey])
   @@map("documents")
 }
 

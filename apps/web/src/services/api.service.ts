@@ -334,12 +334,65 @@ export async function fetchStudentDocuments(token: string) {
     id: string;
     name: string;
     type: string;
+    checklistItemKey?: string | null;
     isVerified: boolean;
     uploadedAt: string;
     url: string;
     mimeType: string;
     size: number;
   }>>>('/students/documents', { token });
+  return res.data!;
+}
+
+export async function fetchStudentDocumentWorkspace(token: string) {
+  const res = await apiClient<ApiResponse<{
+    student: {
+      id: string;
+      registrationNo: string;
+      preferredCountries: Array<{ code: string; name: string; flag?: string | null }>;
+      appliedCountries: Array<{ code: string; name: string; flag?: string | null }>;
+      profile: { firstName: string; lastName: string; email: string; phone: string | null };
+    };
+    summary: {
+      total: number;
+      required: number;
+      pending: number;
+      uploaded: number;
+      verified: number;
+      completionPercent: number;
+    };
+    checklist: {
+      byCategory: Array<{
+        category: string;
+        label: string;
+        items: Array<{
+          key: string;
+          number: number;
+          label: string;
+          category: string;
+          required: boolean;
+          status: 'pending' | 'uploaded' | 'verified';
+          latestUpload: {
+            id: string;
+            name: string;
+            url: string;
+            uploadedAt: string;
+          } | null;
+        }>;
+      }>;
+    };
+    applications: Array<{
+      id: string;
+      status: string;
+      visaStatus: string;
+      submittedAt: string | null;
+      offerReceivedAt: string | null;
+      university: { id: string; name: string; slug: string };
+      course: { id: string; name: string; degreeLevel: string };
+      country: { code: string; name: string; flag?: string | null };
+      documentCount: number;
+    }>;
+  }>>('/students/documents/checklist', { token });
   return res.data!;
 }
 

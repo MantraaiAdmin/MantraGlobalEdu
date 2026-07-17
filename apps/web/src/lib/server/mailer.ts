@@ -9,11 +9,18 @@ function getSmtpConfig() {
     return null;
   }
 
+  const port = Number(process.env.SMTP_PORT || 587);
+  const secure = process.env.SMTP_SECURE === 'true';
+
   return {
     host,
-    port: Number(process.env.SMTP_PORT || 587),
-    secure: process.env.SMTP_SECURE === 'true',
+    port,
+    secure,
     auth: { user, pass },
+    requireTLS: !secure && port === 587,
+    tls: {
+      minVersion: 'TLSv1.2' as const,
+    },
   };
 }
 

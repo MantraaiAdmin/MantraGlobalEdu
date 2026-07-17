@@ -136,6 +136,7 @@ export class StudentRepository {
     mimeType: string;
     size: number;
     applicationId?: string;
+    checklistItemKey?: string;
   }) {
     return prisma.document.create({
       data: {
@@ -146,6 +147,7 @@ export class StudentRepository {
         mimeType: data.mimeType,
         size: data.size,
         applicationId: data.applicationId,
+        checklistItemKey: data.checklistItemKey,
       },
     });
   }

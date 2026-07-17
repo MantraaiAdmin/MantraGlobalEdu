@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mantra Global Education — College Partnership Pitch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #00234e;
+      --primary-light: #0d3a6e;
+      --accent: #c89116;
+      --accent-soft: #f5ead4;
+      --neutral: #a5b4c4;
+      --white: #ffffff;
+      --muted: #5a6b7d;
+      --slide-w: 1280px;
+      --slide-h: 720px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #0a1628;
+      color: var(--primary);
+      min-height: 100vh;
+    }
+
+    .toolbar {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0, 35, 78, 0.92);
+      border: 1px solid rgba(200, 145, 22, 0.35);
+      padding: 10px 18px;
+      border-radius: 999px;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .toolbar button {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .toolbar button:hover { background: rgba(200,145,22,0.2); border-color: var(--accent); }
+
+    .toolbar span {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      min-width: 72px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .deck {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      padding: 48px 24px 120px;
+    }
+
+    .slide {
+      width: min(var(--slide-w), 100%);
+      aspect-ratio: 16 / 9;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+      border: 1px solid rgba(0,35,78,0.08);
+    }
+
+    .slide.active { display: flex; }
+
+    .slide-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 56px 72px 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Cover */
+    .slide-cover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .slide-cover .slide-inner { justify-content: space-between; }
+
+    .brand-mark {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-mark .name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .brand-mark .name span { color: var(--accent); }
+
+    .brand-mark .sub {
+      font-size: 15px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-top: 8px;
+    }
+
+    .cover-hero {
+      max-width: 640px;
+    }
+
+    .cover-hero h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .cover-hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 24px;
+    }
+
+    .cover-meta { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    .cover-meta strong { color: var(--accent); font-weight: 600; }
+
+    .accent-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: var(--accent);
+    }
+
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 36px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,35,78,0.08);
+    }
+
+    .slide-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .slide-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 6px;
+      line-height: 1.15;
+    }
+
+    .slide-num {
+      font-size: 13px;
+      color: var(--neutral);
+      font-weight: 600;
+    }
+
+    /* Agenda */
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .agenda-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 22px 24px;
+      background: #f7f9fc;
+      border-left: 3px solid var(--accent);
+    }
+
+    .agenda-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      min-width: 36px;
+    }
+
+    .agenda-item h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .agenda-item p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Two column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      flex: 1;
+    }
+
+    .bullet-list { list-style: none; }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 14px;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .bullet-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .bullet-list li strong { color: var(--primary); }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 20px 12px;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .stat-box .val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-box .lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.65);
+      margin-top: 4px;
+    }
+
+    .highlight-box {
+      background: var(--accent-soft);
+      border: 1px solid rgba(200,145,22,0.25);
+      padding: 24px 28px;
+    }
+
+    .highlight-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    /* Framework */
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      flex: 1;
+    }
+
+    .framework-card {
+      background: #f7f9fc;
+      padding: 18px 20px;
+      border-top: 3px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .framework-card .letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .framework-card .word {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      margin: 4px 0 8px;
+    }
+
+    .framework-card .title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .framework-card .desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .framework-card .outcome {
+      margin-top: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Partnership */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .step-card {
+      padding: 20px 18px;
+      background: var(--primary);
+      color: var(--white);
+      min-height: 140px;
+    }
+
+    .step-card .step-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .step-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .step-card p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.45;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .benefit {
+      padding: 16px 18px;
+      border: 1px solid rgba(0,35,78,0.1);
+    }
+
+    .benefit h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .benefit p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .cta-panel {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .cta-panel h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .cta-panel .contact {
+      text-align: right;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .cta-panel .contact strong { color: var(--accent); }
+
+    .slide-footer {
+      position: absolute;
+      bottom: 20px;
+      left: 72px;
+      right: 72px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--neutral);
+      letter-spacing: 0.04em;
+    }
+
+    .slide-cover .slide-footer {
+      color: rgba(255,255,255,0.35);
+      bottom: 28px;
+    }
+
+    @media print {
+      body { background: white; }
+      .toolbar { display: none; }
+      .deck { padding: 0; gap: 0; }
+      .slide {
+        display: flex !important;
+        page-break-after: always;
+        width: 100%;
+        height: 100vh;
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="deck" id="deck">
+
+    <!-- SLIDE 1: COVER -->
+    <section class="slide slide-cover active" data-slide="1">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="brand-mark">
+          <div class="name">Mantra <span>Global</span> Education</div>
+          <div class="sub">Study Abroad Excellence</div>
+        </div>
+        <div class="cover-hero">
+          <h2>College Partnership Proposal</h2>
+          <p>Bridging engineering graduates to world-class postgraduate programs in the USA, United Kingdom, and Australia.</p>
+        </div>
+        <div class="cover-footer">
+          <div class="cover-meta">
+            <strong>Vinodhini Y.</strong><br />
+            Founder, Mantra Global Education<br />
+            HQ: Coimbatore, Tamil Nadu
+          </div>
+          <div class="cover-meta" style="text-align:right;">
+            mantraglobaledu.com
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Confidential — For Institutional Review</span>
+        <span>Slide 1 of 6</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: AGENDA -->
+    <section class="slide" data-slide="2">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Presentation Agenda</div>
+            <h2 class="slide-title">Today's Framework for Discussion</h2>
+          </div>
+          <div class="slide-num">02 / 06</div>
+        </div>
+        <div class="agenda-grid">
+          <div class="agenda-item">
+            <div class="agenda-num">01</div>
+            <div>
+              <h3>Who We Are</h3>
+              <p>Credentials, track record, and institutional positioning of Mantra Global Education.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">02</div>
+            <div>
+              <h3>The Opportunity</h3>
+              <p>Why engineering colleges need structured global pathway support for graduates.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">03</div>
+            <div>
+              <h3>MANTRA Framework</h3>
+              <p>Our proprietary six-stage student journey from counseling to career success abroad.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">04</div>
+            <div>
+              <h3>Partnership Value</h3>
+              <p>Mutual benefits, co-marketing opportunities, and measurable outcomes for your college.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">05</div>
+            <div>
+              <h3>Engagement Model</h3>
+              <p>How we onboard, operate, and report throughout the partnership lifecycle.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-num">06</div>
+            <div>
+              <h3>Next Steps</h3>
+              <p>Proposed timeline, discussion points, and partnership activation pathway.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Mantra Global Education</span>
+        <span>mantraglobaledu.com</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: WHO WE ARE -->
+    <section class="slide" data-slide="3">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Agenda Item 01</div>
+            <h2 class="slide-title">Who We Are</h2>
+          </div>
+          <div class="slide-num">03 / 06</div>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="section-sub">Our Mission</div>
+            <p style="font-size:16px;line-height:1.65;color:var(--muted);margin-bottom:24px;">
+              <strong style="color:var(--primary);">Mantra Global Education</strong> is a boutique study abroad consultancy delivering personalized, end-to-end guidance — not call-center scripts. We help ambitious students pursue world-class education with integrity and measurable outcomes.
+            </p>
+            <div class="section-sub">Founder Credentials</div>
+            <ul class="bullet-list">
+              <li><strong>Vinodhini Y.</strong> — 10+ years in international education counseling</li>
+              <li>Former <strong>IDP Counselor</strong> with deep admissions expertise</li>
+              <li><strong>British Council Certified</strong> study abroad counselor</li>
+              <li>Pan-India Top 17 · Best Counselor — Silver Category</li>
+            </ul>
+          </div>
+          <div>
+            <div class="highlight-box">
+              <h3>Tagline</h3>
+              <p style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--primary);line-height:1.35;">
+                Your Journey. Our Guidance. Global Success.
+              </p>
+            </div>
+            <div class="section-sub" style="margin-top:24px;">Focus Markets</div>
+            <ul class="bullet-list">
+              <li><strong>United States</strong> — MS, MBA & postgraduate pathways</li>
+              <li><strong>United Kingdom</strong> — Masters & research programs</li>
+              <li><strong>Australia</strong> — PR-friendly postgraduate routes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box"><div class="val">700+</div><div class="lbl">Students Guided</div></div>
+          <div class="stat-box"><div class="val">15+</div><div class="lbl">Partner Universities</div></div>
+          <div class="stat-box"><div class="val">3</div><div class="lbl">Focus Countries</div></div>
+          <div class="stat-box"><div class="val">94%</div><div class="lbl">Partner Satisfaction</div></div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Mantra Global Education</span>
+        <span>HQ: Coimbatore, TN</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: THE OPPORTUNITY -->
+    <section class="slide" data-slide="4">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Agenda Item 02</div>
+            <h2 class="slide-title">The Opportunity for Your College</h2>
+          </div>
+          <div class="slide-num">04 / 06</div>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="section-sub">The Challenge</div>
+            <ul class="bullet-list">
+              <li>Growing demand among <strong>engineering graduates</strong> for international MS programs</li>
+              <li>Students lack structured guidance on <strong>university selection, scholarships, and visas</strong></li>
+              <li>Placement cells face capacity limits for <strong>global admissions expertise</strong></li>
+              <li>Fragmented agents create inconsistent outcomes and reputational risk</li>
+            </ul>
+          </div>
+          <div>
+            <div class="section-sub">The Mantra Solution</div>
+            <ul class="bullet-list">
+              <li>Dedicated <strong>graduate pathway counseling</strong> for your final-year students</li>
+              <li><strong>Faculty workshops</strong> on global admissions trends and requirements</li>
+              <li>Transparent pipeline with <strong>quarterly enrolment reports</strong></li>
+              <li>Co-branded campus events, webinars, and pre-departure support</li>
+            </ul>
+            <div class="highlight-box" style="margin-top:20px;">
+              <h3>Partnership Outcome</h3>
+              <p style="font-size:14px;color:var(--primary);line-height:1.55;">
+                Elevate your college's global placement profile while students receive trusted, certified counseling under your institutional umbrella.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>Engineering College Partnership</span>
+        <span>mantraglobaledu.com/partners</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: MANTRA FRAMEWORK -->
+    <section class="slide" data-slide="5">
+      <div class="accent-bar"></div>
+      <div class="slide-inner">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Agenda Item 03</div>
+            <h2 class="slide-title">The MANTRA Framework</h2>
+          </div>
+          <div class="slide-num">05 / 06</div>
+        </div>
+        <p style="font-size:14px;color:var(--muted);margin-bottom:20px;max-width:820px;">
+          Our proprietary six-stage methodology ensures every student receives structured, end-to-end support — from first counseling session to thriving abroad.
+        </p>
+        <div class="framework-grid">
+          <div class="framework-card">
+            <div class="letter">M</div>
+            <div class="word">Mentor</div>
+            <div class="title">Discover Your Future</div>
+            <div class="desc">Profile evaluation, career counseling, budget assessment, and personalized study roadmap.</div>
+            <div class="outcome">Personalized Study Plan</div>
+          </div>
+          <div class="framework-card">
+            <div class="letter">A</div>
+            <div class="word">Assess</div>
+            <div class="title">Choose the Right University</div>
+            <div class="desc">University shortlisting, course selection, scholarship matching, and admission strategy.</div>
+            <div class="outcome">Best-Fit Universities</div>
+          </div>
+          <div class="framework-card">
+            <div class="letter">N</div>
+            <div class="word">Navigate</div>
+            <div class="title">Build a Winning Application</div>
+            <div class="desc">SOP, LOR, resume support, documentation review, and application submission.</div>
+            <div class="outcome">Competitive Applications</div>
+          </div>
+          <div class="framework-card">
+            <div class="letter">T</div>
+            <div class="word">Transition</div>
+            <div class="title">Prepare for Global Success</div>
+            <div class="desc">Visa documentation, interview prep, education loans, and financial planning.</div>
+            <div class="outcome">Visa Approved & Travel Ready</div>
+          </div>
+          <div class="framework-card">
+            <div class="letter">R</div>
+            <div class="word">Relocate</div>
+            <div class="title">Move Abroad with Confidence</div>
+            <div class="desc">Accommodation, airport guidance, forex, SIM setup, and local orientation.</div>
+            <div class="outcome">Successfully Settled Abroad</div>
+          </div>
+          <div class="framework-card">
+            <div class="letter">A</div>
+            <div class="word">Arrive</div>
+            <div class="title">Thrive Beyond Admission</div>
+            <div class="desc">Student orientation, alumni network access, and ongoing mentorship support.</div>
+            <div class="outcome">Academic & Career Success</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>MANTRA Framework — Proprietary Methodology</span>
+        <span>End-to-End Student Support</span>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: PARTNERSHIP & NEXT STEPS -->
+    <section class="slide" data-slide="6">
+      <div class="accent-bar"></div>
+      <div class="slide-inner" style="padding-bottom: 0;">
+        <div class="slide-header">
+          <div>
+            <div class="slide-label">Agenda Items 04–06</div>
+            <h2 class="slide-title">Partnership Model & Next Steps</h2>
+          </div>
+          <div class="slide-num">06 / 06</div>
+        </div>
+
+        <div class="section-sub">Engagement Framework</div>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-num">Step 01</div>
+            <h4>Initial Discussion</h4>
+            <p>Align on institutional goals, target student cohorts, and partnership scope.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">Step 02</div>
+            <h4>MOU & Onboarding</h4>
+            <p>Formalise terms, designate coordinators, and integrate counseling workflows.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">Step 03</div>
+            <h4>Co-Marketing Launch</h4>
+            <p>Joint webinars, campus seminars, and student awareness campaigns.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">Step 04</div>
+            <h4>Ongoing Growth</h4>
+            <p>Quarterly pipeline reviews, enrolment reports, and continuous optimisation.</p>
+          </div>
+        </div>
+
+        <div class="section-sub">What Your College Gains</div>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <h4>Graduate Pathways</h4>
+            <p>Structured MS and postgraduate routes to USA, UK, and Australia for engineering alumni.</p>
+          </div>
+          <div class="benefit">
+            <h4>Faculty Workshops</h4>
+            <p>Admissions briefings for placement officers and department heads on global trends.</p>
+          </div>
+          <div class="benefit">
+            <h4>Alumni Network</h4>
+            <p>Connect graduates to a growing community of international students and mentors.</p>
+          </div>
+          <div class="benefit">
+            <h4>Co-Marketing</h4>
+            <p>Joint branding at campus events, digital campaigns, and counselling fairs.</p>
+          </div>
+          <div class="benefit">
+            <h4>Pipeline Transparency</h4>
+            <p>Regular reports on inquiries, applications, offers, and enrolments.</p>
+          </div>
+          <div class="benefit">
+            <h4>Trusted Representation</h4>
+            <p>British Council certified counseling under a premium, accountable brand.</p>
+          </div>
+        </div>
+
+        <div class="cta-panel">
+          <h3>Let's build global pathways together.</h3>
+          <div class="contact">
+            <strong>mantraglobaledu.com</strong><br />
+            Coimbatore, Tamil Nadu, India
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="toolbar">
+    <button id="prev" title="Previous slide">&#8592;</button>
+    <span id="counter">1 / 6</span>
+    <button id="next" title="Next slide">&#8594;</button>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function show(index) {
+      current = Math.max(0, Math.min(index, slides.length - 1));
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+      document.getElementById('counter').textContent = `${current + 1} / ${slides.length}`;
+    }
+
+    document.getElementById('prev').addEventListener('click', () => show(current - 1));
+    document.getElementById('next').addEventListener('click', () => show(current + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); show(current + 1); }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); show(current - 1); }
+    });
+  </script>
+</body>
+</html>

@@ -100,13 +100,22 @@ export class StudentController {
     }
   };
 
+  documentWorkspace = async (req: AuthRequest, res: Response, next: NextFunction) => {
+    try {
+      const data = await studentService.getDocumentWorkspace(req.user!.sub);
+      sendSuccess(res, data);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   uploadDocument = async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       if (!req.file) {
         res.status(400).json({ success: false, error: 'No file uploaded' });
         return;
       }
-      const { name, type, applicationId } = req.body;
+      const { name, type, applicationId, checklistItemKey } = req.body;
       if (!type) {
         res.status(400).json({ success: false, error: 'Document type is required' });
         return;
@@ -115,6 +124,7 @@ export class StudentController {
         name: name || req.file.originalname,
         type,
         applicationId: applicationId || undefined,
+        checklistItemKey: checklistItemKey || undefined,
       });
       sendCreated(res, doc, 'Document uploaded successfully');
     } catch (error) {

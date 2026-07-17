@@ -11,6 +11,7 @@ router.use(authenticate, authorize(UserRole.STUDENT));
 router.get('/dashboard', studentController.dashboard);
 router.get('/applications', studentController.applications);
 router.post('/applications', ...studentController.createApplication);
+router.get('/documents/checklist', studentController.documentWorkspace);
 router.get('/documents', studentController.documents);
 router.post(
   '/documents/upload',
