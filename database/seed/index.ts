@@ -23,6 +23,7 @@ async function main() {
       emailVerified: true,
       firstName: 'Vinodhini',
       lastName: 'Y.',
+      passwordHash,
     },
     create: {
       email: SEED_ADMIN_EMAIL,

@@ -5,6 +5,7 @@ import { UserRole as PrismaUserRole } from '@prisma/client';
 import { AUTH_CONFIG } from '@mge/config';
 import { UserRole, JwtPayload, AuthTokens } from '@mge/types';
 import { prisma } from './prisma';
+import { sendOtpEmail, sendOtpSms } from './mailer';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret-change-in-production';
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'dev-refresh-secret-change-in-production';
@@ -67,20 +68,11 @@ function hashOtp(otp: string): string {
 }
 
 async function deliverOtp(channel: 'email' | 'phone', target: string, otp: string) {
-  const message = `Your Mantra Global Education verification code is ${otp}. It expires in 10 minutes.`;
-
   if (channel === 'email') {
-    if (process.env.SMTP_HOST && process.env.SMTP_USER) {
-      // SMTP can be wired when credentials are configured
-      console.info(`[OTP email queued] ${target}`);
-    } else if (process.env.NODE_ENV !== 'production') {
-      console.info(`[DEV OTP email] ${target}: ${otp}`);
-    }
-  } else if (process.env.NODE_ENV !== 'production') {
-    console.info(`[DEV OTP SMS] ${target}: ${otp}`);
+    await sendOtpEmail(target, otp);
+    return;
   }
-
-  return message;
+  await sendOtpSms(target, otp);
 }
 
 export class AuthError extends Error {
