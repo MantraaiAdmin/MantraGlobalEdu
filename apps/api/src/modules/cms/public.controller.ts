@@ -6,6 +6,46 @@ import { sendSuccess, sendCreated } from '../../shared/utils/response';
 import { calculateCostEstimate } from '@mge/utils';
 import { prisma } from '../../database/prisma';
 
+async function createCounselingBookingRecord(body: {
+  name: string;
+  email: string;
+  phone: string;
+  preferredDate?: string;
+  countryOfInterest?: string;
+  message?: string;
+}) {
+  const preferredDate = body.preferredDate ? new Date(body.preferredDate) : null;
+
+  const booking = await prisma.counselingBooking.create({
+    data: {
+      ...body,
+      email: body.email.toLowerCase(),
+      preferredDate: preferredDate ?? undefined,
+    },
+  });
+
+  await prisma.lead.create({
+    data: {
+      name: body.name,
+      email: body.email.toLowerCase(),
+      phone: body.phone,
+      source: 'Book Counseling',
+      status: 'NEW',
+      countryOfInterest: body.countryOfInterest || null,
+      notes: [
+        preferredDate ? `Preferred slot: ${preferredDate.toISOString()}` : null,
+        body.message ? `Notes: ${body.message}` : null,
+        `Booking ID: ${booking.id}`,
+      ]
+        .filter(Boolean)
+        .join('\n'),
+      assignedTo: 'vinodhini@mantraglobaledu.com',
+    },
+  });
+
+  return booking;
+}
+
 export class PublicController {
   submitContact = [
     validateBody(contactSchema),
@@ -23,12 +63,7 @@ export class PublicController {
     validateBody(counselingBookingSchema),
     async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const booking = await prisma.counselingBooking.create({
-          data: {
-            ...req.body,
-            preferredDate: req.body.preferredDate ? new Date(req.body.preferredDate) : undefined,
-          },
-        });
+        const booking = await createCounselingBookingRecord(req.body);
         sendCreated(res, booking, 'Counseling session booked successfully');
       } catch (error) {
         next(error);

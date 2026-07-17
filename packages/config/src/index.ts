@@ -18,6 +18,12 @@ export const FOUNDER = {
 /** Server/seed only — never expose passwords in client UI */
 export const SEED_ADMIN_EMAIL = 'vinodhini@mantraglobaledu.com' as const;
 
+/** Counseling booking notifications (Outlook SMTP) */
+export const COUNSELING_NOTIFY_EMAILS = [
+  'vinodhini@mantraglobaledu.com',
+  'praveen@mantraglobaledu.com',
+] as const;
+
 export const PRODUCT_NAMES = {
   profileCheck: 'Mantra Profile Check',
 } as const;

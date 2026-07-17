@@ -89,3 +89,108 @@ export async function sendOtpSms(phone: string, otp: string) {
     throw new Error('Unable to send SMS verification code.');
   }
 }
+
+function getMailTransporter() {
+  const smtp = getSmtpConfig();
+  if (!smtp) return null;
+  return nodemailer.createTransport(smtp);
+}
+
+function getFromAddress() {
+  const fromName = process.env.SMTP_FROM_NAME || 'Mantra Global Education';
+  const fromEmail = process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@mantraglobaledu.com';
+  return `"${fromName}" <${fromEmail}>`;
+}
+
+export async function sendCounselingBookingEmails(booking: {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  preferredDate: Date | null;
+  countryOfInterest: string | null;
+  message: string | null;
+}) {
+  const transporter = getMailTransporter();
+  const notifyEmails = (process.env.COUNSELING_NOTIFY_EMAILS || '')
+    .split(',')
+    .map((e) => e.trim())
+    .filter(Boolean);
+
+  const recipients =
+    notifyEmails.length > 0
+      ? notifyEmails
+      : ['vinodhini@mantraglobaledu.com', 'praveen@mantraglobaledu.com'];
+
+  const preferredSlot = booking.preferredDate
+    ? booking.preferredDate.toLocaleString('en-IN', {
+        dateStyle: 'full',
+        timeStyle: 'short',
+        timeZone: 'Asia/Kolkata',
+      })
+    : 'Not specified';
+
+  const adminBody = `
+New free counseling booking (ID: ${booking.id.slice(0, 8).toUpperCase()})
+
+Name: ${booking.name}
+Email: ${booking.email}
+Phone: ${booking.phone}
+Preferred slot: ${preferredSlot}
+Country of interest: ${booking.countryOfInterest || 'Not specified'}
+Notes: ${booking.message || '—'}
+
+View in Admin Portal → CRM / Leads
+https://www.mantraglobaledu.com/portal/admin/crm
+`.trim();
+
+  if (!transporter) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.info('[DEV counseling notify]', recipients.join(', '), adminBody);
+    }
+    return { sent: false };
+  }
+
+  await transporter.sendMail({
+    from: getFromAddress(),
+    to: recipients.join(', '),
+    replyTo: booking.email,
+    subject: `[MGE] New counseling booking — ${booking.name}`,
+    text: adminBody,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 560px; color: #00234E;">
+        <h2 style="color: #00234E;">New Free Counseling Booking</h2>
+        <p style="color: #64748B; font-size: 13px;">Lead ID: ${booking.id.slice(0, 8).toUpperCase()}</p>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+          <tr><td style="padding: 8px 0; color: #64748B;">Name</td><td style="padding: 8px 0;"><strong>${booking.name}</strong></td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B;">Email</td><td style="padding: 8px 0;"><a href="mailto:${booking.email}">${booking.email}</a></td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B;">Phone</td><td style="padding: 8px 0;">${booking.phone}</td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B;">Preferred slot</td><td style="padding: 8px 0;">${preferredSlot}</td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B;">Country</td><td style="padding: 8px 0;">${booking.countryOfInterest || '—'}</td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B; vertical-align: top;">Notes</td><td style="padding: 8px 0;">${(booking.message || '—').replace(/\n/g, '<br/>')}</td></tr>
+        </table>
+        <p style="margin-top: 24px;"><a href="https://www.mantraglobaledu.com/portal/admin/crm" style="background: #00234E; color: #fff; padding: 10px 18px; text-decoration: none; border-radius: 8px;">Open Admin CRM</a></p>
+      </div>
+    `,
+  });
+
+  await transporter.sendMail({
+    from: getFromAddress(),
+    to: booking.email,
+    subject: 'Your Mantra Global Education counseling request is received',
+    text: `Hi ${booking.name},\n\nThank you for booking a free counseling session with Mantra Global Education.\n\nPreferred slot: ${preferredSlot}\nCountry of interest: ${booking.countryOfInterest || 'Not specified'}\n\nOur team will confirm your session within 24 hours.\n\nMantra Global Education`,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 520px; color: #00234E;">
+        <h2 style="color: #00234E;">Counseling Request Received</h2>
+        <p>Hi ${booking.name},</p>
+        <p>Thank you for booking a <strong>free counseling session</strong> with Mantra Global Education.</p>
+        <p><strong>Preferred slot:</strong> ${preferredSlot}<br/>
+        <strong>Country of interest:</strong> ${booking.countryOfInterest || 'Not specified'}</p>
+        <p>Our team will confirm your session within <strong>24 hours</strong> via email or phone.</p>
+        <p style="color: #64748B; font-size: 13px;">Mantra Global Education · www.mantraglobaledu.com</p>
+      </div>
+    `,
+  });
+
+  return { sent: true };
+}
