@@ -13,13 +13,40 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
 const JWT_REFRESH_EXPIRES_IN = process.env.JWT_REFRESH_EXPIRES_IN || '30d';
 const RESET_TOKEN_SECRET = process.env.JWT_RESET_SECRET || JWT_SECRET;
 
-function isDatabaseConfigured(): boolean {
+export const BOOTSTRAP_ADMIN_ID = 'bootstrap-admin';
+
+export function isDatabaseConfigured(): boolean {
   const url = process.env.DATABASE_URL?.trim();
   if (!url) return false;
   if (process.env.VERCEL === '1' && /localhost|127\.0\.0\.1/.test(url)) {
     return false;
   }
   return true;
+}
+
+export function getBootstrapAdminUser() {
+  return {
+    id: BOOTSTRAP_ADMIN_ID,
+    email: SEED_ADMIN_EMAIL,
+    firstName: 'Vinodhini',
+    lastName: 'Y.',
+    phone: null as string | null,
+    avatar: null as string | null,
+    role: UserRole.ADMIN,
+    isActive: true,
+    emailVerified: true,
+    createdAt: new Date(),
+  };
+}
+
+export function requireDatabase() {
+  if (!isDatabaseConfigured()) {
+    throw new AuthError(
+      'Database is not connected. Configure DATABASE_URL on the server to manage users and records.',
+      503,
+      'SERVICE_UNAVAILABLE'
+    );
+  }
 }
 
 function sanitizeUser(user: {
@@ -136,20 +163,9 @@ export async function loginUser(email: string, password: string) {
       normalizedEmail === SEED_ADMIN_EMAIL &&
       password === adminPassword
     ) {
-      const tokens = await generateTokens('bootstrap-admin', SEED_ADMIN_EMAIL, UserRole.ADMIN);
+      const tokens = await generateTokens(BOOTSTRAP_ADMIN_ID, SEED_ADMIN_EMAIL, UserRole.ADMIN);
       return {
-        user: {
-          id: 'bootstrap-admin',
-          email: SEED_ADMIN_EMAIL,
-          firstName: 'Vinodhini',
-          lastName: 'Y.',
-          phone: null,
-          avatar: null,
-          role: UserRole.ADMIN,
-          isActive: true,
-          emailVerified: true,
-          createdAt: new Date(),
-        },
+        user: getBootstrapAdminUser(),
         ...tokens,
       };
     }
@@ -294,12 +310,31 @@ export async function resetPassword(resetToken: string, password: string) {
 export async function getUserFromAccessToken(token: string) {
   try {
     const payload = jwt.verify(token, JWT_SECRET) as JwtPayload;
+
+    if (payload.sub === BOOTSTRAP_ADMIN_ID) {
+      if (!isDatabaseConfigured()) {
+        return getBootstrapAdminUser();
+      }
+      const dbAdmin = await prisma.user.findFirst({
+        where: { email: SEED_ADMIN_EMAIL, role: PrismaUserRole.ADMIN },
+      });
+      if (dbAdmin?.isActive) {
+        return sanitizeUser(dbAdmin);
+      }
+      return getBootstrapAdminUser();
+    }
+
+    if (!isDatabaseConfigured()) {
+      throw new AuthError('Unauthorized', 401, 'UNAUTHORIZED');
+    }
+
     const user = await prisma.user.findUnique({ where: { id: payload.sub } });
     if (!user || !user.isActive) {
       throw new AuthError('Unauthorized', 401, 'UNAUTHORIZED');
     }
     return sanitizeUser(user);
-  } catch {
+  } catch (error) {
+    if (error instanceof AuthError) throw error;
     throw new AuthError('Unauthorized', 401, 'UNAUTHORIZED');
   }
 }
@@ -312,6 +347,8 @@ export async function createUserAsAdmin(data: {
   phone?: string;
   role: UserRole;
 }) {
+  requireDatabase();
+
   const existing = await prisma.user.findUnique({ where: { email: data.email.toLowerCase() } });
   if (existing) {
     throw new AuthError('Email already registered', 409, 'CONFLICT');
@@ -346,13 +383,69 @@ export async function createUserAsAdmin(data: {
   return sanitizeUser(user);
 }
 
-export async function listUsers(page = 1, limit = 20) {
+export async function listUsers(options: {
+  page?: number;
+  limit?: number;
+  search?: string;
+  role?: UserRole;
+  status?: 'active' | 'inactive' | 'all';
+  sortBy?: 'createdAt' | 'email' | 'firstName' | 'role' | 'lastLoginAt';
+  sortOrder?: 'asc' | 'desc';
+} = {}) {
+  const page = options.page ?? 1;
+  const limit = options.limit ?? 20;
   const skip = (page - 1) * limit;
+  const sortBy = options.sortBy ?? 'createdAt';
+  const sortOrder = options.sortOrder ?? 'desc';
+
+  if (!isDatabaseConfigured()) {
+    const bootstrap = getBootstrapAdminUser();
+    return {
+      data: [{
+        ...bootstrap,
+        lastLoginAt: null as Date | null,
+      }],
+      meta: {
+        total: 1,
+        page: 1,
+        limit,
+        totalPages: 1,
+        hasNextPage: false,
+        hasPrevPage: false,
+        databaseConnected: false,
+      },
+    };
+  }
+
+  const where: {
+    OR?: Array<{ email?: { contains: string; mode: 'insensitive' }; firstName?: { contains: string; mode: 'insensitive' }; lastName?: { contains: string; mode: 'insensitive' }; phone?: { contains: string } }>;
+    role?: PrismaUserRole;
+    isActive?: boolean;
+  } = {};
+
+  if (options.search?.trim()) {
+    const q = options.search.trim();
+    where.OR = [
+      { email: { contains: q, mode: 'insensitive' } },
+      { firstName: { contains: q, mode: 'insensitive' } },
+      { lastName: { contains: q, mode: 'insensitive' } },
+      { phone: { contains: q.replace(/\D/g, '') } },
+    ];
+  }
+
+  if (options.role) {
+    where.role = options.role as PrismaUserRole;
+  }
+
+  if (options.status === 'active') where.isActive = true;
+  if (options.status === 'inactive') where.isActive = false;
+
   const [users, total] = await Promise.all([
     prisma.user.findMany({
+      where,
       skip,
       take: limit,
-      orderBy: { createdAt: 'desc' },
+      orderBy: { [sortBy]: sortOrder },
       select: {
         id: true,
         email: true,
@@ -366,7 +459,7 @@ export async function listUsers(page = 1, limit = 20) {
         lastLoginAt: true,
       },
     }),
-    prisma.user.count(),
+    prisma.user.count({ where }),
   ]);
 
   return {
@@ -378,6 +471,7 @@ export async function listUsers(page = 1, limit = 20) {
       totalPages: Math.ceil(total / limit),
       hasNextPage: page * limit < total,
       hasPrevPage: page > 1,
+      databaseConnected: true,
     },
   };
 }
@@ -386,6 +480,12 @@ export async function updateUserAsAdmin(
   userId: string,
   data: Partial<{ firstName: string; lastName: string; phone: string; role: UserRole; isActive: boolean }>
 ) {
+  requireDatabase();
+
+  if (userId === BOOTSTRAP_ADMIN_ID) {
+    throw new AuthError('Bootstrap admin cannot be modified without a database connection.', 400, 'BAD_REQUEST');
+  }
+
   const user = await prisma.user.update({
     where: { id: userId },
     data: {

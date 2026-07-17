@@ -1,20 +1,8 @@
 import { NextRequest } from 'next/server';
-import { UserRole } from '@mge/types';
 import { adminUpdateUserSchema } from '@mge/shared';
-import { AuthError, getUserFromAccessToken, updateUserAsAdmin } from '@/lib/server/auth';
-import { getBearerToken, jsonError, jsonSuccess } from '@/lib/server/api-response';
-
-async function requireAdmin(request: NextRequest) {
-  const token = getBearerToken(request);
-  if (!token) {
-    throw new AuthError('Access token required', 401, 'UNAUTHORIZED');
-  }
-  const user = await getUserFromAccessToken(token);
-  if (user.role !== UserRole.ADMIN) {
-    throw new AuthError('Insufficient permissions', 403, 'FORBIDDEN');
-  }
-  return user;
-}
+import { updateUserAsAdmin } from '@/lib/server/auth';
+import { requireAdmin } from '@/lib/server/admin-guard';
+import { jsonError, jsonSuccess } from '@/lib/server/api-response';
 
 export async function PATCH(
   request: NextRequest,
