@@ -74,9 +74,9 @@ npm run dev
 
 | Role | Email | Password |
 |------|-------|----------|
-| Admin | admin@mantraglobaleducation.com | Password123! |
-| Counselor | counselor@mantraglobaleducation.com | Password123! |
-| Student | student@mantraglobaleducation.com | Password123! |
+| Admin | vinodhini@mantraglobaledu.com | Set via `ADMIN_INITIAL_PASSWORD` in environment |
+| Counselor | counselor@mantraglobaleducation.com | Set via admin user management |
+| Student | student@mantraglobaleducation.com | Set via admin user management |
 
 ## Project Structure
 
