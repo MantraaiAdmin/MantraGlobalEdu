@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm ci",
-  "buildCommand": "npx prisma generate --schema=database/prisma/schema.prisma && (test -n \"$DATABASE_URL\" && npx prisma db push --schema=database/prisma/schema.prisma --accept-data-loss && ADMIN_INITIAL_PASSWORD=\"$ADMIN_INITIAL_PASSWORD\" npx tsx database/seed/index.ts || true) && npm run build --workspace=@mge/web",
+  "buildCommand": "bash scripts/vercel-build.sh",
   "outputDirectory": "apps/web/.next",
   "framework": "nextjs"
 }
