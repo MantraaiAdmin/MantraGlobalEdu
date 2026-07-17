@@ -1,5 +1,6 @@
 import { PrismaClient, UserRole } from '@prisma/client';
 import bcrypt from 'bcryptjs';
+import { SEED_ADMIN_EMAIL } from '@mge/config';
 import {
   COUNTRY_DATA,
   UNIVERSITIES,
@@ -12,16 +13,22 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Seeding database...');
 
-  const passwordHash = await bcrypt.hash('Password123!', 12);
+  const adminPassword = process.env.ADMIN_INITIAL_PASSWORD || 'ChangeMeOnFirstLogin!2026';
+  const passwordHash = await bcrypt.hash(adminPassword, 12);
 
   await prisma.user.upsert({
-    where: { email: 'admin@mantraglobaleducation.com' },
-    update: {},
+    where: { email: SEED_ADMIN_EMAIL },
+    update: {
+      role: UserRole.ADMIN,
+      emailVerified: true,
+      firstName: 'Vinodhini',
+      lastName: 'Y.',
+    },
     create: {
-      email: 'admin@mantraglobaleducation.com',
+      email: SEED_ADMIN_EMAIL,
       passwordHash,
-      firstName: 'Admin',
-      lastName: 'User',
+      firstName: 'Vinodhini',
+      lastName: 'Y.',
       role: UserRole.ADMIN,
       emailVerified: true,
     },
@@ -456,10 +463,8 @@ async function main() {
   console.log(`  Universities: ${stats[1]}`);
   console.log(`  Courses: ${stats[2]}`);
   console.log(`  Scholarships: ${stats[3]}`);
-  console.log('Demo accounts:');
-  console.log('  Admin: admin@mantraglobaleducation.com / Password123!');
-  console.log('  Counselor: counselor@mantraglobaleducation.com / Password123!');
-  console.log('  Student: student@mantraglobaleducation.com / Password123!');
+  console.log('Demo accounts seeded. Admin email:', SEED_ADMIN_EMAIL);
+  console.log('Set ADMIN_INITIAL_PASSWORD in environment before running seed in production.');
 }
 
 main()

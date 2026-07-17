@@ -53,12 +53,13 @@ function notifyAuthChange() {
   window.dispatchEvent(new Event('gem-auth-change'));
 }
 
-export function setAuth(accessToken: string, refreshToken: string, user: object) {
+export function setAuth(accessToken: string, refreshToken: string, user: StoredUser & object) {
   localStorage.setItem('accessToken', accessToken);
   localStorage.setItem('refreshToken', refreshToken);
   localStorage.setItem('user', JSON.stringify(user));
   invalidateUserCache();
   document.cookie = `mge_token=${accessToken}; path=/; max-age=${7 * 24 * 60 * 60}; SameSite=Lax`;
+  document.cookie = `mge_role=${user.role}; path=/; max-age=${7 * 24 * 60 * 60}; SameSite=Lax`;
   notifyAuthChange();
 }
 
@@ -68,6 +69,7 @@ export function clearAuth() {
   localStorage.removeItem('user');
   invalidateUserCache();
   document.cookie = 'mge_token=; path=/; max-age=0';
+  document.cookie = 'mge_role=; path=/; max-age=0';
   notifyAuthChange();
 }
 

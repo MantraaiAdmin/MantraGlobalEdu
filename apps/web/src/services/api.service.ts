@@ -221,6 +221,76 @@ export async function login(email: string, password: string) {
   return res.data!;
 }
 
+export async function forgotPassword(identifier: string, channel: 'email' | 'phone') {
+  const res = await apiClient<ApiResponse<{ message: string }>>('/auth/forgot-password', {
+    method: 'POST',
+    body: JSON.stringify({ identifier, channel }),
+  });
+  return res.data!;
+}
+
+export async function verifyPasswordOtp(identifier: string, channel: 'email' | 'phone', otp: string) {
+  const res = await apiClient<ApiResponse<{ resetToken: string }>>('/auth/verify-otp', {
+    method: 'POST',
+    body: JSON.stringify({ identifier, channel, otp }),
+  });
+  return res.data!;
+}
+
+export async function resetPasswordWithToken(resetToken: string, password: string) {
+  const res = await apiClient<ApiResponse<{ message: string }>>('/auth/reset-password', {
+    method: 'POST',
+    body: JSON.stringify({ resetToken, password }),
+  });
+  return res.data!;
+}
+
+export async function fetchAdminUsers(token: string, page = 1, limit = 50) {
+  const res = await apiClient<ApiResponse<PaginatedResponse<{
+    id: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    phone: string | null;
+    role: string;
+    isActive: boolean;
+    createdAt: string;
+  }>>>(`/admin/users?page=${page}&limit=${limit}`, { token });
+  return res.data!;
+}
+
+export async function createAdminUser(
+  token: string,
+  data: {
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+    phone?: string;
+    role: string;
+  }
+) {
+  const res = await apiClient<ApiResponse<object>>('/admin/users', {
+    method: 'POST',
+    token,
+    body: JSON.stringify(data),
+  });
+  return res.data!;
+}
+
+export async function updateAdminUser(
+  token: string,
+  userId: string,
+  data: Partial<{ firstName: string; lastName: string; phone: string; role: string; isActive: boolean }>
+) {
+  const res = await apiClient<ApiResponse<object>>(`/admin/users/${userId}`, {
+    method: 'PATCH',
+    token,
+    body: JSON.stringify(data),
+  });
+  return res.data!;
+}
+
 export async function fetchScholarshipById(id: string) {
   const scholarship = getCatalogScholarshipById(id);
   if (!scholarship) throw new Error('Scholarship not found');

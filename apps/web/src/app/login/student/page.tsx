@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { GraduationCap, ArrowRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { LoginShell, LoginRoleSwitcher } from '@/components/auth/login-shell';
 import { login } from '@/services/api.service';
 import { redirectAfterLogin, setAuth } from '@/lib/auth';
-import { DEMO_ACCOUNTS } from '@mge/config';
 
 const EXPECTED_ROLE = 'STUDENT';
 const PORTAL_PATH = '/portal/student';
@@ -25,13 +25,13 @@ export default function StudentLoginPage() {
     try {
       const data = await login(email, password);
       if (data.user.role !== EXPECTED_ROLE) {
-        setError(`This account is not a student account. Please use the ${data.user.role.toLowerCase()} login.`);
+        setError('This account does not have student access. Please use the correct login portal.');
         return;
       }
       setAuth(data.accessToken, data.refreshToken, data.user);
       redirectAfterLogin(PORTAL_PATH);
     } catch {
-      setError(`Invalid credentials. Try ${DEMO_ACCOUNTS.student} / ${DEMO_ACCOUNTS.password}`);
+      setError('Invalid email or password. Please try again or use Forgot Password.');
     } finally {
       setLoading(false);
     }
@@ -61,19 +61,26 @@ export default function StudentLoginPage() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder={DEMO_ACCOUNTS.student}
+            placeholder="Enter your email"
             className="mt-1.5 bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-accent"
+            autoComplete="username"
             required
           />
         </div>
         <div>
-          <label className="text-sm font-medium text-white/80">Password</label>
+          <div className="flex items-center justify-between">
+            <label className="text-sm font-medium text-white/80">Password</label>
+            <Link href="/login/forgot-password?portal=student" className="text-xs text-accent hover:underline">
+              Forgot password?
+            </Link>
+          </div>
           <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
             className="mt-1.5 bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-accent"
+            autoComplete="current-password"
             required
           />
         </div>

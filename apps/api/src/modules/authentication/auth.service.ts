@@ -17,7 +17,6 @@ export class AuthService {
     firstName: string;
     lastName: string;
     phone?: string;
-    role?: UserRole;
   }) {
     const existing = await this.repository.findByEmail(data.email);
     if (existing) {
@@ -25,10 +24,10 @@ export class AuthService {
     }
 
     const passwordHash = await bcrypt.hash(data.password, AUTH_CONFIG.bcryptRounds);
-    const role = data.role || UserRole.STUDENT;
+    const role = UserRole.STUDENT;
 
     const user = await this.repository.create({
-      email: data.email,
+      email: data.email.toLowerCase(),
       passwordHash,
       firstName: data.firstName,
       lastName: data.lastName,
@@ -36,18 +35,14 @@ export class AuthService {
       role: role as PrismaUserRole,
     });
 
-    if (role === UserRole.STUDENT) {
-      await prisma.student.create({ data: { userId: user.id } });
-    } else if (role === UserRole.COUNSELOR) {
-      await prisma.counselor.create({ data: { userId: user.id } });
-    }
+    await prisma.student.create({ data: { userId: user.id } });
 
     const tokens = await this.generateTokens(user.id, user.email, user.role as UserRole);
     return { user: this.sanitizeUser(user), ...tokens };
   }
 
   async login(email: string, password: string) {
-    const user = await this.repository.findByEmail(email);
+    const user = await this.repository.findByEmail(email.toLowerCase());
     if (!user) {
       throw new UnauthorizedError('Invalid email or password');
     }

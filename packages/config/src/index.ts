@@ -15,12 +15,8 @@ export const FOUNDER = {
   title: 'Founder, Mantra Global Education',
 } as const;
 
-export const DEMO_ACCOUNTS = {
-  admin: 'admin@mantraglobaledu.com',
-  counselor: 'counselor@mantraglobaledu.com',
-  student: 'student@mantraglobaledu.com',
-  password: 'Password123!',
-} as const;
+/** Server/seed only — never expose passwords in client UI */
+export const SEED_ADMIN_EMAIL = 'vinodhini@mantraglobaledu.com' as const;
 
 export const PRODUCT_NAMES = {
   profileCheck: 'Mantra Profile Check',

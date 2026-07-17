@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { PortalHeader } from '@/components/portal/portal-header';
 import {
   LayoutDashboard, Users, FileText, Calendar, CheckSquare, BarChart3,
-  Building2, Globe, GraduationCap, Award, Settings,
+  Building2, Globe, GraduationCap, Award, Settings, UserCog,
 } from 'lucide-react';
 
 const navItems = [
   { label: 'Dashboard', href: '/portal/admin', icon: LayoutDashboard },
+  { label: 'User Management', href: '/portal/admin/users', icon: UserCog },
   { label: 'CRM / Leads', href: '/portal/admin/crm', icon: Users },
   { label: 'Students', href: '/portal/admin/students', icon: Users },
   { label: 'Counselors', href: '/portal/admin/counselors', icon: Users },

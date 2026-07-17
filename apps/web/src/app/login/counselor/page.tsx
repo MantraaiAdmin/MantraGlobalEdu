@@ -2,12 +2,13 @@
 
 import { useState } from 'react';
 import { Headphones, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { LoginShell, LoginRoleSwitcher } from '@/components/auth/login-shell';
 import { login } from '@/services/api.service';
 import { redirectAfterLogin, setAuth } from '@/lib/auth';
-import { APP_CONFIG, DEMO_ACCOUNTS } from '@mge/config';
+import { APP_CONFIG } from '@mge/config';
 
 const EXPECTED_ROLE = 'COUNSELOR';
 const PORTAL_PATH = '/portal/counselor';
@@ -25,13 +26,13 @@ export default function CounselorLoginPage() {
     try {
       const data = await login(email, password);
       if (data.user.role !== EXPECTED_ROLE) {
-        setError(`This account is not a counselor account. Please use the ${data.user.role.toLowerCase()} login.`);
+        setError('This account does not have counselor access. Please use the correct login portal.');
         return;
       }
       setAuth(data.accessToken, data.refreshToken, data.user);
       redirectAfterLogin(PORTAL_PATH);
     } catch {
-      setError(`Invalid credentials. Try ${DEMO_ACCOUNTS.counselor} / ${DEMO_ACCOUNTS.password}`);
+      setError('Invalid email or password. Please try again or use Forgot Password.');
     } finally {
       setLoading(false);
     }
@@ -53,19 +54,26 @@ export default function CounselorLoginPage() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder={DEMO_ACCOUNTS.counselor}
+            placeholder="Enter your counselor email"
             className="mt-1.5 border-emerald-200 focus-visible:ring-emerald-500"
+            autoComplete="username"
             required
           />
         </div>
         <div>
-          <label className="text-sm font-medium text-primary">Password</label>
+          <div className="flex items-center justify-between">
+            <label className="text-sm font-medium text-primary">Password</label>
+            <Link href="/login/forgot-password?portal=counselor" className="text-xs text-emerald-700 hover:underline">
+              Forgot password?
+            </Link>
+          </div>
           <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
             className="mt-1.5 border-emerald-200 focus-visible:ring-emerald-500"
+            autoComplete="current-password"
             required
           />
         </div>

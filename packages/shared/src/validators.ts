@@ -27,7 +27,39 @@ export const registerSchema = z.object({
   firstName: z.string().min(1, 'First name is required').max(100),
   lastName: z.string().min(1, 'Last name is required').max(100),
   phone: z.string().optional(),
-  role: z.nativeEnum(UserRole).optional().default(UserRole.STUDENT),
+});
+
+export const adminCreateUserSchema = z.object({
+  email: emailSchema,
+  password: passwordSchema,
+  firstName: z.string().min(1, 'First name is required').max(100),
+  lastName: z.string().min(1, 'Last name is required').max(100),
+  phone: z.string().optional(),
+  role: z.nativeEnum(UserRole),
+});
+
+export const adminUpdateUserSchema = z.object({
+  firstName: z.string().min(1).max(100).optional(),
+  lastName: z.string().min(1).max(100).optional(),
+  phone: z.string().optional(),
+  role: z.nativeEnum(UserRole).optional(),
+  isActive: z.boolean().optional(),
+});
+
+export const forgotPasswordSchema = z.object({
+  identifier: z.string().min(3, 'Email or phone is required'),
+  channel: z.enum(['email', 'phone']),
+});
+
+export const verifyOtpSchema = z.object({
+  identifier: z.string().min(3),
+  channel: z.enum(['email', 'phone']),
+  otp: z.string().length(6, 'OTP must be 6 digits'),
+});
+
+export const resetPasswordSchema = z.object({
+  resetToken: z.string().min(1),
+  password: passwordSchema,
 });
 
 export const courseSearchSchema = z.object({

@@ -86,8 +86,24 @@ model User {
   counselor     Counselor?
   refreshTokens RefreshToken[]
   notifications Notification[]
+  passwordResetOtps PasswordResetOtp[]
 
   @@map("users")
+}
+
+model PasswordResetOtp {
+  id        String   @id @default(uuid())
+  userId    String
+  channel   String
+  target    String
+  codeHash  String
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, expiresAt])
+  @@map("password_reset_otps")
 }
 
 model RefreshToken {
