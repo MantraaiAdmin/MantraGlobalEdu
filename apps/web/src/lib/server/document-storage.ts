@@ -7,7 +7,6 @@ const EXTENSION_MIME: Record<string, string> = {
   jpeg: 'image/jpeg',
   png: 'image/png',
   webp: 'image/webp',
-  doc: 'application/msword',
   docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 };
 
@@ -25,16 +24,17 @@ export function resolveMimeType(file: File): string {
 }
 
 export function validateUploadFile(file: File) {
-  const maxSize = process.env.VERCEL === '1' ? 4 * 1024 * 1024 : UPLOAD_CONFIG.maxFileSize;
-  const maxLabel = process.env.VERCEL === '1' ? '4 MB' : UPLOAD_CONFIG.maxFileSizeLabel;
-
-  if (file.size > maxSize) {
-    throw new AuthError(`File exceeds maximum size of ${maxLabel}`, 400, 'VALIDATION');
+  if (file.size > UPLOAD_CONFIG.maxFileSize) {
+    throw new AuthError(`File exceeds maximum size of ${UPLOAD_CONFIG.maxFileSizeLabel}`, 400, 'VALIDATION');
   }
 
   const mimeType = resolveMimeType(file);
   if (!UPLOAD_CONFIG.allowedMimeTypes.includes(mimeType as (typeof UPLOAD_CONFIG.allowedMimeTypes)[number])) {
-    throw new AuthError('File type not allowed. Accepted: PDF, JPEG, PNG, WebP, DOC, DOCX', 400, 'VALIDATION');
+    throw new AuthError(
+      `File type not allowed. Accepted: ${UPLOAD_CONFIG.allowedExtensions.join(', ')}`,
+      400,
+      'VALIDATION'
+    );
   }
 
   return mimeType;

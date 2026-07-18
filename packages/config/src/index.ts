@@ -52,10 +52,10 @@ export const UPLOAD_CONFIG = {
     'image/png',
     'image/webp',
     'application/pdf',
-    'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
   ],
-  allowedExtensions: ['PDF', 'JPEG', 'JPG', 'PNG', 'WebP', 'DOC', 'DOCX'],
+  allowedExtensions: ['PDF', 'JPEG', 'JPG', 'PNG', 'WebP', 'DOCX'],
+  acceptAttribute: '.pdf,.jpg,.jpeg,.png,.webp,.docx',
   documentTypes: [
     { value: 'transcript', label: 'Academic Transcript' },
     { value: 'sop', label: 'Statement of Purpose (SOP)' },

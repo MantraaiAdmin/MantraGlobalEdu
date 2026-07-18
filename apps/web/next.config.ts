@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   transpilePackages: ['@mge/config', '@mge/types', '@mge/utils'],
   devIndicators: false,
   reactStrictMode: true,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '10mb',
+    },
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: '**' },

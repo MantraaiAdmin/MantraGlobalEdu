@@ -7,7 +7,7 @@ import { UPLOAD_CONFIG } from '@mge/config';
 import { CheckCircle2, Clock3, ExternalLink, FileUp, Loader2, Upload, X } from 'lucide-react';
 import { API_URL } from '@/lib/api';
 import { getAccessToken } from '@/lib/auth';
-import { resolveDocumentType } from '@/lib/document-upload';
+import { resolveDocumentType, validateClientUploadFile } from '@/lib/document-upload';
 
 type ChecklistItem = {
   key: string;
@@ -92,6 +92,14 @@ export function DocumentChecklistPanel({
   const handleFileSelected = async (file: File | undefined, itemKey: string, itemLabel: string) => {
     if (!file) return;
 
+    const validationError = validateClientUploadFile(file);
+    if (validationError) {
+      setRowError((prev) => ({ ...prev, [itemKey]: validationError }));
+      setModalError(validationError);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+
     setUploadingKey(itemKey);
     setRowError((prev) => ({ ...prev, [itemKey]: '' }));
     setModalError('');
@@ -112,9 +120,7 @@ export function DocumentChecklistPanel({
     }
   };
 
-  const maxLabel = typeof window !== 'undefined' && window.location.hostname.includes('vercel')
-    ? '4 MB'
-    : UPLOAD_CONFIG.maxFileSizeLabel;
+  const maxLabel = UPLOAD_CONFIG.maxFileSizeLabel;
 
   return (
     <>
@@ -122,7 +128,7 @@ export function DocumentChecklistPanel({
         ref={fileInputRef}
         type="file"
         className="hidden"
-        accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx"
+        accept={UPLOAD_CONFIG.acceptAttribute}
         onChange={(e) => {
           const file = e.target.files?.[0];
           if (activeItem) {

@@ -25,7 +25,7 @@ export const uploadMiddleware = multer({
     if (UPLOAD_CONFIG.allowedMimeTypes.includes(file.mimetype as typeof UPLOAD_CONFIG.allowedMimeTypes[number])) {
       cb(null, true);
     } else {
-      cb(new Error(`File type not allowed. Accepted: PDF, JPEG, PNG, WebP, DOC, DOCX`));
+      cb(new Error(`File type not allowed. Accepted: ${UPLOAD_CONFIG.allowedExtensions.join(', ')}`));
     }
   },
 });
