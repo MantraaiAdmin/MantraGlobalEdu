@@ -30,8 +30,8 @@ export function AboutPageContent() {
                 {APP_CONFIG.tagline}
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                {APP_CONFIG.name} is not a typical study abroad consultancy — it is the international
-                education vertical of Mantra.Ai, an IT services software company, headquartered in
+                {APP_CONFIG.name} is not a typical study abroad consultancy — it is the education
+                vertical of Mantra.Ai, an IT services software company, headquartered in
                 Coimbatore, Tamil Nadu. Founded by {FOUNDER.name}, we help ambitious students pursue
                 world-class education across 19+ countries worldwide — with personal counseling, not
                 call-center scripts.

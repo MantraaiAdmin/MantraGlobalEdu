@@ -3,9 +3,9 @@ export const APP_CONFIG = {
   shortName: 'Mantra',
   tagline: 'Your Global Education. Backed by Tech.',
   description:
-    'Mantra Global Education is the international vertical of Mantra.Ai, an IT services software company — helping students build real tech portfolios while they study abroad.',
+    'Mantra Global Education is the vertical of Mantra.Ai, an IT services software company — helping students build real tech portfolios while they study abroad.',
   metaDescription:
-    'Mantra Global Education — the international education vertical of Mantra.Ai. Study abroad guidance plus tech-standard profile building, guided internships, and a job-ready portfolio before you graduate.',
+    'Mantra Global Education — the education vertical of Mantra.Ai. Study abroad guidance plus tech-standard profile building, guided internships, and a job-ready portfolio before you graduate.',
   version: '1.0.0',
   website: 'www.mantraglobaledu.com',
   supportEmail: 'vinodhini@mantraglobaledu.com',

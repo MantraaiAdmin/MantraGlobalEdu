@@ -39,7 +39,7 @@ export function UspSection() {
         <SectionHeader
           eyebrow="Powered by Mantra.Ai"
           title="Our USP"
-          description="Mantra Global Education is not another study abroad consultancy — it's the international vertical of Mantra.Ai, an IT services software company. From day one, we take each student's profile to real industry tech standards, place them in guided internships, and help them build their own portfolio through the course of their Masters program — so they graduate with a strong, job-ready portfolio and land roles fast."
+          description="Mantra Global Education is not another study abroad consultancy — it's the vertical of Mantra.Ai, an IT services software company. From day one, we take each student's profile to real industry tech standards, place them in guided internships, and help them build their own portfolio through the course of their Masters program — so they graduate with a strong, job-ready portfolio and land roles fast."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
