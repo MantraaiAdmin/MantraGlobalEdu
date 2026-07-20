@@ -1,9 +1,11 @@
 export const APP_CONFIG = {
   name: 'Mantra Global Education',
   shortName: 'Mantra',
-  tagline: 'Your Journey. Our Guidance. Global Success.',
+  tagline: 'Your Global Education. Backed by Tech.',
   description:
-    'Explore world-class universities, compare programs, discover scholarships, and confidently plan your international study abroad journey.',
+    'Mantra Global Education is the international vertical of Mantra.Ai, an IT services software company — helping students build real tech portfolios while they study abroad.',
+  metaDescription:
+    'Mantra Global Education — the international education vertical of Mantra.Ai. Study abroad guidance plus tech-standard profile building, guided internships, and a job-ready portfolio before you graduate.',
   version: '1.0.0',
   website: 'www.mantraglobaledu.com',
   supportEmail: 'vinodhini@mantraglobaledu.com',
@@ -99,6 +101,7 @@ export const SERVICES = [
   { id: 'visa', title: 'Visa Documentation', icon: 'FileCheck' },
   { id: 'pre-departure', title: 'Pre-Departure Support', icon: 'Plane' },
   { id: 'career', title: 'Career Guidance', icon: 'Briefcase' },
+  { id: 'mantra-ai', title: 'Mantra.Ai Tech Portfolio', icon: 'Laptop' },
   { id: 'sop-lor', title: 'SOP & LOR Support', icon: 'FileText' },
   { id: 'loan', title: 'Education Loan Assistance', icon: 'Landmark' },
 ] as const;

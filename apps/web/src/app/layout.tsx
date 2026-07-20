@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: APP_CONFIG.name,
     template: `%s | ${APP_CONFIG.name}`,
   },
-  description: APP_CONFIG.description,
+  description: APP_CONFIG.metaDescription,
   icons: {
     icon: [
       { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },

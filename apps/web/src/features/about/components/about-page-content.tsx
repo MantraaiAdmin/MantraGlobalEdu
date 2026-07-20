@@ -30,9 +30,11 @@ export function AboutPageContent() {
                 {APP_CONFIG.tagline}
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                {APP_CONFIG.name} is a boutique study abroad consultancy founded by {FOUNDER.name}.
-                We help ambitious students pursue world-class education across 19+ countries worldwide —
-                with personal counseling, not call-center scripts.
+                {APP_CONFIG.name} is not a typical study abroad consultancy — it is the international
+                education vertical of Mantra.Ai, an IT services software company, headquartered in
+                Coimbatore, Tamil Nadu. Founded by {FOUNDER.name}, we help ambitious students pursue
+                world-class education across 19+ countries worldwide — with personal counseling, not
+                call-center scripts.
               </p>
               <Button variant="accent" className="mt-8" asChild>
                 <Link href={ROUTES.bookCounseling}>Book Free Counseling <ArrowRight className="h-4 w-4" /></Link>
@@ -70,6 +72,7 @@ export function AboutPageContent() {
           <h2 className="font-display text-2xl font-bold text-primary">Why students choose {APP_CONFIG.shortName}</h2>
           <ul className="mt-6 space-y-3">
             {[
+              'Mantra.Ai Tech Edge — Powered by Mantra.Ai — tech-standard profile, guided internships & job-ready portfolio',
               `Founded by ${FOUNDER.name} — 10+ years experience, former IDP Counselor`,
               `${STUDENTS_PLACED_STAT} students placed across global universities worldwide`,
               'Pan-India Top 17 · Best Counselor — Silver Category',

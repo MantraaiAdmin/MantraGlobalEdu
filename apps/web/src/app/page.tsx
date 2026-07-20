@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { HeroSection } from '@/components/landing/hero-section';
 import { TrustMetrics } from '@/components/landing/trust-metrics';
+import { UspSection } from '@/components/landing/usp-section';
 import { MantraFrameworkSection } from '@/components/landing/mantra-framework-section';
 import { ExpertCounselorSection } from '@/components/landing/expert-counselor-section';
 import { StudentsShowcaseSection } from '@/components/landing/students-showcase-section';
@@ -19,6 +20,7 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <TrustMetrics />
+        <UspSection />
         <MantraFrameworkSection />
         <ExpertCounselorSection />
         <StudentsShowcaseSection />

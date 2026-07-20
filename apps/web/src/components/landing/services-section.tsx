@@ -4,13 +4,13 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import type { ComponentType } from 'react';
 import {
-  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, ArrowUpRight,
+  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, Laptop, ArrowUpRight,
 } from 'lucide-react';
 import { SERVICES } from '@mge/config';
 import { SectionHeader } from '@/components/common/section-header';
 
 const iconMap: Record<string, ComponentType<{ className?: string }>> = {
-  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark,
+  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, Laptop,
 };
 
 const descriptions: Record<string, string> = {
@@ -20,6 +20,7 @@ const descriptions: Record<string, string> = {
   visa: 'Complete visa documentation and interview preparation',
   'pre-departure': 'Accommodation, travel, and cultural orientation support',
   career: 'Global career planning and industry networking',
+  'mantra-ai': 'Tech-standard profile, internships & portfolio via Mantra.Ai',
   'sop-lor': 'Professional SOP and recommendation letter crafting',
   loan: 'Education loan guidance and financial planning',
 };

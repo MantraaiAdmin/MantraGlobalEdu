@@ -29,7 +29,7 @@ export function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur-sm mb-8"
             >
               <Sparkles className="h-4 w-4 text-accent" />
-              <span>{APP_CONFIG.name}</span>
+              <span>Powered by Mantra.Ai</span>
               <span className="h-1 w-1 rounded-full bg-accent" />
               <span className="text-accent font-medium">19+ Countries Worldwide</span>
             </motion.div>
@@ -40,8 +40,8 @@ export function HeroSection() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] tracking-tight"
             >
-              {APP_CONFIG.tagline.split('. ').slice(0, 2).join('. ')}.{' '}
-              <span className="text-gradient-gold">{APP_CONFIG.tagline.split('. ').slice(2).join('. ')}</span>
+              Your Global Education.{' '}
+              <span className="text-gradient-gold">Backed by Tech.</span>
             </motion.h1>
 
             <motion.p

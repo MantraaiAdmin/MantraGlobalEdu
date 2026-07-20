@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import type { ComponentType } from 'react';
 import {
-  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark,
+  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, Laptop,
   ArrowRight, ArrowUpRight, Sparkles, Users, Globe2, CheckCircle2,
 } from 'lucide-react';
 import { APP_CONFIG, SERVICES, TRUST_METRICS, ROUTES, STUDENTS_PLACED_STAT } from '@mge/config';
@@ -15,7 +15,7 @@ import { SectionHeader } from '@/components/common/section-header';
 import { STUDENT_IMAGES } from '@/lib/student-images';
 
 const iconMap: Record<string, ComponentType<{ className?: string }>> = {
-  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark,
+  Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, Laptop,
 };
 
 const descriptions: Record<string, string> = {
@@ -25,6 +25,7 @@ const descriptions: Record<string, string> = {
   visa: 'Document checklists, financial proof guidance, and mock visa interview preparation.',
   'pre-departure': 'Accommodation, travel, banking, and cultural orientation before you fly.',
   career: 'Global career planning, networking, and post-study work route guidance.',
+  'mantra-ai': 'Tech-standard profile, internships & portfolio via Mantra.Ai',
   'sop-lor': 'Professional Statement of Purpose and Letter of Recommendation crafting.',
   loan: 'Education loan comparison, documentation, and financial planning support.',
 };
@@ -151,7 +152,7 @@ export function ServicesPageContent() {
         <div className="relative mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="What We Offer"
-            title="8 Services. One Seamless Journey."
+            title="9 Services. One Seamless Journey."
             description="Every service is designed to remove friction and maximise your chances of admission, funding, and visa approval."
           />
 
