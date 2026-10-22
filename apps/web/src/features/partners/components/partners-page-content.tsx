@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/common/section-header';
-import { APP_CONFIG, STUDENTS_PLACED_STAT } from '@mge/config';
+import { APP_CONFIG } from '@mge/config';
 import { STUDENT_IMAGES } from '@/lib/student-images';
 
 const partnerships = [
@@ -28,7 +28,7 @@ const partnerships = [
     id: 'college',
     title: 'Engineering College Partnership',
     description:
-      'Bridge your engineering graduates to top MS and postgraduate programs worldwide with dedicated pathway counseling and application support.',
+      'Help your engineering graduates explore MS and postgraduate programmes abroad with pathway counselling and application support.',
     cta: 'Partner Your College',
     icon: Handshake,
     highlights: ['Graduate pathways', 'Faculty workshops', 'Alumni network'],
@@ -38,19 +38,19 @@ const partnerships = [
     id: 'placement',
     title: 'Placement Partnership',
     description:
-      'Collaborate on global career outcomes — help students transition from education abroad to internships and full-time roles with employer networks.',
+      'Collaborate on career readiness — workshops, projects and employer connections that help students prepare for internships and jobs.',
     cta: 'Become a Placement Partner',
     icon: Briefcase,
-    highlights: ['Career fairs', 'Employer connects', 'Visa-ready talent'],
+    highlights: ['Career workshops', 'Employer connects', 'Project-based learning'],
     image: '/images/campus-walking-uk.jpg',
   },
 ];
 
 const benefits = [
-  { icon: Globe2, title: 'Global Reach', desc: 'Access students targeting 19+ study destinations worldwide' },
-  { icon: Users, title: `${STUDENTS_PLACED_STAT} Students`, desc: 'Successfully guided to universities worldwide' },
-  { icon: TrendingUp, title: 'Higher Enrolments', desc: 'Proven conversion from inquiry to offer' },
-  { icon: Shield, title: 'Trusted Brand', desc: `${APP_CONFIG.name} — ${APP_CONFIG.tagline}` },
+  { icon: Users, title: 'Personal counselling', desc: 'Students are guided one-to-one, so applications are well matched to programmes' },
+  { icon: Globe2, title: 'Students across India', desc: 'Based in Coimbatore with online counselling for students nationwide' },
+  { icon: TrendingUp, title: 'Prepared applicants', desc: 'Support with documents, SOPs and deadlines before students apply' },
+  { icon: Shield, title: 'Backed by Mantra.Ai', desc: 'The education vertical of Mantra.Ai, an IT services company' },
 ];
 
 const partnerSteps = [
@@ -58,13 +58,6 @@ const partnerSteps = [
   { step: '02', title: 'MOU & Onboarding', desc: 'Formalise partnership terms and integration setup.' },
   { step: '03', title: 'Co-Marketing Launch', desc: 'Joint campaigns, webinars, and campus events.' },
   { step: '04', title: 'Ongoing Growth', desc: 'Quarterly reviews, pipeline reports, and optimisation.' },
-];
-
-const networkStats = [
-  { value: '15+', label: 'Partner Universities' },
-  { value: '19+', label: 'Study Destinations' },
-  { value: STUDENTS_PLACED_STAT, label: 'Students Placed' },
-  { value: '94%', label: 'Partner Satisfaction' },
 ];
 
 export function PartnersPageContent() {
@@ -76,7 +69,7 @@ export function PartnersPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-28 pb-16 lg:pb-20 overflow-hidden bg-background">
+      <section className="relative pt-6 pb-16 lg:pb-20 overflow-hidden bg-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(212_100%_15%/0.08),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(42_80%_44%/0.1),transparent_50%)]" />
         <div className="absolute inset-0 dot-pattern opacity-20" />
@@ -92,17 +85,17 @@ export function PartnersPageContent() {
                 <Handshake className="h-3.5 w-3.5" />
                 Partnerships
               </span>
-              <h1 className="font-display text-4xl sm:text-5xl font-bold text-primary leading-tight">
+              <h1 className="font-display text-3xl sm:text-5xl font-bold text-primary leading-tight">
                 Partner with{' '}
                 <span className="text-gradient">{APP_CONFIG.name}</span>
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl">
                 Join our network of universities, colleges, and placement partners.
-                Together we connect talented students to world-class education across 19+ countries worldwide.
+                Together we can help well-prepared students find the right programmes abroad.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button variant="accent" size="lg" asChild>
-                  <Link href="/contact?type=partnership">
+                  <Link href="/contact?type=partnership" data-track="partner_enquiry">
                     Start a Partnership <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
@@ -122,7 +115,7 @@ export function PartnersPageContent() {
               <div className="relative aspect-[5/4] rounded-[2rem] overflow-hidden shadow-premium-xl border border-border/40">
                 <Image
                   src="/images/hero-campus-walking.jpg"
-                  alt="Students walking on a partner university campus"
+                  alt="Students walking across a university campus"
                   fill
                   priority
                   className="object-cover"
@@ -130,29 +123,7 @@ export function PartnersPageContent() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/45 via-transparent to-accent/10" />
               </div>
-              <div className="absolute -bottom-5 -left-5 glass rounded-2xl px-5 py-4 shadow-premium-lg">
-                <p className="text-xs text-muted-foreground">Partner network</p>
-                <p className="text-2xl font-bold text-primary">15+ Unis</p>
-              </div>
-              <div className="absolute -top-3 -right-3 glass rounded-2xl px-5 py-4 shadow-premium-lg">
-                <p className="text-xs text-muted-foreground">Countries</p>
-                <p className="text-2xl font-bold text-accent">19+ Countries</p>
-              </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-border/60 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {networkStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-2xl font-bold text-primary">{stat.value}</p>
-                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -206,7 +177,7 @@ export function PartnersPageContent() {
                     ))}
                   </ul>
                   <Button className="mt-6 w-full group-hover:bg-primary/90" asChild>
-                    <Link href="/contact?type=partnership">
+                    <Link href="/contact?type=partnership" data-track="partner_enquiry">
                       {partner.cta} <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </Button>
@@ -225,7 +196,7 @@ export function PartnersPageContent() {
               <SectionHeader
                 eyebrow={`Why ${APP_CONFIG.shortName}`}
                 title="Why Institutions Choose Us"
-                description="A trusted bridge between ambitious students and world-class universities."
+                description="How we work with institutions and the students we support."
                 align="left"
                 className="mb-8"
               />
@@ -251,7 +222,7 @@ export function PartnersPageContent() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-premium-xl">
               <Image
                 src={STUDENT_IMAGES.gallery[0].src}
-                alt="Students on a partner university campus"
+                alt="Students on a university campus"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -277,7 +248,7 @@ export function PartnersPageContent() {
           <SectionHeader
             eyebrow="Getting Started"
             title="How Partnership Works"
-            description="A straightforward onboarding process — from first call to live student pipeline in weeks."
+            description="A straightforward process from first conversation to working together."
             className="[&_h2]:text-white [&_p]:text-white/65 [&_span]:border-white/20 [&_span]:bg-white/10 [&_span]:text-accent"
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -311,10 +282,10 @@ export function PartnersPageContent() {
                 Let&apos;s build something together
               </h2>
               <p className="mt-4 text-white/70 max-w-lg mx-auto">
-                Reach out to our partnerships team and discover how {APP_CONFIG.shortName} can amplify your global reach.
+                Get in touch to discuss how we could work together.
               </p>
               <Button size="lg" variant="accent" className="mt-8" asChild>
-                <Link href="/contact?type=partnership">
+                <Link href="/contact?type=partnership" data-track="partner_enquiry">
                   Contact Partnerships Team <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

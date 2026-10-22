@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T06:32:49.581Z",
+  "generatedAt": "2026-10-22T11:54:34.174Z",
   "countries": [
     {
       "id": "country-us",
@@ -1776,6 +1776,7 @@
       ],
       "eligibility": "Strong high school STEM record. SAT/ACT optional. English proficiency required.",
       "description": "Undergraduate program covering algorithms, AI, systems, and software engineering.",
+      "sourceUrl": "https://www.mit.edu",
       "university": {
         "id": "uni-massachusetts-institute-of-technology",
         "name": "Massachusetts Institute of Technology",
@@ -1833,6 +1834,7 @@
       ],
       "eligibility": "Bachelor's in EE/CS. GRE not required. Strong academic record.",
       "description": "Graduate research program in EECS with AI, robotics, and systems focus.",
+      "sourceUrl": "https://www.eecs.mit.edu/academics-admissions/graduate-program",
       "university": {
         "id": "uni-massachusetts-institute-of-technology",
         "name": "Massachusetts Institute of Technology",
@@ -1890,6 +1892,7 @@
       ],
       "eligibility": "Exceptional academic record. English proficiency. Holistic admissions review.",
       "description": "Core CS theory, systems, AI, and human-computer interaction.",
+      "sourceUrl": "https://cs.stanford.edu/degrees/undergrad",
       "university": {
         "id": "uni-stanford-university",
         "name": "Stanford University",
@@ -1948,6 +1951,7 @@
       ],
       "eligibility": "Bachelor's in CS or related field. Strong GPA and research background.",
       "description": "Specializations in AI, systems, theory, and HCI.",
+      "sourceUrl": "https://cs.stanford.edu/degrees/masters",
       "university": {
         "id": "uni-stanford-university",
         "name": "Stanford University",
@@ -2006,6 +2010,7 @@
       ],
       "eligibility": "Outstanding secondary school record. English proficiency required.",
       "description": "Harvard College undergraduate degree in computer science.",
+      "sourceUrl": "https://college.harvard.edu/admissions",
       "university": {
         "id": "uni-harvard-university",
         "name": "Harvard University",
@@ -2064,6 +2069,7 @@
       ],
       "eligibility": "Bachelor's degree. 2+ years work experience. GMAT/GRE required.",
       "description": "Full-time MBA program at Harvard Business School.",
+      "sourceUrl": "https://www.hbs.edu/mba/admissions",
       "university": {
         "id": "uni-harvard-university",
         "name": "Harvard University",
@@ -2122,6 +2128,7 @@
       ],
       "eligibility": "Strong STEM grades. English proficiency. UC application required.",
       "description": "EECS undergraduate program — one of the top CS programs globally.",
+      "sourceUrl": "https://eecs.berkeley.edu/academics/undergraduate",
       "university": {
         "id": "uni-university-of-california-berkeley",
         "name": "University of California, Berkeley",
@@ -2180,6 +2187,7 @@
       ],
       "eligibility": "Bachelor's in engineering or CS. Minimum 3.0 GPA.",
       "description": "Industry-focused one-year professional masters in EECS.",
+      "sourceUrl": "https://eecs.berkeley.edu/academics/graduate/industry-programs",
       "university": {
         "id": "uni-university-of-california-berkeley",
         "name": "University of California, Berkeley",
@@ -2238,6 +2246,7 @@
       ],
       "eligibility": "Competitive academic record. English proficiency required.",
       "description": "Columbia Engineering undergraduate CS program in NYC.",
+      "sourceUrl": "https://www.engineering.columbia.edu/admissions/undergraduate",
       "university": {
         "id": "uni-columbia-university",
         "name": "Columbia University",
@@ -2297,6 +2306,7 @@
       ],
       "eligibility": "Quantitative bachelor's degree. Programming and statistics background.",
       "description": "Interdisciplinary data science masters from Columbia's Data Science Institute.",
+      "sourceUrl": "https://datascience.columbia.edu/education/programs/m-s-in-data-science",
       "university": {
         "id": "uni-columbia-university",
         "name": "Columbia University",
@@ -2355,6 +2365,7 @@
       ],
       "eligibility": "A-levels or equivalent. Strong mathematics. Admissions test may apply.",
       "description": "Three-year undergraduate computer science at Oxford.",
+      "sourceUrl": "https://www.ox.ac.uk/admissions/undergraduate",
       "university": {
         "id": "uni-university-of-oxford",
         "name": "University of Oxford",
@@ -2414,6 +2425,7 @@
       ],
       "eligibility": "First-class or strong upper second bachelor's in CS or related field.",
       "description": "One-year taught masters in advanced computer science.",
+      "sourceUrl": "https://www.ox.ac.uk/admissions/graduate",
       "university": {
         "id": "uni-university-of-oxford",
         "name": "University of Oxford",
@@ -2479,6 +2491,7 @@
       ],
       "eligibility": "Bachelor's degree. 2+ years work experience. GMAT/GRE required.",
       "description": "One-year intensive MBA at Oxford Saïd Business School.",
+      "sourceUrl": "https://www.sbs.ox.ac.uk/programmes/degrees/mba",
       "university": {
         "id": "uni-university-of-oxford",
         "name": "University of Oxford",
@@ -2538,6 +2551,7 @@
       ],
       "eligibility": "A-levels or equivalent with strong mathematics. Admissions assessment.",
       "description": "Cambridge undergraduate computer science tripos.",
+      "sourceUrl": "https://www.undergraduate.study.cam.ac.uk",
       "university": {
         "id": "uni-university-of-cambridge",
         "name": "University of Cambridge",
@@ -2596,6 +2610,7 @@
       ],
       "eligibility": "First-class bachelor's in CS. Research proposal may be required.",
       "description": "Advanced taught masters with research dissertation component.",
+      "sourceUrl": "https://www.postgraduate.study.cam.ac.uk",
       "university": {
         "id": "uni-university-of-cambridge",
         "name": "University of Cambridge",
@@ -2654,6 +2669,7 @@
       ],
       "eligibility": "A-levels AAA including Mathematics. English proficiency.",
       "description": "Computing undergraduate degree at Imperial's Department of Computing.",
+      "sourceUrl": "https://www.imperial.ac.uk",
       "university": {
         "id": "uni-imperial-college-london",
         "name": "Imperial College London",
@@ -2712,6 +2728,7 @@
       ],
       "eligibility": "First-class bachelor's in computing or related quantitative field.",
       "description": "Specialist masters in artificial intelligence and machine learning.",
+      "sourceUrl": "https://www.imperial.ac.uk",
       "university": {
         "id": "uni-imperial-college-london",
         "name": "Imperial College London",
@@ -2770,6 +2787,7 @@
       ],
       "eligibility": "A-levels A*AA including Mathematics. English proficiency.",
       "description": "UCL Computer Science undergraduate programme.",
+      "sourceUrl": "https://www.ucl.ac.uk/prospective-students/undergraduate",
       "university": {
         "id": "uni-university-college-london",
         "name": "University College London",
@@ -2828,6 +2846,7 @@
       ],
       "eligibility": "Upper second bachelor's in quantitative discipline.",
       "description": "Taught masters combining statistics, ML, and big data systems.",
+      "sourceUrl": "https://www.ucl.ac.uk/prospective-students/graduate",
       "university": {
         "id": "uni-university-college-london",
         "name": "University College London",
@@ -2879,6 +2898,7 @@
       ],
       "eligibility": "A-levels or equivalent with mathematics. IELTS 6.5.",
       "description": "Computer science undergraduate at the School of Computer Science.",
+      "sourceUrl": "https://www.manchester.ac.uk/study/undergraduate",
       "university": {
         "id": "uni-university-of-manchester",
         "name": "University of Manchester",
@@ -2937,6 +2957,7 @@
       ],
       "eligibility": "Upper second bachelor's in CS or related field.",
       "description": "Advanced CS masters with AI, software engineering, and data analytics options.",
+      "sourceUrl": "https://www.manchester.ac.uk/study/masters",
       "university": {
         "id": "uni-university-of-manchester",
         "name": "University of Manchester",
@@ -2996,6 +3017,7 @@
       ],
       "eligibility": "ATAR 85+ or equivalent. Mathematics prerequisite. IELTS 6.5.",
       "description": "Computing major within the Bachelor of Science at Melbourne.",
+      "sourceUrl": "https://study.unimelb.edu.au/find/courses/undergraduate",
       "university": {
         "id": "uni-university-of-melbourne",
         "name": "University of Melbourne",
@@ -3055,6 +3077,7 @@
       ],
       "eligibility": "Bachelor's degree. Prior computing experience preferred.",
       "description": "Professional IT masters with software, AI, and cybersecurity streams.",
+      "sourceUrl": "https://study.unimelb.edu.au/find/courses/graduate",
       "university": {
         "id": "uni-university-of-melbourne",
         "name": "University of Melbourne",
@@ -3107,6 +3130,7 @@
       ],
       "eligibility": "ATAR 90+ or equivalent. Mathematics Extension 1. IELTS 6.5.",
       "description": "Advanced computing degree with AI, data science, and software engineering majors.",
+      "sourceUrl": "https://www.sydney.edu.au",
       "university": {
         "id": "uni-university-of-sydney",
         "name": "University of Sydney",
@@ -3166,6 +3190,7 @@
       ],
       "eligibility": "Engineering or IT bachelor's. Accredited pathway to professional engineer status.",
       "description": "Professional engineering masters accredited by Engineers Australia.",
+      "sourceUrl": "https://www.sydney.edu.au",
       "university": {
         "id": "uni-university-of-sydney",
         "name": "University of Sydney",
@@ -3225,6 +3250,7 @@
       ],
       "eligibility": "ATAR 85+ or equivalent. Mathematics. IELTS 6.5 overall.",
       "description": "Computer science undergraduate at UNSW School of Computer Science and Engineering.",
+      "sourceUrl": "https://www.unsw.edu.au/study/undergraduate",
       "university": {
         "id": "uni-unsw-sydney",
         "name": "UNSW Sydney",
@@ -3284,6 +3310,7 @@
       ],
       "eligibility": "Recognised bachelor's degree. Computing background recommended.",
       "description": "MIT program with specialisations in AI, cybersecurity, and database systems.",
+      "sourceUrl": "https://www.unsw.edu.au/study/postgraduate",
       "university": {
         "id": "uni-unsw-sydney",
         "name": "UNSW Sydney",
@@ -3343,6 +3370,7 @@
       ],
       "eligibility": "ATAR 80+ or equivalent. Mathematics. IELTS 6.5.",
       "description": "CS undergraduate with AI, data science, and software engineering majors.",
+      "sourceUrl": "https://www.monash.edu/study/courses/find-a-course",
       "university": {
         "id": "uni-monash-university",
         "name": "Monash University",
@@ -3402,6 +3430,7 @@
       ],
       "eligibility": "Quantitative bachelor's degree with statistics or programming.",
       "description": "Data science masters covering ML, big data, and visualisation.",
+      "sourceUrl": "https://www.monash.edu/study/courses/find-a-course",
       "university": {
         "id": "uni-monash-university",
         "name": "Monash University",
@@ -3461,6 +3490,7 @@
       ],
       "eligibility": "ATAR 85+ or equivalent. Mathematics Methods. IELTS 6.5.",
       "description": "Computing undergraduate at ANU College of Engineering, Computing and Cybernetics.",
+      "sourceUrl": "https://www.anu.edu.au",
       "university": {
         "id": "uni-australian-national-university",
         "name": "Australian National University",
@@ -3513,6 +3543,7 @@
       ],
       "eligibility": "Bachelor's in computing or related field with minimum 60% average.",
       "description": "Advanced computing masters with AI, systems, and HCI specialisations.",
+      "sourceUrl": "https://www.anu.edu.au",
       "university": {
         "id": "uni-australian-national-university",
         "name": "Australian National University",
@@ -3571,6 +3602,7 @@
       ],
       "eligibility": "Bachelor's in ECE with 75%+. IELTS 7.0.",
       "description": "Professional graduate engineering degree at U of T Faculty of Applied Science.",
+      "sourceUrl": "https://www.utoronto.ca",
       "university": {
         "id": "uni-university-of-toronto",
         "name": "University of Toronto",
@@ -3623,6 +3655,7 @@
       ],
       "eligibility": "Quantitative bachelor's degree. IELTS 7.0.",
       "description": "Intensive data science professional masters at UBC Vancouver.",
+      "sourceUrl": "https://www.ubc.ca",
       "university": {
         "id": "uni-university-of-british-columbia",
         "name": "University of British Columbia",
@@ -3676,6 +3709,7 @@
       ],
       "eligibility": "CS bachelor's with strong GPA. IELTS 6.5 or German C1.",
       "description": "Research-oriented informatics masters at TUM School of Computation, Information and Technology.",
+      "sourceUrl": "https://www.tum.de",
       "university": {
         "id": "uni-technical-university-munich",
         "name": "Technical University of Munich",
@@ -3727,6 +3761,7 @@
       ],
       "eligibility": "CS or related bachelor's. IELTS 6.5.",
       "description": "Full-time taught masters in computer science at Trinity College Dublin.",
+      "sourceUrl": "https://www.tcd.ie",
       "university": {
         "id": "uni-trinity-college-dublin",
         "name": "Trinity College Dublin",
@@ -3778,6 +3813,7 @@
       ],
       "eligibility": "Bachelor's with quantitative background. IELTS 7.0.",
       "description": "Business analytics masters at NUS Business School.",
+      "sourceUrl": "https://www.nus.edu.sg",
       "university": {
         "id": "uni-national-university-singapore",
         "name": "National University of Singapore",
@@ -3829,6 +3865,7 @@
       ],
       "eligibility": "CS bachelor's. IELTS 6.5.",
       "description": "English-taught computer science masters at TU Delft.",
+      "sourceUrl": "https://www.tudelft.nl",
       "university": {
         "id": "uni-delft-university-technology",
         "name": "Delft University of Technology",
@@ -3881,6 +3918,7 @@
       ],
       "eligibility": "Engineering bachelor's. IELTS 6.5.",
       "description": "Taught engineering masters at University of Auckland Faculty of Engineering.",
+      "sourceUrl": "https://www.auckland.ac.nz",
       "university": {
         "id": "uni-university-of-auckland",
         "name": "University of Auckland",
@@ -3932,6 +3970,7 @@
       ],
       "eligibility": "CS bachelor's. IELTS 6.0 or French B2.",
       "description": "Computer science masters at Sorbonne Faculty of Science and Engineering.",
+      "sourceUrl": "https://www.sorbonne-universite.fr",
       "university": {
         "id": "uni-sorbonne-university",
         "name": "Sorbonne University",
@@ -3983,6 +4022,7 @@
       ],
       "eligibility": "Outstanding CS bachelor's. IELTS 7.0 or German C1.",
       "description": "Research-intensive computer science masters at ETH Zurich.",
+      "sourceUrl": "https://ethz.ch",
       "university": {
         "id": "uni-eth-zurich",
         "name": "ETH Zurich",
@@ -4034,6 +4074,7 @@
       ],
       "eligibility": "Bachelor's + 2 years work experience. IELTS 6.0.",
       "description": "Accelerated MBA program at University of Dubai.",
+      "sourceUrl": "https://www.ud.ac.ae",
       "university": {
         "id": "uni-university-of-dubai",
         "name": "University of Dubai",
@@ -4092,6 +4133,7 @@
       ],
       "eligibility": "CS or engineering bachelor's. IELTS 6.0.",
       "description": "English-taught computer science masters at Politecnico di Milano.",
+      "sourceUrl": "https://www.polimi.it",
       "university": {
         "id": "uni-politecnico-di-milano",
         "name": "Politecnico di Milano",
@@ -4150,6 +4192,7 @@
       ],
       "eligibility": "Engineering or economics bachelor's. IELTS 6.0.",
       "description": "Interdisciplinary management and engineering programme.",
+      "sourceUrl": "https://www.polimi.it",
       "university": {
         "id": "uni-politecnico-di-milano",
         "name": "Politecnico di Milano",
@@ -4208,6 +4251,7 @@
       ],
       "eligibility": "CS or related bachelor's. IELTS 6.0.",
       "description": "AI masters combining machine learning, NLP, and robotics.",
+      "sourceUrl": "https://www.unibo.it",
       "university": {
         "id": "uni-university-of-bologna",
         "name": "University of Bologna",
@@ -4266,6 +4310,7 @@
       ],
       "eligibility": "Strong high school record. IELTS 7.0+. No Japanese required.",
       "description": "All-English liberal arts undergraduate at University of Tokyo.",
+      "sourceUrl": "https://www.u-tokyo.ac.jp",
       "university": {
         "id": "uni-university-of-tokyo",
         "name": "University of Tokyo",
@@ -4325,6 +4370,7 @@
       ],
       "eligibility": "CS bachelor's. English proficiency required.",
       "description": "Graduate programme in information science at UTokyo.",
+      "sourceUrl": "https://www.u-tokyo.ac.jp",
       "university": {
         "id": "uni-university-of-tokyo",
         "name": "University of Tokyo",
@@ -4383,6 +4429,7 @@
       ],
       "eligibility": "Engineering bachelor's. IELTS 6.5.",
       "description": "English-track civil engineering masters at Kyoto University.",
+      "sourceUrl": "https://www.kyoto-u.ac.jp",
       "university": {
         "id": "uni-kyoto-university",
         "name": "Kyoto University",
@@ -4442,6 +4489,7 @@
       ],
       "eligibility": "CS bachelor's. IELTS 6.5 or TOEFL 80.",
       "description": "Graduate computer science at Seoul National University.",
+      "sourceUrl": "https://www.snu.ac.kr",
       "university": {
         "id": "uni-seoul-national-university",
         "name": "Seoul National University",
@@ -4500,6 +4548,7 @@
       ],
       "eligibility": "Bachelor's + work experience. GMAT/GRE. IELTS 7.0.",
       "description": "SNU Business School MBA programme.",
+      "sourceUrl": "https://www.snu.ac.kr",
       "university": {
         "id": "uni-seoul-national-university",
         "name": "Seoul National University",
@@ -4559,6 +4608,7 @@
       ],
       "eligibility": "CS bachelor's with strong GPA. IELTS 6.5.",
       "description": "Research-focused CS masters at KAIST School of Computing.",
+      "sourceUrl": "https://www.kaist.ac.kr",
       "university": {
         "id": "uni-kaist",
         "name": "KAIST",
@@ -4617,6 +4667,7 @@
       ],
       "eligibility": "STPM/A-levels with mathematics. IELTS 5.5.",
       "description": "Undergraduate computer science at University of Malaya.",
+      "sourceUrl": "https://www.um.edu.my",
       "university": {
         "id": "uni-university-of-malaya",
         "name": "University of Malaya",
@@ -4676,6 +4727,7 @@
       ],
       "eligibility": "Quantitative bachelor's. IELTS 6.0.",
       "description": "Data science masters combining statistics, ML, and analytics.",
+      "sourceUrl": "https://www.um.edu.my",
       "university": {
         "id": "uni-university-of-malaya",
         "name": "University of Malaya",
@@ -4735,6 +4787,7 @@
       ],
       "eligibility": "A-levels or equivalent. IELTS 6.5.",
       "description": "Monash CS degree awarded at Malaysia campus.",
+      "sourceUrl": "https://www.monash.edu.my",
       "university": {
         "id": "uni-monash-university-malaysia",
         "name": "Monash University Malaysia",
@@ -4793,6 +4846,7 @@
       ],
       "eligibility": "CS bachelor's. IELTS 6.5.",
       "description": "English-taught computer science masters at KTH.",
+      "sourceUrl": "https://www.kth.se",
       "university": {
         "id": "uni-kth-royal-institute-technology",
         "name": "KTH Royal Institute of Technology",
@@ -4851,6 +4905,7 @@
       ],
       "eligibility": "Engineering bachelor's. IELTS 6.5.",
       "description": "Sustainability and energy systems masters programme.",
+      "sourceUrl": "https://www.kth.se",
       "university": {
         "id": "uni-kth-royal-institute-technology",
         "name": "KTH Royal Institute of Technology",
@@ -4909,6 +4964,7 @@
       ],
       "eligibility": "Economics or quantitative bachelor's. IELTS 6.5.",
       "description": "Interdisciplinary data analytics and business programme.",
+      "sourceUrl": "https://www.lu.se",
       "university": {
         "id": "uni-lund-university",
         "name": "Lund University",
@@ -4967,6 +5023,7 @@
       ],
       "eligibility": "Quantitative bachelor's. IELTS 6.5 or Spanish B2.",
       "description": "Data science masters at University of Barcelona.",
+      "sourceUrl": "https://www.ub.edu",
       "university": {
         "id": "uni-university-of-barcelona",
         "name": "University of Barcelona",
@@ -5025,6 +5082,7 @@
       ],
       "eligibility": "Baccalaureate with mathematics. Spanish or English track.",
       "description": "Computer engineering undergraduate at UB.",
+      "sourceUrl": "https://www.ub.edu",
       "university": {
         "id": "uni-university-of-barcelona",
         "name": "University of Barcelona",
@@ -5083,6 +5141,7 @@
       ],
       "eligibility": "Quantitative bachelor's. IELTS 7.0. GMAT optional.",
       "description": "Intensive business analytics masters at IE Madrid.",
+      "sourceUrl": "https://www.ie.edu",
       "university": {
         "id": "uni-ie-university",
         "name": "IE University",
@@ -5141,6 +5200,7 @@
       ],
       "eligibility": "CS bachelor's. IELTS 6.5.",
       "description": "English-taught computer science masters at University of Helsinki.",
+      "sourceUrl": "https://www.helsinki.fi",
       "university": {
         "id": "uni-university-of-helsinki",
         "name": "University of Helsinki",
@@ -5199,6 +5259,7 @@
       ],
       "eligibility": "Quantitative bachelor's. IELTS 6.5.",
       "description": "Interdisciplinary data science programme.",
+      "sourceUrl": "https://www.helsinki.fi",
       "university": {
         "id": "uni-university-of-helsinki",
         "name": "University of Helsinki",
@@ -5257,6 +5318,7 @@
       ],
       "eligibility": "CS or EE bachelor's. IELTS 6.5.",
       "description": "CCIS masters with specialisations in ML, security, and networks.",
+      "sourceUrl": "https://www.aalto.fi",
       "university": {
         "id": "uni-aalto-university",
         "name": "Aalto University",
@@ -5315,6 +5377,7 @@
       ],
       "eligibility": "Strong high school grades in math/science. IELTS 6.5.",
       "description": "Computer science undergraduate at McGill Faculty of Science.",
+      "sourceUrl": "https://www.mcgill.ca",
       "university": {
         "id": "uni-mcgill-university",
         "name": "McGill University",
@@ -5375,6 +5438,7 @@
       ],
       "eligibility": "CS bachelor's. IELTS 6.5 or German B2.",
       "description": "English/German CS masters at RWTH Aachen.",
+      "sourceUrl": "https://www.rwth-aachen.de",
       "university": {
         "id": "uni-rwth-aachen-university",
         "name": "RWTH Aachen University",
@@ -5433,6 +5497,7 @@
       ],
       "eligibility": "Non-CS bachelor's with aptitude for computing. IELTS 6.5.",
       "description": "Conversion masters for career changers into computer science.",
+      "sourceUrl": "https://www.ucd.ie",
       "university": {
         "id": "uni-university-college-dublin",
         "name": "University College Dublin",
@@ -5487,6 +5552,7 @@
       "deadline": "2026-12-15",
       "eligibility": "International applicants with outstanding academic merit.",
       "requirements": "Admission application, transcripts, and financial documentation.",
+      "sourceUrl": "https://www.mit.edu",
       "universityId": "uni-massachusetts-institute-of-technology",
       "countryId": "country-us",
       "courseId": null,
@@ -5549,6 +5615,7 @@
       "deadline": "2026-10-11",
       "eligibility": "Graduate applicants demonstrating leadership and civic commitment.",
       "requirements": "Graduate school application plus Knight-Hennessy separate application.",
+      "sourceUrl": "https://knight-hennessy.stanford.edu",
       "universityId": "uni-stanford-university",
       "countryId": "country-us",
       "courseId": null,
@@ -5612,6 +5679,7 @@
       "deadline": "2026-02-01",
       "eligibility": "Admitted international students demonstrating financial need.",
       "requirements": "CSS Profile and institutional financial aid application.",
+      "sourceUrl": "https://college.harvard.edu/financial-aid",
       "universityId": "uni-harvard-university",
       "countryId": "country-us",
       "courseId": null,
@@ -5675,6 +5743,7 @@
       "deadline": "2026-12-01",
       "eligibility": "Outstanding incoming undergraduates including international students.",
       "requirements": "Automatic consideration with UC application.",
+      "sourceUrl": "https://financialaid.berkeley.edu/types-of-aid-at-berkeley/scholarships",
       "universityId": "uni-university-of-california-berkeley",
       "countryId": "country-us",
       "courseId": null,
@@ -5738,6 +5807,7 @@
       "deadline": "2026-11-15",
       "eligibility": "International students with demonstrated financial need.",
       "requirements": "CSS Profile and admission application.",
+      "sourceUrl": "https://sfs.columbia.edu/content/international-students",
       "universityId": "uni-columbia-university",
       "countryId": "country-us",
       "courseId": null,
@@ -5801,6 +5871,7 @@
       "deadline": "2026-01-20",
       "eligibility": "Outstanding graduate applicants across all subjects.",
       "requirements": "Automatic consideration with graduate course application.",
+      "sourceUrl": "https://www.ox.ac.uk/clarendon",
       "universityId": "uni-university-of-oxford",
       "countryId": "country-gb",
       "courseId": "course-oxford-msc-computer-science",
@@ -5869,6 +5940,7 @@
         ],
         "eligibility": "First-class or strong upper second bachelor's in CS or related field.",
         "description": "One-year taught masters in advanced computer science.",
+        "sourceUrl": "https://www.ox.ac.uk/admissions/graduate",
         "university": {
           "id": "uni-university-of-oxford",
           "name": "University of Oxford",
@@ -5929,6 +6001,7 @@
       "deadline": "2026-11-05",
       "eligibility": "Future leaders with 2+ years work experience from Chevening-eligible countries.",
       "requirements": "Separate Chevening application plus UK university offer.",
+      "sourceUrl": "https://www.chevening.org",
       "universityId": "uni-university-of-oxford",
       "countryId": "country-gb",
       "courseId": null,
@@ -5993,6 +6066,7 @@
       "deadline": "2026-10-11",
       "eligibility": "Outstanding international graduate applicants outside the UK.",
       "requirements": "Graduate admission application plus Gates Cambridge application.",
+      "sourceUrl": "https://www.gatescambridge.org",
       "universityId": "uni-university-of-cambridge",
       "countryId": "country-gb",
       "courseId": null,
@@ -6056,6 +6130,7 @@
       "deadline": "2026-01-15",
       "eligibility": "Outstanding PhD applicants across all faculties.",
       "requirements": "PhD programme application. Covers fees and stipend.",
+      "sourceUrl": "https://www.imperial.ac.uk/study/fees-and-funding",
       "universityId": "uni-imperial-college-london",
       "countryId": "country-gb",
       "courseId": null,
@@ -6119,6 +6194,7 @@
       "deadline": "2026-05-31",
       "eligibility": "International undergraduate applicants with financial need.",
       "requirements": "UCAS application and scholarship application form.",
+      "sourceUrl": "https://www.ucl.ac.uk/scholarships",
       "universityId": "uni-university-college-london",
       "countryId": "country-gb",
       "courseId": "course-ucl-bsc-computer-science",
@@ -6186,6 +6262,7 @@
         ],
         "eligibility": "A-levels A*AA including Mathematics. English proficiency.",
         "description": "UCL Computer Science undergraduate programme.",
+        "sourceUrl": "https://www.ucl.ac.uk/prospective-students/undergraduate",
         "university": {
           "id": "uni-university-college-london",
           "name": "University College London",
@@ -6239,6 +6316,7 @@
       "deadline": "2026-06-30",
       "eligibility": "Self-funded international postgraduate taught students.",
       "requirements": "Offer holder application via scholarship portal.",
+      "sourceUrl": "https://www.manchester.ac.uk/study/fees-and-funding",
       "universityId": "uni-university-of-manchester",
       "countryId": "country-gb",
       "courseId": null,
@@ -6302,6 +6380,7 @@
       "deadline": "2026-11-30",
       "eligibility": "High-achieving international undergraduate applicants.",
       "requirements": "Automatic consideration with course application.",
+      "sourceUrl": "https://scholarships.unimelb.edu.au",
       "universityId": "uni-university-of-melbourne",
       "countryId": "country-au",
       "courseId": "course-melbourne-bsc-computing",
@@ -6370,6 +6449,7 @@
         ],
         "eligibility": "ATAR 85+ or equivalent. Mathematics prerequisite. IELTS 6.5.",
         "description": "Computing major within the Bachelor of Science at Melbourne.",
+        "sourceUrl": "https://study.unimelb.edu.au/find/courses/undergraduate",
         "university": {
           "id": "uni-university-of-melbourne",
           "name": "University of Melbourne",
@@ -6423,6 +6503,7 @@
       "deadline": "2026-12-31",
       "eligibility": "High-achieving international students commencing coursework degrees.",
       "requirements": "Automatic consideration with admission application.",
+      "sourceUrl": "https://www.sydney.edu.au/scholarships",
       "universityId": "uni-university-of-sydney",
       "countryId": "country-au",
       "courseId": null,
@@ -6486,6 +6567,7 @@
       "deadline": "2026-11-01",
       "eligibility": "High-achieving international students across all faculties.",
       "requirements": "Admission application. Merit-based automatic assessment.",
+      "sourceUrl": "https://www.unsw.edu.au",
       "universityId": "uni-unsw-sydney",
       "countryId": "country-au",
       "courseId": null,
@@ -6549,6 +6631,7 @@
       "deadline": "2026-10-31",
       "eligibility": "International students demonstrating academic excellence and leadership.",
       "requirements": "Separate scholarship application after receiving offer.",
+      "sourceUrl": "https://www.monash.edu/study/fees-scholarships/scholarships",
       "universityId": "uni-monash-university",
       "countryId": "country-au",
       "courseId": null,
@@ -6612,6 +6695,7 @@
       "deadline": "2026-11-15",
       "eligibility": "International students in CECS postgraduate coursework programs.",
       "requirements": "Offer holder. Merit-based selection.",
+      "sourceUrl": "https://www.anu.edu.au/study/scholarships",
       "universityId": "uni-australian-national-university",
       "countryId": "country-au",
       "courseId": "course-anu-master-computing",
@@ -6680,6 +6764,7 @@
         ],
         "eligibility": "Bachelor's in computing or related field with minimum 60% average.",
         "description": "Advanced computing masters with AI, systems, and HCI specialisations.",
+        "sourceUrl": "https://www.anu.edu.au",
         "university": {
           "id": "uni-australian-national-university",
           "name": "Australian National University",
@@ -6733,6 +6818,7 @@
       "deadline": "2026-08-15",
       "eligibility": "High-achieving international applicants with GPA 3.5+.",
       "requirements": "Admission application and scholarship essay.",
+      "sourceUrl": "https://www.ud.ac.ae",
       "universityId": "uni-university-of-dubai",
       "countryId": "country-ae",
       "courseId": "course-ud-mba",
@@ -6801,6 +6887,7 @@
         ],
         "eligibility": "Bachelor's + 2 years work experience. IELTS 6.0.",
         "description": "Accelerated MBA program at University of Dubai.",
+        "sourceUrl": "https://www.ud.ac.ae",
         "university": {
           "id": "uni-university-of-dubai",
           "name": "University of Dubai",
@@ -6854,6 +6941,7 @@
       "deadline": "2026-05-30",
       "eligibility": "Outstanding international MSc applicants.",
       "requirements": "Merit-based selection with admission application.",
+      "sourceUrl": "https://www.polimi.it",
       "universityId": "uni-politecnico-di-milano",
       "countryId": "country-it",
       "courseId": null,
@@ -6917,6 +7005,7 @@
       "deadline": "2026-04-30",
       "eligibility": "International students with strong academic merit.",
       "requirements": "Online scholarship application with admission.",
+      "sourceUrl": "https://www.unibo.it",
       "universityId": "uni-university-of-bologna",
       "countryId": "country-it",
       "courseId": null,
@@ -6980,6 +7069,7 @@
       "deadline": "2026-09-01",
       "eligibility": "International students applying to Japanese universities.",
       "requirements": "Embassy recommendation or university recommendation track.",
+      "sourceUrl": "https://www.studyinjapan.go.jp",
       "universityId": "uni-university-of-tokyo",
       "countryId": "country-jp",
       "courseId": null,
@@ -7043,6 +7133,7 @@
       "deadline": "2026-03-15",
       "eligibility": "Self-funded international graduate students with outstanding records.",
       "requirements": "Graduate admission application.",
+      "sourceUrl": "https://www.kyoto-u.ac.jp",
       "universityId": "uni-kyoto-university",
       "countryId": "country-jp",
       "courseId": null,
@@ -7106,6 +7197,7 @@
       "deadline": "2026-03-01",
       "eligibility": "International students pursuing degree programmes in Korea.",
       "requirements": "GKS application through Korean embassy or university.",
+      "sourceUrl": "https://www.studyinkorea.go.kr",
       "universityId": "uni-seoul-national-university",
       "countryId": "country-kr",
       "courseId": null,
@@ -7169,6 +7261,7 @@
       "deadline": "2026-04-15",
       "eligibility": "Outstanding international graduate applicants.",
       "requirements": "Automatic consideration with graduate admission.",
+      "sourceUrl": "https://www.kaist.ac.kr",
       "universityId": "uni-kaist",
       "countryId": "country-kr",
       "courseId": null,
@@ -7232,6 +7325,7 @@
       "deadline": "2026-06-30",
       "eligibility": "International students with academic excellence.",
       "requirements": "Admission application and scholarship form.",
+      "sourceUrl": "https://www.um.edu.my",
       "universityId": "uni-university-of-malaya",
       "countryId": "country-my",
       "courseId": null,
@@ -7295,6 +7389,7 @@
       "deadline": "2026-05-15",
       "eligibility": "High-achieving international undergraduate applicants.",
       "requirements": "Automatic merit assessment with application.",
+      "sourceUrl": "https://www.monash.edu.my",
       "universityId": "uni-monash-university-malaysia",
       "countryId": "country-my",
       "courseId": null,
@@ -7358,6 +7453,7 @@
       "deadline": "2026-01-15",
       "eligibility": "Fee-paying Indian students admitted to KTH masters.",
       "requirements": "Automatic consideration with masters application.",
+      "sourceUrl": "https://www.kth.se",
       "universityId": "uni-kth-royal-institute-technology",
       "countryId": "country-se",
       "courseId": null,
@@ -7421,6 +7517,7 @@
       "deadline": "2026-02-15",
       "eligibility": "Top academic international masters applicants.",
       "requirements": "Merit-based selection during admission.",
+      "sourceUrl": "https://www.lu.se",
       "universityId": "uni-lund-university",
       "countryId": "country-se",
       "courseId": null,
@@ -7484,6 +7581,7 @@
       "deadline": "2026-05-31",
       "eligibility": "International students with financial need.",
       "requirements": "Admission and grant application.",
+      "sourceUrl": "https://www.ub.edu",
       "universityId": "uni-university-of-barcelona",
       "countryId": "country-es",
       "courseId": null,
@@ -7547,6 +7645,7 @@
       "deadline": "2026-06-15",
       "eligibility": "Outstanding international masters applicants.",
       "requirements": "Merit-based award with programme application.",
+      "sourceUrl": "https://www.ie.edu",
       "universityId": "uni-ie-university",
       "countryId": "country-es",
       "courseId": null,
@@ -7610,6 +7709,7 @@
       "deadline": "2026-01-31",
       "eligibility": "Non-EU/EEA students with excellent academic records.",
       "requirements": "Automatic consideration with masters application.",
+      "sourceUrl": "https://www.helsinki.fi",
       "universityId": "uni-university-of-helsinki",
       "countryId": "country-fi",
       "courseId": null,
@@ -7673,6 +7773,7 @@
       "deadline": "2026-01-15",
       "eligibility": "Non-EU masters applicants with outstanding merit.",
       "requirements": "Merit-based tuition waiver with admission.",
+      "sourceUrl": "https://www.aalto.fi",
       "universityId": "uni-aalto-university",
       "countryId": "country-fi",
       "courseId": null,
@@ -7736,6 +7837,7 @@
       "deadline": "2026-03-01",
       "eligibility": "High-achieving international undergraduate applicants.",
       "requirements": "Automatic consideration with admission application.",
+      "sourceUrl": "https://www.mcgill.ca",
       "universityId": "uni-mcgill-university",
       "countryId": "country-ca",
       "courseId": null,
@@ -7801,6 +7903,7 @@
       "deadline": "2026-10-15",
       "eligibility": "International students pursuing graduate study in Germany.",
       "requirements": "DAAD online application with university admission.",
+      "sourceUrl": "https://www.daad.de",
       "universityId": "uni-rwth-aachen-university",
       "countryId": "country-de",
       "courseId": null,
@@ -7864,6 +7967,7 @@
       "deadline": "2026-04-30",
       "eligibility": "International students with first-class academic records.",
       "requirements": "Automatic merit review with admission.",
+      "sourceUrl": "https://www.ucd.ie",
       "universityId": "uni-university-college-dublin",
       "countryId": "country-ie",
       "courseId": null,

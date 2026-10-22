@@ -29,7 +29,11 @@ npx prisma db push --schema=database/prisma/schema.prisma
 
 echo ""
 echo "Step 3: Seed demo data + admin user..."
-ADMIN_INITIAL_PASSWORD="${ADMIN_INITIAL_PASSWORD:-Hope@2026!}" npx tsx database/seed/index.ts
+if [[ -z "${ADMIN_INITIAL_PASSWORD:-}" ]]; then
+  echo "Set ADMIN_INITIAL_PASSWORD before running this script." >&2
+  exit 1
+fi
+npx tsx database/seed/index.ts
 
 echo ""
 echo "Step 4: Add DATABASE_URL to Vercel (production)"

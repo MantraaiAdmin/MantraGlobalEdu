@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
+import Link from 'next/link';
 import { useRef } from 'react';
 import type { ComponentType } from 'react';
 import {
@@ -14,15 +15,15 @@ const iconMap: Record<string, ComponentType<{ className?: string }>> = {
 };
 
 const descriptions: Record<string, string> = {
-  counseling: 'Personalized guidance from certified study abroad experts',
-  admissions: 'End-to-end application support for top global universities',
-  scholarships: 'Discover and apply for merit and need-based funding',
-  visa: 'Complete visa documentation and interview preparation',
-  'pre-departure': 'Accommodation, travel, and cultural orientation support',
-  career: 'Global career planning and industry networking',
-  'mantra-ai': 'Tech-standard profile, internships & portfolio via Mantra.Ai',
-  'sop-lor': 'Professional SOP and recommendation letter crafting',
-  loan: 'Education loan guidance and financial planning',
+  counseling: 'One-to-one guidance on countries, courses and universities',
+  admissions: 'Shortlisting, applications, documents and deadlines',
+  scholarships: 'Find scholarships that fit your profile and plan applications',
+  visa: 'Document checklists and interview preparation',
+  'pre-departure': 'Accommodation, travel, money and arrival planning',
+  career: 'Connect your course choice to your career goals',
+  'mantra-ai': 'Projects, skills and a professional profile with Mantra.Ai',
+  'sop-lor': 'Structure and feedback for your SOP and references',
+  loan: 'Understand loan options, documents and timelines',
 };
 
 export function ServicesSection() {
@@ -35,8 +36,8 @@ export function ServicesSection() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Our Services"
-          title="Comprehensive Student Services"
-          description="End-to-end support for your international education journey, from first inquiry to campus arrival"
+          title="Study Abroad Services"
+          description="Support for each stage of your international education journey, from first enquiry to departure."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -49,20 +50,20 @@ export function ServicesSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.07 }}
               >
-                <div className="premium-card group h-full p-6 cursor-pointer">
+                <Link href={`/services/${service.slug}`} className="premium-card group block h-full p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-500 shadow-sm">
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-muted-foreground/40 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                   </div>
-                  <h3 className="mt-5 font-semibold text-primary text-base leading-snug">
+                  <h3 className="mt-5 font-semibold text-primary text-base leading-snug group-hover:underline underline-offset-4">
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {descriptions[service.id] || 'Expert support tailored to your goals'}
                   </p>
-                </div>
+                </Link>
               </motion.div>
             );
           })}

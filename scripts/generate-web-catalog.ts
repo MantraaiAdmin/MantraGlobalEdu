@@ -66,6 +66,7 @@ const courses = UNIVERSITIES.flatMap((university) => {
     intakePeriods: course.intakePeriods.map(String),
     eligibility: course.eligibility,
     description: course.description,
+    sourceUrl: course.sourceUrl,
     university: uni,
     scholarships: university.scholarships
       .filter((scholarship) => !scholarship.courseSlug || scholarship.courseSlug === course.slug)
@@ -88,6 +89,7 @@ const scholarships = UNIVERSITIES.flatMap((university) => {
     deadline: scholarship.deadline,
     eligibility: scholarship.eligibility,
     requirements: scholarship.requirements,
+    sourceUrl: scholarship.sourceUrl,
     universityId: uni.id,
     countryId: uni.countryId,
     courseId: scholarship.courseSlug ? `course-${scholarship.courseSlug}` : null,

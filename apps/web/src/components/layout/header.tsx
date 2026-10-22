@@ -3,28 +3,39 @@
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import { NAVIGATION, ROUTES } from '@mge/config';
+import { Menu, Phone, X } from 'lucide-react';
+import { BUSINESS_CONTACT, NAVIGATION, ROUTES } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/common/logo';
 import { NavLink } from '@/components/common/nav-link';
 import { cn } from '@/lib/utils';
 
-/** Pages with a dark mesh-hero under the header — white nav text only at the top */
-const DARK_HERO_PREFIXES = [
+/** Pages whose first section is a dark mesh hero — the header starts transparent with white text. */
+const DARK_HERO_EXACT = new Set([
   '/',
-  '/universities',
   '/countries',
+  '/services',
   '/scholarships',
   '/resources',
+  '/universities',
+  '/about',
+  '/sitemap',
   '/cost-estimator',
   '/login/student',
-];
+  '/study-abroad-consultants-coimbatore',
+  '/privacy-policy',
+  '/terms',
+  '/cookie-policy',
+  '/disclaimer',
+]);
+
+/** Section prefixes where one level below the hub is also a dark-hero page. */
+const DARK_HERO_CHILD_PREFIXES = ['/countries/', '/services/', '/resources/'];
 
 function hasDarkHero(pathname: string): boolean {
-  if (pathname === '/') return true;
-  return DARK_HERO_PREFIXES.some(
-    (prefix) => prefix !== '/' && (pathname === prefix || pathname.startsWith(`${prefix}/`))
+  if (DARK_HERO_EXACT.has(pathname)) return true;
+  return DARK_HERO_CHILD_PREFIXES.some(
+    (prefix) => pathname.startsWith(prefix) && !pathname.slice(prefix.length).includes('/')
   );
 }
 
@@ -35,6 +46,15 @@ export function Header() {
 
   const isDarkHeroPage = hasDarkHero(pathname);
   const useSolidHeader = scrolled || !isDarkHeroPage;
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [mobileOpen]);
 
   const updateScroll = useCallback(() => {
     setScrolled(window.scrollY > 20);
@@ -80,13 +100,13 @@ export function Header() {
             className="shrink-0"
           />
 
-          <nav className="hidden lg:flex items-center gap-0.5">
-            {NAVIGATION.public.slice(0, 8).map((item) => (
+          <nav aria-label="Main" className="hidden lg:flex items-center gap-0.5">
+            {NAVIGATION.public.map((item) => (
               <NavLink
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                  'px-2.5 xl:px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200',
                   useSolidHeader
                     ? 'text-primary/70 hover:text-primary hover:bg-muted/60'
                     : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -97,20 +117,22 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <Button
-              variant="ghost"
-              className={
-                useSolidHeader
-                  ? 'text-primary/70 hover:text-primary'
-                  : 'text-white/90 hover:text-white hover:bg-white/10'
-              }
-              asChild
+          <div className="hidden lg:flex items-center gap-2">
+            <a
+              href={BUSINESS_CONTACT.phoneHref}
+              data-track-location="header"
+              className={cn(
+                'hidden xl:inline-flex items-center gap-1.5 px-2 py-2 text-sm font-semibold rounded-lg',
+                useSolidHeader ? 'text-primary hover:text-accent' : 'text-white hover:text-accent'
+              )}
             >
-              <Link href="/login/student">Student Login</Link>
-            </Button>
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {BUSINESS_CONTACT.phoneDisplay}
+            </a>
             <Button variant="accent" size="sm" asChild>
-              <Link href={ROUTES.bookCounseling}>Book Counseling</Link>
+              <Link href={ROUTES.bookCounseling} data-track="book_counselling_click" data-track-location="header">
+                Book Free Counselling
+              </Link>
             </Button>
           </div>
 
@@ -120,20 +142,21 @@ export function Header() {
               useSolidHeader ? 'text-primary' : 'text-white'
             )}
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
           </button>
         </div>
       </div>
 
       <div
-        className={cn(
-          'lg:hidden overflow-hidden transition-all duration-300 glass',
-          mobileOpen ? 'max-h-[28rem] border-t border-border/40' : 'max-h-0'
-        )}
+        id="mobile-menu"
+        hidden={!mobileOpen}
+        className="lg:hidden glass border-t border-border/40 max-h-[calc(100vh-4rem)] overflow-y-auto"
       >
-        <nav className="px-4 py-4 space-y-1">
+        <nav aria-label="Mobile" className="px-4 py-4 space-y-1">
           {NAVIGATION.public.map((item) => (
             <NavLink
               key={item.href}
@@ -145,12 +168,19 @@ export function Header() {
             </NavLink>
           ))}
           <div className="pt-4 flex flex-col gap-2">
-            <Button variant="outline" asChild>
-              <Link href="/login/student">Student Login</Link>
-            </Button>
             <Button variant="accent" asChild>
-              <Link href={ROUTES.bookCounseling}>Book Free Counseling</Link>
+              <Link href={ROUTES.bookCounseling} data-track="book_counselling_click" data-track-location="mobile_menu">
+                Book Free Counselling
+              </Link>
             </Button>
+            <Button variant="outline" asChild>
+              <a href={BUSINESS_CONTACT.phoneHref} data-track-location="mobile_menu">
+                <Phone className="h-4 w-4" aria-hidden="true" /> Call {BUSINESS_CONTACT.phoneDisplay}
+              </a>
+            </Button>
+            <Link href="/login/student" className="block px-3 py-2.5 text-sm font-medium text-primary/70 hover:text-primary">
+              Student Login
+            </Link>
           </div>
         </nav>
       </div>

@@ -29,18 +29,4 @@ export const STUDENT_IMAGES = {
       label: 'Global Study',
     },
   ],
-  testimonials: {
-    priya: {
-      src: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&q=80',
-      alt: 'Priya Patel',
-    },
-    rajesh: {
-      src: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&q=80',
-      alt: 'Rajesh Kumar',
-    },
-    ananya: {
-      src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&q=80',
-      alt: 'Ananya Singh',
-    },
-  },
 } as const;

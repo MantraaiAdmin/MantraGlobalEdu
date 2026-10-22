@@ -27,7 +27,7 @@ const CW = SLIDE.w - M.l - M.r;
 const BRAND = {
   name: 'Mantra Global Education', tagline: 'Your Journey. Our Guidance. Global Success.',
   founder: 'Vinodhini Y.', founderRole: 'Founder & Chief Counselor',
-  email: 'support@mantraglobaleducation.com', phone: '+91 98765 43210', web: 'www.mantraglobaleducation.com',
+  email: 'vinodhini@mantraglobaledu.com', phone: '+91 99401 13077', web: 'mantraglobaledu.com',
   focus: 'USA · United Kingdom · Australia',
 };
 
@@ -470,7 +470,7 @@ function contact(pptx) {
   });
   s.addShape('rect', { x: M.l + CW * 0.47, y: 1.35, w: CW * 0.53, h: 3.5, fill: { color: C.light }, line: { color: C.border, width: 0.5 } });
   s.addText('Start Your Journey', { x: M.l + CW * 0.47 + 0.15, y: 1.45, w: 3, h: 0.25, fontSize: 10, bold: true, color: C.navy, fontFace: 'Calibri' });
-  const steps = ['Visit mantraglobaleducation.com', 'Take Mantra Profile Check (free)', 'Book free counseling session', 'Explore courses & scholarships', 'Track journey in student portal'];
+  const steps = ['Visit mantraglobaledu.com', 'Take Mantra Profile Check (free)', 'Book free counseling session', 'Explore courses & scholarships', 'Track journey in student portal'];
   steps.forEach((st, i) => {
     s.addShape('ellipse', { x: M.l + CW * 0.47 + 0.2, y: 1.9 + i * 0.58, w: 0.3, h: 0.3, fill: { color: C.gold } });
     s.addText(String(i + 1), { x: M.l + CW * 0.47 + 0.2, y: 1.95 + i * 0.58, w: 0.3, h: 0.22, fontSize: 9, bold: true, color: C.white, align: 'center', fontFace: 'Calibri' });

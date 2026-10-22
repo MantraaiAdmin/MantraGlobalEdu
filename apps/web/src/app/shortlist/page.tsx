@@ -12,14 +12,17 @@ import {
 } from '@/lib/shortlist';
 import { formatCurrency } from '@mge/utils';
 
+const EMPTY_LIST: never[] = [];
+const emptySnapshot = () => EMPTY_LIST;
+
 function subscribe(cb: () => void) {
   window.addEventListener('gem-shortlist-change', cb);
   return () => window.removeEventListener('gem-shortlist-change', cb);
 }
 
 export default function ShortlistPage() {
-  const universities = useSyncExternalStore(subscribe, getUniversityShortlist, () => []);
-  const courses = useSyncExternalStore(subscribe, getCourseShortlist, () => []);
+  const universities = useSyncExternalStore(subscribe, getUniversityShortlist, emptySnapshot);
+  const courses = useSyncExternalStore(subscribe, getCourseShortlist, emptySnapshot);
 
   const compareUrl = courses.length >= 2
     ? `${ROUTES.compareCourses}?${courses.map((c) => `slug=${c.slug}`).join('&')}`
@@ -28,7 +31,7 @@ export default function ShortlistPage() {
   return (
     <>
       <Header />
-      <main className="bg-background pt-24 pb-24 lg:pb-16">
+      <main id="main-content" className="bg-background pt-24 pb-24 lg:pb-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
           <h1 className="font-display text-3xl font-bold text-primary">My Shortlist</h1>
           <p className="mt-2 text-muted-foreground">Saved universities and courses — share with your {APP_CONFIG.shortName} counselor during booking.</p>

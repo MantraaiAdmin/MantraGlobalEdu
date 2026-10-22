@@ -19,13 +19,32 @@ export interface ShortlistCourse {
   currency?: string;
 }
 
+const EMPTY: never[] = [];
+const cache = new Map<string, { raw: string | null; value: unknown[] }>();
+
+/**
+ * Returns a referentially stable array while storage is unchanged, so the
+ * result can be used directly as a useSyncExternalStore snapshot without
+ * triggering an infinite re-render.
+ */
 function read<T>(key: string): T[] {
-  if (typeof window === 'undefined') return [];
+  if (typeof window === 'undefined') return EMPTY;
+  let raw: string | null = null;
   try {
-    return JSON.parse(localStorage.getItem(key) || '[]') as T[];
+    raw = localStorage.getItem(key);
   } catch {
-    return [];
+    return EMPTY;
   }
+  const cached = cache.get(key);
+  if (cached && cached.raw === raw) return cached.value as T[];
+  let value: T[] = EMPTY;
+  try {
+    value = raw ? (JSON.parse(raw) as T[]) : EMPTY;
+  } catch {
+    value = EMPTY;
+  }
+  cache.set(key, { raw, value });
+  return value;
 }
 
 function write<T>(key: string, items: T[]) {

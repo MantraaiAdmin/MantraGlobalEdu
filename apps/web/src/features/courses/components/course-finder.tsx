@@ -9,6 +9,7 @@ import type { CourseFilters } from '@/services/api.service';
 import { CourseFiltersPanel, ActiveFilterPills } from '@/features/courses/components/course-filters';
 import { CourseCard, CourseListEmpty, CourseListSkeleton } from '@/features/courses/components/course-card';
 import { cn } from '@/lib/utils';
+import { trackEvent } from '@/lib/analytics';
 
 export function CourseFinder() {
   const searchParams = useSearchParams();
@@ -32,6 +33,19 @@ export function CourseFinder() {
       }));
     }
   }, [searchParams]);
+
+  useEffect(() => {
+    if (!filters.query && !filters.countryId && !filters.degreeLevel && !filters.intake) return;
+    const timer = window.setTimeout(() => {
+      trackEvent('course_search', {
+        has_query: filters.query ? 'yes' : 'no',
+        country: filters.countryId,
+        level: filters.degreeLevel,
+        intake: filters.intake,
+      });
+    }, 1500);
+    return () => window.clearTimeout(timer);
+  }, [filters.query, filters.countryId, filters.degreeLevel, filters.intake]);
 
   const { data, isLoading, isError, error } = useCourses(filters);
   const { data: countries } = useCountries();

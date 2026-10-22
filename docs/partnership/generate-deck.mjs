@@ -25,8 +25,8 @@ const C = {
 
 const BRAND = {
   name: 'Mantra Global Education', tagline: 'Your Journey. Our Guidance. Global Success.',
-  founder: 'Vinodhini Y.', email: 'support@mantraglobaleducation.com',
-  phone: '+91 98765 43210', web: 'www.mantraglobaleducation.com',
+  founder: 'Vinodhini Y.', email: 'vinodhini@mantraglobaledu.com',
+  phone: '+91 99401 13077', web: 'mantraglobaledu.com',
 };
 
 const DECK = [

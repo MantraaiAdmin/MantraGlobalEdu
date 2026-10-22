@@ -88,7 +88,7 @@ export default function CompareCoursesPage() {
   return (
     <>
       <Header />
-      <main className="bg-background pt-24 pb-24 lg:pb-16">
+      <main id="main-content" className="bg-background pt-24 pb-24 lg:pb-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
           <h1 className="font-display text-3xl font-bold text-primary">Compare Courses</h1>
           <p className="mt-2 text-muted-foreground">Side-by-side comparison of up to 3 shortlisted courses.</p>

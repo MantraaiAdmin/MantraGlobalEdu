@@ -19,7 +19,7 @@ const tools = [
   },
   {
     title: 'Course Discovery',
-    description: 'Search programs with intelligent filtering by country, university, degree level, and tuition range.',
+    description: 'Search programmes by country, university, study level and tuition range.',
     icon: Search,
     href: ROUTES.findACourse,
     cta: 'Find a Course',
@@ -27,7 +27,7 @@ const tools = [
   },
   {
     title: 'Scholarship Finder',
-    description: 'Discover scholarships matching your academic profile, budget, and destination preferences.',
+    description: 'Browse government and university scholarship programmes by destination, with official links.',
     icon: Award,
     href: '/scholarships',
     cta: 'Find Scholarships',
@@ -35,7 +35,7 @@ const tools = [
   },
   {
     title: 'Cost Estimator',
-    description: 'Calculate total education costs including tuition, living expenses, visa, and insurance.',
+    description: 'Estimate total costs including tuition, living expenses, visa and insurance.',
     icon: Calculator,
     href: '/cost-estimator',
     cta: 'Estimate Costs',
@@ -60,8 +60,8 @@ export function ToolsSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Smart Tools"
-          title="Intelligent Discovery Tools"
-          description="Make informed decisions with our powerful search and planning tools"
+          title="Find a Course and Plan Your Budget"
+          description="Free tools to search courses, compare costs and check what documents you will need."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -76,11 +76,11 @@ export function ToolsSection() {
               <div className={`premium-card h-full flex flex-col p-8 group ${tool.featured ? 'gradient-border' : ''}`}>
                 {tool.featured && (
                   <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent">
-                    <Sparkles className="h-3 w-3" /> Popular
+                    <Sparkles className="h-3 w-3" aria-hidden="true" /> Free
                   </div>
                 )}
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/70 text-white shadow-premium group-hover:shadow-glow-sm transition-shadow duration-500">
-                  <tool.icon className="h-6 w-6" />
+                  <tool.icon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-primary font-display">{tool.title}</h3>
                 <p className="mt-3 text-muted-foreground flex-1 leading-relaxed text-sm">{tool.description}</p>

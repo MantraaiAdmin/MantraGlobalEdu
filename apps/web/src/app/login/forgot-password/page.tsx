@@ -122,7 +122,7 @@ function ForgotPasswordContent() {
             <Input
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
-              placeholder={channel === 'email' ? 'you@mantraglobaledu.com' : '+91 98765 43210'}
+              placeholder={channel === 'email' ? 'you@example.com' : 'Mobile number with country code'}
               required
             />
             <Button type="submit" className="w-full" disabled={loading}>

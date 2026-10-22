@@ -41,7 +41,7 @@ export default function CostEstimatorPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <PageHero
           eyebrow="Planning"
           title="Cost Estimator"

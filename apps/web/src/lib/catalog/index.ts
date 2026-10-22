@@ -1,13 +1,38 @@
 import catalogData from '@/data/catalog.json';
 import { calculatePagination } from '@mge/utils';
 import type { PaginationParams } from '@mge/types';
+import { HIDDEN_SCHOLARSHIP_IDS } from '@/data/scholarship-verification';
 
 export type CatalogCountry = (typeof catalogData.countries)[number];
 export type CatalogUniversity = (typeof catalogData.universities)[number];
 export type CatalogCourse = (typeof catalogData.courses)[number];
 export type CatalogScholarship = (typeof catalogData.scholarships)[number];
 
-const { countries, universities, courses, scholarships } = catalogData;
+const { countries, universities } = catalogData;
+const courses = catalogData.courses.map((course) => ({
+  ...course,
+  scholarships: course.scholarships.filter((scholarship) => !HIDDEN_SCHOLARSHIP_IDS.has(scholarship.id)),
+}));
+/** Only scholarships that have not been withheld pending verification. */
+const scholarships = catalogData.scholarships.filter((scholarship) => !HIDDEN_SCHOLARSHIP_IDS.has(scholarship.id));
+
+export const CATALOG_COUNTS = {
+  countries: countries.length,
+  universities: universities.length,
+  courses: courses.length,
+} as const;
+
+export function getAllCatalogCourses() {
+  return courses;
+}
+
+export function getAllCatalogUniversities() {
+  return universities;
+}
+
+export function getPublicScholarships() {
+  return scholarships;
+}
 
 const CODE_ALIASES: Record<string, string> = {
   USA: 'US',

@@ -23,7 +23,7 @@ export default function DocumentChecklistPage() {
   return (
     <>
       <Header />
-      <main className="bg-background pt-24 pb-24 lg:pb-16">
+      <main id="main-content" className="bg-background pt-24 pb-24 lg:pb-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
           <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent mb-4">
             <FileCheck className="h-3.5 w-3.5" />

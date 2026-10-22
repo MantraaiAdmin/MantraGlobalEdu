@@ -4,19 +4,19 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import type { ComponentType } from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, FileCheck, Award, Building2, Briefcase } from 'lucide-react';
+import { ArrowRight, BookOpen, FileCheck, FileText, Award, Building2, Briefcase } from 'lucide-react';
 import { RESOURCE_CATEGORIES } from '@mge/config';
 import { SectionHeader } from '@/components/common/section-header';
 
 const iconMap: Record<string, ComponentType<{ className?: string }>> = {
-  BookOpen, FileCheck, Award, Building2, Briefcase,
+  BookOpen, FileCheck, FileText, Award, Building2, Briefcase,
 };
 
-const articleCounts: Record<string, number> = {
-  guides: 24, visa: 18, scholarships: 31, universities: 42, career: 15,
-};
+interface ResourcesSectionProps {
+  articleCounts: Record<string, number>;
+}
 
-export function ResourcesSection() {
+export function ResourcesSection({ articleCounts }: ResourcesSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
@@ -27,7 +27,7 @@ export function ResourcesSection() {
           <SectionHeader
             eyebrow="Knowledge Centre"
             title="Resources & Guides"
-            description="Stay informed with guides, visa updates, and scholarship news"
+            description="Practical guides on choosing a destination, applications, scholarships, visas and careers."
             align="left"
             className="mb-0"
           />
@@ -39,10 +39,10 @@ export function ResourcesSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {RESOURCE_CATEGORIES.map((cat, i) => {
             const Icon = iconMap[cat.icon] || BookOpen;
-            const count = articleCounts[cat.id] || 10;
+            const count = articleCounts[cat.id] ?? 0;
             return (
               <motion.div
                 key={cat.id}
@@ -50,13 +50,13 @@ export function ResourcesSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
               >
-                <Link href={`/resources?category=${cat.id}`}>
+                <Link href={`/resources/${cat.id}`} className="block h-full">
                   <div className="premium-card group cursor-pointer p-5 text-center h-full">
                     <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-500">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="mt-4 text-sm font-semibold text-primary leading-snug">{cat.title}</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">{count} articles</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{count} {count === 1 ? 'guide' : 'guides'}</p>
                   </div>
                 </Link>
               </motion.div>

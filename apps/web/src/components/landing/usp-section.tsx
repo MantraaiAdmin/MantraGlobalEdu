@@ -2,29 +2,30 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 import { Building2, Briefcase, Code2, Rocket, Sparkles } from 'lucide-react';
 import { SectionHeader } from '@/components/common/section-header';
 
 const USP_CARDS = [
   {
     icon: Building2,
-    title: 'Not Just a Consultancy',
-    desc: 'Backed by Mantra.Ai, an IT services software company — not a paperwork agency',
+    title: 'Backed by a Technology Company',
+    desc: 'Mantra Global Education is the education vertical of Mantra.Ai, an IT services company',
   },
   {
     icon: Code2,
-    title: 'Tech-Standard Profile',
-    desc: 'Student profiles built and benchmarked to real industry tech standards',
+    title: 'Industry-Aware Profile',
+    desc: 'Guidance on the skills and projects technology employers commonly look for',
   },
   {
     icon: Briefcase,
-    title: 'Guided Internships',
-    desc: 'Structured internships during the Masters program to build real experience',
+    title: 'Practical Project Work',
+    desc: 'Structured project guidance to help you build real experience during your studies',
   },
   {
     icon: Rocket,
-    title: 'Job-Ready Portfolio',
-    desc: 'Own portfolio built before graduation — for fast job placement post-study',
+    title: 'Your Own Portfolio',
+    desc: 'A documented portfolio of your work to share with universities and employers',
   },
 ] as const;
 
@@ -38,8 +39,8 @@ export function UspSection() {
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Powered by Mantra.Ai"
-          title="Our USP"
-          description="Mantra Global Education is not another study abroad consultancy — it's the vertical of Mantra.Ai, an IT services software company. From day one, we take each student's profile to real industry tech standards, place them in guided internships, and help them build their own portfolio through the course of their Masters program — so they graduate with a strong, job-ready portfolio and land roles fast."
+          title="The Mantra.Ai Difference"
+          description="Alongside admissions guidance, students can get help building a technology portfolio — projects, skills and a professional profile — with support from Mantra.Ai, our IT services company. A strong portfolio gives you concrete evidence of your abilities; it does not guarantee admission or employment."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -66,10 +67,10 @@ export function UspSection() {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="mt-10 flex justify-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-accent">
-            <Sparkles className="h-3.5 w-3.5" />
-            Continuous in-program support — not a one-time pre-departure add-on
-          </span>
+          <Link href="/services/tech-portfolio" className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[#8a5f00] hover:bg-accent/20">
+            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+            Learn about Mantra.Ai tech portfolio support
+          </Link>
         </motion.div>
       </div>
     </section>

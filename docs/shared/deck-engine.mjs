@@ -15,9 +15,9 @@ export const BRAND = {
   tagline: 'Your Journey. Our Guidance. Global Success.',
   founder: 'Vinodhini Y.',
   founderTitle: 'Founder, Mantra Global Education',
-  email: 'support@mantraglobaleducation.com',
-  phone: '+91 98765 43210',
-  web: 'www.mantraglobaleducation.com',
+  email: 'vinodhini@mantraglobaledu.com',
+  phone: '+91 99401 13077',
+  web: 'mantraglobaledu.com',
   focus: 'USA · United Kingdom · Australia',
 };
 

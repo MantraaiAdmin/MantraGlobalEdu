@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import type { Course } from '@/services/api.service';
 import { getCourseCardImage, COURSE_FINDER_IMAGES } from '@/lib/course-images';
 import { toggleCourseShortlist, isCourseShortlisted } from '@/lib/shortlist';
+import { trackEvent } from '@/lib/analytics';
 import { useSyncExternalStore } from 'react';
 
 function subscribe(cb: () => void) {
@@ -113,7 +114,9 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
             variant="ghost"
             size="sm"
             className={saved ? 'text-accent' : ''}
-            onClick={() => toggleCourseShortlist({
+            onClick={() => {
+              if (!saved) trackEvent('course_shortlist', { course: course.slug });
+              toggleCourseShortlist({
               id: course.id,
               slug: course.slug,
               name: course.name,
@@ -121,7 +124,8 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
               degreeLevel: course.degreeLevel,
               tuition: course.tuition,
               currency: course.currency,
-            })}
+            });
+            }}
           >
             <BookmarkPlus className="h-4 w-4" /> {saved ? 'Saved' : 'Save'}
           </Button>

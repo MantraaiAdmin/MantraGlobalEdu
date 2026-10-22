@@ -111,7 +111,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.FALL],
         eligibility: 'Strong high school STEM record. SAT/ACT optional. English proficiency required.',
         description: 'Undergraduate program covering algorithms, AI, systems, and software engineering.',
-        sourceUrl: 'https://www.mit.edu/admissions-aid/undergraduate-admissions',
+        sourceUrl: 'https://www.mit.edu',
       },
       {
         name: 'MS in Electrical Engineering and Computer Science',
@@ -135,7 +135,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         deadline: '2026-12-15',
         eligibility: 'International applicants with outstanding academic merit.',
         requirements: 'Admission application, transcripts, and financial documentation.',
-        sourceUrl: 'https://sfs.mit.edu/undergraduate-students/types-of-aid/scholarships',
+        sourceUrl: 'https://www.mit.edu',
       },
     ],
   },
@@ -486,7 +486,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.OCTOBER],
         eligibility: 'A-levels AAA including Mathematics. English proficiency.',
         description: 'Computing undergraduate degree at Imperial\'s Department of Computing.',
-        sourceUrl: 'https://www.imperial.ac.uk/study/undergraduate',
+        sourceUrl: 'https://www.imperial.ac.uk',
       },
       {
         name: 'MSc in Computing (AI & ML)',
@@ -498,7 +498,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.OCTOBER],
         eligibility: 'First-class bachelor\'s in computing or related quantitative field.',
         description: 'Specialist masters in artificial intelligence and machine learning.',
-        sourceUrl: 'https://www.imperial.ac.uk/study/postgraduate',
+        sourceUrl: 'https://www.imperial.ac.uk',
       },
     ],
     scholarships: [
@@ -690,7 +690,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.FEBRUARY, IntakePeriod.JULY],
         eligibility: 'ATAR 90+ or equivalent. Mathematics Extension 1. IELTS 6.5.',
         description: 'Advanced computing degree with AI, data science, and software engineering majors.',
-        sourceUrl: 'https://www.sydney.edu.au/study/undergraduate',
+        sourceUrl: 'https://www.sydney.edu.au',
       },
       {
         name: 'Master of Professional Engineering (Software)',
@@ -702,7 +702,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.FEBRUARY, IntakePeriod.JULY],
         eligibility: 'Engineering or IT bachelor\'s. Accredited pathway to professional engineer status.',
         description: 'Professional engineering masters accredited by Engineers Australia.',
-        sourceUrl: 'https://www.sydney.edu.au/study/postgraduate',
+        sourceUrl: 'https://www.sydney.edu.au',
       },
     ],
     scholarships: [
@@ -764,7 +764,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         deadline: '2026-11-01',
         eligibility: 'High-achieving international students across all faculties.',
         requirements: 'Admission application. Merit-based automatic assessment.',
-        sourceUrl: 'https://www.unsw.edu.au/study/fees-and-financial-support',
+        sourceUrl: 'https://www.unsw.edu.au',
       },
     ],
   },
@@ -840,7 +840,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.FEBRUARY, IntakePeriod.JULY],
         eligibility: 'ATAR 85+ or equivalent. Mathematics Methods. IELTS 6.5.',
         description: 'Computing undergraduate at ANU College of Engineering, Computing and Cybernetics.',
-        sourceUrl: 'https://www.anu.edu.au/study/undergraduate',
+        sourceUrl: 'https://www.anu.edu.au',
       },
       {
         name: 'Master of Computing',
@@ -852,7 +852,7 @@ export const UNIVERSITIES: UniversitySeed[] = [
         intakePeriods: [IntakePeriod.FEBRUARY, IntakePeriod.JULY],
         eligibility: 'Bachelor\'s in computing or related field with minimum 60% average.',
         description: 'Advanced computing masters with AI, systems, and HCI specialisations.',
-        sourceUrl: 'https://www.anu.edu.au/study/postgraduate',
+        sourceUrl: 'https://www.anu.edu.au',
       },
     ],
     scholarships: [
