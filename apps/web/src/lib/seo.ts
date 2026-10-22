@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { APP_CONFIG, BUSINESS_CONTACT, FOUNDER, SITE_URL } from '@mge/config';
+import { APP_CONFIG, BUSINESS_CONTACT, FOUNDER, SERVICE_AREA, SITE_URL } from '@mge/config';
 
 export const DEFAULT_OG_IMAGE = '/opengraph-image';
 
@@ -85,7 +85,11 @@ export function organizationSchema() {
     email: BUSINESS_CONTACT.email,
     telephone: BUSINESS_CONTACT.phoneE164,
     description: APP_CONFIG.metaDescription,
-    areaServed: [{ '@type': 'City', name: BUSINESS_CONTACT.city }, { '@type': 'Country', name: 'India' }],
+    areaServed: [
+      ...SERVICE_AREA.cities.map((name) => ({ '@type': 'City', name })),
+      { '@type': 'State', name: SERVICE_AREA.region },
+      { '@type': 'Country', name: SERVICE_AREA.country },
+    ],
     founder: { '@type': 'Person', name: FOUNDER.name, jobTitle: FOUNDER.title },
     contactPoint: [
       {

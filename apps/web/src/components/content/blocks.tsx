@@ -69,7 +69,7 @@ export function OutcomeNotice({ className }: { className?: string }) {
 /** Final conversion band: counselling, phone and email. */
 export function CounsellingCta({
   title = 'Talk to a counsellor about your plans',
-  description = 'Book a free first counselling session online or from Coimbatore. We will help you understand your options and next steps.',
+  description = 'Book a counselling session — in Coimbatore, for Chennai students or online from anywhere in India. We will help you understand your options and next steps.',
   location,
 }: {
   title?: string;

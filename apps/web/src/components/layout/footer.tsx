@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Mail, Phone } from 'lucide-react';
-import { APP_CONFIG, BUSINESS_CONTACT, OUTCOME_DISCLAIMER, ROUTES, SERVICES } from '@mge/config';
+import { APP_CONFIG, BUSINESS_CONTACT, OUTCOME_DISCLAIMER, ROUTES, SERVICE_AREA, SERVICES } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/common/logo';
 import { COUNTRY_GUIDES } from '@/data/country-guides';
@@ -14,6 +14,7 @@ const FOOTER_DESTINATIONS = COUNTRY_GUIDES.slice(0, 8).map((guide) => ({
 const COMPANY_LINKS = [
   { href: '/about', label: 'About' },
   { href: ROUTES.coimbatore, label: 'Coimbatore Counselling' },
+  { href: ROUTES.chennai, label: 'Chennai Counselling' },
   { href: '/partners', label: 'Partners' },
   { href: '/contact', label: 'Contact' },
   { href: ROUTES.bookCounseling, label: 'Book Counselling' },
@@ -55,7 +56,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 mb-12 border-b border-white/10">
           <div>
             <p className="font-display text-2xl font-bold">Start planning your studies abroad</p>
-            <p className="mt-2 text-white/70 text-sm">Free first counselling session — online or from Coimbatore.</p>
+            <p className="mt-2 text-white/70 text-sm">Personal counselling in Coimbatore, for Chennai students and online across India.</p>
           </div>
           <Button variant="accent" size="lg" asChild>
             <Link href={ROUTES.bookCounseling} data-track="book_counselling_click" data-track-location="footer">
@@ -85,7 +86,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="text-white/70">
-                {BUSINESS_CONTACT.city}, {BUSINESS_CONTACT.region} · Online counselling across India
+                Based in {BUSINESS_CONTACT.city} · Serving {SERVICE_AREA.label}
               </li>
             </ul>
           </div>

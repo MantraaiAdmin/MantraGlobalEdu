@@ -9,7 +9,7 @@ import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata({
   title: 'Book Free Study Abroad Counselling | Mantra Global Education',
   description:
-    'Request a free study abroad counselling session online, by phone or in Coimbatore. Get help choosing a country, course and universities, and plan your applications.',
+    'Book study abroad counselling online from anywhere in India, by phone or in Coimbatore. Get help choosing a country, course and universities.',
   path: '/book-counselling',
 });
 
@@ -40,7 +40,7 @@ export default function BookCounsellingPage() {
               </h1>
               <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
                 Tell us a little about your plans and we will arrange a free session with {FOUNDER.name} and the
-                Mantra Global Education team — online, by phone or in Coimbatore by arrangement.
+                Mantra Global Education team — online or by phone from Chennai or anywhere in India, or in Coimbatore by arrangement.
               </p>
               <h2 className="mt-8 font-semibold text-primary">In your session</h2>
               <ul className="mt-4 space-y-3">

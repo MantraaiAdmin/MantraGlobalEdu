@@ -89,15 +89,15 @@ export function ScholarshipsTeaser() {
   );
 }
 
-export function CoimbatoreSection() {
+export function LocalSection() {
   return (
     <section className="section-padding">
       <div className="mx-auto max-w-7xl grid lg:grid-cols-5 gap-10 items-start">
         <div className="lg:col-span-3">
           <SectionHeading
-            eyebrow="Coimbatore"
-            title="Study Abroad Counselling in Coimbatore"
-            description="Mantra Global Education is based in Coimbatore, Tamil Nadu, and works with students and families across India through online counselling."
+            eyebrow="Coimbatore · Chennai · All India"
+            title="Study Abroad Counselling in Coimbatore, Chennai and Across India"
+            description="Mantra Global Education is based in Coimbatore, Tamil Nadu. We counsel students in Coimbatore in person by arrangement, and students in Chennai and every other part of India online."
             className="mb-6"
           />
           <ul className="space-y-3">
@@ -113,9 +113,14 @@ export function CoimbatoreSection() {
               </li>
             ))}
           </ul>
-          <Link href={ROUTES.coimbatore} className="mt-6 inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4 hover:text-accent">
-            Study abroad counselling in Coimbatore <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <div className="mt-6 flex flex-col sm:flex-row gap-x-8 gap-y-3">
+            <Link href={ROUTES.coimbatore} className="inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4 hover:text-accent">
+              Study abroad counselling in Coimbatore <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link href={ROUTES.chennai} className="inline-flex items-center gap-2 font-semibold text-primary underline underline-offset-4 hover:text-accent">
+              Counselling for Chennai students <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
         <div className="lg:col-span-2 premium-card p-6">
           <MapPin className="h-6 w-6 text-accent mb-3" aria-hidden="true" />
@@ -140,7 +145,7 @@ export function CoimbatoreSection() {
             <div>
               <dt className="text-muted-foreground">Location</dt>
               <dd className="text-primary">
-                {BUSINESS_CONTACT.city}, {BUSINESS_CONTACT.region} — online sessions available
+                Based in {BUSINESS_CONTACT.city}, {BUSINESS_CONTACT.region} — online counselling across India
               </dd>
             </div>
           </dl>
@@ -152,12 +157,8 @@ export function CoimbatoreSection() {
 
 export const HOME_FAQS = [
   {
-    q: 'Is the first counselling session free?',
-    a: 'Yes. Your first counselling session is free and there is no obligation.',
-  },
-  {
     q: 'Can I get counselling online?',
-    a: 'Yes. We offer online counselling, so students from anywhere in India can work with us.',
+    a: 'Yes. We offer online counselling, so students in Chennai, Bengaluru, Hyderabad, Mumbai, Delhi or anywhere else in India can work with us without travelling.',
   },
   {
     q: 'Which countries do you help with?',

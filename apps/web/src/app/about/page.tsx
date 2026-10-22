@@ -45,7 +45,7 @@ export default function AboutPage() {
               <h2 className="font-display text-2xl sm:text-3xl font-bold text-primary">Who we are</h2>
               <p>
                 {APP_CONFIG.name} was founded by {FOUNDER.name} to give students the kind of personal, expert guidance
-                that is often missing from study abroad planning. We work with students from Coimbatore and across India,
+                that is often missing from study abroad planning. We work with students from Coimbatore, Chennai and across India,
                 mainly through online counselling.
               </p>
               <p>{MANTRA_AI_DESCRIPTION}</p>

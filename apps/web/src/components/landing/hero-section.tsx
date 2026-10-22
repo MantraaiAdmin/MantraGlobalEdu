@@ -21,7 +21,7 @@ export function HeroSection() {
           <div>
             <p className="inline-flex flex-wrap items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white/90 mb-7">
               <Sparkles className="h-4 w-4 text-accent" aria-hidden="true" />
-              <span>Study abroad consultants in Coimbatore &amp; online</span>
+              <span>Study abroad consultants · Coimbatore, Chennai &amp; across India</span>
             </p>
 
             <h1 className="font-display text-[2.1rem] leading-[1.15] sm:text-5xl lg:text-[3.4rem] font-bold text-white tracking-tight">
@@ -32,8 +32,8 @@ export function HeroSection() {
             <p className="mt-6 text-base sm:text-lg text-white/85 leading-relaxed max-w-xl">
               Mantra Global Education offers personalised study abroad counselling and application support —
               from choosing a country and course to university applications, scholarship guidance and visa
-              documentation. As the education vertical of Mantra.Ai, we also help students build a technology
-              portfolio alongside their studies.
+              documentation — for students in Coimbatore, Chennai and across India. As the education vertical of
+              Mantra.Ai, we also help students build a technology portfolio alongside their studies.
             </p>
 
             <div className="mt-9 flex flex-col sm:flex-row gap-3">

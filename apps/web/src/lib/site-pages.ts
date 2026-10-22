@@ -20,6 +20,7 @@ export function getIndexablePages(): SitePage[] {
   return [
     { path: '/', title: 'Home', group: 'Main', lastModified: CONTENT_DATE },
     { path: '/study-abroad-consultants-coimbatore', title: 'Study Abroad Consultants in Coimbatore', group: 'Main', lastModified: CONTENT_DATE },
+    { path: '/study-abroad-consultants-chennai', title: 'Study Abroad Consultants for Chennai Students', group: 'Main', lastModified: CONTENT_DATE },
     { path: '/book-counselling', title: 'Book Free Counselling', group: 'Main', lastModified: CONTENT_DATE },
     { path: '/countries', title: 'Study Destinations', group: 'Destinations', lastModified: CONTENT_DATE },
     ...COUNTRY_GUIDES.map((guide) => ({

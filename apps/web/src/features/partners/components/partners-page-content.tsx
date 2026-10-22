@@ -48,7 +48,7 @@ const partnerships = [
 
 const benefits = [
   { icon: Users, title: 'Personal counselling', desc: 'Students are guided one-to-one, so applications are well matched to programmes' },
-  { icon: Globe2, title: 'Students across India', desc: 'Based in Coimbatore with online counselling for students nationwide' },
+  { icon: Globe2, title: 'Students across India', desc: 'Based in Coimbatore, working with students in Chennai and across India through online counselling' },
   { icon: TrendingUp, title: 'Prepared applicants', desc: 'Support with documents, SOPs and deadlines before students apply' },
   { icon: Shield, title: 'Backed by Mantra.Ai', desc: 'The education vertical of Mantra.Ai, an IT services company' },
 ];

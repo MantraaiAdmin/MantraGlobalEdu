@@ -22,9 +22,9 @@ export const SERVICE_PAGES: ServiceContent[] = [
   {
     slug: 'study-abroad-counselling',
     name: 'Study Abroad Counselling',
-    seoTitle: 'Study Abroad Counselling in Coimbatore & Online | Mantra',
+    seoTitle: 'Study Abroad Counselling in Coimbatore, Chennai & Online | Mantra',
     metaDescription:
-      'One-to-one study abroad counselling to help you choose a country, course and universities that fit your goals, academics and budget. Online or from Coimbatore.',
+      'One-to-one counselling to choose a country, course and universities that fit your goals and budget — in Coimbatore, Chennai or online across India.',
     h1: 'Study Abroad Counselling',
     summary: 'One-to-one guidance to choose the right country, course and universities for your goals and budget.',
     intro: [
@@ -54,7 +54,6 @@ export const SERVICE_PAGES: ServiceContent[] = [
     ],
     countries: ALL_PRIORITY,
     faqs: [
-      { q: 'Is the first counselling session free?', a: 'Yes, the initial counselling session is free and carries no obligation.' },
       { q: 'Can counselling be done online?', a: 'Yes. Sessions can be held online, so you can join from anywhere in India.' },
       { q: 'What should I bring to a counselling session?', a: 'Your mark sheets or a summary of grades, any test scores you already have, and an idea of your budget. It is fine if you are still unsure about some details.' },
     ],

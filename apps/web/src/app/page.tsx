@@ -10,7 +10,7 @@ import { DestinationsSection } from '@/components/landing/destinations-section';
 import { ToolsSection } from '@/components/landing/tools-section';
 import { ResourcesSection } from '@/components/landing/resources-section';
 import {
-  CoimbatoreSection,
+  LocalSection,
   HomeFaq,
   ScholarshipsTeaser,
   WhyMantraSection,
@@ -22,7 +22,7 @@ import { ARTICLES, RESOURCE_CATEGORY_PAGES } from '@/data/articles';
 export const metadata = pageMetadata({
   title: 'Study Abroad Consultants in Coimbatore | Mantra Global Education',
   description:
-    'Personalised study abroad counselling, university applications, scholarship and visa guidance — plus Mantra.Ai profile building. Book a free session.',
+    'Study abroad counselling for students in Coimbatore, Chennai and across India — applications, scholarships, visa guidance and Mantra.Ai profile support.',
   path: '/',
 });
 
@@ -49,7 +49,7 @@ export default function HomePage() {
         <ScholarshipsTeaser />
         <ExpertCounselorSection />
         <ResourcesSection articleCounts={articleCounts} />
-        <CoimbatoreSection />
+        <LocalSection />
         <HomeFaq />
         <CounsellingCta location="home_final" />
       </main>

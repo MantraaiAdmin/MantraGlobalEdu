@@ -23,6 +23,7 @@ const DARK_HERO_EXACT = new Set([
   '/cost-estimator',
   '/login/student',
   '/study-abroad-consultants-coimbatore',
+  '/study-abroad-consultants-chennai',
   '/privacy-policy',
   '/terms',
   '/cookie-policy',

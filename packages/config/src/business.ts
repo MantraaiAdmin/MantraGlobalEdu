@@ -35,6 +35,18 @@ export const BUSINESS_CONTACT = {
 } as const;
 
 /**
+ * Where students are served from. Only Coimbatore is a verified base; other
+ * cities are served through online counselling — never present them as offices.
+ */
+export const SERVICE_AREA = {
+  label: 'Coimbatore, Chennai and across India',
+  short: 'Coimbatore · Chennai · All India',
+  cities: ['Coimbatore', 'Chennai'],
+  region: 'Tamil Nadu',
+  country: 'India',
+} as const;
+
+/**
  * Business statistics. `null` means the claim has not been verified and must not
  * be shown anywhere on the public site. Replace with a real number only when the
  * business can evidence it.

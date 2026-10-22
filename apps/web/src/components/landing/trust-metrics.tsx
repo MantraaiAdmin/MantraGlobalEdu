@@ -1,4 +1,4 @@
-import { BadgeCheck, Globe, GraduationCap, Laptop, MapPin, MessageSquare } from 'lucide-react';
+import { BadgeCheck, Globe, GraduationCap, Laptop, MapPin } from 'lucide-react';
 import { CATALOG_COUNTS } from '@/lib/catalog';
 
 /**
@@ -8,9 +8,8 @@ import { CATALOG_COUNTS } from '@/lib/catalog';
  * not shown — see BUSINESS_STATS in @mge/config.
  */
 const ITEMS = [
-  { icon: MessageSquare, title: 'Free first session', detail: 'No-obligation counselling' },
   { icon: BadgeCheck, title: 'Founder-led guidance', detail: 'Personal, one-to-one advice' },
-  { icon: MapPin, title: 'Coimbatore & online', detail: 'Counselling across India' },
+  { icon: MapPin, title: 'Coimbatore & Chennai', detail: 'Online counselling across India' },
   {
     icon: GraduationCap,
     title: `${CATALOG_COUNTS.courses} courses listed`,
@@ -24,7 +23,7 @@ export function TrustMetrics() {
   return (
     <section aria-label="Why students contact us" className="relative bg-primary overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(42_78%_52%/0.12),transparent_70%)]" aria-hidden="true" />
-      <ul className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <ul className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {ITEMS.map((item) => (
           <li key={item.title} className="text-center px-2">
             <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">

@@ -52,7 +52,7 @@ export default function OpengraphImage() {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 24, color: 'rgba(255,255,255,0.75)' }}>
-          <span>Coimbatore &amp; online</span>
+          <span>Coimbatore · Chennai · All India</span>
           <span>mantraglobaledu.com</span>
         </div>
       </div>

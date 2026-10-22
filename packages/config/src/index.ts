@@ -8,7 +8,7 @@ export const APP_CONFIG = {
   tagline: 'Study abroad guidance with a career-ready profile',
   description: MANTRA_AI_DESCRIPTION,
   metaDescription:
-    'Personalised study abroad counselling from Coimbatore and online — course and university selection, applications, scholarship guidance, visa documentation and Mantra.Ai profile development.',
+    'Personalised study abroad counselling for students in Coimbatore, Chennai and across India — course and university selection, applications, scholarships, visa documentation and Mantra.Ai profile development.',
   version: '1.0.0',
   website: SITE_URL,
   supportEmail: BUSINESS_CONTACT.email,
@@ -134,6 +134,7 @@ export const ROUTES = {
   findACourse: '/find-a-course',
   bookCounseling: '/book-counselling',
   coimbatore: '/study-abroad-consultants-coimbatore',
+  chennai: '/study-abroad-consultants-chennai',
   profileCheck: '/profile-check',
   shortlist: '/shortlist',
   compareCourses: '/compare-courses',
