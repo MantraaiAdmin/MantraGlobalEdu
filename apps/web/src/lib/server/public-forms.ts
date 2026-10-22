@@ -52,7 +52,7 @@ export async function createCounselingBooking(input: unknown) {
     },
   });
 
-  await prisma.lead.create({
+  const lead = await prisma.lead.create({
     data: {
       name: parsed.name,
       email: parsed.email.toLowerCase(),
@@ -73,18 +73,27 @@ export async function createCounselingBooking(input: unknown) {
     },
   });
 
+  const email = await sendCounselingBookingEmails({
+    id: booking.id,
+    name: booking.name,
+    email: booking.email,
+    phone: booking.phone,
+    preferredDate: booking.preferredDate,
+    countryOfInterest: booking.countryOfInterest,
+    message: booking.message,
+  });
+
+  // Record the delivery result on the lead so the team can see it in the CRM.
+  const emailStatus = email.team.sent
+    ? `Email notification sent to ${email.recipients.join(', ')}`
+    : `Email notification FAILED: ${email.team.error}`;
   try {
-    await sendCounselingBookingEmails({
-      id: booking.id,
-      name: booking.name,
-      email: booking.email,
-      phone: booking.phone,
-      preferredDate: booking.preferredDate,
-      countryOfInterest: booking.countryOfInterest,
-      message: booking.message,
+    await prisma.lead.update({
+      where: { id: lead.id },
+      data: { notes: `${lead.notes ?? ''}\n${emailStatus}`.trim() },
     });
   } catch (error) {
-    console.error('[counselling booking email]', error);
+    console.error('[counselling lead email status]', error);
   }
 
   return { id: booking.id };

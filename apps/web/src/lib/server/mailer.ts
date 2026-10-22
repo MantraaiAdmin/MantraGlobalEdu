@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { BUSINESS_CONTACT } from '@mge/config';
 
 function getSmtpConfig() {
   const host = process.env.SMTP_HOST;
@@ -21,6 +22,10 @@ function getSmtpConfig() {
     tls: {
       minVersion: 'TLSv1.2' as const,
     },
+    // Fail fast instead of hanging until the serverless function times out.
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000,
   };
 }
 
@@ -96,10 +101,62 @@ function getMailTransporter() {
   return nodemailer.createTransport(smtp);
 }
 
+/**
+ * Microsoft 365 / Outlook only lets an account send as itself, so the From
+ * address is always the authenticated SMTP_USER mailbox. SMTP_FROM is honoured
+ * only when it is that same mailbox; otherwise Outlook rejects the message
+ * (554 SendAsDenied) and no email is delivered.
+ */
 function getFromAddress() {
   const fromName = process.env.SMTP_FROM_NAME || 'Mantra Global Education';
-  const fromEmail = process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@mantraglobaledu.com';
+  const user = process.env.SMTP_USER || '';
+  const configured = process.env.SMTP_FROM || '';
+  const fromEmail = configured && configured.toLowerCase() === user.toLowerCase() ? configured : user;
   return `"${fromName}" <${fromEmail}>`;
+}
+
+/** Booking notification recipients. The verified business inbox is always included. */
+export function getCounselingNotifyRecipients(): string[] {
+  const configured = (process.env.COUNSELING_NOTIFY_EMAILS || '')
+    .split(',')
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
+  return [...new Set([BUSINESS_CONTACT.email.toLowerCase(), ...configured])];
+}
+
+function describeError(error: unknown): string {
+  if (error instanceof Error) {
+    const code = (error as Error & { code?: string; responseCode?: number }).code;
+    const responseCode = (error as Error & { responseCode?: number }).responseCode;
+    return [code, responseCode, error.message].filter(Boolean).join(' — ').slice(0, 300);
+  }
+  return 'Unknown error';
+}
+
+export interface EmailResult {
+  sent: boolean;
+  error?: string;
+}
+
+/** Admin diagnostic: checks the SMTP login and sends a test message to the booking recipients. */
+export async function sendTestNotificationEmail(): Promise<EmailResult & { recipients: string[] }> {
+  const recipients = getCounselingNotifyRecipients();
+  const transporter = getMailTransporter();
+  if (!transporter) {
+    return { sent: false, recipients, error: 'SMTP is not configured: set SMTP_HOST, SMTP_USER and SMTP_PASS in Vercel.' };
+  }
+  try {
+    await transporter.verify();
+    await transporter.sendMail({
+      from: getFromAddress(),
+      to: recipients.join(', '),
+      subject: '[MGE] Test email — counselling notifications',
+      text: 'This is a test from the Mantra Global Education admin portal. If you received it, counselling booking notifications are working.',
+    });
+    return { sent: true, recipients };
+  } catch (error) {
+    return { sent: false, recipients, error: describeError(error) };
+  }
 }
 
 function escapeHtml(value: string): string {
@@ -111,6 +168,11 @@ function escapeHtml(value: string): string {
     .replace(/'/g, '&#39;');
 }
 
+/**
+ * Sends the team notification and the student confirmation independently, so a
+ * failure in one never hides the other. Never throws; returns what happened so
+ * the caller can record it on the CRM lead.
+ */
 export async function sendCounselingBookingEmails(booking: {
   id: string;
   name: string;
@@ -119,17 +181,9 @@ export async function sendCounselingBookingEmails(booking: {
   preferredDate: Date | null;
   countryOfInterest: string | null;
   message: string | null;
-}) {
+}): Promise<{ team: EmailResult; student: EmailResult; recipients: string[] }> {
   const transporter = getMailTransporter();
-  const notifyEmails = (process.env.COUNSELING_NOTIFY_EMAILS || '')
-    .split(',')
-    .map((e) => e.trim())
-    .filter(Boolean);
-
-  const recipients =
-    notifyEmails.length > 0
-      ? notifyEmails
-      : ['vinodhini@mantraglobaledu.com', 'praveen@mantraglobaledu.com'];
+  const recipients = getCounselingNotifyRecipients();
 
   const safe = {
     name: escapeHtml(booking.name),
@@ -140,74 +194,86 @@ export async function sendCounselingBookingEmails(booking: {
   };
 
   const preferredSlot = booking.preferredDate
-    ? booking.preferredDate.toLocaleString('en-IN', {
-        dateStyle: 'full',
-        timeStyle: 'short',
-        timeZone: 'Asia/Kolkata',
-      })
+    ? booking.preferredDate.toLocaleDateString('en-IN', { dateStyle: 'full', timeZone: 'Asia/Kolkata' })
     : 'Not specified';
 
-  const adminBody = `
-New free counseling booking (ID: ${booking.id.slice(0, 8).toUpperCase()})
+  const reference = booking.id.slice(0, 8).toUpperCase();
+  const teamBody = `
+New free counselling request (ref ${reference})
 
 Name: ${booking.name}
 Email: ${booking.email}
 Phone: ${booking.phone}
-Preferred slot: ${preferredSlot}
+Preferred date: ${preferredSlot}
 Country of interest: ${booking.countryOfInterest || 'Not specified'}
-Notes: ${booking.message || '—'}
+
+${booking.message || ''}
 
 View in Admin Portal → CRM / Leads
 https://mantraglobaledu.com/portal/admin/crm
 `.trim();
 
   if (!transporter) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.info('[DEV counseling notify]', recipients.join(', '), adminBody);
-    }
-    return { sent: false };
+    const error = 'SMTP is not configured (SMTP_HOST, SMTP_USER and SMTP_PASS are required)';
+    console.error(`[counselling email] ${error}. Booking ${reference} was saved but no email was sent.`);
+    return { team: { sent: false, error }, student: { sent: false, error }, recipients };
   }
 
-  await transporter.sendMail({
-    from: getFromAddress(),
-    to: recipients.join(', '),
-    replyTo: booking.email,
-    subject: `[MGE] New counseling booking — ${booking.name}`,
-    text: adminBody,
-    html: `
+  const team: EmailResult = { sent: false };
+  try {
+    await transporter.sendMail({
+      from: getFromAddress(),
+      to: recipients.join(', '),
+      replyTo: booking.email,
+      subject: `[MGE] New counselling request — ${booking.name}`,
+      text: teamBody,
+      html: `
       <div style="font-family: Arial, sans-serif; max-width: 560px; color: #00234E;">
-        <h2 style="color: #00234E;">New Free Counseling Booking</h2>
-        <p style="color: #64748B; font-size: 13px;">Lead ID: ${booking.id.slice(0, 8).toUpperCase()}</p>
+        <h2 style="color: #00234E;">New Free Counselling Request</h2>
+        <p style="color: #64748B; font-size: 13px;">Reference: ${reference}</p>
         <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
           <tr><td style="padding: 8px 0; color: #64748B;">Name</td><td style="padding: 8px 0;"><strong>${safe.name}</strong></td></tr>
           <tr><td style="padding: 8px 0; color: #64748B;">Email</td><td style="padding: 8px 0;"><a href="mailto:${safe.email}">${safe.email}</a></td></tr>
           <tr><td style="padding: 8px 0; color: #64748B;">Phone</td><td style="padding: 8px 0;">${safe.phone}</td></tr>
-          <tr><td style="padding: 8px 0; color: #64748B;">Preferred slot</td><td style="padding: 8px 0;">${preferredSlot}</td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B;">Preferred date</td><td style="padding: 8px 0;">${preferredSlot}</td></tr>
           <tr><td style="padding: 8px 0; color: #64748B;">Country</td><td style="padding: 8px 0;">${safe.country}</td></tr>
-          <tr><td style="padding: 8px 0; color: #64748B; vertical-align: top;">Notes</td><td style="padding: 8px 0;">${safe.message}</td></tr>
+          <tr><td style="padding: 8px 0; color: #64748B; vertical-align: top;">Details</td><td style="padding: 8px 0;">${safe.message}</td></tr>
         </table>
         <p style="margin-top: 24px;"><a href="https://mantraglobaledu.com/portal/admin/crm" style="background: #00234E; color: #fff; padding: 10px 18px; text-decoration: none; border-radius: 8px;">Open Admin CRM</a></p>
       </div>
     `,
-  });
+    });
+    team.sent = true;
+  } catch (error) {
+    team.error = describeError(error);
+    console.error(`[counselling email] team notification failed for ${reference}:`, team.error);
+  }
 
-  await transporter.sendMail({
-    from: getFromAddress(),
-    to: booking.email,
-    subject: 'Your Mantra Global Education counseling request is received',
-    text: `Hi ${booking.name},\n\nThank you for requesting a free counselling session with Mantra Global Education.\n\nPreferred slot: ${preferredSlot}\nCountry of interest: ${booking.countryOfInterest || 'Not specified'}\n\nOur team will confirm your session within 24 hours.\n\nMantra Global Education`,
-    html: `
+  const student: EmailResult = { sent: false };
+  try {
+    await transporter.sendMail({
+      from: getFromAddress(),
+      to: booking.email,
+      replyTo: BUSINESS_CONTACT.email,
+      subject: 'We have received your counselling request — Mantra Global Education',
+      text: `Hi ${booking.name},\n\nThank you for requesting a free counselling session with Mantra Global Education. Our team will contact you by phone or email to arrange it.\n\nPreferred date: ${preferredSlot}\nCountry of interest: ${booking.countryOfInterest || 'Not specified'}\n\nQuestions? Call ${BUSINESS_CONTACT.phoneDisplay} or reply to this email.\n\nMantra Global Education`,
+      html: `
       <div style="font-family: Arial, sans-serif; max-width: 520px; color: #00234E;">
-        <h2 style="color: #00234E;">Counseling Request Received</h2>
+        <h2 style="color: #00234E;">Counselling Request Received</h2>
         <p>Hi ${safe.name},</p>
-        <p>Thank you for booking a <strong>free counseling session</strong> with Mantra Global Education.</p>
-        <p><strong>Preferred slot:</strong> ${preferredSlot}<br/>
+        <p>Thank you for requesting a <strong>free counselling session</strong> with Mantra Global Education. Our team will contact you by phone or email to arrange it.</p>
+        <p><strong>Preferred date:</strong> ${preferredSlot}<br/>
         <strong>Country of interest:</strong> ${safe.country}</p>
-        <p>Our team will confirm your session within <strong>24 hours</strong> via email or phone.</p>
-        <p style="color: #64748B; font-size: 13px;">Mantra Global Education · mantraglobaledu.com · +91 99401 13077</p>
+        <p>Questions? Call <a href="${BUSINESS_CONTACT.phoneHref}">${BUSINESS_CONTACT.phoneDisplay}</a> or reply to this email.</p>
+        <p style="color: #64748B; font-size: 13px;">Mantra Global Education · mantraglobaledu.com</p>
       </div>
     `,
-  });
+    });
+    student.sent = true;
+  } catch (error) {
+    student.error = describeError(error);
+    console.error(`[counselling email] student confirmation failed for ${reference}:`, student.error);
+  }
 
-  return { sent: true };
+  return { team, student, recipients };
 }

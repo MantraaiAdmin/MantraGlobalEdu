@@ -19,6 +19,28 @@ export default function AdminSettingsPage() {
   const [data, setData] = useState<SettingsData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [testing, setTesting] = useState(false);
+  const [testResult, setTestResult] = useState<{ sent: boolean; recipients: string[]; error?: string } | null>(null);
+
+  const sendTestEmail = async () => {
+    const token = getAccessToken();
+    if (!token) return;
+    setTesting(true);
+    setTestResult(null);
+    try {
+      const res = await fetch('/api/v1/admin/settings/test-email', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Test failed');
+      setTestResult(json.data);
+    } catch (err) {
+      setTestResult({ sent: false, recipients: [], error: err instanceof Error ? err.message : 'Test failed' });
+    } finally {
+      setTesting(false);
+    }
+  };
 
   useEffect(() => {
     const token = getAccessToken();
@@ -89,7 +111,22 @@ export default function AdminSettingsPage() {
             <StatusRow ok={data?.smtpConfigured ?? false} label={data?.smtpConfigured ? 'SMTP ready' : 'SMTP_PASS missing'} />
             <p className="text-muted-foreground">Host: {data?.smtpHost || '—'}</p>
             {!data?.smtpConfigured && (
-              <p className="text-muted-foreground">Add <code>SMTP_PASS</code> (Outlook app password) in Vercel for forgot-password OTP.</p>
+              <p className="text-muted-foreground">
+                Add <code>SMTP_HOST</code>, <code>SMTP_USER</code> and <code>SMTP_PASS</code> in Vercel. Counselling booking
+                notifications and password-reset codes are not sent until these are set.
+              </p>
+            )}
+            <Button variant="outline" size="sm" onClick={sendTestEmail} disabled={testing}>
+              {testing ? 'Sending test…' : 'Send test email'}
+            </Button>
+            {testResult && (
+              <div role="status" className="space-y-1">
+                <StatusRow
+                  ok={testResult.sent}
+                  label={testResult.sent ? `Test email sent to ${testResult.recipients.join(', ')}` : 'Test email failed'}
+                />
+                {testResult.error && <p className="text-xs text-red-600 break-words">{testResult.error}</p>}
+              </div>
             )}
           </CardContent>
         </Card>
