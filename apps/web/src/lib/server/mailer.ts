@@ -102,16 +102,18 @@ function getMailTransporter() {
 }
 
 /**
- * Microsoft 365 / Outlook only lets an account send as itself, so the From
- * address is always the authenticated SMTP_USER mailbox. SMTP_FROM is honoured
- * only when it is that same mailbox; otherwise Outlook rejects the message
- * (554 SendAsDenied) and no email is delivered.
+ * Microsoft 365 / Outlook only lets an account send as itself, so for those
+ * hosts the From address is always the authenticated SMTP_USER mailbox (a
+ * different SMTP_FROM is rejected with 554 SendAsDenied). Other providers
+ * (Resend, Brevo, SendGrid, SES) use a non-email SMTP_USER and need SMTP_FROM
+ * set to an address on a domain verified with that provider.
  */
 function getFromAddress() {
   const fromName = process.env.SMTP_FROM_NAME || 'Mantra Global Education';
   const user = process.env.SMTP_USER || '';
   const configured = process.env.SMTP_FROM || '';
-  const fromEmail = configured && configured.toLowerCase() === user.toLowerCase() ? configured : user;
+  const isMicrosoft = /office365|outlook/i.test(process.env.SMTP_HOST || '');
+  const fromEmail = isMicrosoft || !configured ? user : configured;
   return `"${fromName}" <${fromEmail}>`;
 }
 
