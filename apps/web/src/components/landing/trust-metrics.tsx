@@ -1,5 +1,6 @@
 import { BadgeCheck, Globe, GraduationCap, Laptop, MapPin } from 'lucide-react';
 import { CATALOG_COUNTS } from '@/lib/catalog';
+import { reveal } from '@/lib/motion';
 
 /**
  * Trust strip built only from verifiable facts: what the service is, how it is
@@ -24,8 +25,8 @@ export function TrustMetrics() {
     <section aria-label="Why students contact us" className="relative bg-primary overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(42_78%_52%/0.12),transparent_70%)]" aria-hidden="true" />
       <ul className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        {ITEMS.map((item) => (
-          <li key={item.title} className="text-center px-2">
+        {ITEMS.map((item, i) => (
+          <li key={item.title} {...reveal('fade-up', i * 80)} className="text-center px-2">
             <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
               <item.icon className="h-5 w-5 text-accent" aria-hidden="true" />
             </div>

@@ -12,6 +12,7 @@ import {
 import { ROUTES } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { SectionHeading } from '@/components/content/blocks';
+import { reveal } from '@/lib/motion';
 
 interface FrameworkStage {
   letter: string;
@@ -113,7 +114,7 @@ export function MantraFrameworkSection() {
           {FRAMEWORK_STAGES.map((stage, index) => {
             const Icon = stage.icon;
             return (
-              <li key={stage.word} className="relative flex flex-col rounded-[24px] border border-white/80 bg-white p-6 shadow-[0_8px_40px_rgba(11,35,65,0.08)]">
+              <li key={stage.word} {...reveal('tilt-in', (index % 3) * 100)} className="relative flex flex-col rounded-[24px] border border-white/80 bg-white p-6 shadow-[0_8px_40px_rgba(11,35,65,0.08)]">
                 <div className="flex items-center gap-3 mb-4">
                   <span className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br text-white shadow-lg ${stage.gradient}`}>
                     <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />

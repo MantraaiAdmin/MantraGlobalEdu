@@ -3,6 +3,7 @@ import { ArrowRight, Info, Mail, Phone } from 'lucide-react';
 import { BUSINESS_CONTACT, OUTCOME_DISCLAIMER, POLICY_CHANGE_NOTICE, ROUTES } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { reveal } from '@/lib/motion';
 
 /** Server-rendered section heading (no entrance animation, so text is visible before hydration). */
 export function SectionHeading({
@@ -21,7 +22,7 @@ export function SectionHeading({
   as?: 'h2' | 'h3';
 }) {
   return (
-    <div className={cn('max-w-3xl mb-10', align === 'center' && 'mx-auto text-center', className)}>
+    <div {...reveal('fade-up')} className={cn('max-w-3xl mb-10', align === 'center' && 'mx-auto text-center', className)}>
       {eyebrow && (
         <p className="mb-3">
           <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[#8a5f00]">
@@ -79,10 +80,12 @@ export function CounsellingCta({
   return (
     <section className="section-padding">
       <div className="mx-auto max-w-5xl">
-        <div className="relative overflow-hidden rounded-3xl mesh-hero px-6 py-12 sm:px-12 sm:py-14 text-center shadow-premium-xl">
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">{title}</h2>
-          <p className="mt-4 text-white/80 max-w-2xl mx-auto">{description}</p>
-          <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
+        <div {...reveal('zoom-in')} className="relative overflow-hidden rounded-3xl mesh-hero px-6 py-12 sm:px-12 sm:py-14 text-center shadow-premium-xl">
+          <div className="motion-blob motion-blob--gold -top-16 -left-10 h-56 w-56" aria-hidden="true" />
+          <div className="motion-blob motion-blob--blue motion-blob--slow -bottom-16 -right-10 h-56 w-56" aria-hidden="true" />
+          <h2 className="relative font-display text-2xl sm:text-3xl font-bold text-white">{title}</h2>
+          <p className="relative mt-4 text-white/80 max-w-2xl mx-auto">{description}</p>
+          <div className="relative mt-8 flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
             <Button size="lg" variant="accent" asChild>
               <Link href={ROUTES.bookCounseling} data-track="book_counselling_click" data-track-location={location}>
                 Book Free Counselling <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -94,7 +97,7 @@ export function CounsellingCta({
               </a>
             </Button>
           </div>
-          <p className="mt-6 text-sm text-white/75">
+          <p className="relative mt-6 text-sm text-white/75">
             Or email{' '}
             <a href={BUSINESS_CONTACT.emailHref} data-track-location={location} className="font-semibold text-white underline underline-offset-2 break-all">
               <Mail className="inline h-4 w-4 mr-1 -mt-0.5" aria-hidden="true" />

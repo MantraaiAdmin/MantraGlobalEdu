@@ -8,6 +8,7 @@ import { CounsellingCta, PolicyNotice, SectionHeading } from '@/components/conte
 import { COUNTRY_GUIDES } from '@/data/country-guides';
 import { getUniversityCountByCountryCode } from '@/lib/catalog';
 import { pageMetadata } from '@/lib/seo';
+import { reveal } from '@/lib/motion';
 
 export const metadata = pageMetadata({
   title: 'Study Abroad Destinations, Universities & Costs | Mantra',
@@ -42,10 +43,10 @@ export default function CountriesPage() {
               description="Each guide covers entry and English requirements, intakes, costs, scholarships, student visas and work rules, with links to official sources."
             />
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {COUNTRY_GUIDES.map((guide) => {
+              {COUNTRY_GUIDES.map((guide, i) => {
                 const uniCount = getUniversityCountByCountryCode(guide.code);
                 return (
-                  <li key={guide.slug}>
+                  <li key={guide.slug} {...reveal('fade-up', (i % 3) * 90)}>
                     <Link href={`/countries/${guide.slug}`} className="premium-card group flex h-full flex-col p-6">
                       <span className="text-5xl" aria-hidden="true">{FLAGS[guide.code]}</span>
                       <h2 className="mt-4 text-xl font-semibold text-primary font-display group-hover:underline underline-offset-4">

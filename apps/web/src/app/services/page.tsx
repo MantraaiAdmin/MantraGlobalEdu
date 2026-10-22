@@ -10,6 +10,7 @@ import { PageHero } from '@/components/layout/page-hero';
 import { CounsellingCta, OutcomeNotice, SectionHeading } from '@/components/content/blocks';
 import { getServicePage } from '@/data/services';
 import { pageMetadata } from '@/lib/seo';
+import { reveal } from '@/lib/motion';
 
 export const metadata = pageMetadata({
   title: 'Study Abroad Counselling & Admission Services | Mantra',
@@ -48,11 +49,11 @@ export default function ServicesPage() {
         <section className="section-padding">
           <div className="mx-auto max-w-7xl">
             <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICES.map((service) => {
+              {SERVICES.map((service, i) => {
                 const Icon = ICONS[service.icon] ?? Compass;
                 const content = getServicePage(service.slug);
                 return (
-                  <li key={service.slug}>
+                  <li key={service.slug} {...reveal('fade-up', (i % 3) * 90)}>
                     <Link href={`/services/${service.slug}`} className="premium-card group flex h-full flex-col p-6">
                       <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                         <Icon className="h-5 w-5" aria-hidden="true" />
@@ -75,7 +76,7 @@ export default function ServicesPage() {
             <SectionHeading title="How Our Support Works" align="center" />
             <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {PROCESS.map((step, index) => (
-                <li key={step.title} className="premium-card p-5">
+                <li key={step.title} {...reveal('fade-up', index * 80)} className="premium-card p-5">
                   <span className="text-2xl font-bold text-accent">{String(index + 1).padStart(2, '0')}</span>
                   <h3 className="mt-3 font-semibold text-primary">{step.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{step.detail}</p>

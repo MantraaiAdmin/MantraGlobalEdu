@@ -13,6 +13,7 @@ import { COUNTRY_GUIDES } from '@/data/country-guides';
 import { SERVICE_PAGES } from '@/data/services';
 import { CITY_PAGES, getCityPage } from '@/data/locations';
 import { pageMetadata } from '@/lib/seo';
+import { reveal } from '@/lib/motion';
 
 export function cityMetadata(slug: string) {
   const page = getCityPage(slug);
@@ -80,8 +81,8 @@ export function CityLandingPage({ slug }: { slug: string }) {
                   className="mb-6"
                 />
                 <ul className="grid gap-4 sm:grid-cols-2">
-                  {SERVICE_PAGES.map((service) => (
-                    <li key={service.slug}>
+                  {SERVICE_PAGES.map((service, i) => (
+                    <li key={service.slug} {...reveal('fade-up', (i % 2) * 80)}>
                       <Link href={`/services/${service.slug}`} className="premium-card group block h-full p-5">
                         <h3 className="font-semibold text-primary group-hover:underline underline-offset-4">{service.name}</h3>
                         <p className="mt-1 text-sm text-muted-foreground">{service.summary}</p>
@@ -131,7 +132,7 @@ export function CityLandingPage({ slug }: { slug: string }) {
                 <SectionHeading title="How to book an appointment" className="mb-5" />
                 <ol className="grid gap-4 sm:grid-cols-2">
                   {STEPS.map((step, index) => (
-                    <li key={step.title} className="premium-card p-5">
+                    <li key={step.title} {...reveal('fade-up', index * 80)} className="premium-card p-5">
                       <span className="text-sm font-bold text-[#8a5f00]">Step {index + 1}</span>
                       <h3 className="mt-1 font-semibold text-primary">{step.title}</h3>
                       <p className="mt-1 text-sm text-muted-foreground">{step.detail}</p>

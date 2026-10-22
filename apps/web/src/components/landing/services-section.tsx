@@ -1,14 +1,11 @@
-'use client';
-
-import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
-import { useRef } from 'react';
 import type { ComponentType } from 'react';
 import {
   Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, Laptop, ArrowUpRight,
 } from 'lucide-react';
 import { SERVICES } from '@mge/config';
 import { SectionHeader } from '@/components/common/section-header';
+import { reveal } from '@/lib/motion';
 
 const iconMap: Record<string, ComponentType<{ className?: string }>> = {
   Compass, GraduationCap, Award, FileCheck, Plane, Briefcase, FileText, Landmark, Laptop,
@@ -27,11 +24,9 @@ const descriptions: Record<string, string> = {
 };
 
 export function ServicesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section ref={ref} className="section-padding relative overflow-hidden">
+    <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 dot-pattern opacity-40" />
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
@@ -44,12 +39,7 @@ export function ServicesSection() {
           {SERVICES.map((service, i) => {
             const Icon = iconMap[service.icon] || Compass;
             return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 28 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-              >
+              <div key={service.id} {...reveal('fade-up', i * 70)}>
                 <Link href={`/services/${service.slug}`} className="premium-card group block h-full p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-500 shadow-sm">
@@ -64,7 +54,7 @@ export function ServicesSection() {
                     {descriptions[service.id] || 'Expert support tailored to your goals'}
                   </p>
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
         </div>

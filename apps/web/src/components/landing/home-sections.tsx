@@ -3,6 +3,7 @@ import { ArrowRight, Award, CheckCircle2, Compass, MapPin, MonitorSmartphone, Sc
 import { BUSINESS_CONTACT, ROUTES } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { FaqList, SectionHeading } from '@/components/content/blocks';
+import { reveal } from '@/lib/motion';
 
 const WHY_ITEMS = [
   {
@@ -37,8 +38,8 @@ export function WhyMantraSection() {
             description="Studying abroad is a big decision for the whole family. Our approach is built around clear information and personal guidance."
           />
         <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {WHY_ITEMS.map((item) => (
-            <li key={item.title} className="premium-card p-6">
+          {WHY_ITEMS.map((item, i) => (
+            <li key={item.title} {...reveal('fade-up', i * 90)} className="premium-card p-6">
               <item.icon className="h-6 w-6 text-accent mb-4" aria-hidden="true" />
               <h3 className="font-semibold text-primary">{item.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -77,8 +78,8 @@ export function ScholarshipsTeaser() {
             'Government schemes such as Chevening (UK) and DAAD (Germany)',
             'University merit and international student awards',
             'Help matching scholarships to your profile and deadlines',
-          ].map((item) => (
-            <li key={item} className="premium-card flex items-start gap-3 p-4">
+          ].map((item, i) => (
+            <li key={item} {...reveal('fade-left', i * 100)} className="premium-card flex items-start gap-3 p-4">
               <Award className="h-5 w-5 text-accent shrink-0 mt-0.5" aria-hidden="true" />
               <span className="text-sm text-primary">{item}</span>
             </li>
@@ -122,7 +123,7 @@ export function LocalSection() {
             </Link>
           </div>
         </div>
-        <div className="lg:col-span-2 premium-card p-6">
+        <div {...reveal('fade-left', 120)} className="lg:col-span-2 premium-card p-6">
           <MapPin className="h-6 w-6 text-accent mb-3" aria-hidden="true" />
           <h3 className="font-semibold text-primary">Speak to us</h3>
           <dl className="mt-4 space-y-3 text-sm">
@@ -183,7 +184,9 @@ export function HomeFaq() {
     <section className="section-padding bg-muted/30">
       <div className="mx-auto max-w-3xl">
         <SectionHeading title="Frequently Asked Questions" align="center" />
-        <FaqList items={HOME_FAQS} />
+        <div {...reveal('fade-up', 100)}>
+          <FaqList items={HOME_FAQS} />
+        </div>
       </div>
     </section>
   );

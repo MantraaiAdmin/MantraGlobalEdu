@@ -8,6 +8,7 @@ import { getPublicScholarships } from '@/lib/catalog';
 import { destinationPathFromCountryId } from '@/lib/destinations';
 import { ARTICLES, articlePath } from '@/data/articles';
 import { pageMetadata } from '@/lib/seo';
+import { reveal } from '@/lib/motion';
 
 export const metadata = pageMetadata({
   title: 'Study Abroad Scholarships for Indian Students | Mantra',
@@ -68,8 +69,8 @@ export default function ScholarshipsPage() {
                     </Link>
                   </h2>
                   <ul className="mt-5 grid gap-4 sm:grid-cols-2">
-                    {items.map((s) => (
-                      <li key={s.id} className="premium-card p-5 flex flex-col">
+                    {items.map((s, i) => (
+                      <li key={s.id} {...reveal('fade-up', (i % 2) * 80)} className="premium-card p-5 flex flex-col">
                         <h3 className="font-semibold text-primary">
                           <Link href={`/scholarships/${s.id}`} className="underline-offset-4 hover:underline">{s.name}</Link>
                         </h3>

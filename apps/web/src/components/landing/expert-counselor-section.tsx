@@ -3,13 +3,14 @@ import Link from 'next/link';
 import { ArrowRight, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { APP_CONFIG, FOUNDER, ROUTES } from '@mge/config';
+import { reveal } from '@/lib/motion';
 
 export function ExpertCounselorSection() {
   return (
     <section className="section-padding relative overflow-hidden bg-muted/30">
       <div className="relative mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="relative order-2 lg:order-1">
+          <div {...reveal('fade-right')} className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 rounded-[2rem] overflow-hidden shadow-premium-xl border border-border/40">
               <Image
                 src="/images/founder-counselor.png"
@@ -27,7 +28,7 @@ export function ExpertCounselorSection() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div {...reveal('fade-left', 120)} className="order-1 lg:order-2">
             <p className="mb-5">
               <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#8a5f00]">
                 Meet our founder

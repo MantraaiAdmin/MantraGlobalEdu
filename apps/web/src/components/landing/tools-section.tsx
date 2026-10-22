@@ -1,12 +1,9 @@
-'use client';
-
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Search, Calculator, Award, Sparkles, ClipboardCheck, FileCheck } from 'lucide-react';
 import { ROUTES, PRODUCT_NAMES } from '@mge/config';
 import { Button } from '@/components/ui/button';
 import { SectionHeader } from '@/components/common/section-header';
+import { reveal } from '@/lib/motion';
 
 const tools = [
   {
@@ -52,11 +49,9 @@ const tools = [
 ];
 
 export function ToolsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section ref={ref} className="section-padding relative">
+    <section className="section-padding relative">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Smart Tools"
@@ -66,13 +61,7 @@ export function ToolsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {tools.map((tool, i) => (
-            <motion.div
-              key={tool.title}
-              initial={{ opacity: 0, y: 28 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={tool.featured ? 'md:col-span-1' : ''}
-            >
+            <div key={tool.title} {...reveal('fade-up', i * 100)}>
               <div className={`premium-card h-full flex flex-col p-8 group ${tool.featured ? 'gradient-border' : ''}`}>
                 {tool.featured && (
                   <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent">
@@ -90,7 +79,7 @@ export function ToolsSection() {
                   </Link>
                 </Button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

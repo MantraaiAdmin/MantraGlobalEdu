@@ -4,6 +4,8 @@ import '@/styles/globals.css';
 import { Providers } from '@/components/common/providers';
 import { MobileStickyCta } from '@/components/common/mobile-sticky-cta';
 import { Analytics } from '@/components/common/analytics';
+import { RevealObserver } from '@/components/common/reveal-observer';
+import { REVEAL_BOOT_SCRIPT } from '@/lib/motion';
 import { JsonLd } from '@/components/seo/json-ld';
 import { APP_CONFIG, SITE_URL } from '@mge/config';
 import { organizationSchema, websiteSchema } from '@/lib/seo';
@@ -59,7 +61,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: REVEAL_BOOT_SCRIPT }} />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <a
           href="#main-content"
@@ -71,6 +76,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <MobileStickyCta />
+          <RevealObserver />
         </Providers>
         <Analytics />
       </body>

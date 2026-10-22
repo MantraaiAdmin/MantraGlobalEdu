@@ -128,3 +128,135 @@
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+
+/* ==========================================================================
+   Motion system
+   - Scroll reveals only hide content once JS has added `js-reveal` to <html>
+     (set by an inline script before paint), so content is always visible
+     without JavaScript and to crawlers that don't run scripts.
+   - Everything is disabled under prefers-reduced-motion.
+   ========================================================================== */
+
+html.js-reveal [data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+html.js-reveal [data-reveal='fade-up'] { transform: translate3d(0, 28px, 0); }
+html.js-reveal [data-reveal='fade-left'] { transform: translate3d(32px, 0, 0); }
+html.js-reveal [data-reveal='fade-right'] { transform: translate3d(-32px, 0, 0); }
+html.js-reveal [data-reveal='zoom-in'] { transform: scale(0.94); }
+html.js-reveal [data-reveal='tilt-in'] { transform: translate3d(0, 20px, 0) rotate(-1.5deg); }
+html.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Drifting gradient blobs behind dark heroes */
+.motion-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: mge-blob-drift 18s ease-in-out infinite alternate;
+}
+.motion-blob--gold { background: hsl(42 80% 50% / 0.22); }
+.motion-blob--blue { background: hsl(205 70% 55% / 0.18); }
+.motion-blob--deep { background: hsl(212 100% 35% / 0.35); }
+.motion-blob--slow { animation-duration: 24s; animation-direction: alternate-reverse; }
+@keyframes mge-blob-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(24px, -18px, 0) scale(1.08); }
+  100% { transform: translate3d(-16px, 14px, 0) scale(0.96); }
+}
+
+/* Slow aurora sheen over the hero */
+.motion-aurora {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 35% at 30% 30%, hsl(42 80% 50% / 0.14), transparent 70%),
+    radial-gradient(35% 30% at 70% 60%, hsl(205 70% 60% / 0.12), transparent 70%);
+  animation: mge-aurora 22s ease-in-out infinite alternate;
+}
+@keyframes mge-aurora {
+  0% { opacity: 0.6; transform: scale(1) translate3d(0, 0, 0); }
+  50% { opacity: 0.9; transform: scale(1.05) translate3d(2%, -1%, 0); }
+  100% { opacity: 0.7; transform: scale(1.02) translate3d(-1%, 2%, 0); }
+}
+
+/* Gentle bobbing for floating badges */
+.motion-float { animation: mge-float 5s ease-in-out infinite; }
+.motion-float--delay { animation-delay: -2.5s; }
+@keyframes mge-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+
+/* Live pulse dot */
+.motion-pulse-dot { position: relative; display: inline-flex; height: 0.5rem; width: 0.5rem; }
+.motion-pulse-dot::before,
+.motion-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: hsl(42 80% 50%);
+}
+.motion-pulse-dot::before { animation: mge-pulse 2s ease-out infinite; }
+@keyframes mge-pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+/* Gold shimmer text */
+.text-shimmer-gold {
+  background-image: linear-gradient(90deg, #c89116 0%, #f3d27a 25%, #c89116 50%, #f3d27a 75%, #c89116 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: mge-text-shimmer 8s linear infinite;
+}
+@keyframes mge-text-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Infinite marquee (track contains the list twice; second copy is aria-hidden) */
+.motion-marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.motion-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: mge-marquee 40s linear infinite;
+}
+.motion-marquee:hover .motion-marquee__track,
+.motion-marquee:focus-within .motion-marquee__track { animation-play-state: paused; }
+@keyframes mge-marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* FAQ answers ease in when opened */
+details[open] > summary + * { animation: mge-fade-in 0.35s ease both; }
+@keyframes mge-fade-in {
+  from { opacity: 0; transform: translate3d(0, -4px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .motion-blob,
+  .motion-aurora,
+  .motion-float,
+  .motion-pulse-dot::before,
+  .text-shimmer-gold,
+  .motion-marquee__track,
+  details[open] > summary + * { animation: none !important; }
+  .motion-marquee { overflow-x: auto; }
+  .premium-card, .premium-card:hover { transform: none !important; }
+}

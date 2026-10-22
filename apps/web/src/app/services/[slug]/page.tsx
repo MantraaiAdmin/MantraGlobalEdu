@@ -10,6 +10,7 @@ import { SERVICE_PAGES, getServicePage } from '@/data/services';
 import { getCountryGuide } from '@/data/country-guides';
 import { getArticle, articlePath } from '@/data/articles';
 import { pageMetadata, serviceSchema } from '@/lib/seo';
+import { reveal } from '@/lib/motion';
 
 export const dynamicParams = false;
 
@@ -78,7 +79,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 <SectionHeading title="How it works" className="mb-5" />
                 <ol className="grid gap-4 sm:grid-cols-2">
                   {service.process.map((step, index) => (
-                    <li key={step.title} className="premium-card p-5">
+                    <li key={step.title} {...reveal('fade-up', index * 80)} className="premium-card p-5">
                       <span className="text-sm font-bold text-[#8a5f00]">Step {index + 1}</span>
                       <h3 className="mt-1 font-semibold text-primary">{step.title}</h3>
                       <p className="mt-1 text-sm text-muted-foreground">{step.detail}</p>

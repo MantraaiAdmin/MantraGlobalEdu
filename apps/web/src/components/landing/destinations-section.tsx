@@ -4,6 +4,7 @@ import { DESTINATIONS } from '@mge/config';
 import { COUNTRY_GUIDES } from '@/data/country-guides';
 import { getUniversityCountByCountryCode } from '@/lib/catalog';
 import { SectionHeading } from '@/components/content/blocks';
+import { reveal } from '@/lib/motion';
 
 const FLAGS = Object.fromEntries(DESTINATIONS.map((d) => [d.code, d.flag]));
 
@@ -27,10 +28,10 @@ export function DestinationsSection() {
         </div>
 
         <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-          {COUNTRY_GUIDES.map((guide) => {
+          {COUNTRY_GUIDES.map((guide, i) => {
             const uniCount = getUniversityCountByCountryCode(guide.code);
             return (
-              <li key={guide.slug}>
+              <li key={guide.slug} {...reveal('fade-up', (i % 5) * 70)}>
                 <Link href={`/countries/${guide.slug}`} className="premium-card group block h-full p-5 sm:p-6">
                   <span className="block text-4xl mb-3" aria-hidden="true">{FLAGS[guide.code]}</span>
                   <span className="block font-semibold text-primary">Study in {guide.inName}</span>

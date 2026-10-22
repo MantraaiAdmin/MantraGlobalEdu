@@ -101,13 +101,13 @@ export function Header() {
             className="shrink-0"
           />
 
-          <nav aria-label="Main" className="hidden lg:flex items-center gap-0.5">
+          <nav aria-label="Main" className="hidden xl:flex items-center gap-0.5">
             {NAVIGATION.public.map((item) => (
               <NavLink
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'px-2.5 xl:px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200',
+                  'whitespace-nowrap px-2 xl:px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200',
                   useSolidHeader
                     ? 'text-primary/70 hover:text-primary hover:bg-muted/60'
                     : 'text-white/90 hover:text-white hover:bg-white/10'
@@ -118,12 +118,12 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden xl:flex items-center gap-2">
             <a
               href={BUSINESS_CONTACT.phoneHref}
               data-track-location="header"
               className={cn(
-                'hidden xl:inline-flex items-center gap-1.5 px-2 py-2 text-sm font-semibold rounded-lg',
+                'hidden 2xl:inline-flex whitespace-nowrap items-center gap-1.5 px-2 py-2 text-sm font-semibold rounded-lg',
                 useSolidHeader ? 'text-primary hover:text-accent' : 'text-white hover:text-accent'
               )}
             >
@@ -139,7 +139,7 @@ export function Header() {
 
           <button
             className={cn(
-              'lg:hidden p-2 rounded-lg transition-colors',
+              'xl:hidden p-2 rounded-lg transition-colors',
               useSolidHeader ? 'text-primary' : 'text-white'
             )}
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -155,7 +155,7 @@ export function Header() {
       <div
         id="mobile-menu"
         hidden={!mobileOpen}
-        className="lg:hidden glass border-t border-border/40 max-h-[calc(100vh-4rem)] overflow-y-auto"
+        className="xl:hidden glass border-t border-border/40 max-h-[calc(100vh-4rem)] overflow-y-auto"
       >
         <nav aria-label="Mobile" className="px-4 py-4 space-y-1">
           {NAVIGATION.public.map((item) => (

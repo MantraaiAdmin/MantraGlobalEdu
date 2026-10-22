@@ -7,6 +7,7 @@ import { MantraFrameworkSection } from '@/components/landing/mantra-framework-se
 import { ExpertCounselorSection } from '@/components/landing/expert-counselor-section';
 import { ServicesSection } from '@/components/landing/services-section';
 import { DestinationsSection } from '@/components/landing/destinations-section';
+import { DestinationsMarquee } from '@/components/landing/destinations-marquee';
 import { ToolsSection } from '@/components/landing/tools-section';
 import { ResourcesSection } from '@/components/landing/resources-section';
 import {
@@ -40,6 +41,7 @@ export default function HomePage() {
       <main id="main-content">
         <HeroSection />
         <TrustMetrics />
+        <DestinationsMarquee />
         <DestinationsSection />
         <ToolsSection />
         <WhyMantraSection />

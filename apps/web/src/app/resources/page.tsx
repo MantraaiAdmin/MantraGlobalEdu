@@ -6,6 +6,7 @@ import { PageHero } from '@/components/layout/page-hero';
 import { CounsellingCta, SectionHeading } from '@/components/content/blocks';
 import { ARTICLES, RESOURCE_CATEGORY_PAGES, articlePath, getArticlesByCategory } from '@/data/articles';
 import { pageMetadata } from '@/lib/seo';
+import { reveal } from '@/lib/motion';
 
 export const metadata = pageMetadata({
   title: 'Study Abroad Resources & Guides | Mantra Global Education',
@@ -33,10 +34,10 @@ export default function ResourcesPage() {
           <div className="mx-auto max-w-7xl">
             <SectionHeading title="Browse by topic" />
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {RESOURCE_CATEGORY_PAGES.map((category) => {
+              {RESOURCE_CATEGORY_PAGES.map((category, i) => {
                 const count = getArticlesByCategory(category.id).length;
                 return (
-                  <li key={category.id}>
+                  <li key={category.id} {...reveal('fade-up', (i % 3) * 90)}>
                     <Link href={`/resources/${category.id}`} className="premium-card group block h-full p-6">
                       <h2 className="text-lg font-semibold text-primary group-hover:underline underline-offset-4">{category.title}</h2>
                       <p className="mt-2 text-sm text-muted-foreground">{category.description}</p>
@@ -55,8 +56,8 @@ export default function ResourcesPage() {
           <div className="mx-auto max-w-4xl">
             <SectionHeading title="All guides" />
             <ul className="space-y-4">
-              {ARTICLES.map((article) => (
-                <li key={article.slug}>
+              {ARTICLES.map((article, i) => (
+                <li key={article.slug} {...reveal('fade-up', (i % 4) * 60)}>
                   <Link href={articlePath(article)} className="premium-card group flex items-start justify-between gap-4 p-6">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-[#8a5f00]">
